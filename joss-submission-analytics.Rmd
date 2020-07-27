@@ -21,6 +21,8 @@ suppressPackageStartupMessages({
   library(ggplot2)
   library(lubridate)
   library(gh)
+  library(purrr)
+  library(jsonlite)
 })
 ```
 

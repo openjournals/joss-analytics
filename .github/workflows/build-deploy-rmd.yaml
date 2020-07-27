@@ -44,7 +44,8 @@ jobs:
       - name: Install dependencies
         run: |
           install.packages(c('remotes', 'dplyr', 'ggplot2', 'rmarkdown',
-                             'knitr'), Ncpu = 2L)
+                             'knitr', 'rcrossref', 'tibble', 'tidyr',
+                             'lubridate', 'gh', 'jsonlite', 'purrr'), Ncpu = 2L)
         shell: Rscript {0}
 
       - name: Session info

@@ -1,0 +1,246 @@
+---
+title: "JOSS submission analytics"
+date: "`r Sys.time()`"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, dev = c("pdf", "png"))
+```
+
+# Load packages
+
+```{r load-packages}
+suppressPackageStartupMessages({
+  library(tibble)
+  library(rcrossref)
+  library(dplyr)
+  library(tidyr)
+  library(ggplot2)
+  library(lubridate)
+  library(gh)
+})
+```
+
+# Pull down papers and citation info from Crossref
+
+
+```{r pull-crossref}
+## Fetch JOSS papers from Crossref
+papers <- rcrossref::cr_works(filter = c(issn = "2475-9066"), 
+                              limit = 1000)$data %>%
+  dplyr::filter(type == "journal-article")
+
+## A few papers don't have DOIs - generate from the URL
+noaltid <- which(is.na(papers$alternative.id))
+papers$alternative.id[noaltid] <- gsub("http://dx.doi.org/", "",
+                                       papers$url[noaltid])
+
+## Get citation info from Crossref and merge with paper details
+cit <- rcrossref::cr_citation_count(doi = papers$alternative.id)
+papers <- papers %>% dplyr::left_join(
+  cit %>% dplyr::rename(citation_count = count), 
+  by = c("alternative.id" = "doi")
+)
+
+## Remove one duplicated paper
+papers <- papers %>% dplyr::filter(alternative.id != "10.21105/joss.00688")
+```
+
+# Pull down info from Whedon API
+
+```{r pull-whedon}
+whedon <- list()
+p <- 1
+a <- jsonlite::fromJSON(
+  url(paste0("https://joss.theoj.org/papers/published.json?page=", p)),
+  simplifyDataFrame = FALSE
+)
+while (length(a) > 0) {
+  whedon <- c(whedon, a)
+  p <- p + 1
+  a <- jsonlite::fromJSON(
+    url(paste0("https://joss.theoj.org/papers/published.json?page=", p)),
+    simplifyDataFrame = FALSE
+  )
+}
+
+whedon <- do.call(dplyr::bind_rows, lapply(whedon, function(w) {
+  data.frame(api_title = w$title, 
+             api_state = w$state,
+             repo_url = w$repository_url,
+             review_issue_id = w$review_issue_id,
+             doi = w$doi,
+             prereview_issue_id = ifelse(!is.null(w$meta_review_issue_id),
+                                         w$meta_review_issue_id, NA_integer_),
+             languages = paste(w$metadata$paper$languages, collapse = ","),
+             archive_doi = w$metadata$paper$archive_doi)
+}))
+
+papers <- papers %>% dplyr::left_join(whedon, by = c("alternative.id" = "doi"))
+```
+
+
+# Most cited papers
+
+```{r most-cited}
+papers %>% dplyr::arrange(desc(citation_count)) %>% 
+  dplyr::select(title, url, deposited, citation_count) %>% 
+  head(10) %>% as.data.frame()
+```
+
+# Citations vs time since publication
+
+```{r citations-vs-time}
+papers <- papers %>% dplyr::mutate(published.date = as.Date(published.print))
+ggplot(papers, aes(x = published.date, y = citation_count)) + 
+  geom_point(alpha = 0.5) + theme_bw() + scale_y_sqrt() + 
+  geom_smooth()
+```
+
+# Power law within each half year
+
+```{r power-law-citations}
+papers <- papers %>% dplyr::mutate(
+  halfyear = paste0(year(published.date), 
+                    ifelse(month(published.date) <= 6, "H1", "H2"))
+) %>% dplyr::mutate(
+  halfyear = factor(halfyear, 
+                    levels = paste0(rep(sort(unique(year(published.date))), 
+                                        each = 2), c("H1", "H2")))
+)
+ggplot(papers %>% dplyr::group_by(halfyear) %>% 
+         dplyr::arrange(desc(citation_count)) %>%
+         dplyr::mutate(idx = seq_along(citation_count)), 
+       aes(x = idx, y = citation_count)) + 
+  geom_point(alpha = 0.5) + facet_wrap(~ halfyear) + 
+  theme_bw()
+
+ggplot(papers %>% dplyr::group_by(halfyear) %>% 
+         dplyr::arrange(desc(citation_count)) %>%
+         dplyr::mutate(idx = seq_along(citation_count)), 
+       aes(x = idx, y = citation_count)) + 
+  geom_point(alpha = 0.5) + 
+  facet_wrap(~ halfyear, scales = "free") + 
+  theme_bw()
+```
+
+# Combine with info from GitHub issues
+
+```{r pull-github}
+## Pull down info on all issues in the joss-reviews repository
+issues <- gh("/repos/openjournals/joss-reviews/issues", 
+             .limit = 5000, state = "all")
+
+## From each issue, extract required information
+iss <- do.call(dplyr::bind_rows, lapply(issues, function(i) {
+  data.frame(title = i$title, 
+             number = i$number,
+             state = i$state,
+             opened = i$created_at,
+             closed = ifelse(!is.null(i$closed_at),
+                             i$closed_at, NA_character_),
+             ncomments = i$comments,
+             labels = paste(setdiff(
+               vapply(i$labels, getElement, 
+                      name = "name", character(1L)),
+               c("review", "pre-review", "query-scope", "paused")),
+               collapse = ","))
+}))
+
+## Split into REVIEW, PRE-REVIEW, and other issues (the latter category 
+## is discarded)
+issother <- iss %>% dplyr::filter(!grepl("\\[PRE REVIEW\\]", title) & 
+                                    !grepl("\\[REVIEW\\]", title))
+dim(issother)
+head(issother)
+
+## For REVIEW issues, generate the DOI of the paper from the issue number
+getnbrzeros <- function(s) {
+  paste(rep(0, 5 - nchar(s)), collapse = "")
+}
+issrev <- iss %>% dplyr::filter(grepl("\\[REVIEW\\]", title)) %>%
+  dplyr::mutate(nbrzeros = purrr::map_chr(number, getnbrzeros)) %>%
+  dplyr::mutate(alternative.id = paste0("10.21105/joss.", 
+                                        nbrzeros,
+                                        number)) %>%
+  dplyr::select(-nbrzeros) %>% 
+  dplyr::mutate(title = gsub("\\[REVIEW\\]: ", "", title)) %>%
+  dplyr::rename_at(vars(-alternative.id), ~ paste0("review_", .))
+
+## For PRE-REVIEW issues, add information about the corresponding REVIEW 
+## issue number
+isspre <- iss %>% dplyr::filter(grepl("\\[PRE REVIEW\\]", title)) %>%
+  dplyr::filter(!grepl("withdrawn", labels)) %>%
+  dplyr::filter(!grepl("rejected", labels))
+## Some titles have multiple pre-review issues. In these cases, keep the latest
+isspre <- isspre %>% dplyr::arrange(desc(number)) %>% 
+  dplyr::filter(!duplicated(title)) %>% 
+  dplyr::mutate(title = gsub("\\[PRE REVIEW\\]: ", "", title)) %>%
+  dplyr::rename_all(~ paste0("prerev_", .))
+
+papers <- papers %>% dplyr::left_join(issrev) %>% 
+  dplyr::left_join(isspre, by = c("prereview_issue_id" = "prerev_number")) %>%
+  dplyr::mutate(prerev_opened = as.Date(prerev_opened),
+                prerev_closed = as.Date(prerev_closed),
+                review_opened = as.Date(review_opened),
+                review_closed = as.Date(review_closed)) %>% 
+  dplyr::mutate(days_in_pre = prerev_closed - prerev_opened,
+                days_in_rev = review_closed - review_opened,
+                to_review = !is.na(review_opened))
+```
+
+# Clean up a bit
+
+```{r clean-up}
+papers <- papers %>% dplyr::select(-reference, -license, -link)
+```
+
+# Pre-review/review time over time
+
+```{r review-time}
+ggplot(papers, aes(x = prerev_opened, y = as.numeric(days_in_pre))) + 
+  geom_point() + geom_smooth() + theme_bw() + 
+  scale_y_sqrt() + xlab("Date of pre-review opening") + 
+  ylab("Number of days in pre-review")
+ggplot(papers, aes(x = review_opened, y = as.numeric(days_in_rev))) + 
+  geom_point() + geom_smooth() + theme_bw() + 
+  scale_y_sqrt() + xlab("Date of review opening") + 
+  ylab("Number of days in review")
+```
+
+# Languages
+
+```{r languages}
+sspl <- strsplit(papers$languages, ",")
+all_languages <- unique(unlist(sspl))
+langs <- do.call(dplyr::bind_rows, lapply(all_languages, function(l) {
+  data.frame(language = l,
+             nbr_submissions = sum(vapply(sspl, function(v) l %in% v, 0)))
+}))
+langs %>% dplyr::arrange(desc(nbr_submissions))
+ggplot(langs %>% dplyr::arrange(desc(nbr_submissions)) %>%
+         dplyr::mutate(language = factor(language, levels = language)),
+       aes(x = language, y = nbr_submissions)) + 
+  geom_bar(stat = "identity") + 
+  theme_bw() + 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) + 
+  xlab("") + ylab("Number of submissions")
+```
+
+
+# Save object
+
+```{r save-data}
+head(papers) %>% as.data.frame()
+saveRDS(papers, file = "joss_submission_analytics.rds")
+```
+
+# Session info
+
+```{r session-info}
+sessionInfo()
+```
+

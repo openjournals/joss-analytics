@@ -51,7 +51,6 @@ jobs:
 
       - name: Session info
         run: |
-          gh::gh_whoami()$login
           install.packages('sessioninfo', Ncpus = 2L)
           options(width = 100)
           pkgs <- installed.packages()[, "Package"]

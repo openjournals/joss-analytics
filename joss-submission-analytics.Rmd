@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = TRUE, dev = c("png", "pdf"))
 
 In this report, we extract information about published JOSS papers and generate  graphics as well as a summary table that can be downloaded and used for further analyses. 
 
-# Import required R packages
+# Load required R packages
 
 ```{r load-packages, class.source = 'fold-show'}
 suppressPackageStartupMessages({
@@ -115,11 +115,13 @@ papers <- papers %>% dplyr::left_join(whedon, by = c("alternative.id" = "doi"))
 
 From each pre-review and review issue, we extract information about review times and assigned labels. 
 
-```{r pull-github, class.source = 'fold-show'}
+```{r pull-github, class.source = 'fold-show', message = FALSE}
 ## Pull down info on all issues in the joss-reviews repository
 issues <- gh("/repos/openjournals/joss-reviews/issues", 
-             .limit = 5000, state = "all", .progress = FALSE)
+             .limit = 5000, state = "all")
+```
 
+```{r extract-github, class.source = 'fold-show'}
 ## From each issue, extract required information
 iss <- do.call(dplyr::bind_rows, lapply(issues, function(i) {
   data.frame(title = i$title, 
@@ -180,12 +182,15 @@ papers <- papers %>% dplyr::left_join(issrev, by = "alternative.id") %>%
 
 ## Add information from software repositories
 
-```{r check-software-repos, class.source = 'fold-show'}
+```{r check-software-repos, class.source = 'fold-show', message = FALSE}
 software_urls <- papers$repo_url
 is_github <- grepl("github", software_urls)
 length(is_github)
 sum(is_github)
 software_urls[!is_github]
+```
+
+```{r get-software-repos, class.source = 'fold-show', message = FALSE, results = 'hide', warning = FALSE}
 df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
   info <- try({
     gh(gsub("(https://)?(www.)?github.com/", "/repos/", u))
@@ -348,7 +353,8 @@ ggplot(papers, aes(x = as.numeric(repo_pushed - review_closed))) +
   geom_histogram(bins = 50) + 
   theme_bw() + 
   labs(x = "Time (days) from closure of JOSS review to most recent commit in repo") + 
-  theme(axis.title = element_text(size = 15))
+  theme(axis.title = element_text(size = 15)) + 
+  facet_wrap(~ year(published.date), scales = "free_y")
 ```
 
 # Save object

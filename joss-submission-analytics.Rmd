@@ -1,18 +1,27 @@
 ---
 title: "JOSS submission analytics"
 date: "`r Sys.time()`"
-output: html_document
+output: 
+  html_document:
+    code_folding: hide
+    theme: sandstone
+    highlight: tango
+    toc: true
 editor_options: 
   chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, dev = c("pdf", "png"))
+knitr::opts_chunk$set(echo = TRUE, dev = c("png", "pdf"))
 ```
 
-# Load packages
+# Introduction
 
-```{r load-packages}
+In this report, we extract information about published JOSS papers and generate  graphics as well as a summary table that can be downloaded and used for further analyses. 
+
+# Import required R packages
+
+```{r load-packages, class.source = 'fold-show'}
 suppressPackageStartupMessages({
   library(tibble)
   library(rcrossref)
@@ -23,19 +32,35 @@ suppressPackageStartupMessages({
   library(gh)
   library(purrr)
   library(jsonlite)
+  library(DT)
+  library(plotly)
 })
 ```
 
-# Pull down papers and citation info from Crossref
+# Collect information about papers
 
+## Pull down papers and citation info from Crossref
 
-```{r pull-crossref}
+We get the information about published JOSS papers from Crossref, using the `rcrossref` R package. This package is also used to extract citation counts.
+
+```{r pull-crossref, class.source = 'fold-show'}
 ## Fetch JOSS papers from Crossref
+## Only 1000 papers at the time can be pulled down
+lim <- 1000
 papers <- rcrossref::cr_works(filter = c(issn = "2475-9066"), 
-                              limit = 1000)$data %>%
-  dplyr::filter(type == "journal-article")
+                              limit = lim)$data
+i <- 1
+while (nrow(papers) == i * lim) {
+  papers <- dplyr::bind_rows(
+    papers, 
+    rcrossref::cr_works(filter = c(issn = "2475-9066"), 
+                        limit = lim, offset = i * lim)$data)
+  i <- i + 1
+}
+papers <- papers %>%
+  dplyr::filter(type == "journal-article") 
 
-## A few papers don't have DOIs - generate from the URL
+## A few papers don't have DOIs - generate them from the URL
 noaltid <- which(is.na(papers$alternative.id))
 papers$alternative.id[noaltid] <- gsub("http://dx.doi.org/", "",
                                        papers$url[noaltid])
@@ -51,9 +76,11 @@ papers <- papers %>% dplyr::left_join(
 papers <- papers %>% dplyr::filter(alternative.id != "10.21105/joss.00688")
 ```
 
-# Pull down info from Whedon API
+## Pull down info from Whedon API
 
-```{r pull-whedon}
+For each published paper, we use the Whedon API to get information about pre-review and review issue numbers, corresponding software repository etc.
+
+```{r pull-whedon, class.source = 'fold-show'}
 whedon <- list()
 p <- 1
 a <- jsonlite::fromJSON(
@@ -84,57 +111,14 @@ whedon <- do.call(dplyr::bind_rows, lapply(whedon, function(w) {
 papers <- papers %>% dplyr::left_join(whedon, by = c("alternative.id" = "doi"))
 ```
 
+## Combine with info from GitHub issues
 
-# Most cited papers
+From each pre-review and review issue, we extract information about review times and assigned labels. 
 
-```{r most-cited}
-papers %>% dplyr::arrange(desc(citation_count)) %>% 
-  dplyr::select(title, url, deposited, citation_count) %>% 
-  head(10) %>% as.data.frame()
-```
-
-# Citations vs time since publication
-
-```{r citations-vs-time}
-papers <- papers %>% dplyr::mutate(published.date = as.Date(published.print))
-ggplot(papers, aes(x = published.date, y = citation_count)) + 
-  geom_point(alpha = 0.5) + theme_bw() + scale_y_sqrt() + 
-  geom_smooth()
-```
-
-# Power law within each half year
-
-```{r power-law-citations}
-papers <- papers %>% dplyr::mutate(
-  halfyear = paste0(year(published.date), 
-                    ifelse(month(published.date) <= 6, "H1", "H2"))
-) %>% dplyr::mutate(
-  halfyear = factor(halfyear, 
-                    levels = paste0(rep(sort(unique(year(published.date))), 
-                                        each = 2), c("H1", "H2")))
-)
-ggplot(papers %>% dplyr::group_by(halfyear) %>% 
-         dplyr::arrange(desc(citation_count)) %>%
-         dplyr::mutate(idx = seq_along(citation_count)), 
-       aes(x = idx, y = citation_count)) + 
-  geom_point(alpha = 0.5) + facet_wrap(~ halfyear) + 
-  theme_bw()
-
-ggplot(papers %>% dplyr::group_by(halfyear) %>% 
-         dplyr::arrange(desc(citation_count)) %>%
-         dplyr::mutate(idx = seq_along(citation_count)), 
-       aes(x = idx, y = citation_count)) + 
-  geom_point(alpha = 0.5) + 
-  facet_wrap(~ halfyear, scales = "free") + 
-  theme_bw()
-```
-
-# Combine with info from GitHub issues
-
-```{r pull-github}
+```{r pull-github, class.source = 'fold-show'}
 ## Pull down info on all issues in the joss-reviews repository
 issues <- gh("/repos/openjournals/joss-reviews/issues", 
-             .limit = 5000, state = "all")
+             .limit = 5000, state = "all", .progress = FALSE)
 
 ## From each issue, extract required information
 iss <- do.call(dplyr::bind_rows, lapply(issues, function(i) {
@@ -183,7 +167,7 @@ isspre <- isspre %>% dplyr::arrange(desc(number)) %>%
   dplyr::mutate(title = gsub("\\[PRE REVIEW\\]: ", "", title)) %>%
   dplyr::rename_all(~ paste0("prerev_", .))
 
-papers <- papers %>% dplyr::left_join(issrev) %>% 
+papers <- papers %>% dplyr::left_join(issrev, by = "alternative.id") %>% 
   dplyr::left_join(isspre, by = c("prereview_issue_id" = "prerev_number")) %>%
   dplyr::mutate(prerev_opened = as.Date(prerev_opened),
                 prerev_closed = as.Date(prerev_closed),
@@ -194,28 +178,128 @@ papers <- papers %>% dplyr::left_join(issrev) %>%
                 to_review = !is.na(review_opened))
 ```
 
-# Clean up a bit
+## Add information from software repositories
 
-```{r clean-up}
-papers <- papers %>% dplyr::select(-reference, -license, -link)
+```{r check-software-repos, class.source = 'fold-show'}
+software_urls <- papers$repo_url
+is_github <- grepl("github", software_urls)
+length(is_github)
+sum(is_github)
+software_urls[!is_github]
+df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
+  info <- try({
+    gh(gsub("(https://)?(www.)?github.com/", "/repos/", u))
+  })
+  if (!is(info, "try-error") && length(info) > 1) {
+    data.frame(repo_url = u, 
+               repo_created = info$created_at,
+               repo_updated = info$updated_at,
+               repo_pushed = info$pushed_at,
+               repo_nbr_stars = info$stargazers_count,
+               repo_language = ifelse(!is.null(info$language),
+                                      info$language, NA_character_),
+               repo_license = ifelse(!is.null(info$license),
+                                     info$license$key, NA_character_)
+    )
+  } else {
+    NULL
+  }
+})) %>%
+  dplyr::mutate(repo_created = as.Date(repo_created),
+                repo_updated = as.Date(repo_updated),
+                repo_pushed = as.Date(repo_pushed)) %>%
+  dplyr::distinct()
+stopifnot(length(unique(df$repo_url)) == length(df$repo_url))
+papers <- papers %>% dplyr::left_join(df, by = "repo_url")
 ```
+
+## Clean up a bit
+
+```{r clean-up, class.source = 'fold-show'}
+## Convert publication date to Date format
+## Add information about the half year (H1, H2) of publication
+papers <- papers %>% dplyr::select(-reference, -license, -link) %>%
+  dplyr::mutate(published.date = as.Date(published.print)) %>% 
+  dplyr::mutate(
+    halfyear = paste0(year(published.date), 
+                      ifelse(month(published.date) <= 6, "H1", "H2"))
+  ) %>% dplyr::mutate(
+    halfyear = factor(halfyear, 
+                      levels = paste0(rep(sort(unique(year(published.date))), 
+                                          each = 2), c("H1", "H2")))
+  )
+
+```
+
+
+# Most cited papers
+
+The table below sorts the JOSS papers in decreasing order by the number of citations in Crossref.
+
+```{r most-cited, class.source = 'fold-hide'}
+DT::datatable(
+  papers %>% 
+    dplyr::mutate(url = paste0("<a href='", url, "' target='_blank'>", 
+                               url,"</a>")) %>% 
+    dplyr::arrange(desc(citation_count)) %>% 
+    dplyr::select(title, url, published.date, citation_count),
+  escape = FALSE,
+  options = list(scrollX = TRUE)
+)
+```
+
+# Citation count vs time since publication
+
+```{r citations-vs-time, class.source = 'fold-hide', message = FALSE}
+plotly::ggplotly(
+  ggplot(papers, aes(x = published.date, y = citation_count, label = title)) + 
+    geom_point(alpha = 0.5) + theme_bw() + scale_y_sqrt() + 
+    geom_smooth() + 
+    labs(x = "Date of publication", y = "Crossref citation count") + 
+    theme(axis.title = element_text(size = 15)),
+  tooltip = c("label", "x", "y")
+)
+```
+
+# Power law of citation count within each half year
+
+Here, we plot the citation count for all papers published within each half year, sorted in decreasing order. 
+
+```{r power-law-citations, class.source = 'fold-hide'}
+ggplot(papers %>% dplyr::group_by(halfyear) %>% 
+         dplyr::arrange(desc(citation_count)) %>%
+         dplyr::mutate(idx = seq_along(citation_count)), 
+       aes(x = idx, y = citation_count)) + 
+  geom_point(alpha = 0.5) + 
+  facet_wrap(~ halfyear, scales = "free") + 
+  theme_bw() + 
+  labs(x = "Index", y = "Crossref citation count")
+```
+
 
 # Pre-review/review time over time
 
-```{r review-time}
+In these plots we investigate whether the time a submission spends in the pre-review or review stage has changed over time. 
+
+```{r review-time, class.source = 'fold-hide', message = FALSE, warning = FALSE}
 ggplot(papers, aes(x = prerev_opened, y = as.numeric(days_in_pre))) + 
   geom_point() + geom_smooth() + theme_bw() + 
-  scale_y_sqrt() + xlab("Date of pre-review opening") + 
-  ylab("Number of days in pre-review")
+  scale_y_sqrt() + 
+  labs(x = "Date of pre-review opening", y = "Number of days in pre-review") + 
+  theme(axis.title = element_text(size = 15))
+
 ggplot(papers, aes(x = review_opened, y = as.numeric(days_in_rev))) + 
   geom_point() + geom_smooth() + theme_bw() + 
-  scale_y_sqrt() + xlab("Date of review opening") + 
-  ylab("Number of days in review")
+  scale_y_sqrt() + 
+  labs(x = "Date of review opening", y = "Number of days in review") + 
+  theme(axis.title = element_text(size = 15))
 ```
 
 # Languages
 
-```{r languages}
+Next, we consider the languages used by the submissions. Note that a given submission can use multiple languages. 
+
+```{r languages, class.source = 'fold-hide', fig.width = 8}
 sspl <- strsplit(papers$languages, ",")
 all_languages <- unique(unlist(sspl))
 langs <- do.call(dplyr::bind_rows, lapply(all_languages, function(l) {
@@ -229,11 +313,52 @@ ggplot(langs %>% dplyr::arrange(desc(nbr_submissions)) %>%
   geom_bar(stat = "identity") + 
   theme_bw() + 
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) + 
-  xlab("") + ylab("Number of submissions")
+  labs(x = "", y = "Number of submissions") + 
+  theme(axis.title = element_text(size = 15))
 ```
 
+# Association between number of citations and number of stars of the GitHub repo
+
+```{r citation-stars, class.source = 'fold-hide'}
+ggplotly(
+  ggplot(papers, aes(x = citation_count, y = repo_nbr_stars,
+                     label = title)) + 
+    geom_point(alpha = 0.5) + scale_x_sqrt() + scale_y_sqrt() + 
+    theme_bw() + 
+    labs(x = "Crossref citation count", y = "Number of stars, GitHub repo") + 
+    theme(axis.title = element_text(size = 15)),
+  tooltip = c("label", "x", "y")
+)
+```
+
+# Distribution of time between GitHub repo creation and JOSS submission
+
+```{r creation-to-submission, class.source = 'fold-hide', warning = FALSE}
+ggplot(papers, aes(x = as.numeric(prerev_opened - repo_created))) +
+  geom_histogram(bins = 50) + 
+  theme_bw() + 
+  labs(x = "Time (days) from repo creation to JOSS pre-review start") + 
+  theme(axis.title = element_text(size = 15))
+```
+
+# Distribution of time between JOSS acceptance and last commit
+
+```{r acceptance-to-commit, class.source = 'fold-hide', warning = FALSE}
+ggplot(papers, aes(x = as.numeric(repo_pushed - review_closed))) +
+  geom_histogram(bins = 50) + 
+  theme_bw() + 
+  labs(x = "Time (days) from closure of JOSS review to most recent commit in repo") + 
+  theme(axis.title = element_text(size = 15))
+```
 
 # Save object
+
+The tibble object with all data collected above is serialized to a file that can be downloaded and reused. To read the current version of this file directly from GitHub, use the following code:
+
+```{r, class.source = 'fold-show', eval = FALSE}
+papers <- readRDS(gzcon(url("https://github.com/openjournals/joss-analytics/blob/gh-pages/joss_submission_analytics.rds?raw=true")))
+```
+
 
 ```{r save-data}
 head(papers) %>% as.data.frame()

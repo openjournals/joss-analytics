@@ -349,7 +349,7 @@ ggplot(papers, aes(x = as.numeric(prerev_opened - repo_created))) +
 
 # Distribution of time between JOSS acceptance and last commit
 
-```{r acceptance-to-commit, class.source = 'fold-hide', warning = FALSE}
+```{r acceptance-to-commit, class.source = 'fold-hide', warning = FALSE, fig.width = 8}
 ggplot(papers, aes(x = as.numeric(repo_pushed - review_closed))) +
   geom_histogram(bins = 50) + 
   theme_bw() + 
@@ -364,15 +364,20 @@ ggplot(papers, aes(x = as.numeric(repo_pushed - review_closed))) +
 ggplot(papers, aes(x = repo_license)) +
   geom_bar() + 
   theme_bw() + 
-  labs(x = "Software repo license", y = "Number of submissions") + 
+  labs(x = "Software license", y = "Number of submissions") + 
   theme(axis.title = element_text(size = 15),
         axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) + 
   facet_wrap(~ year(published.date), scales = "free_y")
+```
 
-## For plots below, replace licenses present in less than 2.5% of the submissions by 'other'
+```{r repl-license, class.source = 'fold-show', warning = FALSE, message = FALSE}
+## For plots below, replace licenses present in less 
+## than 2.5% of the submissions by 'other'
 tbl <- table(papers$repo_license)
 to_replace <- names(tbl[tbl <= 0.025 * nrow(papers)])
+```
 
+```{r plot-repo-license, class.source = 'fold-hide', warning = FALSE, message = FALSE}
 ggplot(papers %>% 
          dplyr::mutate(year = year(published.date)) %>%
          dplyr::mutate(repo_license = replace(repo_license, 
@@ -386,6 +391,7 @@ ggplot(papers %>%
   theme_minimal() + 
   scale_fill_brewer(palette = "Set1", name = "Software\nlicense", 
                     na.value = "grey") + 
+  theme(axis.title = element_text(size = 15)) + 
   labs(x = "Year", y = "Number of submissions")
 
 ggplot(papers %>% 
@@ -402,6 +408,7 @@ ggplot(papers %>%
   theme_minimal() + 
   scale_fill_brewer(palette = "Set1", name = "Software\nlicense", 
                     na.value = "grey") + 
+  theme(axis.title = element_text(size = 15)) + 
   labs(x = "Year", y = "Fraction of submissions")
 ```
 

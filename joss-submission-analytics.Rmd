@@ -192,8 +192,9 @@ software_urls[!is_github]
 
 ```{r get-software-repos, class.source = 'fold-show', message = FALSE, results = 'hide', warning = FALSE}
 df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
+  u0 <- gsub("\\.git$", "", gsub("/$", "", u))
   info <- try({
-    gh(gsub("(https://)?(www.)?github.com/", "/repos/", u))
+    gh(gsub("(https://)?(www.)?github.com/", "/repos/", u0))
   })
   if (!is(info, "try-error") && length(info) > 1) {
     data.frame(repo_url = u, 
@@ -356,6 +357,54 @@ ggplot(papers, aes(x = as.numeric(repo_pushed - review_closed))) +
   theme(axis.title = element_text(size = 15)) + 
   facet_wrap(~ year(published.date), scales = "free_y")
 ```
+
+# Distribution of software repo licenses
+
+```{r repo-license, class.source = 'fold-hide', warning = FALSE, message = FALSE}
+ggplot(papers, aes(x = repo_license)) +
+  geom_bar() + 
+  theme_bw() + 
+  labs(x = "Software repo license", y = "Number of submissions") + 
+  theme(axis.title = element_text(size = 15),
+        axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) + 
+  facet_wrap(~ year(published.date), scales = "free_y")
+
+## For plots below, replace licenses present in less than 2.5% of the submissions by 'other'
+tbl <- table(papers$repo_license)
+to_replace <- names(tbl[tbl <= 0.025 * nrow(papers)])
+
+ggplot(papers %>% 
+         dplyr::mutate(year = year(published.date)) %>%
+         dplyr::mutate(repo_license = replace(repo_license, 
+                                              repo_license %in% to_replace,
+                                              "other")) %>%
+         dplyr::mutate(year = factor(year), repo_license = factor(repo_license)) %>%
+         dplyr::group_by(year, repo_license, .drop = FALSE) %>%
+         dplyr::count() %>%
+         dplyr::mutate(year = as.integer(as.character(year))), 
+       aes(x = year, y = n, fill = repo_license)) + geom_area() + 
+  theme_minimal() + 
+  scale_fill_brewer(palette = "Set1", name = "Software\nlicense", 
+                    na.value = "grey") + 
+  labs(x = "Year", y = "Number of submissions")
+
+ggplot(papers %>% 
+         dplyr::mutate(year = year(published.date)) %>%
+         dplyr::mutate(repo_license = replace(repo_license, 
+                                              repo_license %in% to_replace,
+                                              "other")) %>%
+         dplyr::mutate(year = factor(year), repo_license = factor(repo_license)) %>%
+         dplyr::group_by(year, repo_license, .drop = FALSE) %>%
+         dplyr::summarize(n = n()) %>%
+         dplyr::mutate(freq = n/sum(n)) %>%
+         dplyr::mutate(year = as.integer(as.character(year))), 
+       aes(x = year, y = freq, fill = repo_license)) + geom_area() + 
+  theme_minimal() + 
+  scale_fill_brewer(palette = "Set1", name = "Software\nlicense", 
+                    na.value = "grey") + 
+  labs(x = "Year", y = "Fraction of submissions")
+```
+
 
 # Save object
 

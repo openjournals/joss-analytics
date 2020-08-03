@@ -237,6 +237,20 @@ papers <- papers %>% dplyr::select(-reference, -license, -link) %>%
 
 ```
 
+# Number of published papers per month
+
+```{r papers-month, class.source = 'fold-hide', fig.width = 8, message = FALSE}
+ggplot(papers %>% 
+         dplyr::mutate(pubmonth = lubridate::floor_date(published.date, "month")) %>%
+         dplyr::group_by(pubmonth) %>%
+         dplyr::summarize(npub = n()), 
+       aes(x = factor(pubmonth), y = npub)) + 
+  geom_bar(stat = "identity") + theme_minimal() + 
+  labs(x = "", y = "Number of published papers") + 
+  theme(axis.title = element_text(size = 15),
+        axis.text = element_text(angle = 90, hjust = 1, vjust = 0.5))
+```
+
 
 # Most cited papers
 

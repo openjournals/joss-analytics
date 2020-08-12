@@ -196,7 +196,23 @@ df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
   info <- try({
     gh(gsub("(https://)?(www.)?github.com/", "/repos/", u0))
   })
+  contribs <- try({
+    gh(paste0(gsub("(https://)?(www.)?github.com/", "/repos/", u0), "/stats/contributors"))
+  })
   if (!is(info, "try-error") && length(info) > 1) {
+    if (!is(contribs, "try-error")) {
+      if (length(contribs) == 0) {
+        repo_nbr_contribs <- repo_nbr_contribs_2ormore <- NA_integer_
+      } else {
+        repo_nbr_contribs <- length(contribs)
+        repo_nbr_contribs_2ormore <- sum(vapply(contribs, function(x) x$total >= 2, NA_integer_))
+        if (is.na(repo_nbr_contribs_2ormore)) {
+          print(contribs)
+        }
+      }
+    } else {
+      repo_nbr_contribs <- repo_nbr_contribs_2ormore <- NA_integer_
+    }
     data.frame(repo_url = u, 
                repo_created = info$created_at,
                repo_updated = info$updated_at,
@@ -205,7 +221,9 @@ df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
                repo_language = ifelse(!is.null(info$language),
                                       info$language, NA_character_),
                repo_license = ifelse(!is.null(info$license),
-                                     info$license$key, NA_character_)
+                                     info$license$key, NA_character_),
+               repo_nbr_contribs = repo_nbr_contribs,
+               repo_nbr_contribs_2ormore = repo_nbr_contribs_2ormore
     )
   } else {
     NULL
@@ -224,6 +242,7 @@ papers <- papers %>% dplyr::left_join(df, by = "repo_url")
 ```{r clean-up, class.source = 'fold-show'}
 ## Convert publication date to Date format
 ## Add information about the half year (H1, H2) of publication
+## Count number of authors
 papers <- papers %>% dplyr::select(-reference, -license, -link) %>%
   dplyr::mutate(published.date = as.Date(published.print)) %>% 
   dplyr::mutate(
@@ -233,8 +252,7 @@ papers <- papers %>% dplyr::select(-reference, -license, -link) %>%
     halfyear = factor(halfyear, 
                       levels = paste0(rep(sort(unique(year(published.date))), 
                                           each = 2), c("H1", "H2")))
-  )
-
+  ) %>% dplyr::mutate(nbr_authors = vapply(author, function(a) nrow(a), NA_integer_))
 ```
 
 # Number of published papers per month
@@ -248,7 +266,7 @@ ggplot(papers %>%
   geom_bar(stat = "identity") + theme_minimal() + 
   labs(x = "", y = "Number of published papers") + 
   theme(axis.title = element_text(size = 15),
-        axis.text = element_text(angle = 90, hjust = 1, vjust = 0.5))
+        axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
 ```
 
 
@@ -371,6 +389,56 @@ ggplot(papers, aes(x = as.numeric(repo_pushed - review_closed))) +
   theme(axis.title = element_text(size = 15)) + 
   facet_wrap(~ year(published.date), scales = "free_y")
 ```
+
+# Number of authors per paper
+
+List the papers with the largest number of authors, and display the distribution of the number of authors per paper, for papers with at most 20 authors.
+
+```{r nbr-authors-top, class.source = 'fold-show'}
+## Papers with largest number of authors
+papers %>% dplyr::arrange(desc(nbr_authors)) %>% 
+  dplyr::select(title, published.date, url, nbr_authors) %>%
+  as.data.frame() %>% head(10)
+```
+
+```{r nbr-authors, class.source = 'fold-hide', message = FALSE}
+nbins <- max(papers$nbr_authors[papers$nbr_authors <= 20])
+ggplot(papers %>% dplyr::filter(nbr_authors <= 20),
+  aes(x = nbr_authors)) + 
+  geom_histogram(bins = nbins, fill = "lightgrey", color = "grey50") + 
+  theme_bw() + 
+  facet_wrap(~ year(published.date), scales = "free_y") + 
+  theme(axis.title = element_text(size = 15)) + 
+  labs(x = "Number of authors", y = "Number of publications with\na given number of authors")
+
+ggplot(papers %>% 
+         dplyr::mutate(nbr_authors = replace(nbr_authors, nbr_authors > 5, ">5")) %>%
+         dplyr::mutate(nbr_authors = factor(nbr_authors, levels = c("1", "2", "3", 
+                                                                    "4", "5", ">5"))) %>%
+         dplyr::mutate(year = year(published.date)) %>%
+         dplyr::mutate(year = factor(year)) %>%
+         dplyr::group_by(year, nbr_authors, .drop = FALSE) %>%
+         dplyr::summarize(n = n()) %>%
+         dplyr::mutate(freq = n/sum(n)) %>%
+         dplyr::mutate(year = as.integer(as.character(year))), 
+       aes(x = year, y = freq, fill = nbr_authors)) + geom_area() + 
+  theme_minimal() + 
+  scale_fill_brewer(palette = "Set1", name = "Number of\nauthors", 
+                    na.value = "grey") + 
+  theme(axis.title = element_text(size = 15)) + 
+  labs(x = "Year", y = "Fraction of submissions")
+
+```
+
+# Number of authors vs number of contributors to the GitHub repo
+
+```{r nbr-authors-contribs, class.source = 'fold-hide', message = FALSE}
+ggplot(papers, aes(x = nbr_authors, y = repo_nbr_contribs_2ormore)) + 
+  geom_point() + 
+  theme_bw() + 
+  labs(x = "Number of authors", y = "Number of contributors\nwith at least 2 commits")
+```
+
 
 # Distribution of software repo licenses
 

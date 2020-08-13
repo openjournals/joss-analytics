@@ -197,7 +197,8 @@ df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
     gh(gsub("(https://)?(www.)?github.com/", "/repos/", u0))
   })
   contribs <- try({
-    gh(paste0(gsub("(https://)?(www.)?github.com/", "/repos/", u0), "/stats/contributors"))
+    gh(paste0(gsub("(https://)?(www.)?github.com/", "/repos/", u0), "/contributors"), 
+       .limit = 500)
   })
   if (!is(info, "try-error") && length(info) > 1) {
     if (!is(contribs, "try-error")) {
@@ -205,7 +206,7 @@ df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
         repo_nbr_contribs <- repo_nbr_contribs_2ormore <- NA_integer_
       } else {
         repo_nbr_contribs <- length(contribs)
-        repo_nbr_contribs_2ormore <- sum(vapply(contribs, function(x) x$total >= 2, NA_integer_))
+        repo_nbr_contribs_2ormore <- sum(vapply(contribs, function(x) x$contributions >= 2, NA_integer_))
         if (is.na(repo_nbr_contribs_2ormore)) {
           print(contribs)
         }
@@ -255,7 +256,7 @@ papers <- papers %>% dplyr::select(-reference, -license, -link) %>%
   ) %>% dplyr::mutate(nbr_authors = vapply(author, function(a) nrow(a), NA_integer_))
 ```
 
-# Number of published papers per month
+# Number of published papers per month and year
 
 ```{r papers-month, class.source = 'fold-hide', fig.width = 8, message = FALSE}
 ggplot(papers %>% 
@@ -264,11 +265,22 @@ ggplot(papers %>%
          dplyr::summarize(npub = n()), 
        aes(x = factor(pubmonth), y = npub)) + 
   geom_bar(stat = "identity") + theme_minimal() + 
-  labs(x = "", y = "Number of published papers") + 
+  labs(x = "", y = "Number of published papers per month") + 
   theme(axis.title = element_text(size = 15),
         axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
 ```
 
+```{r papers-year, class.source = 'fold-hide', fig.width = 8, message = FALSE}
+ggplot(papers %>% 
+         dplyr::mutate(pubyear = lubridate::year(published.date)) %>%
+         dplyr::group_by(pubyear) %>%
+         dplyr::summarize(npub = n()), 
+       aes(x = factor(pubyear), y = npub)) + 
+  geom_bar(stat = "identity") + theme_minimal() + 
+  labs(x = "", y = "Number of published papers per year") + 
+  theme(axis.title = element_text(size = 15),
+        axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+```
 
 # Most cited papers
 
@@ -432,11 +444,20 @@ ggplot(papers %>%
 
 # Number of authors vs number of contributors to the GitHub repo
 
+Note that points are slightly jittered to reduce the overlap. 
+
 ```{r nbr-authors-contribs, class.source = 'fold-hide', message = FALSE}
-ggplot(papers, aes(x = nbr_authors, y = repo_nbr_contribs_2ormore)) + 
-  geom_point() + 
-  theme_bw() + 
-  labs(x = "Number of authors", y = "Number of contributors\nwith at least 2 commits")
+plotly::ggplotly(
+  ggplot(papers, aes(x = nbr_authors, y = repo_nbr_contribs_2ormore, label = title)) + 
+    geom_abline(slope = 1, intercept = 0) + 
+    geom_jitter(width = 0.05, height = 0.05, alpha = 0.5) + 
+    # geom_point(alpha = 0.5) + 
+    theme_bw() + 
+    scale_x_sqrt() + scale_y_sqrt() + 
+    labs(x = "Number of authors", y = "Number of contributors\nwith at least 2 commits") + 
+    theme(axis.title = element_text(size = 15)),
+  tooltip = c("label", "x", "y")
+)
 ```
 
 

@@ -282,6 +282,25 @@ ggplot(papers %>%
         axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
 ```
 
+# Citation distribution
+
+Papers with 20 or more citations are grouped in the ">=20" category.
+
+```{r citation-distribution, class.source = 'fold-hide'}
+ggplot(papers %>% 
+         dplyr::mutate(citation_count = replace(citation_count,
+                                                citation_count >= 20, ">=20")) %>%
+         dplyr::mutate(citation_count = factor(citation_count, 
+                                               levels = c(0:20, ">=20"))) %>%
+         dplyr::group_by(citation_count) %>%
+         dplyr::tally(),
+       aes(x = citation_count, y = n)) + 
+  geom_bar(stat = "identity") + 
+  theme_minimal() + 
+  labs(x = "Crossref citation count", y = "Number of publications")
+```
+
+
 # Most cited papers
 
 The table below sorts the JOSS papers in decreasing order by the number of citations in Crossref.

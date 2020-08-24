@@ -37,6 +37,11 @@ suppressPackageStartupMessages({
 })
 ```
 
+```{r source-track, class.source = 'fold-hide'}
+## Keep track of the source of each column
+source_track <- c()
+```
+
 # Collect information about papers
 
 ## Pull down papers and citation info from Crossref
@@ -74,6 +79,10 @@ papers <- papers %>% dplyr::left_join(
 
 ## Remove one duplicated paper
 papers <- papers %>% dplyr::filter(alternative.id != "10.21105/joss.00688")
+
+source_track <- c(source_track, 
+                  structure(rep("crossref", ncol(papers)), 
+                            names = colnames(papers)))
 ```
 
 ## Pull down info from Whedon API
@@ -109,6 +118,11 @@ whedon <- do.call(dplyr::bind_rows, lapply(whedon, function(w) {
 }))
 
 papers <- papers %>% dplyr::left_join(whedon, by = c("alternative.id" = "doi"))
+
+source_track <- c(source_track, 
+                  structure(rep("whedon", length(setdiff(colnames(papers),
+                                                         names(source_track)))), 
+                            names = setdiff(colnames(papers), names(source_track))))
 ```
 
 ## Combine with info from GitHub issues
@@ -178,6 +192,11 @@ papers <- papers %>% dplyr::left_join(issrev, by = "alternative.id") %>%
   dplyr::mutate(days_in_pre = prerev_closed - prerev_opened,
                 days_in_rev = review_closed - review_opened,
                 to_review = !is.na(review_opened))
+
+source_track <- c(source_track, 
+                  structure(rep("joss-github", length(setdiff(colnames(papers),
+                                                              names(source_track)))), 
+                            names = setdiff(colnames(papers), names(source_track))))
 ```
 
 ## Add information from software repositories
@@ -192,7 +211,13 @@ software_urls[!is_github]
 
 ```{r get-software-repos, class.source = 'fold-show', message = FALSE, results = 'hide', warning = FALSE}
 df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
-  u0 <- gsub("\\.git$", "", gsub("/$", "", u))
+  u0 <- gsub("^http://", "https://", gsub("\\.git$", "", gsub("/$", "", u)))
+  if (grepl("/tree/", u0)) {
+    u0 <- strsplit(u0, "/tree/")[[1]][1]
+  }
+  if (grepl("/blob/", u0)) {
+    u0 <- strsplit(u0, "/blob/")[[1]][1]
+  }
   info <- try({
     gh(gsub("(https://)?(www.)?github.com/", "/repos/", u0))
   })
@@ -236,6 +261,11 @@ df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
   dplyr::distinct()
 stopifnot(length(unique(df$repo_url)) == length(df$repo_url))
 papers <- papers %>% dplyr::left_join(df, by = "repo_url")
+
+source_track <- c(source_track, 
+                  structure(rep("sw-github", length(setdiff(colnames(papers),
+                                                            names(source_track)))), 
+                            names = setdiff(colnames(papers), names(source_track))))
 ```
 
 ## Clean up a bit
@@ -254,7 +284,27 @@ papers <- papers %>% dplyr::select(-reference, -license, -link) %>%
                       levels = paste0(rep(sort(unique(year(published.date))), 
                                           each = 2), c("H1", "H2")))
   ) %>% dplyr::mutate(nbr_authors = vapply(author, function(a) nrow(a), NA_integer_))
+
+source_track <- c(source_track, 
+                  structure(rep("cleanup", length(setdiff(colnames(papers),
+                                                          names(source_track)))), 
+                            names = setdiff(colnames(papers), names(source_track))))
 ```
+
+# Tabulate number of missing values
+
+In some cases, fetching information from (e.g.) the GitHub API fails for a subset of the publications. There are also other reasons for missing values (for example, the earliest submissions do not have an associated pre-review issue). The table below lists the number of missing values for each of the variables in the data frame.
+
+```{r nbr-missing, class.source = 'fold-hide'}
+DT::datatable(
+  data.frame(variable = colnames(papers),
+             nbr_missing = colSums(is.na(papers))) %>%
+    dplyr::mutate(source = source_track[variable]),
+  escape = FALSE, rownames = FALSE, 
+  options = list(scrollX = TRUE)
+)
+```
+
 
 # Number of published papers per month and year
 
@@ -368,7 +418,7 @@ ggplot(papers, aes(x = review_opened, y = as.numeric(days_in_rev))) +
 
 Next, we consider the languages used by the submissions. Note that a given submission can use multiple languages. 
 
-```{r languages, class.source = 'fold-hide', fig.width = 8}
+```{r languages, class.source = 'fold-hide', fig.width = 9}
 sspl <- strsplit(papers$languages, ",")
 all_languages <- unique(unlist(sspl))
 langs <- do.call(dplyr::bind_rows, lapply(all_languages, function(l) {

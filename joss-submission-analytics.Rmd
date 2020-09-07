@@ -641,7 +641,11 @@ ggplot(papers %>%
          dplyr::mutate(repo_license = replace(repo_license, 
                                               repo_license %in% to_replace,
                                               "other")) %>%
-         dplyr::mutate(year = factor(year), repo_license = factor(repo_license)) %>%
+         dplyr::mutate(year = factor(year), 
+                       repo_license = factor(
+                         repo_license, 
+                         levels = license_levels[license_levels %in% repo_license]
+                       )) %>%
          dplyr::group_by(year, repo_license, .drop = FALSE) %>%
          dplyr::count() %>%
          dplyr::mutate(year = as.integer(as.character(year))), 
@@ -657,7 +661,11 @@ ggplot(papers %>%
          dplyr::mutate(repo_license = replace(repo_license, 
                                               repo_license %in% to_replace,
                                               "other")) %>%
-         dplyr::mutate(year = factor(year), repo_license = factor(repo_license)) %>%
+         dplyr::mutate(year = factor(year), 
+                       repo_license = factor(
+                         repo_license, 
+                         levels = license_levels[license_levels %in% repo_license]
+                       )) %>%
          dplyr::group_by(year, repo_license, .drop = FALSE) %>%
          dplyr::summarize(n = n()) %>%
          dplyr::mutate(freq = n/sum(n)) %>%

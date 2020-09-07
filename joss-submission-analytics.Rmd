@@ -116,6 +116,9 @@ while (length(a) > 0) {
 whedon <- do.call(dplyr::bind_rows, lapply(whedon, function(w) {
   data.frame(api_title = w$title, 
              api_state = w$state,
+             editor = paste(w$metadata$paper$editor, collapse = ","),
+             reviewers = paste(w$reviewers, collapse = ","),
+             nbr_reviewers = length(w$reviewers),
              repo_url = w$repository_url,
              review_issue_id = w$review_issue_id,
              doi = w$doi,

@@ -42,6 +42,13 @@ suppressPackageStartupMessages({
 source_track <- c()
 ```
 
+```{r}
+## Read archived version of summary data frame, to use for filling in 
+## information about software repositories (due to limit on API requests)
+papers_archive <- readRDS(gzcon(url("https://github.com/openjournals/joss-analytics/blob/gh-pages/joss_submission_analytics.rds?raw=true")))# %>%
+  # dplyr::arrange(repo_info_obtained)
+```
+
 # Collect information about papers
 
 ## Pull down papers and citation info from Crossref
@@ -258,7 +265,8 @@ df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
   dplyr::mutate(repo_created = as.Date(repo_created),
                 repo_updated = as.Date(repo_updated),
                 repo_pushed = as.Date(repo_pushed)) %>%
-  dplyr::distinct()
+  dplyr::distinct() %>%
+  dplyr::mutate(repo_info_obtained = lubridate::today())
 stopifnot(length(unique(df$repo_url)) == length(df$repo_url))
 papers <- papers %>% dplyr::left_join(df, by = "repo_url")
 

@@ -45,8 +45,9 @@ source_track <- c()
 ```{r}
 ## Read archived version of summary data frame, to use for filling in 
 ## information about software repositories (due to limit on API requests)
-papers_archive <- readRDS(gzcon(url("https://github.com/openjournals/joss-analytics/blob/gh-pages/joss_submission_analytics.rds?raw=true")))# %>%
-  # dplyr::arrange(repo_info_obtained)
+## Sort by the date when software repo info was last obtained
+papers_archive <- readRDS(gzcon(url("https://github.com/openjournals/joss-analytics/blob/gh-pages/joss_submission_analytics.rds?raw=true"))) %>%
+  dplyr::arrange(!is.na(repo_info_obtained), repo_info_obtained)
 ```
 
 # Collect information about papers
@@ -209,7 +210,11 @@ source_track <- c(source_track,
 ## Add information from software repositories
 
 ```{r check-software-repos, class.source = 'fold-show', message = FALSE}
-software_urls <- papers$repo_url
+## Reorder so that software repositories that were interrogated longest 
+## ago are checked first
+tmporder <- order(match(papers$alternative.id, papers_archive$alternative.id),
+                  na.last = FALSE)
+software_urls <- papers$repo_url[tmporder]
 is_github <- grepl("github", software_urls)
 length(is_github)
 sum(is_github)
@@ -268,6 +273,15 @@ df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
   dplyr::distinct() %>%
   dplyr::mutate(repo_info_obtained = lubridate::today())
 stopifnot(length(unique(df$repo_url)) == length(df$repo_url))
+dim(df)
+
+## For papers not in df (i.e., for which we didn't get a valid response
+## from the GitHub API query), use information from the archived data frame
+dfarchive <- papers_archive %>% 
+  dplyr::select(colnames(df)) %>%
+  dplyr::filter(!(repo_url %in% df$repo_url))
+df <- dplyr::bind_rows(df, dfarchive)
+
 papers <- papers %>% dplyr::left_join(df, by = "repo_url")
 
 source_track <- c(source_track, 

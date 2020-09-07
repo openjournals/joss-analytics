@@ -554,11 +554,72 @@ plotly::ggplotly(
 )
 ```
 
+# Number of reviewers per paper
+
+Submissions associated with rOpenSci and pyOpenSci are not considered here, since they are not explicitly reviewed at JOSS. 
+
+```{r nbr-reviewers, class.source = 'fold-hide', message = FALSE}
+ggplot(papers %>%
+         dplyr::filter(!grepl("rOpenSci|pyOpenSci", prerev_labels)) %>%
+         dplyr::mutate(year = year(published.date)),
+       aes(x = nbr_reviewers)) + geom_bar() + 
+  facet_wrap(~ year) + theme_bw() + 
+  labs(x = "Number of reviewers", y = "Number of submissions")
+```
+
+# Most active reviewers
+
+Submissions associated with rOpenSci and pyOpenSci are not considered here, since they are not explicitly reviewed at JOSS. 
+
+```{r most-reviewers, class.source = 'fold-hide', message = FALSE}
+reviewers <- papers %>% 
+  dplyr::filter(!grepl("rOpenSci|pyOpenSci", prerev_labels)) %>%
+  dplyr::mutate(year = year(published.date)) %>%
+  dplyr::select(reviewers, year) %>%
+  tidyr::separate_rows(reviewers, sep = ",")
+
+## Most active reviewers
+DT::datatable(
+  reviewers %>% dplyr::group_by(reviewers) %>%
+    dplyr::summarize(nbr_reviews = length(year),
+                     timespan = paste(unique(c(min(year), max(year))), 
+                                      collapse = " - ")) %>%
+    dplyr::arrange(desc(nbr_reviews)),
+  escape = FALSE, rownames = FALSE, 
+  options = list(scrollX = TRUE)
+)
+```
+
+# Number of papers per editor and year
+
+```{r papers-per-editor, class.source = 'fold-hide', message = FALSE, fig.width = 10, fig.height = 10}
+ggplot(papers %>% 
+         dplyr::mutate(year = year(published.date),
+                       `r/pyOpenSci` = factor(
+                         grepl("rOpenSci|pyOpenSci", prerev_labels),
+                         levels = c("TRUE", "FALSE"))), 
+       aes(x = editor)) + geom_bar(aes(fill = `r/pyOpenSci`)) + 
+  theme_bw() + facet_wrap(~ year, ncol = 1) + 
+  scale_fill_manual(values = c(`TRUE` = "grey65", `FALSE` = "grey35")) + 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) + 
+  labs(x = "Editor", y = "Number of submissions")
+```
+
 
 # Distribution of software repo licenses
 
 ```{r repo-license, class.source = 'fold-hide', warning = FALSE, message = FALSE}
-ggplot(papers, aes(x = repo_license)) +
+all_licenses <- sort(unique(papers$repo_license))
+license_levels = c(grep("apache", all_licenses, value = TRUE),
+                   grep("bsd", all_licenses, value = TRUE),
+                   grep("mit", all_licenses, value = TRUE),
+                   grep("gpl", all_licenses, value = TRUE),
+                   grep("mpl", all_licenses, value = TRUE))
+license_levels <- c(license_levels, setdiff(all_licenses, license_levels))
+ggplot(papers %>% 
+         dplyr::mutate(repo_license = factor(repo_license, 
+                                             levels = license_levels)),
+       aes(x = repo_license)) +
   geom_bar() + 
   theme_bw() + 
   labs(x = "Software license", y = "Number of submissions") + 

@@ -192,6 +192,13 @@ issrev <- iss %>% dplyr::filter(grepl("\\[REVIEW\\]", title)) %>%
   dplyr::mutate(title = gsub("\\[REVIEW\\]: ", "", title)) %>%
   dplyr::rename_at(vars(-alternative.id), ~ paste0("review_", .))
 
+## Tabulate the number of pre-review issues labeled 'rejected' per year
+iss %>% dplyr::filter(grepl("\\[PRE REVIEW\\]", title)) %>% 
+  dplyr::filter(grepl("rejected", labels)) %>% 
+  dplyr::mutate(year = lubridate::year(opened)) %>% 
+  dplyr::group_by(year) %>% 
+  dplyr::summarize(nbr_rejected = length(labels))
+
 ## For PRE-REVIEW issues, add information about the corresponding REVIEW 
 ## issue number
 isspre <- iss %>% dplyr::filter(grepl("\\[PRE REVIEW\\]", title)) %>%

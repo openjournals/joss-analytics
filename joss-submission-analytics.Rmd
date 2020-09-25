@@ -252,6 +252,10 @@ df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
   info <- try({
     gh(gsub("(https://)?(www.)?github.com/", "/repos/", u0))
   })
+  languages <- try({
+    gh(paste0(gsub("(https://)?(www.)?github.com/", "/repos/", u0), "/languages"), 
+       .limit = 500)
+  })
   contribs <- try({
     gh(paste0(gsub("(https://)?(www.)?github.com/", "/repos/", u0), "/contributors"), 
        .limit = 500)
@@ -270,6 +274,17 @@ df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
     } else {
       repo_nbr_contribs <- repo_nbr_contribs_2ormore <- NA_integer_
     }
+    
+    if (!is(languages, "try-error")) {
+      if (length(languages) == 0) {
+        repolang <- ""
+      } else {
+        repolang <- paste(paste(gsub(" ", "", names(unlist(languages))), 
+                                unlist(languages), sep = ":"), collapse = ",")
+      }
+    } else {
+      repolang <- ""
+    }
     data.frame(repo_url = u, 
                repo_created = info$created_at,
                repo_updated = info$updated_at,
@@ -277,6 +292,7 @@ df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
                repo_nbr_stars = info$stargazers_count,
                repo_language = ifelse(!is.null(info$language),
                                       info$language, NA_character_),
+               repo_languages_bytes = repolang,
                repo_license = ifelse(!is.null(info$license),
                                      info$license$key, NA_character_),
                repo_nbr_contribs = repo_nbr_contribs,
@@ -473,7 +489,38 @@ ggplot(langs %>% dplyr::arrange(desc(nbr_submissions)) %>%
   geom_bar(stat = "identity") + 
   theme_bw() + 
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) + 
-  labs(x = "", y = "Number of submissions") + 
+  labs(x = "", y = "Number of submissions", caption = dcap) + 
+  theme(axis.title = element_text(size = 15))
+```
+
+We'll also list the languages ordered by the number of bytes of code written in each (based on available GitHub repositories), and plot the number of repositories using a given language vs the total number of bytes written in the language.
+
+```{r language-bytes, class.source = 'fold-hide', message = FALSE}
+a <- lapply(strsplit(papers$repo_languages_bytes, ","), function(w) strsplit(w, ":"))
+a <- a[sapply(a, length) > 0]
+langbytes <- as.data.frame(t(as.data.frame(a))) %>% 
+  setNames(c("language", "bytes")) %>%
+  dplyr::mutate(bytes = as.numeric(bytes)) %>%
+  dplyr::filter(!is.na(language)) %>%
+  dplyr::group_by(language) %>%
+  dplyr::summarize(n_bytes = sum(bytes),
+                   n_repos = length(bytes)) %>%
+  dplyr::arrange(desc(n_bytes))
+DT::datatable(
+  langbytes,
+  escape = FALSE,
+  filter = list(position = 'top', clear = FALSE),
+  options = list(scrollX = TRUE)
+)
+```
+
+```{r language-bytes-plot, class.source = 'fold-hide'}
+ggplot(langbytes, aes(x = n_repos, y = n_bytes)) + 
+  geom_point() + scale_x_log10() + scale_y_log10() + geom_smooth() + 
+  theme_bw() + 
+  labs(x = "Number of repos using the language",
+       y = "Total number of bytes of code\nwritten in the language", 
+       caption = dcap) + 
   theme(axis.title = element_text(size = 15))
 ```
 

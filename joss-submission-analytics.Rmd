@@ -155,7 +155,7 @@ issues <- gh("/repos/openjournals/joss-reviews/issues",
              .limit = 5000, state = "all")
 ```
 
-```{r extract-github, class.source = 'fold-show'}
+```{r extract-github, class.source = 'fold-show', message = FALSE}
 ## From each issue, extract required information
 iss <- do.call(dplyr::bind_rows, lapply(issues, function(i) {
   data.frame(title = i$title, 
@@ -313,7 +313,7 @@ dim(df)
 ## For papers not in df (i.e., for which we didn't get a valid response
 ## from the GitHub API query), use information from the archived data frame
 dfarchive <- papers_archive %>% 
-  dplyr::select(colnames(df)) %>%
+  dplyr::select(colnames(df)[colnames(df) %in% colnames(papers_archive)]) %>%
   dplyr::filter(!(repo_url %in% df$repo_url))
 df <- dplyr::bind_rows(df, dfarchive)
 
@@ -358,6 +358,7 @@ DT::datatable(
              nbr_missing = colSums(is.na(papers))) %>%
     dplyr::mutate(source = source_track[variable]),
   escape = FALSE, rownames = FALSE, 
+  filter = list(position = 'top', clear = FALSE),
   options = list(scrollX = TRUE)
 )
 ```
@@ -420,6 +421,7 @@ DT::datatable(
     dplyr::arrange(desc(citation_count)) %>% 
     dplyr::select(title, url, published.date, citation_count),
   escape = FALSE,
+  filter = list(position = 'top', clear = FALSE),
   options = list(scrollX = TRUE)
 )
 ```
@@ -656,6 +658,7 @@ DT::datatable(
                                       collapse = " - ")) %>%
     dplyr::arrange(desc(nbr_reviews)),
   escape = FALSE, rownames = FALSE, 
+  filter = list(position = 'top', clear = FALSE),
   options = list(scrollX = TRUE)
 )
 ```

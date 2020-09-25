@@ -34,12 +34,21 @@ suppressPackageStartupMessages({
   library(jsonlite)
   library(DT)
   library(plotly)
+  library(citecorp)
 })
 ```
 
 ```{r source-track, class.source = 'fold-hide'}
 ## Keep track of the source of each column
 source_track <- c()
+
+## Determine whether to add a caption with today's date to the (non-interactive) plots
+add_date_caption <- TRUE
+if (add_date_caption) {
+  dcap <- lubridate::today()
+} else {
+  dcap <- ""
+}
 ```
 
 ```{r}
@@ -675,22 +684,159 @@ ggplot(papers %>%
   scale_fill_brewer(palette = "Set1", name = "Software\nlicense", 
                     na.value = "grey") + 
   theme(axis.title = element_text(size = 15)) + 
-  labs(x = "Year", y = "Fraction of submissions")
+  labs(x = "Year", y = "Fraction of submissions", caption = dcap)
+```
+
+# Citation analysis [work in progress]
+
+Here, we take a more detailed look at the papers that cite JOSS papers, using data from the Open Citations Corpus.
+
+## Get citing papers for each submission
+
+```{r get-citing-papers, class.source = 'fold-show', warning = FALSE, message = FALSE}
+citations <- citecorp::oc_coci_cites(doi = papers$alternative.id[1:50])
+
+## TODO: Extract the records that are not present in the archive
+
+tmpj <- rcrossref::cr_works(dois = citations$citing)$data %>%
+      dplyr::select(contains("doi"), contains("container.title"), contains("issn"),
+                    contains("type"), contains("publisher"), contains("prefix"))
+citations <- citations %>% dplyr::left_join(tmpj, by = c("citing" = "doi"))
+
+## bioRxiv preprints don't have a 'container.title' or 'issn', but we'll assume 
+## that they can be 
+## identified from the prefix 10.1101 - set the container.title 
+## for these records manually; we may or may not want to count these
+## (would it count citations twice, both preprint and publication?)
+citations$container.title[citations$prefix == "10.1101"] <- "bioRxiv"
+
+## JOSS is represented by 'The Journal of Open Source Software' as well as 
+## 'Journal of Open Source Software'
+citations$container.title[citations$container.title == 
+                            "Journal of Open Source Software"] <- 
+  "The Journal of Open Source Software"
+
+## Remove real self citations (cited DOI = citing DOI)
+citations <- citations %>% dplyr::filter(cited != citing)
+
+## TODO: Merge with the archive
+
+write.table(citations, file = "joss_submission_citations.tsv",
+            row.names = FALSE, col.names = TRUE, sep = "\t", quote = FALSE)
+```
+
+## Summary statistics
+
+```{r citation-summary-stats, class.source = 'fold-show', warning = FALSE, message = FALSE}
+## Number of JOSS papers with >0 citations included in this collection
+length(unique(citations$cited))
+
+## Number of JOSS papers with >0 citations according to Crossref
+length(which(papers$citation_count > 0))
+```
+
+```{r citation-merge, class.source = 'fold-hide', warning = FALSE, message = FALSE}
+## Number of citations from Open Citations Corpus vs Crossref
+df0 <- papers %>% dplyr::select(doi, citation_count) %>%
+  dplyr::full_join(citations %>% dplyr::group_by(cited) %>%
+                     dplyr::tally() %>%
+                     dplyr::mutate(n = replace(n, is.na(n), 0)),
+                   by = c("doi" = "cited"))
+```
+
+```{r citation-fraction, class.source = 'fold-show', warning = FALSE, message = FALSE}
+## Total citation count Crossref
+sum(df0$citation_count, na.rm = TRUE)
+
+## Total citation count Open Citations Corpus
+sum(df0$n, na.rm = TRUE)
+
+## Ratio of total citation count Open Citations Corpus/Crossref
+sum(df0$n, na.rm = TRUE)/sum(df0$citation_count, na.rm = TRUE)
+```
+
+```{r citation-plot-crossref, class.source = 'fold-hide', warning = FALSE, message = FALSE}
+ggplot(df0, aes(x = citation_count, y = n)) + 
+  geom_abline(slope = 1, intercept = 0) + 
+  geom_point(size = 3, alpha = 0.5) + 
+  labs(x = "Crossref citation count", y = "Open Citations Corpus citation count",
+       caption = dcap) + 
+  theme_bw()
+
+## Zoom in
+ggplot(df0, aes(x = citation_count, y = n)) + 
+  geom_abline(slope = 1, intercept = 0) + 
+  geom_point(size = 3, alpha = 0.5) + 
+  labs(x = "Crossref citation count", y = "Open Citations Corpus citation count",
+       caption = dcap) + 
+  theme_bw() + 
+  coord_cartesian(xlim = c(0, 75), ylim = c(0, 75))
+```
+
+```{r citation-nbr-journals, class.source = 'fold-show'}
+## Number of journals citing JOSS papers
+length(unique(citations$container.title))
+length(unique(citations$issn))
+```
+
+## Most citing journals
+
+```{r citation-top-journals, class.source = 'fold-hide', message = FALSE}
+topcit <- citations %>% dplyr::group_by(container.title) %>%
+  dplyr::summarize(nbr_citations_of_joss_papers = length(cited),
+                   nbr_cited_joss_papers = length(unique(cited)),
+                   nbr_citing_papers = length(unique(citing)),
+                   nbr_selfcitations_of_joss_papers = sum(author_sc == "yes"),
+                   fraction_selfcitations = signif(nbr_selfcitations_of_joss_papers /
+                     nbr_citations_of_joss_papers, digits = 3)) %>%
+  dplyr::arrange(desc(nbr_cited_joss_papers))
+DT::datatable(topcit,
+  escape = FALSE, rownames = FALSE, 
+  filter = list(position = 'top', clear = FALSE),
+  options = list(scrollX = TRUE))
+```
+
+```{r citation-journals-plot, class.source = 'fold-hide'}
+plotly::ggplotly(
+  ggplot(topcit, aes(x = nbr_citations_of_joss_papers, y = nbr_cited_joss_papers,
+                     label = container.title)) + 
+    geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "grey") + 
+    geom_point(size = 3, alpha = 0.5) + 
+    theme_bw() + 
+    labs(caption = dcap, x = "Number of citations of JOSS papers",
+         y = "Number of cited JOSS papers")
+)
+plotly::ggplotly(
+  ggplot(topcit, aes(x = nbr_citations_of_joss_papers, y = nbr_cited_joss_papers,
+                     label = container.title)) + 
+    geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "grey") + 
+    geom_point(size = 3, alpha = 0.5) + 
+    theme_bw() + 
+    coord_cartesian(xlim = c(0, 100), ylim = c(0, 50)) + 
+    labs(caption = dcap, x = "Number of citations of JOSS papers",
+         y = "Number of cited JOSS papers")
+)
+```
+
+```{r}
+write.table(topcit, file = "joss_submission_citations_byjournal.tsv",
+            row.names = FALSE, col.names = TRUE, sep = "\t", quote = FALSE)
 ```
 
 
 # Save object
 
-The tibble object with all data collected above is serialized to a file that can be downloaded and reused. To read the current version of this file directly from GitHub, use the following code:
-
-```{r, class.source = 'fold-show', eval = FALSE}
-papers <- readRDS(gzcon(url("https://github.com/openjournals/joss-analytics/blob/gh-pages/joss_submission_analytics.rds?raw=true")))
-```
-
+The tibble object with all data collected above is serialized to a file that can be downloaded and reused.
 
 ```{r save-data}
 head(papers) %>% as.data.frame()
 saveRDS(papers, file = "joss_submission_analytics.rds")
+```
+
+To read the current version of this file directly from GitHub, use the following code:
+
+```{r, class.source = 'fold-show', eval = FALSE}
+papers <- readRDS(gzcon(url("https://github.com/openjournals/joss-analytics/blob/gh-pages/joss_submission_analytics.rds?raw=true")))
 ```
 
 # Session info

@@ -46,7 +46,7 @@ jobs:
           install.packages(c('remotes', 'dplyr', 'ggplot2', 'rmarkdown',
                              'knitr', 'rcrossref', 'tibble', 'tidyr',
                              'lubridate', 'gh', 'jsonlite', 'purrr',
-                             'DT', 'plotly'), Ncpu = 2L)
+                             'DT', 'plotly', 'citecorp'), Ncpu = 2L)
         shell: Rscript {0}
 
       - name: Session info
@@ -65,7 +65,10 @@ jobs:
       - name: Prepare files to deploy
         run: |
           mkdir _site
-          cp -r joss-submission-analytics_files joss-submission-analytics.html joss_submission_analytics.rds _site/
+          cp -r joss-submission-analytics_files joss-submission-analytics.html _site/
+          cp -r joss_submission_analytics.rds _site/
+          cp -r joss_submission_citations_byjournal.tsv _site/
+          cp -r joss_submission_citations.tsv _site/
           
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3

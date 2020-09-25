@@ -372,7 +372,7 @@ ggplot(papers %>%
          dplyr::summarize(npub = n()), 
        aes(x = factor(pubmonth), y = npub)) + 
   geom_bar(stat = "identity") + theme_minimal() + 
-  labs(x = "", y = "Number of published papers per month") + 
+  labs(x = "", y = "Number of published papers per month", caption = dcap) + 
   theme(axis.title = element_text(size = 15),
         axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
 ```
@@ -384,7 +384,7 @@ ggplot(papers %>%
          dplyr::summarize(npub = n()), 
        aes(x = factor(pubyear), y = npub)) + 
   geom_bar(stat = "identity") + theme_minimal() + 
-  labs(x = "", y = "Number of published papers per year") + 
+  labs(x = "", y = "Number of published papers per year", caption = dcap) + 
   theme(axis.title = element_text(size = 15),
         axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
 ```
@@ -404,7 +404,7 @@ ggplot(papers %>%
        aes(x = citation_count, y = n)) + 
   geom_bar(stat = "identity") + 
   theme_minimal() + 
-  labs(x = "Crossref citation count", y = "Number of publications")
+  labs(x = "Crossref citation count", y = "Number of publications", caption = dcap)
 ```
 
 
@@ -431,7 +431,7 @@ plotly::ggplotly(
   ggplot(papers, aes(x = published.date, y = citation_count, label = title)) + 
     geom_point(alpha = 0.5) + theme_bw() + scale_y_sqrt() + 
     geom_smooth() + 
-    labs(x = "Date of publication", y = "Crossref citation count") + 
+    labs(x = "Date of publication", y = "Crossref citation count", caption = dcap) + 
     theme(axis.title = element_text(size = 15)),
   tooltip = c("label", "x", "y")
 )
@@ -449,7 +449,7 @@ ggplot(papers %>% dplyr::group_by(halfyear) %>%
   geom_point(alpha = 0.5) + 
   facet_wrap(~ halfyear, scales = "free") + 
   theme_bw() + 
-  labs(x = "Index", y = "Crossref citation count")
+  labs(x = "Index", y = "Crossref citation count", caption = dcap)
 ```
 
 
@@ -460,14 +460,14 @@ In these plots we investigate whether the time a submission spends in the pre-re
 ```{r review-time, class.source = 'fold-hide', message = FALSE, warning = FALSE}
 ggplot(papers, aes(x = prerev_opened, y = as.numeric(days_in_pre))) + 
   geom_point() + geom_smooth() + theme_bw() + 
-  scale_y_sqrt() + 
-  labs(x = "Date of pre-review opening", y = "Number of days in pre-review") + 
+  labs(x = "Date of pre-review opening", y = "Number of days in pre-review", 
+       caption = dcap) + 
   theme(axis.title = element_text(size = 15))
 
 ggplot(papers, aes(x = review_opened, y = as.numeric(days_in_rev))) + 
   geom_point() + geom_smooth() + theme_bw() + 
-  scale_y_sqrt() + 
-  labs(x = "Date of review opening", y = "Number of days in review") + 
+  labs(x = "Date of review opening", y = "Number of days in review", 
+       caption = dcap) + 
   theme(axis.title = element_text(size = 15))
 ```
 
@@ -532,7 +532,8 @@ ggplotly(
                      label = title)) + 
     geom_point(alpha = 0.5) + scale_x_sqrt() + scale_y_sqrt() + 
     theme_bw() + 
-    labs(x = "Crossref citation count", y = "Number of stars, GitHub repo") + 
+    labs(x = "Crossref citation count", y = "Number of stars, GitHub repo", 
+         caption = dcap) + 
     theme(axis.title = element_text(size = 15)),
   tooltip = c("label", "x", "y")
 )
@@ -544,7 +545,8 @@ ggplotly(
 ggplot(papers, aes(x = as.numeric(prerev_opened - repo_created))) +
   geom_histogram(bins = 50) + 
   theme_bw() + 
-  labs(x = "Time (days) from repo creation to JOSS pre-review start") + 
+  labs(x = "Time (days) from repo creation to JOSS pre-review start", 
+       caption = dcap) + 
   theme(axis.title = element_text(size = 15))
 ```
 
@@ -554,7 +556,8 @@ ggplot(papers, aes(x = as.numeric(prerev_opened - repo_created))) +
 ggplot(papers, aes(x = as.numeric(repo_pushed - review_closed))) +
   geom_histogram(bins = 50) + 
   theme_bw() + 
-  labs(x = "Time (days) from closure of JOSS review to most recent commit in repo") + 
+  labs(x = "Time (days) from closure of JOSS review to most recent commit in repo",
+       caption = dcap) + 
   theme(axis.title = element_text(size = 15)) + 
   facet_wrap(~ year(published.date), scales = "free_y")
 ```
@@ -578,7 +581,9 @@ ggplot(papers %>% dplyr::filter(nbr_authors <= 20),
   theme_bw() + 
   facet_wrap(~ year(published.date), scales = "free_y") + 
   theme(axis.title = element_text(size = 15)) + 
-  labs(x = "Number of authors", y = "Number of publications with\na given number of authors")
+  labs(x = "Number of authors",
+       y = "Number of publications with\na given number of authors", 
+       caption = dcap)
 
 ggplot(papers %>% 
          dplyr::mutate(nbr_authors = replace(nbr_authors, nbr_authors > 5, ">5")) %>%
@@ -595,7 +600,7 @@ ggplot(papers %>%
   scale_fill_brewer(palette = "Set1", name = "Number of\nauthors", 
                     na.value = "grey") + 
   theme(axis.title = element_text(size = 15)) + 
-  labs(x = "Year", y = "Fraction of submissions")
+  labs(x = "Year", y = "Fraction of submissions", caption = dcap)
 
 ```
 
@@ -611,7 +616,9 @@ plotly::ggplotly(
     # geom_point(alpha = 0.5) + 
     theme_bw() + 
     scale_x_sqrt() + scale_y_sqrt() + 
-    labs(x = "Number of authors", y = "Number of contributors\nwith at least 2 commits") + 
+    labs(x = "Number of authors", 
+         y = "Number of contributors\nwith at least 2 commits", 
+         caption = dcap) + 
     theme(axis.title = element_text(size = 15)),
   tooltip = c("label", "x", "y")
 )
@@ -627,7 +634,7 @@ ggplot(papers %>%
          dplyr::mutate(year = year(published.date)),
        aes(x = nbr_reviewers)) + geom_bar() + 
   facet_wrap(~ year) + theme_bw() + 
-  labs(x = "Number of reviewers", y = "Number of submissions")
+  labs(x = "Number of reviewers", y = "Number of submissions", caption = dcap)
 ```
 
 # Most active reviewers
@@ -665,7 +672,7 @@ ggplot(papers %>%
   theme_bw() + facet_wrap(~ year, ncol = 1) + 
   scale_fill_manual(values = c(`TRUE` = "grey65", `FALSE` = "grey35")) + 
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) + 
-  labs(x = "Editor", y = "Number of submissions")
+  labs(x = "Editor", y = "Number of submissions", caption = dcap)
 ```
 
 
@@ -685,7 +692,7 @@ ggplot(papers %>%
        aes(x = repo_license)) +
   geom_bar() + 
   theme_bw() + 
-  labs(x = "Software license", y = "Number of submissions") + 
+  labs(x = "Software license", y = "Number of submissions", caption = dcap) + 
   theme(axis.title = element_text(size = 15),
         axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) + 
   facet_wrap(~ year(published.date), scales = "free_y")
@@ -717,7 +724,7 @@ ggplot(papers %>%
   scale_fill_brewer(palette = "Set1", name = "Software\nlicense", 
                     na.value = "grey") + 
   theme(axis.title = element_text(size = 15)) + 
-  labs(x = "Year", y = "Number of submissions")
+  labs(x = "Year", y = "Number of submissions", caption = dcap)
 
 ggplot(papers %>% 
          dplyr::mutate(year = year(published.date)) %>%

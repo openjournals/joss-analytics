@@ -766,7 +766,7 @@ ggplot(papers %>%
   labs(x = "Year", y = "Fraction of submissions", caption = dcap)
 ```
 
-# Citation analysis [work in progress]
+# Citation analysis
 
 Here, we take a more detailed look at the papers that cite JOSS papers, using data from the Open Citations Corpus.
 
@@ -779,16 +779,11 @@ dim(citations)
 
 citations <- citations %>% 
   dplyr::filter(!(oci %in% citations_archive$oci))
-dim(citations)
-
-## temporary
-citations <- citations[1:1000, ]
 
 tmpj <- rcrossref::cr_works(dois = unique(citations$citing))$data %>%
       dplyr::select(contains("doi"), contains("container.title"), contains("issn"),
                     contains("type"), contains("publisher"), contains("prefix"))
 citations <- citations %>% dplyr::left_join(tmpj, by = c("citing" = "doi"))
-dim(citations)
 
 ## bioRxiv preprints don't have a 'container.title' or 'issn', but we'll assume 
 ## that they can be 

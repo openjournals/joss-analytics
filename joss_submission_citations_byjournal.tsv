@@ -1,84 +1,427 @@
 container.title	nbr_citations_of_joss_papers	nbr_cited_joss_papers	nbr_citing_papers	nbr_selfcitations_of_joss_papers	fraction_selfcitations
-bioRxiv	13	7	13	1	0.0769
-The Journal of Open Source Software	10	7	7	8	0.8
-Monthly Notices of the Royal Astronomical Society	11	3	11	0	0
-The Astrophysical Journal	11	3	11	4	0.364
-The Astronomical Journal	4	2	4	1	0.25
-The Astrophysical Journal Supplement Series	3	2	3	0	0
+bioRxiv	315	55	312	19	0.0603
+The Journal of Open Source Software	42	36	38	25	0.595
+Monthly Notices of the Royal Astronomical Society	23	15	22	4	0.174
+The Astrophysical Journal	29	14	28	16	0.552
+Nature Communications	27	8	27	0	0
+Geoscientific Model Development	8	7	8	5	0.625
+PLOS ONE	10	7	10	4	0.4
+The Journal of Chemical Physics	9	7	9	3	0.333
+eLife	10	6	9	1	0.1
+Astronomy & Astrophysics	5	5	5	1	0.2
+BMC Bioinformatics	6	5	6	1	0.167
+Hydrology and Earth System Sciences	5	5	3	3	0.6
+Physical Review E	5	5	4	1	0.2
+Scientific Reports	15	5	15	0	0
+Sensors	12	5	12	0	0
+The Astronomical Journal	8	5	8	4	0.5
+Frontiers in Psychology	5	4	4	0	0
+Physical Review B	5	4	5	1	0.2
+Publications of the Astronomical Society of the Pacific	4	4	4	0	0
+Remote Sensing	4	4	4	0	0
+Science Advances	5	4	5	1	0.2
+Frontiers in Microbiology	5	3	5	0	0
+Genome Biology	11	3	11	1	0.0909
+Geophysical Research Letters	3	3	3	1	0.333
+IFIP Advances in Information and Communication Technology,Artificial Intelligence Applications and Innovations	3	3	3	0	0
+Journal of Geophysical Research: Solid Earth	3	3	3	1	0.333
+Journal of Open Research Software	3	3	3	0	0
+Nature	13	3	13	0	0
+PeerJ	3	3	3	0	0
+PLOS Computational Biology	4	3	4	0	0
+Statistics and Computing	3	3	2	2	0.667
+Sustainability	4	3	4	0	0
+The Astrophysical Journal Supplement Series	4	3	4	0	0
+2019 42nd International Convention on Information and Communication Technology, Electronics and Microelectronics (MIPRO)	2	2	2	0	0
+Agronomy	2	2	2	0	0
+Applied Sciences	2	2	2	0	0
+Biomolecules	2	2	2	2	1
+BMC Genomics	2	2	2	0	0
+BMC Medical Research Methodology	2	2	2	1	0.5
+Cancers	2	2	2	0	0
+Communications Biology	3	2	3	0	0
+Computer Graphics Forum	4	2	4	0	0
+Entropy	2	2	2	0	0
+F1000Research	3	2	3	2	0.667
+Frontiers in Neuroinformatics	2	2	2	0	0
+Frontiers in Oncology	2	2	2	0	0
+Frontiers in Physics	2	2	2	0	0
+Geology	2	2	2	0	0
+GigaScience	2	2	2	1	0.5
+Global Ecology and Biogeography	2	2	2	1	0.5
+Journal of Neural Engineering	2	2	2	0	0
+Journal of Physics: Conference Series	2	2	2	0	0
+Journal of Sustainable Metallurgy	2	2	1	1	0.5
+Lecture Notes in Computer Science,Computational Science – ICCS 2020	2	2	2	0	0
+Lecture Notes in Computer Science,Web Engineering	2	2	2	0	0
+mBio	2	2	2	0	0
+Methods in Ecology and Evolution	2	2	2	1	0.5
+Microbiology Resource Announcements	2	2	2	0	0
+Molecular Biology and Evolution	2	2	2	0	0
+Molecular Ecology	2	2	2	0	0
+Nature Human Behaviour	2	2	2	0	0
+Nature Methods	11	2	11	0	0
+npj Computational Materials	2	2	2	1	0.5
+npj Digital Medicine	3	2	3	0	0
+Nucleic Acids Research	4	2	4	0	0
+PeerJ Computer Science	2	2	1	0	0
+Personal and Ubiquitous Computing	2	2	2	0	0
+Physical Review D	6	2	6	1	0.167
+Physical Review Letters	2	2	2	0	0
+Physics of Fluids	2	2	2	0	0
+Proceedings of the National Academy of Sciences	6	2	6	0	0
+Psychophysiology	2	2	1	2	1
+Scientific Data	2	2	2	1	0.5
+Sustainable Energy & Fuels	3	2	3	0	0
+The International Journal of Life Cycle Assessment	7	2	6	1	0.143
+11th Chaotic Modeling and Simulation International Conference,Springer Proceedings in Complexity	1	1	1	0	0
+2017 3rd International Conference on Applied and Theoretical Computing and Communication Technology (iCATccT)	1	1	1	0	0
+2017 IEEE International Conference on Data Science and Advanced Analytics (DSAA)	1	1	1	0	0
+2017 IEEE Symposium Series on Computational Intelligence (SSCI)	1	1	1	0	0
+2017 Latin American Robotics Symposium (LARS) and 2017 Brazilian Symposium on Robotics (SBR)	1	1	1	0	0
+2018 ACM Multimedia Conference on Multimedia Conference - MM '18	1	1	1	0	0
 Accelerator Programming Using Directives,Lecture Notes in Computer Science	1	1	1	1	1
+ACM Transactions on Graphics	1	1	1	0	0
+ACM Transactions on Mathematical Software	1	1	1	0	0
+Acta Anaesthesiologica Scandinavica	2	1	2	0	0
+Acta Neuropathologica	1	1	1	0	0
+Advanced Computational Intelligence in Healthcare-7,Studies in Computational Intelligence	1	1	1	0	0
 Advanced Concepts for Intelligent Vision Systems,Lecture Notes in Computer Science	1	1	1	0	0
+Advanced Information Networking and Applications,Advances in Intelligent Systems and Computing	1	1	1	0	0
+Advanced Modeling and Simulation in Engineering Sciences	1	1	1	0	0
+Advances in Artificial Intelligence,Lecture Notes in Computer Science	1	1	1	0	0
+Advances in Cartography and GIScience,Lecture Notes in Geoinformation and Cartography	1	1	1	0	0
+Advances in Intelligent Systems and Computing,Advances in Computer Vision	1	1	1	0	0
+Advances in Intelligent Systems and Computing,International Conference on Innovative Computing and Communications	1	1	1	0	0
+Advances in Intelligent Systems and Computing,The 8th International Conference on Computer Engineering and Networks (CENet2018)	1	1	1	0	0
+Advances in Knowledge Discovery and Data Mining,Lecture Notes in Computer Science	1	1	1	0	0
 Aerospace	1	1	1	0	0
 AgriEngineering	1	1	1	0	0
-Agronomy	1	1	1	0	0
+Algorithms	1	1	1	1	1
+Alzheimer's & Dementia	1	1	1	0	0
+Alzheimer's Research & Therapy	1	1	1	0	0
+Ambio	1	1	1	0	0
+American Journal of Medical Genetics Part C: Seminars in Medical Genetics	1	1	1	0	0
+American Journal of Political Science	2	1	2	0	0
+American Journal of Transplantation	1	1	1	0	0
+American Sociological Review	1	1	1	0	0
 Animal Conservation	1	1	1	0	0
 Animals	1	1	1	0	0
+Annals of Clinical and Translational Neurology	1	1	1	0	0
+Annals of the Rheumatic Diseases	1	1	1	0	0
+Annual Review of Biomedical Data Science	1	1	1	0	0
+Annual Review of Statistics and Its Application	1	1	1	0	0
+Applications of Evolutionary Computation,Lecture Notes in Computer Science	1	1	1	0	0
+Applied Network Science	1	1	1	0	0
+Applied Physics Letters	1	1	1	0	0
 Aquatic Sciences	1	1	1	1	1
+Archaeological and Anthropological Sciences	1	1	1	0	0
+Artificial Intelligence in Music, Sound, Art and Design,Lecture Notes in Computer Science	1	1	1	0	0
 Artificial Neural Networks and Machine Learning – ICANN 2018,Lecture Notes in Computer Science	1	1	1	0	0
-Astronomy & Astrophysics	1	1	1	0	0
+Artificial Neural Networks and Machine Learning – ICANN 2019: Text and Time Series,Lecture Notes in Computer Science	1	1	1	0	0
+AStA Advances in Statistical Analysis	1	1	1	1	1
+Atmosphere	2	1	2	0	0
+Atmospheric Chemistry and Physics	1	1	1	0	0
 Atmospheric Measurement Techniques	1	1	1	0	0
+Belgeo	1	1	1	0	0
+Bio-inspired Information and Communication Technologies,Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering	1	1	1	1	1
 Biochemical Society Transactions	1	1	1	0	0
 Biogeochemistry	1	1	1	0	0
-Biomolecules	1	1	1	1	1
-BMC Medical Research Methodology	1	1	1	0	0
+Bioinformatics	2	1	2	0	0
+Bioinformatics and Biomedical Engineering,Lecture Notes in Computer Science	1	1	1	0	0
+BioMed Research International	1	1	1	0	0
+BMC Biology	1	1	1	0	0
+BMC Medical Informatics and Decision Making	1	1	1	0	0
+Brainlesion: Glioma, Multiple Sclerosis, Stroke and Traumatic Brain Injuries,Lecture Notes in Computer Science	2	1	2	0	0
+Briefings in Bioinformatics	1	1	1	0	0
+Briefings in Functional Genomics	1	1	1	0	0
 Bringing Innovative Robotic Technologies from Research Labs to Industrial End-users,Springer Tracts in Advanced Robotics	1	1	1	0	0
+British Journal of Psychology	1	1	1	0	0
+Budownictwo i Architektura	1	1	1	0	0
+Bulletin of the World Health Organization	1	1	1	0	0
 Canadian Journal of Zoology	1	1	1	0	0
+Case Studies in Applied Bayesian Data Science,Lecture Notes in Mathematics	1	1	1	0	0
+Cell Discovery	1	1	1	0	0
+Cellular & Molecular Immunology	1	1	1	0	0
+Cellulose	1	1	1	0	0
+Chaos: An Interdisciplinary Journal of Nonlinear Science	2	1	2	1	0.5
+Chemical Senses	1	1	1	0	0
 Collabra: Psychology	1	1	1	0	0
+Communications in Computer and Information Science,Data Mining	1	1	1	0	0
+Communications in Computer and Information Science,High Performance Computing	1	1	1	0	0
+Communications in Computer and Information Science,Knowledge Management in Organizations	1	1	1	0	0
+Communications in Computer and Information Science,New Trends in Databases and Information Systems	1	1	1	1	1
+Communications Materials	1	1	1	0	0
+Compositionality	1	1	1	0	0
+Comprehensive Physiology	1	1	1	0	0
+Computational Mechanics	1	1	1	0	0
 Computer Aided Systems Theory – EUROCAST 2019,Lecture Notes in Computer Science	1	1	1	0	0
-Computer Graphics Forum	1	1	1	0	0
+Computer Analysis of Images and Patterns,Lecture Notes in Computer Science	1	1	1	0	0
+Computer Methods in Biomechanics and Biomedical Engineering	3	1	3	1	0.333
+Computer Vision	2	1	2	0	0
+CPT: Pharmacometrics & Systems Pharmacology	1	1	1	0	0
+Cytometry Part A	2	1	2	0	0
+Dalton Transactions	1	1	1	0	0
 Data Mining and Knowledge Discovery	1	1	1	1	1
+Database	1	1	1	0	0
+Designs	1	1	1	0	0
+Development	4	1	4	0	0
+Discovery Science,Lecture Notes in Computer Science	2	1	2	0	0
+Earth Surface Dynamics	1	1	1	1	1
 Ecohydrology	1	1	1	1	1
-eLife	1	1	1	0	0
+Ecological Applications	1	1	1	1	1
+Ecology Letters	1	1	1	0	0
+Écoscience	1	1	1	0	0
+Educational Technology Research and Development	1	1	1	0	0
+Electronic Markets	1	1	1	0	0
+Electronics	1	1	1	0	0
+Emerging Frontiers in Nonlinear Science,Nonlinear Systems and Complexity	1	1	1	0	0
+Empirical Software Engineering	1	1	1	0	0
+Encyclopedia of Solid Earth Geophysics,Encyclopedia of Earth Sciences Series	1	1	1	0	0
 Energy & Environmental Science	1	1	1	0	0
 Energy, Environment, and Sustainability,Two-Phase Flow for Automotive and Power Generation Sectors	1	1	1	0	0
+Environmental Engineering Science	1	1	1	0	0
 Environmental Research Letters	1	1	1	0	0
+Epigenetics & Chromatin	1	1	1	0	0
+Ergonomics	1	1	1	0	0
+EURASIP Journal on Wireless Communications and Networking	1	1	1	0	0
+European Journal of Clinical Microbiology & Infectious Diseases	1	1	1	0	0
 European Journal of Epidemiology	1	1	1	0	0
-F1000Research	2	1	2	2	1
+European Journal of Immunology	2	1	2	0	0
+European Journal of Inorganic Chemistry	1	1	1	0	0
+European Respiratory Review	1	1	1	0	0
+Eurosurveillance	1	1	1	0	0
+Evolutionary Biology	1	1	1	0	0
+From Reactive Systems to Cyber-Physical Systems,Lecture Notes in Computer Science	1	1	1	0	0
+Frontiers in Applied Mathematics and Statistics	1	1	1	0	0
+Frontiers in Cardiovascular Medicine	1	1	1	0	0
 Frontiers in Cellular Neuroscience	1	1	1	0	0
+Frontiers in Computational Neuroscience	1	1	1	0	0
+Frontiers in Digital Humanities	1	1	1	0	0
+Frontiers in Earth Science	1	1	1	0	0
+Frontiers in Energy Research	1	1	1	0	0
+Frontiers in Genetics	3	1	3	0	0
+Frontiers in Immunology	3	1	3	0	0
+Frontiers in Marine Science	2	1	2	0	0
+Frontiers in Materials	1	1	1	0	0
+Frontiers in Neuroscience	1	1	1	0	0
 Frontiers in Plant Science	1	1	1	0	0
-Frontiers in Psychology	1	1	1	0	0
 Frontiers in Robotics and AI	1	1	1	0	0
-Geoscientific Model Development	1	1	1	1	1
+Gefässchirurgie	1	1	1	0	0
+Genes	1	1	1	0	0
+Genetic Programming and Evolvable Machines	1	1	1	0	0
+Glia	1	1	1	0	0
+Green Chemistry	1	1	1	0	0
 Groundwater	1	1	1	0	0
-Hydrology and Earth System Sciences	1	1	1	1	1
+Handbook of Research on Intrusion Detection Systems,Advances in Information Security, Privacy, and Ethics	1	1	1	0	0
+Human Genetics	1	1	1	0	0
+Hyperspectral Image Analysis,Advances in Computer Vision and Pattern Recognition	1	1	1	0	0
 IEEE Robotics and Automation Letters	1	1	1	1	1
+in silico Plants	1	1	1	0	0
+Infection Control & Hospital Epidemiology	1	1	1	0	0
+Information	1	1	1	0	0
+Information Technology for Management: Current Research and Future Directions,Lecture Notes in Business Information Processing	1	1	1	0	0
+Insect Science	1	1	1	0	0
 Intelligent Robotics and Applications,Lecture Notes in Computer Science	1	1	1	0	0
+International Journal of Computer Integrated Manufacturing	1	1	1	0	0
 International Journal of Machine Learning and Cybernetics	1	1	1	0	0
+International Journal of Modern Physics C	1	1	1	0	0
+International Journal of Molecular Sciences	1	1	1	0	0
+International Journal on Artificial Intelligence Tools	1	1	1	0	0
+Internet of Vehicles. Technologies and Services Toward Smart Cities,Lecture Notes in Computer Science	1	1	1	0	0
+Inverse Problems	1	1	1	0	0
+IOP Conference Series: Earth and Environmental Science	1	1	1	0	0
+IOP SciNotes	1	1	1	1	1
+IoT Sensor-Based Activity Recognition,Intelligent Systems Reference Library	1	1	1	0	0
+ISPRS International Journal of Geo-Information	1	1	1	0	0
+it - Information Technology	1	1	1	0	0
+IUCrJ	1	1	1	0	0
+JCI Insight	1	1	1	0	0
+Journal for ImmunoTherapy of Cancer	1	1	1	0	0
+Journal of Ambient Intelligence and Humanized Computing	1	1	1	0	0
+Journal of Archaeological Method and Theory	1	1	1	0	0
 Journal of Biomechanical Engineering	1	1	1	0	0
+Journal of Biophotonics	1	1	1	0	0
+Journal of Cheminformatics	1	1	1	0	0
+Journal of Computational Neuroscience	1	1	1	0	0
+Journal of Computer Aided Chemistry	1	1	1	0	0
+Journal of Conflict Resolution	1	1	1	0	0
 Journal of Ecohydraulics	1	1	1	1	1
+Journal of Fluid Mechanics	1	1	1	0	0
+Journal of Geophysical Research: Earth Surface	1	1	1	1	1
+Journal of Human Genetics	1	1	1	0	0
+Journal of Hydrometeorology	1	1	1	0	0
 Journal of Industrial Ecology	4	1	4	1	0.25
+Journal of Information Technology in Construction	1	1	1	0	0
 Journal of Intelligent Information Systems	1	1	1	1	1
+Journal of Intelligent Manufacturing	1	1	1	0	0
+Journal of Magnetic Resonance Imaging	1	1	1	0	0
 Journal of Manufacturing Science and Engineering	1	1	1	0	0
+Journal of Materials Chemistry A	4	1	4	4	1
+Journal of Materials Chemistry C	3	1	3	2	0.667
 Journal of Mountain Science	1	1	1	0	0
+Journal of NeuroEngineering and Rehabilitation	1	1	1	0	0
 Journal of Neuroimaging	1	1	1	1	1
-Journal of Open Research Software	1	1	1	0	0
-Journal of Physics: Conference Series	1	1	1	0	0
-Journal of Sustainable Metallurgy	1	1	1	0	0
+Journal of Neurophysiology	1	1	1	0	0
+Journal of Physics Communications	1	1	1	1	1
+Journal of Physics: Condensed Matter	1	1	1	0	0
+Journal of Physics: Energy	1	1	1	1	1
+Journal of Public Administration Research and Theory	1	1	1	0	0
+Journal of Renewable and Sustainable Energy	1	1	1	0	0
+Journal of The Electrochemical Society	3	1	3	2	0.667
+Journal of The Royal Society Interface	1	1	1	1	1
+Journal of Turbomachinery	1	1	1	0	0
+Journal of Ultrasound in Medicine	1	1	1	0	0
+Journal of Urban Ecology	1	1	1	0	0
+Journal of Vision	1	1	1	0	0
+KI 2019: Advances in Artificial Intelligence,Lecture Notes in Computer Science	1	1	1	0	0
+Knowledge & Management of Aquatic Ecosystems	1	1	1	0	0
+Knowledge Science, Engineering and Management,Lecture Notes in Computer Science	1	1	1	0	0
+Landscape Ecology	1	1	1	0	0
+Lecture Notes in Business Information Processing,Information Technology for Management: Emerging Research and Applications	1	1	1	0	0
+Lecture Notes in Computer Science,Advances in Information Retrieval	2	1	2	0	0
+Lecture Notes in Computer Science,Advances in Intelligent Data Analysis XVIII	1	1	1	0	0
+Lecture Notes in Computer Science,Artificial Neural Networks and Machine Learning – ICANN 2019: Deep Learning	1	1	1	0	0
+Lecture Notes in Computer Science,Artificial Neural Networks and Machine Learning – ICANN 2019: Image Processing	1	1	1	0	0
+Lecture Notes in Computer Science,Computer Vision – ECCV 2018 Workshops	1	1	1	0	0
+Lecture Notes in Computer Science,Geometric Science of Information	1	1	1	0	0
+Lecture Notes in Computer Science,Graph Drawing and Network Visualization	1	1	1	0	0
+Lecture Notes in Computer Science,Image Analysis and Recognition	1	1	1	0	0
+Lecture Notes in Computer Science,Image and Signal Processing	1	1	1	0	0
+Lecture Notes in Computer Science,Medical Image Computing and Computer Assisted Intervention – MICCAI 2019	2	1	2	0	0
+Lecture Notes in Computer Science,The Impact of Digital Technologies on Public Health in Developed and Developing Countries	1	1	1	0	0
+Lecture Notes in Electrical Engineering,China Satellite Navigation Conference (CSNC) 2018 Proceedings	1	1	1	0	0
+Lecture Notes in Electrical Engineering,Modelling, Simulation and Intelligent Computing	1	1	1	0	0
+Leveraging Data Science for Global Health	1	1	1	0	0
+Limnology and Oceanography: Methods	1	1	1	0	0
+Machine Learning	1	1	1	0	0
+Machine Learning and Knowledge Discovery in Databases,Lecture Notes in Computer Science	3	1	3	0	0
 Mathematical Problems in Engineering	1	1	1	0	0
 Mathematics	1	1	1	0	0
+Mathematics and Computation in Music,Lecture Notes in Computer Science	1	1	1	1	1
+Medical Physics	1	1	1	0	0
+Methods in Molecular Biology,Evolutionary Genomics	1	1	1	0	0
+Methods in Molecular Biology,Single Cell Methods	1	1	1	0	0
+Micro-Pollutant Regulation in the River Rhine	1	1	1	0	0
+Microbial Genomics	4	1	4	0	0
+Mitochondrial DNA Part B	3	1	3	0	0
+Modern Pathology	1	1	1	0	0
+Molecular and Cellular Biology	1	1	1	0	0
+Molecular Simulation	1	1	1	0	0
+Molecular Systems Biology	2	1	2	0	0
+MRS Bulletin	1	1	1	0	0
+MRS Communications	1	1	1	0	0
+MultiMedia Modeling,Lecture Notes in Computer Science	1	1	1	0	0
 Multimedia Tools and Applications	2	1	2	0	0
+Nanomaterials	1	1	1	0	0
 Nanoscale	1	1	1	1	1
-Nature Communications	1	1	1	0	0
-Physical Review B	1	1	1	1	1
-Physical Review Letters	1	1	1	0	0
-PLOS ONE	1	1	1	0	0
+NAR Genomics and Bioinformatics	1	1	1	0	0
+Nature Biomedical Engineering	1	1	1	0	0
+Nature Biotechnology	5	1	5	1	0.2
+Nature Cancer	2	1	2	0	0
+Nature Cell Biology	1	1	1	0	0
+Nature Genetics	3	1	3	0	0
+Nature Immunology	2	1	2	0	0
+Nature Medicine	2	1	2	0	0
+Nature Neuroscience	1	1	1	0	0
+Nature Protocols	2	1	2	0	0
+Nature Reviews Genetics	1	1	1	0	0
+Nature Reviews Nephrology	1	1	1	0	0
+Neural Computing and Applications	1	1	1	0	0
+New Journal of Physics	1	1	1	1	1
+New Technologies, Development and Application III,Lecture Notes in Networks and Systems	1	1	1	0	0
+Nonlinear Dynamics	1	1	1	0	0
+npj Schizophrenia	1	1	1	0	0
+Nuclear Science and Engineering	1	1	1	0	0
+Open Forum Infectious Diseases	1	1	1	0	0
+Open Source Systems: Towards Robust Practices,IFIP Advances in Information and Communication Technology	1	1	1	0	0
+Optics Letters	1	1	1	1	1
+Orphanet Journal of Rare Diseases	1	1	1	0	0
+PAMM	1	1	1	0	0
+Pattern Recognition and Image Analysis,Lecture Notes in Computer Science	1	1	1	0	0
+Pediatric Diabetes	1	1	1	0	0
+Pediatric Research	1	1	1	0	0
+Physical Chemistry Chemical Physics	1	1	1	1	1
+Physical Review Materials	1	1	1	0	0
+Physics in Medicine & Biology	1	1	1	0	0
+Plasma Sources Science and Technology	1	1	1	0	0
+PLOS Biology	1	1	1	0	0
+PLOS Genetics	1	1	1	1	1
+Policy Studies Journal	1	1	1	0	0
+Political Science Research and Methods	1	1	1	0	0
 Proceedings of International Joint Conference on Computational Intelligence,Algorithms for Intelligent Systems	1	1	1	0	0
 Proceedings of the 12th EAI International Conference on Performance Evaluation Methodologies and Tools - VALUETOOLS 2019	1	1	1	0	0
+Proceedings of the 14th International Audio Mostly Conference: A Journey in Sound	1	1	1	0	0
 Proceedings of the 2019 11th International Conference on Bioinformatics and Biomedical Technology	1	1	1	0	0
+Proceedings of the 2020 Genetic and Evolutionary Computation Conference Companion	1	1	1	0	0
+Proceedings of the 24th ACM Symposium on Access Control Models and Technologies	1	1	1	0	0
+Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining	1	1	1	0	0
+Proceedings of the 26th Annual International Conference on Mobile Computing and Networking	1	1	1	0	0
+Proceedings of the 28th ACM International Conference on Information and Knowledge Management	1	1	1	0	0
+Proceedings of the 3rd Workshop on Experiences with the Design and Implementation of Smart Objects - SMARTOBJECTS '17	1	1	1	0	0
+Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval	1	1	1	0	0
+Proceedings of the ACM Workshop on Systems and Network Telemetry and Analytics  - SNTA '19	1	1	1	0	0
+Proceedings of the Design Society: DESIGN Conference	1	1	1	0	0
+Proceedings of the Genetic and Evolutionary Computation Conference	1	1	1	0	0
+Proceedings of the Genetic and Evolutionary Computation Conference Companion	1	1	1	0	0
 Proceedings of the IEEE	1	1	1	1	1
+Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis	1	1	1	0	0
+Proceedings of the International Symposium on Quality of Service	1	1	1	0	0
+Proceedings of the Practice and Experience in Advanced Research Computing on Rise of the Machines (learning)	1	1	1	0	0
+Proceedings of the Practice and Experience on Advanced Research Computing	1	1	1	0	0
+Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences	1	1	1	0	0
 Proceedings of the Royal Society B: Biological Sciences	1	1	1	0	0
+Proceedings of the Thirteenth International Conference on Tangible, Embedded, and Embodied Interaction	1	1	1	0	0
 Progress in Artificial Intelligence,Lecture Notes in Computer Science	1	1	1	0	0
 Protein Science	1	1	1	0	0
-Psychophysiology	1	1	1	1	1
-Publications of the Astronomical Society of the Pacific	1	1	1	0	0
+Regional Environmental Change	1	1	1	1	1
+Remote Sensing in Ecology and Conservation	1	1	1	0	0
+Research Synthesis Methods	1	1	1	0	0
+Risk Analysis	1	1	1	0	0
 River Research and Applications	1	1	1	1	1
 RoboCup 2019: Robot World Cup XXIII,Lecture Notes in Computer Science	1	1	1	0	0
 ROBOMECH Journal	1	1	1	0	0
 Sādhanā	1	1	1	0	0
-Science Advances	1	1	1	0	0
-Scientific Reports	1	1	1	0	0
-Sustainability	2	1	2	0	0
-Sustainable Energy & Fuels	2	1	2	0	0
-The International Journal of Life Cycle Assessment	6	1	6	0	0
+Science	7	1	7	0	0
+Science Immunology	2	1	2	0	0
+SEMA SIMAI Springer Series,Mathematical and Numerical Modeling of the Cardiovascular System and Applications	1	1	1	0	0
+Ships and Offshore Structures	1	1	1	0	0
+SIAM Journal on Scientific Computing	1	1	1	0	0
+SIAM/ASA Journal on Uncertainty Quantification	1	1	1	0	0
+SICOT-J	1	1	1	0	0
+Sleep	1	1	1	0	0
+Smart and Sustainable Manufacturing Systems	1	1	1	0	0
+Smart Innovation, Systems and Technologies,Proceedings of the 8th International Conference on Sciences of Electronics, Technologies of Information and Telecommunications (SETIT’18), Vol.2	1	1	1	0	0
+Social Science Quarterly	1	1	1	0	0
+Software Technologies: Applications and Foundations,Lecture Notes in Computer Science	1	1	1	0	0
+Solar Physics	1	1	1	1	1
+SpringerBriefs in Optimization,Bayesian Optimization and Data Science	1	1	1	0	0
+Statistical Language and Speech Processing,Lecture Notes in Computer Science	1	1	1	0	0
+Symmetry	1	1	1	0	0
+Tellus A: Dynamic Meteorology and Oceanography	1	1	1	0	0
+The Aeronautical Journal	1	1	1	1	1
+The EMBO Journal	1	1	1	0	0
+The European Physical Journal C	1	1	1	0	0
+The FASEB Journal	2	1	2	0	0
+The ISME Journal	1	1	1	0	0
+The Plant Journal	1	1	1	0	0
+The Visual Computer	1	1	1	0	0
+The World Wide Web Conference	1	1	1	0	0
+Towards User-Centric Transport in Europe 2,Lecture Notes in Mobility	1	1	1	0	0
+Transactions in GIS	1	1	1	0	0
+Transactions of Japan Society of Kansei Engineering	1	1	1	0	0
 Transactions of the Institute of Measurement and Control	1	1	1	0	0
+Transport in Porous Media	1	1	1	0	0
+Uncertainty Modeling for Engineering Applications,PoliTO Springer Series	1	1	1	0	0
+Urban Science	1	1	1	0	0
+Vaccines	1	1	1	0	0
+Virchows Archiv	1	1	1	0	0
+Virus Evolution	1	1	1	0	0
+Viruses	1	1	1	0	0
+Water Resources Research	1	1	1	1	1
+Wellcome Open Research	1	1	1	0	0
 Wildlife Research	1	1	1	0	0
+Wind Energy Science	1	1	1	0	0
 WMU Journal of Maritime Affairs	1	1	1	0	0
+World Archaeology	1	1	1	1	1
+NA	1	1	1	0	0

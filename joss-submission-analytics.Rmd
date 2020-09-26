@@ -287,7 +287,7 @@ df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
       if (length(languages) == 0) {
         repolang <- ""
       } else {
-        repolang <- paste(paste(gsub(" ", "", names(unlist(languages))), 
+        repolang <- paste(paste(names(unlist(languages)), 
                                 unlist(languages), sep = ":"), collapse = ",")
       }
     } else {
@@ -483,29 +483,18 @@ ggplot(papers, aes(x = review_opened, y = as.numeric(days_in_rev))) +
 
 # Languages
 
-Next, we consider the languages used by the submissions. Note that a given submission can use multiple languages. 
+Next, we consider the languages used by the submissions, both as reported by Whedon and based on the information encoded in available GitHub repositories (for the latter, we also record the number of bytes of code written in each language). Note that a given submission can use multiple languages. 
 
-```{r languages, class.source = 'fold-hide', fig.width = 9}
+```{r languages, class.source = 'fold-hide', fig.width = 9, message = FALSE}
+## Language information from Whedon
 sspl <- strsplit(papers$languages, ",")
 all_languages <- unique(unlist(sspl))
 langs <- do.call(dplyr::bind_rows, lapply(all_languages, function(l) {
   data.frame(language = l,
-             nbr_submissions = sum(vapply(sspl, function(v) l %in% v, 0)))
+             nbr_submissions_Whedon = sum(vapply(sspl, function(v) l %in% v, 0)))
 }))
-langs %>% dplyr::arrange(desc(nbr_submissions))
-ggplot(langs %>% dplyr::arrange(desc(nbr_submissions)) %>%
-         dplyr::mutate(language = factor(language, levels = language)),
-       aes(x = language, y = nbr_submissions)) + 
-  geom_bar(stat = "identity") + 
-  theme_bw() + 
-  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) + 
-  labs(x = "", y = "Number of submissions", caption = dcap) + 
-  theme(axis.title = element_text(size = 15))
-```
 
-We'll also list the languages ordered by the number of bytes of code written in each (based on available GitHub repositories), and plot the number of repositories using a given language vs the total number of bytes written in the language.
-
-```{r language-bytes, class.source = 'fold-hide', message = FALSE}
+## Language information from GitHub software repos
 a <- lapply(strsplit(papers$repo_languages_bytes, ","), function(w) strsplit(w, ":"))
 a <- a[sapply(a, length) > 0]
 langbytes <- as.data.frame(t(as.data.frame(a))) %>% 
@@ -513,19 +502,36 @@ langbytes <- as.data.frame(t(as.data.frame(a))) %>%
   dplyr::mutate(bytes = as.numeric(bytes)) %>%
   dplyr::filter(!is.na(language)) %>%
   dplyr::group_by(language) %>%
-  dplyr::summarize(n_bytes = sum(bytes),
-                   n_repos = length(bytes)) %>%
-  dplyr::arrange(desc(n_bytes))
+  dplyr::summarize(nbr_bytes_GitHub = sum(bytes),
+                   nbr_repos_GitHub = length(bytes)) %>%
+  dplyr::arrange(desc(nbr_bytes_GitHub))
+
+langs <- dplyr::full_join(langs, langbytes, by = "language")
+```
+
+```{r language-plot, class.source = 'fold-hide', message = FALSE}
+ggplot(langs %>% dplyr::arrange(desc(nbr_submissions_Whedon)) %>%
+         dplyr::filter(nbr_submissions_Whedon > 10) %>%
+         dplyr::mutate(language = factor(language, levels = language)),
+       aes(x = language, y = nbr_submissions_Whedon)) + 
+  geom_bar(stat = "identity") + 
+  theme_bw() + 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) + 
+  labs(x = "", y = "Number of submissions", caption = dcap) + 
+  theme(axis.title = element_text(size = 15))
+```
+
+```{r language-bytes, class.source = 'fold-hide', message = FALSE}
 DT::datatable(
-  langbytes,
+  langs %>% dplyr::arrange(desc(nbr_bytes_GitHub)),
   escape = FALSE,
   filter = list(position = 'top', clear = FALSE),
   options = list(scrollX = TRUE)
 )
 ```
 
-```{r language-bytes-plot, class.source = 'fold-hide'}
-ggplot(langbytes, aes(x = n_repos, y = n_bytes)) + 
+```{r language-bytes-plot, class.source = 'fold-hide', message = FALSE, warning = FALSE}
+ggplot(langs, aes(x = nbr_repos_GitHub, y = nbr_bytes_GitHub)) + 
   geom_point() + scale_x_log10() + scale_y_log10() + geom_smooth() + 
   theme_bw() + 
   labs(x = "Number of repos using the language",

@@ -349,6 +349,7 @@ papers <- papers %>% dplyr::select(-reference, -license, -link) %>%
                       levels = paste0(rep(sort(unique(year(published.date))), 
                                           each = 2), c("H1", "H2")))
   ) %>% dplyr::mutate(nbr_authors = vapply(author, function(a) nrow(a), NA_integer_))
+papers <- papers %>% dplyr::distinct()
 
 source_track <- c(source_track, 
                   structure(rep("cleanup", length(setdiff(colnames(papers),

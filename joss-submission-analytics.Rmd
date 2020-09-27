@@ -199,7 +199,9 @@ issrev <- iss %>% dplyr::filter(grepl("\\[REVIEW\\]", title)) %>%
   dplyr::select(-nbrzeros) %>% 
   dplyr::mutate(title = gsub("\\[REVIEW\\]: ", "", title)) %>%
   dplyr::rename_at(vars(-alternative.id), ~ paste0("review_", .))
+```
 
+```{r extract-github-2, class.source = 'fold-show', message = FALSE}
 ## Tabulate the number of pre-review issues labeled 'rejected' per year
 iss %>% dplyr::filter(grepl("\\[PRE REVIEW\\]", title)) %>% 
   dplyr::filter(grepl("rejected", labels)) %>% 
@@ -264,6 +266,10 @@ df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
     gh(paste0(gsub("(https://)?(www.)?github.com/", "/repos/", u0), "/languages"), 
        .limit = 500)
   })
+  topics <- try({
+    gh(paste0(gsub("(https://)?(www.)?github.com/", "/repos/", u0), "/topics"), 
+       .accept = "application/vnd.github.mercy-preview+json", .limit = 500)
+  })
   contribs <- try({
     gh(paste0(gsub("(https://)?(www.)?github.com/", "/repos/", u0), "/contributors"), 
        .limit = 500)
@@ -293,6 +299,17 @@ df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
     } else {
       repolang <- ""
     }
+    
+    if (!is(topics, "try-error")) {
+      if (length(topics$names) == 0) {
+        repotopics <- ""
+      } else {
+        repotopics <- paste(unlist(topics$names), collapse = ",")
+      }
+    } else {
+      repotopics <- ""
+    }
+    
     data.frame(repo_url = u, 
                repo_created = info$created_at,
                repo_updated = info$updated_at,
@@ -301,6 +318,7 @@ df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
                repo_language = ifelse(!is.null(info$language),
                                       info$language, NA_character_),
                repo_languages_bytes = repolang,
+               repo_topics = repotopics,
                repo_license = ifelse(!is.null(info$license),
                                      info$license$key, NA_character_),
                repo_nbr_contribs = repo_nbr_contribs,
@@ -765,6 +783,31 @@ ggplot(papers %>%
   theme(axis.title = element_text(size = 15)) + 
   labs(x = "Year", y = "Fraction of submissions", caption = dcap)
 ```
+
+# Most common GitHub repo topics (work in progress)
+
+```{r github-topics, class.source = 'fold-hide', fig.width = 12, fig.height = 12}
+a <- unlist(strsplit(papers$repo_topics, ","))
+a <- a[!is.na(a)]
+topicfreq <- table(a)
+
+colors <- viridis::viridis(100)
+set.seed(1234)
+wordcloud::wordcloud(
+  names(topicfreq), sqrt(topicfreq), min.freq = 1, max.words = 300,
+  random.order = FALSE, rot.per = 0.05, use.r.layout = FALSE, 
+  colors = colors, scale = c(10, 0.1), random.color = TRUE,
+  ordered.colors = FALSE, vfont = c("serif", "plain")
+)
+
+DT::datatable(as.data.frame(topicfreq) %>% 
+                dplyr::rename(topic = a, nbr_repos = Freq) %>%
+                dplyr::arrange(desc(nbr_repos)),
+  escape = FALSE, rownames = FALSE, 
+  filter = list(position = 'top', clear = FALSE),
+  options = list(scrollX = TRUE))
+```
+
 
 # Citation analysis
 

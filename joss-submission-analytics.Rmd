@@ -784,7 +784,7 @@ ggplot(papers %>%
   labs(x = "Year", y = "Fraction of submissions", caption = dcap)
 ```
 
-# Most common GitHub repo topics (work in progress)
+# Most common GitHub repo topics
 
 ```{r github-topics, class.source = 'fold-hide', fig.width = 12, fig.height = 12, warning = FALSE, message = FALSE}
 a <- unlist(strsplit(papers$repo_topics, ","))

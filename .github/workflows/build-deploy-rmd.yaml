@@ -43,6 +43,11 @@ jobs:
       - name: Set up pandoc
         uses: r-lib/actions/setup-pandoc@master
 
+        ## rcrossref requires an email address associated with a query
+      - name: Set up crossref email
+        run: |
+          echo crossref_email=\"${{ secrets.CROSSREF_EMAIL }}\" >> ~/.Renviron
+          
       - name: Install dependencies
         run: |
           install.packages(c('remotes', 'dplyr', 'ggplot2', 'rmarkdown',

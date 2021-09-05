@@ -51,10 +51,11 @@ jobs:
       - name: Install dependencies
         run: |
           install.packages(c('remotes', 'dplyr', 'ggplot2', 'rmarkdown',
-                             'knitr', 'rcrossref', 'tibble', 'tidyr',
+                             'knitr', 'tibble', 'tidyr',
                              'lubridate', 'gh', 'jsonlite', 'purrr',
                              'DT', 'plotly', 'citecorp', 'readr', 
                              'viridis', 'wordcloud'), Ncpu = 2L)
+          remotes::install_github('ropensci/rcrossref')
         shell: Rscript {0}
 
       - name: Session info

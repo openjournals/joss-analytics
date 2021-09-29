@@ -852,7 +852,7 @@ Here, we take a more detailed look at the papers that cite JOSS papers, using da
 citations <- tryCatch({
   citecorp::oc_coci_cites(doi = papers$alternative.id) %>%
     dplyr::distinct() %>%
-    dplyr::mutate(citation_info_obtained = lubridate::today())
+    dplyr::mutate(citation_info_obtained = as.character(lubridate::today()))
 }, error = function(e) {
   NULL
 })
@@ -888,12 +888,12 @@ if (!is.null(citations)) {
 } else {
   citations <- citations_archive
   if (is.null(citations[["citation_info_obtained"]])) {
-    citations$citation_info_obtained <- as.Date(NA)
+    citations$citation_info_obtained <- NA_character_
   }
 }
 
 citations$citation_info_obtained[is.na(citations$citation_info_obtained)] <- 
-  as.Date("2021-08-11")
+  "2021-08-11"
 
 write.table(citations, file = "joss_submission_citations.tsv",
             row.names = FALSE, col.names = TRUE, sep = "\t", quote = FALSE)
@@ -903,7 +903,7 @@ write.table(citations, file = "joss_submission_citations.tsv",
 
 ```{r citation-summary-stats, class.source = 'fold-show', warning = FALSE, message = FALSE}
 ## Latest successful update of new citation data
-max(citations$citation_info_obtained)
+max(as.Date(citations$citation_info_obtained))
 
 ## Number of JOSS papers with >0 citations included in this collection
 length(unique(citations$cited))

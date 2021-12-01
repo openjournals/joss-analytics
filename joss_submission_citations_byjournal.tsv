@@ -99,6 +99,7 @@ Frontiers in Earth Science	10	8	10	0	0
 Geophysical Journal International	13	8	10	4	0.308
 Geophysical Research Letters	11	8	11	1	0.0909
 iScience	13	8	12	1	0.0769
+Journal of Animal Ecology	12	8	10	0	0
 Journal of Hydrology	11	8	11	0	0
 Magnetic Resonance in Medicine	9	8	9	4	0.444
 Molecular Biology and Evolution	9	8	9	0	0
@@ -131,7 +132,6 @@ Frontiers in Veterinary Science	9	7	7	0	0
 G3 Genes|Genomes|Genetics	12	7	12	1	0.0833
 Genes	17	7	17	0	0
 Global Ecology and Biogeography	8	7	8	1	0.125
-Journal of Animal Ecology	11	7	10	0	0
 Journal of Chemical Information and Modeling	13	7	13	2	0.154
 Journal of Geophysical Research: Earth Surface	9	7	8	4	0.444
 Journal of Geophysical Research: Oceans	7	7	7	2	0.286
@@ -608,7 +608,7 @@ Social Psychiatry and Psychiatric Epidemiology	3	3	1	0	0
 Soil Biology and Biochemistry	5	3	5	0	0
 Solar Energy	20	3	20	0	0
 Solar Physics	4	3	4	2	0.5
-Structural and Multidisciplinary Optimization	5	3	5	0	0
+Structural and Multidisciplinary Optimization	6	3	6	0	0
 Sustainable Energy & Fuels	5	3	5	0	0
 The Aeronautical Journal	3	3	3	1	0.333
 The Annals of Applied Statistics	3	3	3	0	0
@@ -715,6 +715,7 @@ Chaos, Solitons & Fractals	2	2	2	0	0
 Chemical Research in Toxicology	2	2	1	0	0
 Child Abuse Review	2	2	1	0	0
 Child Psychiatry & Human Development	3	2	3	0	0
+Circulation: Cardiovascular Quality and Outcomes	2	2	1	0	0
 Cleaner Environmental Systems	2	2	2	1	0.5
 Climate Dynamics	2	2	2	0	0
 Climate of the Past	2	2	2	0	0
@@ -823,6 +824,7 @@ Human Genetics	2	2	2	0	0
 Human Genomics	2	2	2	0	0
 Hydrology Research	2	2	2	0	0
 Hypertension	2	2	2	0	0
+Hypertension Research	2	2	1	0	0
 IFIP Advances in Information and Communication Technology,Advances in Production Management Systems. The Path to Digital Transformation and Innovation of Production Management Systems	2	2	1	0	0
 Immunity	6	2	6	0	0
 Indoor Air	2	2	2	0	0
@@ -1520,7 +1522,6 @@ Circulation	1	1	1	0	0
 Circulation Research	1	1	1	0	0
 Circulation: Cardiovascular Imaging	1	1	1	0	0
 Circulation: Cardiovascular Interventions	1	1	1	0	0
-Circulation: Cardiovascular Quality and Outcomes	1	1	1	0	0
 Climate Risk Management	1	1	1	0	0
 Clinical and Experimental Dental Research	1	1	1	0	0
 Clinical Cancer Research	1	1	1	0	0
@@ -1926,7 +1927,6 @@ Hydrological Processes	1	1	1	0	0
 Hydrological Sciences Journal	1	1	1	0	0
 Hydrology, hydrochemistry and hydroecology	1	1	1	0	0
 Hyperspectral Image Analysis,Advances in Computer Vision and Pattern Recognition	1	1	1	0	0
-Hypertension Research	1	1	1	0	0
 Ibis	2	1	2	0	0
 IEEE Access	1	1	1	1	1
 IEEE Robotics and Automation Letters	1	1	1	1	1
@@ -2201,6 +2201,7 @@ Journal of Geochemical Exploration	1	1	1	0	0
 Journal of Geophysical Research: Biogeosciences	2	1	2	0	0
 Journal of Geophysical Research: Space Physics	1	1	1	0	0
 Journal of Geovisualization and Spatial Analysis	1	1	1	0	0
+Journal of Glaciology	1	1	1	0	0
 Journal of Global Antimicrobial Resistance	1	1	1	0	0
 Journal of Global Health	1	1	1	0	0
 Journal of Global Optimization	1	1	1	1	1

@@ -1,20 +1,20 @@
 container.title	nbr_citations_of_joss_papers	nbr_cited_joss_papers	nbr_citing_papers	nbr_selfcitations_of_joss_papers	fraction_selfcitations
-bioRxiv	2112	241	1973	138	0.0653
-The Journal of Open Source Software	314	207	240	110	0.35
+bioRxiv	2115	241	1975	138	0.0652
+The Journal of Open Source Software	315	207	240	110	0.349
 Monthly Notices of the Royal Astronomical Society	489	76	439	33	0.0675
 Scientific Reports	237	72	226	5	0.0211
-The Astrophysical Journal	529	69	478	95	0.18
-PLOS ONE	158	66	150	11	0.0696
+The Astrophysical Journal	530	69	479	95	0.179
+PLOS ONE	160	68	152	11	0.0688
 Nature Communications	211	56	201	12	0.0569
-Astronomy & Astrophysics	215	43	198	13	0.0605
+Astronomy & Astrophysics	217	44	199	13	0.0599
 Sensors	67	40	63	2	0.0299
-The Astronomical Journal	186	38	169	23	0.124
+The Astronomical Journal	187	38	170	23	0.123
 Remote Sensing	62	33	62	3	0.0484
 Physical Review D	149	32	141	17	0.114
-PLOS Computational Biology	54	31	46	8	0.148
+PLOS Computational Biology	55	32	47	8	0.145
+Applied Sciences	41	31	37	1	0.0244
 NA	57	31	57	4	0.0702
-Applied Sciences	39	30	35	1	0.0256
-eLife	60	29	56	7	0.117
+eLife	61	30	57	7	0.115
 SoftwareX	32	27	26	0	0
 The Astrophysical Journal Supplement Series	69	27	53	29	0.42
 Bioinformatics	52	26	50	1	0.0192
@@ -22,8 +22,8 @@ Proceedings of the National Academy of Sciences	49	25	49	4	0.0816
 The Astrophysical Journal Letters	53	25	47	17	0.321
 BMC Bioinformatics	36	24	35	2	0.0556
 Geoscientific Model Development	31	24	27	10	0.323
+Nature	63	24	55	2	0.0317
 SSRN Electronic Journal	53	24	50	0	0
-Nature	61	23	54	2	0.0328
 PeerJ	34	23	32	1	0.0294
 Frontiers in Psychology	59	22	57	0	0
 Genome Biology	45	22	39	3	0.0667
@@ -68,6 +68,7 @@ Global Change Biology	22	12	21	1	0.0455
 Journal of Hydrology	15	12	14	0	0
 Molecular Ecology	21	12	20	0	0
 Royal Society Open Science	17	12	16	4	0.235
+Science	31	12	30	2	0.0645
 Water Resources Research	20	12	19	2	0.1
 BMC Genomics	23	11	23	0	0
 Frontiers in Plant Science	31	11	31	0	0
@@ -78,7 +79,6 @@ Journal of Medical Internet Research	14	11	14	0	0
 Microorganisms	19	11	18	0	0
 Physical Chemistry Chemical Physics	19	11	19	3	0.158
 Physical Review Research	13	11	13	0	0
-Science	30	11	29	2	0.0667
 Scientific Data	15	11	15	4	0.267
 SN Computer Science	11	11	9	0	0
 Applied Energy	40	10	39	3	0.075
@@ -141,6 +141,7 @@ Geophysical Journal International	13	8	10	4	0.308
 Information	10	8	8	2	0.2
 IOP Conference Series: Earth and Environmental Science	8	8	7	0	0
 Journal of Applied Ecology	12	8	12	0	0
+Journal of Computational and Graphical Statistics	8	8	8	0	0
 Journal of Fluid Mechanics	9	8	9	1	0.111
 Journal of High Energy Physics	11	8	11	0	0
 Molecular Biology and Evolution	10	8	10	0	0
@@ -178,7 +179,6 @@ Genome Medicine	11	7	10	0	0
 Global Ecology and Biogeography	8	7	8	1	0.125
 Journal of Advances in Modeling Earth Systems	8	7	6	5	0.625
 Journal of Clinical Medicine	10	7	10	0	0
-Journal of Computational and Graphical Statistics	7	7	7	0	0
 Journal of Geophysical Research: Oceans	8	7	8	3	0.375
 Landscape Ecology	9	7	9	0	0
 Materials	7	7	7	1	0.143
@@ -230,6 +230,7 @@ Journal of Neural Engineering	6	6	6	0	0
 Journal of The Royal Society Interface	6	6	6	2	0.333
 Land	8	6	8	1	0.125
 mBio	7	6	7	0	0
+Medical Physics	9	6	9	0	0
 Metabolites	9	6	9	0	0
 Methods	6	6	6	0	0
 Molecules	11	6	11	0	0
@@ -246,6 +247,7 @@ Sleep	6	6	6	1	0.167
 Statistics and Computing	6	6	3	3	0.5
 Systematic Biology	8	6	8	0	0
 The Journal of Physical Chemistry A	6	6	6	1	0.167
+Transportation Research Part C: Emerging Technologies	7	6	6	0	0
 Transportation Research Part D: Transport and Environment	7	6	7	0	0
 Vaccines	12	6	12	0	0
 Accident Analysis & Prevention	6	5	5	0	0
@@ -281,6 +283,7 @@ Frontiers in Human Neuroscience	5	5	5	0	0
 Frontiers in Neuroinformatics	5	5	5	0	0
 Frontiers in Physics	5	5	4	0	0
 Frontiers in Public Health	5	5	4	0	0
+Frontiers in Sustainable Food Systems	6	5	5	0	0
 Geochemistry, Geophysics, Geosystems	5	5	5	0	0
 GEOPHYSICS	6	5	6	0	0
 Global Environmental Change	6	5	6	0	0
@@ -308,7 +311,6 @@ Journal of Speech, Language, and Hearing Research	8	5	8	0	0
 Journal of Systems and Software	5	5	5	1	0.2
 Journal of The Electrochemical Society	11	5	11	4	0.364
 Journal of Theoretical Biology	5	5	5	0	0
-Medical Physics	8	5	8	0	0
 Molecular Phylogenetics and Evolution	8	5	8	0	0
 Molecular Systems Biology	9	5	9	0	0
 mSphere	10	5	9	3	0.3
@@ -339,7 +341,6 @@ Solar Physics	6	5	6	2	0.333
 Sustainable Cities and Society	7	5	7	0	0
 The Journal of Wildlife Management	5	5	4	0	0
 The Plant Journal	6	5	6	0	0
-Transportation Research Part C: Emerging Technologies	6	5	5	0	0
 Acta Astronautica	5	4	4	0	0
 Acta Materialia	4	4	4	0	0
 Acta Neuropathologica	9	4	7	0	0
@@ -351,6 +352,7 @@ Analytical and Bioanalytical Chemistry	6	4	6	0	0
 Animal Behaviour	7	4	7	0	0
 Annals of Botany	5	4	5	0	0
 Applied Geography	4	4	4	1	0.25
+Applied Soft Computing	4	4	4	0	0
 Automation in Construction	6	4	6	0	0
 Behavioral Ecology and Sociobiology	4	4	4	0	0
 Biogeochemistry	4	4	4	0	0
@@ -400,7 +402,6 @@ Frontiers in Computer Science	4	4	3	0	0
 Frontiers in Medicine	5	4	5	0	0
 Frontiers in Molecular Neuroscience	4	4	2	0	0
 Frontiers in Robotics and AI	8	4	8	0	0
-Frontiers in Sustainable Food Systems	5	4	4	0	0
 Frontiers in Systems Neuroscience	4	4	4	0	0
 Frontiers in Water	5	4	5	0	0
 Functional Ecology	5	4	5	0	0
@@ -504,7 +505,6 @@ Animal Cognition	5	3	3	0	0
 Annals of Clinical and Translational Neurology	5	3	5	0	0
 Annals of Nuclear Energy	3	3	3	0	0
 Appetite	3	3	2	0	0
-Applied Soft Computing	3	3	3	0	0
 Aquaculture	5	3	5	0	0
 Artificial Intelligence Review	4	3	3	0	0
 Atmospheric Chemistry and Physics	4	3	4	0	0
@@ -640,6 +640,7 @@ Journal of Industrial Ecology	12	3	10	2	0.167
 Journal of Intelligence	5	3	3	0	0
 Journal of Marine Systems	3	3	2	0	0
 Journal of Mass Spectrometry and Advances in the Clinical Lab	5	3	3	0	0
+Journal of Mathematical Imaging and Vision	3	3	3	0	0
 Journal of Medical Systems	3	3	3	0	0
 Journal of Microbiology	3	3	3	0	0
 Journal of Molecular Evolution	5	3	4	1	0.2
@@ -704,6 +705,7 @@ Pest Management Science	4	3	4	0	0
 Pharmaceuticals	3	3	3	0	0
 Physical Review C	8	3	8	0	0
 Physics of Plasmas	4	3	4	1	0.25
+Physiological Measurement	3	3	3	1	0.333
 Plant Methods	3	3	3	0	0
 Policy Sciences	4	3	2	0	0
 Political Research Exchange	3	3	2	0	0
@@ -732,6 +734,7 @@ Social Psychiatry and Psychiatric Epidemiology	3	3	1	0	0
 Social Science & Medicine	3	3	3	0	0
 Social Science Quarterly	3	3	3	0	0
 Soft Computing	3	3	3	0	0
+Software: Practice and Experience	3	3	3	1	0.333
 Soil Biology and Biochemistry	6	3	6	0	0
 Solar Energy	22	3	22	0	0
 Stat	5	3	5	0	0
@@ -1089,7 +1092,6 @@ Journal of Magnetic Resonance Imaging	2	2	2	0	0
 Journal of Manufacturing Science and Engineering	2	2	2	0	0
 Journal of Materials Chemistry B	2	2	2	1	0.5
 Journal of Mathematical Biology	2	2	2	0	0
-Journal of Mathematical Imaging and Vision	2	2	2	0	0
 Journal of Mechanical Design	2	2	2	0	0
 Journal of Memory and Language	2	2	2	0	0
 Journal of Molecular and Cellular Cardiology	3	2	3	0	0
@@ -1144,6 +1146,7 @@ Macromolecules	2	2	1	0	0
 Magnetic Resonance Imaging	3	2	3	0	0
 Marine and Coastal Fisheries	2	2	2	0	0
 Materials Advances	2	2	1	0	0
+Materials Horizons	3	2	3	1	0.333
 Materials Letters	2	2	2	0	0
 Mathematical Geosciences	2	2	1	0	0
 Mathematics in Engineering	2	2	1	0	0
@@ -1212,9 +1215,9 @@ Physica Scripta	2	2	2	0	0
 Physical Review Physics Education Research	2	2	2	0	0
 Physics Letters B	2	2	2	0	0
 Physics of the Dark Universe	2	2	2	0	0
-Physiological Measurement	2	2	2	1	0.5
 Physiological Reports	2	2	1	0	0
 Phytopathology®	3	2	3	0	0
+Planetary and Space Science	2	2	2	0	0
 Plant and Soil	5	2	5	0	0
 Plant Physiology	2	2	2	1	0.5
 Poetics	2	2	2	0	0
@@ -1263,7 +1266,6 @@ SN Applied Sciences	2	2	2	2	1
 Social Cognitive and Affective Neuroscience	2	2	2	0	0
 Social Networks	2	2	2	0	0
 Soft Robotics	2	2	1	0	0
-Software: Practice and Experience	2	2	2	1	0.5
 Solar RRL	2	2	2	0	0
 Solid State Ionics	2	2	2	0	0
 Spectrochimica Acta Part A: Molecular and Biomolecular Spectroscopy	2	2	2	0	0
@@ -2013,6 +2015,7 @@ Encyclopedia of Solid Earth Geophysics,Encyclopedia of Earth Sciences Series	2	1
 Endangered Species Research	1	1	1	0	0
 Endocrinology, Diabetes & Metabolism	1	1	1	0	0
 Energy and Climate Change	1	1	1	0	0
+Energy Economics	1	1	1	0	0
 Energy, Environment, and Sustainability,Two-Phase Flow for Automotive and Power Generation Sectors	1	1	1	0	0
 Energy, Sustainability and Society	1	1	1	0	0
 Engineering	1	1	1	0	0
@@ -2583,6 +2586,7 @@ Journal of Investigative Dermatology	1	1	1	0	0
 Journal of Islamic Marketing	1	1	1	0	0
 Journal of Japan Society for Fuzzy Theory and Intelligent Informatics	1	1	1	0	0
 Journal of Japan Society of Civil Engineers, Ser. D3 (Infrastructure Planning and Management)	1	1	1	0	0
+Journal of King Saud University - Computer and Information Sciences	1	1	1	0	0
 Journal of Korean Society of Coastal and Ocean Engineers	1	1	1	0	0
 Journal of Land Use Science	1	1	1	0	0
 Journal of Language Evolution	1	1	1	0	0
@@ -2732,6 +2736,7 @@ Laboratory Phonology,Volume 12	1	1	1	0	0
 Labour Economics	1	1	1	0	0
 LAK21: 11th International Learning Analytics and Knowledge Conference	1	1	1	0	0
 Lanaguage Research	1	1	1	0	0
+Land Degradation & Development	1	1	1	0	0
 Land Use Policy	1	1	1	0	0
 Landscape Research	1	1	1	0	0
 Landslides	1	1	1	0	0
@@ -2818,6 +2823,7 @@ Machine Learning for Asset Management	1	1	1	0	0
 Machine Learning in Geosciences,Advances in Geophysics	1	1	1	0	0
 Machines	1	1	1	0	0
 Madroño	1	1	1	0	0
+Magnetospheric Imaging	1	1	1	0	0
 Makers at School, Educational Robotics and Innovative Learning Environments,Lecture Notes in Networks and Systems	1	1	1	0	0
 Malaria Journal	3	1	3	0	0
 Mammal Research	1	1	1	0	0
@@ -2837,7 +2843,6 @@ Marriage & Family Review	1	1	1	0	0
 Materialia	1	1	1	1	1
 Materials & Design	1	1	1	0	0
 Materials Characterization	1	1	1	0	0
-Materials Horizons	2	1	2	1	0.5
 Materials Science and Technology	1	1	1	0	0
 Materials Theory	1	1	1	0	0
 Materials Today	1	1	1	0	0
@@ -3069,7 +3074,6 @@ Physics of the Earth and Planetary Interiors	1	1	1	0	0
 Physiotherapy Theory and Practice	1	1	1	0	0
 Phytobiomes Journal	2	1	2	0	0
 Phytopathology Research	1	1	1	0	0
-Planetary and Space Science	1	1	1	0	0
 Plant and Cell Physiology	1	1	1	0	0
 Plant Biology	2	1	2	0	0
 Plant Biotechnology Journal	1	1	1	0	0

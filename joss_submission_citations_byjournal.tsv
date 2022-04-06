@@ -1,17 +1,17 @@
 container.title	nbr_citations_of_joss_papers	nbr_cited_joss_papers	nbr_citing_papers	nbr_selfcitations_of_joss_papers	fraction_selfcitations
-bioRxiv	2325	252	2169	148	0.0637
+bioRxiv	2328	252	2172	149	0.064
 The Journal of Open Source Software	331	216	254	113	0.341
-Monthly Notices of the Royal Astronomical Society	544	84	488	42	0.0772
+Monthly Notices of the Royal Astronomical Society	545	84	489	42	0.0771
 Scientific Reports	258	76	246	5	0.0194
 The Astrophysical Journal	580	76	524	104	0.179
-PLOS ONE	174	70	165	11	0.0632
+PLOS ONE	175	71	166	11	0.0629
 Nature Communications	229	58	217	13	0.0568
 Astronomy & Astrophysics	241	48	219	14	0.0581
 Sensors	72	40	68	2	0.0278
 The Astronomical Journal	201	39	183	26	0.129
 Applied Sciences	53	37	49	1	0.0189
+Remote Sensing	72	36	72	3	0.0417
 Physical Review D	163	34	155	19	0.117
-Remote Sensing	70	34	70	3	0.0429
 NA	65	34	65	4	0.0615
 PLOS Computational Biology	60	33	51	8	0.133
 eLife	71	32	63	7	0.0986
@@ -24,9 +24,9 @@ BMC Bioinformatics	39	26	38	2	0.0513
 The Astrophysical Journal Letters	61	26	54	20	0.328
 NeuroImage	40	25	36	1	0.025
 Proceedings of the National Academy of Sciences	52	25	52	4	0.0769
+Science Advances	39	25	37	4	0.103
 Frontiers in Psychology	70	24	68	0	0
 PeerJ	40	24	37	1	0.025
-Science Advances	38	24	36	4	0.105
 SSRN Electronic Journal	53	24	50	0	0
 Genome Biology	51	23	44	3	0.0588
 Science of The Total Environment	59	23	58	1	0.0169
@@ -35,7 +35,7 @@ Physical Review Letters	33	22	31	6	0.182
 Sustainability	34	22	33	2	0.0588
 Journal of Physics: Conference Series	29	20	27	0	0
 Energies	60	19	58	1	0.0167
-Journal of Geophysical Research: Solid Earth	19	17	19	3	0.158
+Journal of Geophysical Research: Solid Earth	20	17	20	3	0.15
 Physical Review E	19	17	17	5	0.263
 AIAA SCITECH 2022 Forum	32	16	29	0	0
 Cancers	34	16	32	2	0.0588
@@ -132,9 +132,11 @@ Chaos: An Interdisciplinary Journal of Nonlinear Science	12	9	12	2	0.167
 Computational Materials Science	12	9	11	2	0.167
 Computer Physics Communications	13	9	13	0	0
 Computers and Electronics in Agriculture	9	9	8	0	0
+Developmental Cognitive Neuroscience	9	9	7	0	0
 Ecology Letters	12	9	12	1	0.0833
 Energy and Buildings	17	9	17	0	0
 EPJ Web of Conferences	13	9	13	0	0
+Geophysical Journal International	14	9	11	4	0.286
 Journal of Chemical Information and Modeling	18	9	18	2	0.111
 Journal of Computational and Graphical Statistics	10	9	10	0	0
 Microbial Genomics	21	9	21	2	0.0952
@@ -152,7 +154,6 @@ Chemistry of Materials	18	8	16	6	0.333
 Computer Methods in Applied Mechanics and Engineering	10	8	10	1	0.1
 Computers & Fluids	8	8	6	1	0.125
 Current Psychology	11	8	9	3	0.273
-Developmental Cognitive Neuroscience	8	8	7	0	0
 Earth Surface Dynamics	11	8	6	6	0.545
 Ecosphere	15	8	14	0	0
 Environment International	8	8	7	0	0
@@ -160,12 +161,12 @@ Forests	18	8	18	0	0
 Frontiers in Behavioral Neuroscience	12	8	10	0	0
 Frontiers in Neuroinformatics	8	8	7	0	0
 G3 Genes|Genomes|Genetics	16	8	16	1	0.0625
-Geophysical Journal International	13	8	10	4	0.308
 Global Ecology and Biogeography	9	8	9	1	0.111
 Information	10	8	8	2	0.2
 IOP Conference Series: Earth and Environmental Science	8	8	7	0	0
 Journal of Applied Ecology	12	8	12	0	0
 Journal of High Energy Physics	11	8	11	0	0
+mBio	10	8	9	2	0.2
 Metabolites	12	8	12	0	0
 Molecular Biology and Evolution	10	8	10	0	0
 mSystems	20	8	17	2	0.1
@@ -211,7 +212,7 @@ Journal of Clinical Medicine	10	7	10	0	0
 Journal of Computational Chemistry	8	7	7	1	0.125
 Journal of Geophysical Research: Oceans	8	7	8	3	0.375
 Journal of Neural Engineering	7	7	7	0	0
-mBio	9	7	8	1	0.111
+Medical Physics	11	7	11	0	0
 Methods	7	7	7	0	0
 Methods in Ecology and Evolution	11	7	11	1	0.0909
 Microbiology Resource Announcements	11	7	11	0	0
@@ -269,7 +270,6 @@ Journal of Materials Chemistry A	13	6	11	8	0.615
 Journal of Personalized Medicine	8	6	8	0	0
 Journal of The Royal Society Interface	6	6	6	2	0.333
 Land	9	6	9	1	0.111
-Medical Physics	10	6	10	0	0
 mSphere	13	6	12	3	0.231
 Nature Computational Science	8	6	8	0	0
 Neuron	6	6	6	1	0.167
@@ -785,6 +785,7 @@ Pharmaceuticals	3	3	3	0	0
 Physical Review C	8	3	8	0	0
 Physical Review Physics Education Research	3	3	3	0	0
 Physiological Measurement	3	3	3	1	0.333
+Phytopathology®	5	3	4	0	0
 Plant and Soil	6	3	6	1	0.167
 Plant Methods	4	3	4	0	0
 Policy Sciences	4	3	2	0	0
@@ -852,6 +853,7 @@ A Broad View of Regional Science,New Frontiers in Regional Science: Asian Perspe
 ACM Transactions on Embedded Computing Systems	2	2	2	0	0
 ACS Applied Electronic Materials	3	2	3	0	0
 ACS Central Science	3	2	3	0	0
+ACS Earth and Space Chemistry	2	2	2	0	0
 ACS Nano	2	2	2	2	1
 ACS Sustainable Chemistry & Engineering	4	2	4	3	0.75
 Acta Anaesthesiologica Scandinavica	5	2	5	0	0
@@ -1189,6 +1191,7 @@ Journal of Colloid and Interface Science	2	2	2	0	0
 Journal of Communication	3	2	3	0	0
 Journal of Computational Science	2	2	2	0	0
 Journal of Computer Security	2	2	2	0	0
+Journal of Digital Imaging	2	2	2	0	0
 Journal of Documentation	2	2	2	1	0.5
 Journal of Economic Entomology	5	2	5	0	0
 Journal of Economic Surveys	2	2	1	0	0
@@ -1354,7 +1357,6 @@ Physica Scripta	2	2	2	0	0
 Physics Letters B	2	2	2	0	0
 Physics of the Dark Universe	2	2	2	0	0
 Physiological Reports	3	2	2	0	0
-Phytopathology®	4	2	4	0	0
 Planetary and Space Science	2	2	2	0	0
 Plant Ecology	2	2	2	0	0
 Plant Physiology	2	2	2	1	0.5
@@ -1531,7 +1533,6 @@ ACM Transactions on Parallel Computing	1	1	1	0	0
 ACM Transactions on Sensor Networks	2	1	2	0	0
 ACS Applied Polymer Materials	1	1	1	0	0
 ACS Biomaterials Science & Engineering	1	1	1	0	0
-ACS Earth and Space Chemistry	1	1	1	0	0
 ACS Environmental Au	1	1	1	0	0
 ACS ES&T Engineering	1	1	1	0	0
 ACS ES&T Water	1	1	1	0	0
@@ -2065,6 +2066,7 @@ Computers	1	1	1	0	0
 Computers & Security	1	1	1	0	0
 Computers &amp; Chemical Engineering	1	1	1	0	0
 Computers &amp; Fluids	1	1	1	0	0
+Computers &amp; Mathematics with Applications	1	1	1	0	0
 Computers &amp; Security	1	1	1	0	0
 Computers and Education Open	1	1	1	0	0
 Computers in Human Behavior Reports	1	1	1	0	0
@@ -2398,6 +2400,7 @@ Geobiology	1	1	1	0	0
 Geocarto International	1	1	1	0	0
 Geographical Modeling	1	1	1	0	0
 GeoInformatica	1	1	1	0	0
+Geological Journal	1	1	1	0	0
 Geomatics	1	1	1	0	0
 Geoscientific Instrumentation, Methods and Data Systems	1	1	1	0	0
 geotechnik	1	1	1	0	0
@@ -2751,7 +2754,6 @@ Journal of Data Analysis and Information Processing	1	1	1	0	0
 Journal of Data Science	1	1	1	0	0
 Journal of Dentistry	1	1	1	0	0
 Journal of Dermatological Treatment	1	1	1	0	0
-Journal of Digital Imaging	1	1	1	0	0
 Journal of Disaster Research	1	1	1	0	0
 Journal of Dynamic Behavior of Materials	1	1	1	0	0
 Journal of Dynamic Systems, Measurement, and Control	1	1	1	0	0
@@ -2769,6 +2771,7 @@ Journal of Engineering Education	1	1	1	0	0
 Journal of Engineering Mathematics	1	1	1	0	0
 Journal of Environmental Chemical Engineering	1	1	1	0	0
 Journal of Environmental Radioactivity	1	1	1	0	0
+Journal of Environmental Sciences	1	1	1	0	0
 Journal of Equine Veterinary Science	1	1	1	0	0
 Journal of Ethnic and Migration Studies	1	1	1	0	0
 Journal of Ethnopharmacology	1	1	1	0	0
@@ -2813,6 +2816,7 @@ Journal of Immunology Research	1	1	1	0	0
 Journal of Infection and Chemotherapy	1	1	1	0	0
 Journal of Information Processing	1	1	1	0	0
 Journal of Information Technology in Construction	2	1	2	0	0
+Journal of Inherited Metabolic Disease	1	1	1	0	0
 Journal of Insect Science	1	1	1	0	0
 Journal of Insects as Food and Feed	1	1	1	0	0
 Journal of Instrumentation	1	1	1	0	0

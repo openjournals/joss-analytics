@@ -1,343 +1,391 @@
 container.title	nbr_citations_of_joss_papers	nbr_cited_joss_papers	nbr_citing_papers	nbr_selfcitations_of_joss_papers	fraction_selfcitations
-bioRxiv	2328	252	2172	149	0.064
-The Journal of Open Source Software	331	216	254	113	0.341
-Monthly Notices of the Royal Astronomical Society	545	84	489	42	0.0771
-Scientific Reports	258	76	246	5	0.0194
-The Astrophysical Journal	580	76	524	104	0.179
-PLOS ONE	175	71	166	11	0.0629
-Nature Communications	229	58	217	13	0.0568
+bioRxiv	2543	264	2373	160	0.0629
+The Journal of Open Source Software	351	225	272	118	0.336
+Monthly Notices of the Royal Astronomical Society	593	88	531	46	0.0776
+Scientific Reports	292	83	278	5	0.0171
+The Astrophysical Journal	628	81	564	116	0.185
+PLOS ONE	196	73	186	11	0.0561
+Nature Communications	252	61	239	13	0.0516
 Astronomy & Astrophysics	241	48	219	14	0.0581
-Sensors	72	40	68	2	0.0278
-The Astronomical Journal	201	39	183	26	0.129
-Applied Sciences	53	37	49	1	0.0189
-Remote Sensing	72	36	72	3	0.0417
-Physical Review D	163	34	155	19	0.117
-NA	65	34	65	4	0.0615
-PLOS Computational Biology	60	33	51	8	0.133
-eLife	71	32	63	7	0.0986
-The Astrophysical Journal Supplement Series	82	31	62	30	0.366
-Bioinformatics	56	29	54	2	0.0357
+Applied Sciences	62	42	58	2	0.0323
+Sensors	78	41	74	2	0.0256
+The Astronomical Journal	217	41	196	31	0.143
+NA	76	38	76	7	0.0921
+Physical Review D	175	37	165	21	0.12
+Remote Sensing	77	37	77	3	0.039
+PLOS Computational Biology	70	36	60	8	0.114
+The Astrophysical Journal Supplement Series	90	35	69	34	0.378
+eLife	85	33	76	7	0.0824
+Bioinformatics	61	32	59	3	0.0492
+Geoscientific Model Development	38	31	29	13	0.342
+Nature	77	30	68	3	0.039
+PeerJ	49	30	45	1	0.0204
+Proceedings of the National Academy of Sciences	63	30	62	6	0.0952
+NeuroImage	48	29	41	2	0.0417
 SoftwareX	36	29	30	0	0
-Geoscientific Model Development	35	28	28	13	0.371
-Nature	71	27	62	2	0.0282
-BMC Bioinformatics	39	26	38	2	0.0513
-The Astrophysical Journal Letters	61	26	54	20	0.328
-NeuroImage	40	25	36	1	0.025
-Proceedings of the National Academy of Sciences	52	25	52	4	0.0769
-Science Advances	39	25	37	4	0.103
-Frontiers in Psychology	70	24	68	0	0
-PeerJ	40	24	37	1	0.025
+The Astrophysical Journal Letters	66	28	57	21	0.318
+BMC Bioinformatics	42	27	41	2	0.0476
+Frontiers in Psychology	74	26	72	0	0
+Science Advances	42	26	40	4	0.0952
+The Journal of Chemical Physics	49	26	47	8	0.163
+Sustainability	39	25	38	2	0.0513
+Science of The Total Environment	68	24	67	1	0.0147
 SSRN Electronic Journal	53	24	50	0	0
 Genome Biology	51	23	44	3	0.0588
-Science of The Total Environment	59	23	58	1	0.0169
-The Journal of Chemical Physics	45	23	44	7	0.156
-Physical Review Letters	33	22	31	6	0.182
-Sustainability	34	22	33	2	0.0588
-Journal of Physics: Conference Series	29	20	27	0	0
-Energies	60	19	58	1	0.0167
-Journal of Geophysical Research: Solid Earth	20	17	20	3	0.15
-Physical Review E	19	17	17	5	0.263
+Physical Review Letters	34	22	32	6	0.176
+Energies	66	20	64	1	0.0152
+iScience	35	20	30	2	0.0571
+Journal of Physics: Conference Series	31	20	29	0	0
+Communications Biology	49	19	42	2	0.0408
+Journal of Geophysical Research: Solid Earth	24	19	24	4	0.167
+Physical Review E	21	19	18	5	0.238
+Astronomy &amp; Astrophysics	35	18	30	4	0.114
+International Journal of Environmental Research and Public Health	45	18	44	3	0.0667
+Journal of Computational Physics	21	18	20	6	0.286
+Science	42	18	41	3	0.0714
+Water Resources Research	30	18	28	5	0.167
+Cancers	38	17	35	2	0.0526
+Cell	36	17	28	2	0.0556
+Nucleic Acids Research	36	17	36	5	0.139
+Physical Review B	37	17	35	4	0.108
 AIAA SCITECH 2022 Forum	32	16	29	0	0
-Cancers	34	16	32	2	0.0588
-International Journal of Environmental Research and Public Health	39	16	38	3	0.0769
-Nucleic Acids Research	31	16	31	5	0.161
-Physical Review B	34	16	32	4	0.118
-Behavior Research Methods	23	15	22	1	0.0435
-Cell	34	15	26	2	0.0588
-Cell Reports	35	15	35	1	0.0286
-Communications Biology	41	15	35	2	0.0488
-Entropy	26	15	25	3	0.115
+Behavior Research Methods	27	16	25	1	0.037
+BMC Genomics	31	16	31	0	0
+Cell Reports	39	16	37	1	0.0256
+Ecology and Evolution	50	16	48	1	0.02
+Entropy	28	16	27	3	0.107
+Frontiers in Immunology	45	16	40	0	0
+PeerJ Computer Science	18	16	11	0	0
+Royal Society Open Science	25	16	24	4	0.16
+Computers in Biology and Medicine	21	15	19	3	0.143
 Environmental Modelling & Software	33	15	31	1	0.0303
-Frontiers in Immunology	40	15	35	0	0
-Frontiers in Microbiology	41	15	41	0	0
+Expert Systems with Applications	20	15	20	1	0.05
+Frontiers in Microbiology	43	15	43	0	0
 Frontiers in Physiology	19	15	16	0	0
-PeerJ Computer Science	16	15	9	0	0
-Science	36	15	35	2	0.0556
-BMC Genomics	27	14	27	0	0
-Briefings in Bioinformatics	28	14	27	1	0.0357
-Ecology and Evolution	44	14	42	1	0.0227
-Expert Systems with Applications	18	14	18	1	0.0556
-F1000Research	36	14	35	6	0.167
-Frontiers in Marine Science	42	14	39	0	0
+Journal of Hydrology	23	15	22	0	0
+Molecular Ecology	26	15	25	0	0
+Physical Chemistry Chemical Physics	27	15	26	6	0.222
+Scientific Data	26	15	26	7	0.269
+Briefings in Bioinformatics	30	14	29	1	0.0333
+Current Biology	23	14	23	1	0.0435
+F1000Research	38	14	37	6	0.158
+Frontiers in Genetics	39	14	38	0	0
+Frontiers in Marine Science	47	14	44	0	0
+Frontiers in Plant Science	39	14	39	0	0
 Global Change Biology	28	14	26	1	0.0357
-Journal of Computational Physics	17	14	16	5	0.294
-Molecular Ecology	24	14	23	0	0
-Physics of Fluids	20	14	18	3	0.15
-Royal Society Open Science	23	14	22	4	0.174
-Water Resources Research	25	14	24	3	0.12
-Applied Energy	46	13	45	3	0.0652
-Current Biology	22	13	22	1	0.0455
-Ecological Indicators	22	13	20	0	0
-Frontiers in Genetics	35	13	34	0	0
+International Journal of Molecular Sciences	35	14	33	0	0
+Machine Learning: Science and Technology	18	14	13	1	0.0556
+Physical Review Research	16	14	15	0	0
+Physics of Fluids	23	14	21	3	0.13
+Applied Energy	47	13	46	3	0.0638
+Computer Physics Communications	17	13	14	1	0.0588
+Ecological Indicators	23	13	21	0	0
 Geophysical Research Letters	17	13	17	2	0.118
 GigaScience	16	13	15	2	0.125
-Journal of Hydrology	18	13	17	0	0
-Machine Learning: Science and Technology	15	13	11	1	0.0667
-Computers in Biology and Medicine	16	12	14	3	0.188
+ISPRS International Journal of Geo-Information	17	13	16	0	0
+Mathematics	16	13	15	0	0
+Microorganisms	28	13	27	0	0
+Computational and Structural Biotechnology Journal	18	12	18	0	0
+Data in Brief	16	12	14	4	0.25
 Environmental Research Letters	20	12	20	2	0.1
-Frontiers in Plant Science	34	12	34	0	0
-International Journal of Molecular Sciences	29	12	27	0	0
+Frontiers in Neuroscience	20	12	20	0	0
+Frontiers in Oncology	20	12	19	0	0
+Genes	25	12	25	0	0
 Journal of Medical Internet Research	16	12	16	0	0
-Mathematics	14	12	13	0	0
+Magnetic Resonance in Medicine	15	12	15	6	0.4
 Molecular Ecology Resources	15	12	15	0	0
-Physical Review Research	14	12	14	0	0
-Computational and Structural Biotechnology Journal	16	11	16	0	0
-Frontiers in Oncology	17	11	17	0	0
+Physical Review Materials	17	12	17	5	0.294
+SN Computer Science	12	12	10	0	0
+Water	30	12	30	3	0.1
+Biophysical Journal	13	11	13	0	0
+Electronics	14	11	14	0	0
+Frontiers in Bioengineering and Biotechnology	13	11	12	0	0
+Frontiers in Earth Science	15	11	15	0	0
+Geophysical Journal International	16	11	12	4	0.25
+Human Brain Mapping	14	11	12	0	0
 Hydrology and Earth System Sciences	15	11	10	4	0.267
-iScience	18	11	17	1	0.0556
-ISPRS International Journal of Geo-Information	15	11	14	0	0
-Journal of Animal Ecology	15	11	13	0	0
-Journal of Cosmology and Astroparticle Physics	45	11	44	0	0
+Journal of Animal Ecology	16	11	14	0	0
+Journal of Cosmology and Astroparticle Physics	48	11	47	0	0
 Journal of Fluid Mechanics	12	11	12	2	0.167
-Microorganisms	23	11	22	0	0
-Physical Chemistry Chemical Physics	20	11	20	3	0.15
-PLOS Genetics	17	11	17	2	0.118
-Scientific Data	19	11	19	4	0.211
-SN Computer Science	11	11	9	0	0
-Water	25	11	25	3	0.12
+Materials	11	11	11	1	0.0909
+Molecular Biology and Evolution	14	11	13	1	0.0714
+npj Computational Materials	20	11	19	8	0.4
+PLOS Genetics	19	11	19	2	0.105
+Research Notes of the AAS	11	11	10	5	0.455
 Agronomy	15	10	15	0	0
+Astronomy and Computing	13	10	12	2	0.154
 Atmosphere	13	10	13	1	0.0769
-Computer Graphics Forum	18	10	18	1	0.0556
-Data in Brief	14	10	13	2	0.143
-Ecological Modelling	12	10	12	0	0
-Electronics	12	10	12	0	0
+Cell Systems	13	10	10	0	0
+Computer Graphics Forum	19	10	19	1	0.0526
+Computers and Electronics in Agriculture	10	10	9	0	0
+Ecological Modelling	13	10	13	0	0
+Environment International	12	10	10	0	0
 Environmental Science & Technology	24	10	23	1	0.0417
-Frontiers in Bioengineering and Biotechnology	11	10	11	0	0
-Frontiers in Earth Science	14	10	14	0	0
-Frontiers in Ecology and Evolution	18	10	18	0	0
-Frontiers in Neuroscience	16	10	16	0	0
-Frontiers in Psychiatry	19	10	16	0	0
-Genes	22	10	22	0	0
+Frontiers in Ecology and Evolution	22	10	22	0	0
+Frontiers in Psychiatry	21	10	18	0	0
+Global Ecology and Biogeography	11	10	10	1	0.0909
 IFAC-PapersOnLine	15	10	15	0	0
-Journal of Chemical Theory and Computation	17	10	17	2	0.118
+Journal of Chemical Information and Modeling	19	10	19	2	0.105
+Journal of Chemical Theory and Computation	19	10	19	2	0.105
 Journal of Geophysical Research: Earth Surface	12	10	11	6	0.5
 Journal of Open Research Software	11	10	9	1	0.0909
 Landscape Ecology	12	10	11	0	0
-Magnetic Resonance in Medicine	13	10	13	5	0.385
-Materials	10	10	10	1	0.1
-Nature Human Behaviour	14	10	12	1	0.0714
-Neurocomputing	14	10	13	0	0
-npj Computational Materials	18	10	17	7	0.389
-Physical Review Materials	14	10	14	4	0.286
-Procedia Computer Science	15	10	15	0	0
+Methods in Ecology and Evolution	15	10	14	3	0.2
+Microbial Genomics	24	10	23	2	0.0833
+Nature Human Behaviour	15	10	13	1	0.0667
+Neurocomputing	16	10	15	0	0
+New Phytologist	17	10	17	0	0
+Procedia Computer Science	17	10	17	0	0
 Psychonomic Bulletin & Review	13	10	12	0	0
+Publications of the Astronomical Society of the Pacific	16	10	15	1	0.0625
+Symmetry	14	10	14	0	0
 The European Physical Journal C	13	10	12	1	0.0769
 The Journal of Physical Chemistry B	15	10	14	3	0.2
-The Journal of Physical Chemistry C	17	10	17	3	0.176
-Viruses	19	10	19	0	0
-Astronomy and Computing	12	9	11	2	0.167
-Biophysical Journal	11	9	11	0	0
-Cell Systems	11	9	9	0	0
+The Journal of Physical Chemistry C	18	10	18	3	0.167
+Viruses	23	10	23	0	0
+ACS Omega	12	9	11	0	0
+Affective Science	10	9	9	0	0
+Cerebral Cortex	14	9	12	0	0
 Chaos: An Interdisciplinary Journal of Nonlinear Science	12	9	12	2	0.167
+Chemistry of Materials	20	9	18	7	0.35
 Computational Materials Science	12	9	11	2	0.167
-Computer Physics Communications	13	9	13	0	0
-Computers and Electronics in Agriculture	9	9	8	0	0
 Developmental Cognitive Neuroscience	9	9	7	0	0
 Ecology Letters	12	9	12	1	0.0833
 Energy and Buildings	17	9	17	0	0
 EPJ Web of Conferences	13	9	13	0	0
-Geophysical Journal International	14	9	11	4	0.286
-Journal of Chemical Information and Modeling	18	9	18	2	0.111
-Journal of Computational and Graphical Statistics	10	9	10	0	0
-Microbial Genomics	21	9	21	2	0.0952
+Frontiers in Behavioral Neuroscience	13	9	11	0	0
+Journal of Advances in Modeling Earth Systems	13	9	9	7	0.538
+Journal of Computational and Graphical Statistics	12	9	12	0	0
+Journal of Experimental Biology	11	9	11	1	0.0909
+mBio	16	9	15	2	0.125
 Nature Biotechnology	28	9	27	3	0.107
 Nature Climate Change	9	9	9	0	0
-Patterns	12	9	10	0	0
-Remote Sensing of Environment	11	9	11	0	0
-Research Notes of the AAS	9	9	8	5	0.556
-Symmetry	12	9	12	0	0
-Additive Manufacturing	8	8	7	0	0
-Affective Science	9	8	8	0	0
-Animals	16	8	16	0	0
-Biological Conservation	13	8	12	0	0
-Chemistry of Materials	18	8	16	6	0.333
-Computer Methods in Applied Mechanics and Engineering	10	8	10	1	0.1
+Neural Computing and Applications	14	9	14	1	0.0714
+Patterns	13	9	11	0	0
+Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences	10	9	9	4	0.4
+Physical Review Fluids	9	9	9	3	0.333
+Plants	21	9	21	0	0
+Remote Sensing of Environment	12	9	12	0	0
+The Journal of Physical Chemistry Letters	12	9	11	3	0.25
+The Journal of the Acoustical Society of America	15	9	13	1	0.0667
+Additive Manufacturing	9	8	8	0	0
+Animals	17	8	17	0	0
+Biological Conservation	14	8	13	0	0
+BMC Public Health	12	8	9	0	0
+Computer Methods in Applied Mechanics and Engineering	13	8	13	1	0.0769
 Computers & Fluids	8	8	6	1	0.125
 Current Psychology	11	8	9	3	0.273
+Diagnostics	9	8	8	1	0.111
+Diversity and Distributions	9	8	9	0	0
 Earth Surface Dynamics	11	8	6	6	0.545
-Ecosphere	15	8	14	0	0
-Environment International	8	8	7	0	0
-Forests	18	8	18	0	0
-Frontiers in Behavioral Neuroscience	12	8	10	0	0
+Ecosphere	19	8	18	0	0
+Forests	20	8	19	0	0
+Frontiers in Human Neuroscience	10	8	10	0	0
 Frontiers in Neuroinformatics	8	8	7	0	0
-G3 Genes|Genomes|Genetics	16	8	16	1	0.0625
-Global Ecology and Biogeography	9	8	9	1	0.111
-Information	10	8	8	2	0.2
+G3 Genes|Genomes|Genetics	17	8	17	1	0.0588
+Information	11	8	9	2	0.182
 IOP Conference Series: Earth and Environmental Science	8	8	7	0	0
-Journal of Applied Ecology	12	8	12	0	0
+Journal of Applied Ecology	13	8	13	0	0
+Journal of Cleaner Production	10	8	10	1	0.1
+Journal of Clinical Medicine	12	8	12	0	0
 Journal of High Energy Physics	11	8	11	0	0
-mBio	10	8	9	2	0.2
-Metabolites	12	8	12	0	0
-Molecular Biology and Evolution	10	8	10	0	0
-mSystems	20	8	17	2	0.1
-Neural Computing and Applications	12	8	12	1	0.0833
-New Phytologist	15	8	15	0	0
-npj Digital Medicine	15	8	14	2	0.133
-Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences	9	8	8	4	0.444
+Land	11	8	11	1	0.0909
+Metabolites	14	8	14	0	0
+Microbiology Resource Announcements	13	8	13	0	0
+mSystems	22	8	19	2	0.0909
+Nature Methods	32	8	32	0	0
+npj Digital Medicine	16	8	15	2	0.125
 Philosophical Transactions of the Royal Society B: Biological Sciences	13	8	10	0	0
 Physical Review A	18	8	18	1	0.0556
-Physical Review Fluids	8	8	8	3	0.375
-Plants	18	8	18	0	0
+PLOS Biology	17	8	17	1	0.0588
+Proceedings of the Royal Society B: Biological Sciences	16	8	16	0	0
 Psychological Research	10	8	8	0	0
 Psychophysiology	9	8	6	4	0.444
-Publications of the Astronomical Society of the Pacific	13	8	12	1	0.0769
+Publications of the Astronomical Society of Australia	15	8	12	1	0.0667
 Software Impacts	8	8	6	1	0.125
-The Journal of Physical Chemistry Letters	11	8	10	3	0.273
-The Journal of the Acoustical Society of America	13	8	12	0	0
 The Planetary Science Journal	16	8	14	3	0.188
 ACS Applied Materials & Interfaces	8	7	8	1	0.125
 Analytical Chemistry	10	7	10	0	0
+Applied and Environmental Microbiology	14	7	14	0	0
+Applied Soft Computing	7	7	7	0	0
 Biological Psychology	7	7	5	0	0
+BMC Medical Research Methodology	8	7	8	1	0.125
 Cell Host & Microbe	8	7	7	0	0
-Cognition	8	7	7	0	0
+Cognition	9	7	8	0	0
 Computational Mechanics	7	7	5	3	0.429
 Computers & Chemical Engineering	9	7	9	0	0
 Computers & Geosciences	8	7	8	1	0.125
 Consciousness and Cognition	9	7	7	0	0
-Diagnostics	7	7	6	1	0.143
-Diversity and Distributions	8	7	8	0	0
+Ecological Applications	8	7	8	1	0.125
 Ecological Engineering	9	7	9	1	0.111
-Environmental Science and Pollution Research	8	7	8	0	0
+Environmental Science and Pollution Research	9	7	9	0	0
 European Journal of Neuroscience	7	7	7	2	0.286
 Forest Ecology and Management	27	7	26	0	0
 Frontiers in Artificial Intelligence	7	7	6	0	0
-Frontiers in Cellular and Infection Microbiology	11	7	11	0	0
-Frontiers in Human Neuroscience	7	7	7	0	0
-Frontiers in Neurology	10	7	9	0	0
-Frontiers in Veterinary Science	10	7	8	0	0
+Frontiers in Cellular and Infection Microbiology	12	7	12	0	0
+Frontiers in Neurology	11	7	10	0	0
+Frontiers in Veterinary Science	11	7	9	0	0
 Genome Medicine	11	7	10	0	0
 Geographical Analysis	8	7	6	2	0.25
-Journal of Advances in Modeling Earth Systems	9	7	7	5	0.556
-Journal of Clinical Medicine	10	7	10	0	0
+Hydrobiologia	9	7	8	1	0.111
+International Journal of Geographical Information Science	7	7	7	1	0.143
+Journal of Applied Physics	10	7	10	3	0.3
+Journal of Biomechanics	10	7	10	1	0.1
 Journal of Computational Chemistry	8	7	7	1	0.125
+Journal of Dairy Science	18	7	18	0	0
 Journal of Geophysical Research: Oceans	8	7	8	3	0.375
-Journal of Neural Engineering	7	7	7	0	0
+Journal of Neural Engineering	8	7	8	0	0
+Journal of Personalized Medicine	9	7	9	0	0
+Journal of The Royal Society Interface	7	7	7	2	0.286
 Medical Physics	11	7	11	0	0
 Methods	7	7	7	0	0
-Methods in Ecology and Evolution	11	7	11	1	0.0909
-Microbiology Resource Announcements	11	7	11	0	0
-Molecules	13	7	13	0	0
-Monthly Notices of the Royal Astronomical Society: Letters	10	7	10	2	0.2
+Molecules	15	7	15	0	0
+Monthly Notices of the Royal Astronomical Society: Letters	11	7	11	2	0.182
+Multimedia Tools and Applications	11	7	10	0	0
 Nature Astronomy	12	7	11	3	0.25
-Nature Methods	31	7	31	0	0
-Nature Neuroscience	12	7	10	1	0.0833
-PLOS Biology	15	7	15	1	0.0667
-PLOS Pathogens	9	7	8	3	0.333
-Proceedings of the Royal Society B: Biological Sciences	15	7	15	0	0
-Research in Astronomy and Astrophysics	8	7	4	0	0
+Nature Neuroscience	13	7	11	1	0.0769
+Nutrients	12	7	12	0	0
+PLOS Pathogens	10	7	9	3	0.3
+Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences	8	7	6	2	0.25
+Remote Sensing in Ecology and Conservation	8	7	7	1	0.125
+Renewable and Sustainable Energy Reviews	16	7	14	1	0.0625
+Research in Astronomy and Astrophysics	9	7	5	0	0
+SIAM Journal on Scientific Computing	8	7	8	0	0
+Technological Forecasting and Social Change	9	7	9	0	0
+The Journal of Physical Chemistry A	7	7	7	1	0.143
+The Journal of Wildlife Management	9	7	8	0	0
 Transportation Research Part D: Transport and Environment	8	7	8	0	0
 Wellcome Open Research	13	7	13	5	0.385
-ACS Omega	8	6	7	0	0
 Advances in Engineering Software	6	6	5	0	0
 Advances in Water Resources	8	6	8	1	0.125
 Aerospace Science and Technology	8	6	8	1	0.125
 AIAA AVIATION 2021 FORUM	9	6	9	0	0
 AIAA Scitech 2021 Forum	14	6	14	0	0
 American Journal of Botany	7	6	6	0	0
-Applied and Environmental Microbiology	12	6	12	0	0
-Applied Soft Computing	6	6	6	0	0
+Behavioral Ecology	10	6	10	0	0
+Behavioural Brain Research	8	6	8	0	0
+Biogeosciences	7	6	6	0	0
 Biological Journal of the Linnean Society	6	6	6	0	0
-BMC Biology	10	6	10	0	0
+BMC Biology	11	6	11	0	0
 BMC Medical Informatics and Decision Making	6	6	6	0	0
-BMC Medical Research Methodology	7	6	7	1	0.143
 BMC Medicine	6	6	6	0	0
+BMC Research Notes	6	6	6	0	0
+Brain Structure and Function	6	6	3	3	0.5
+Building and Environment	13	6	13	0	0
 Classical and Quantum Gravity	6	6	6	1	0.167
 Cognition and Emotion	6	6	5	0	0
-Computational Statistics	6	6	6	0	0
+Computational Statistics	7	6	7	1	0.143
 Computer Methods in Biomechanics and Biomedical Engineering	13	6	12	3	0.231
 Computers in Human Behavior	9	6	8	0	0
 Concurrency and Computation: Practice and Experience	6	6	6	2	0.333
-Ecological Applications	6	6	6	1	0.167
+Diversity	10	6	10	0	0
+Earth's Future	6	6	5	0	0
 Ecological Monographs	8	6	7	0	0
-Environmental Microbiology	11	6	11	0	0
-Environmental Toxicology and Chemistry	11	6	10	1	0.0909
+Energy	14	6	12	1	0.0714
+Environmental Microbiology	12	6	12	0	0
+Environmental Pollution	11	6	11	0	0
+Environmental Toxicology and Chemistry	14	6	12	1	0.0714
 Fire	6	6	6	0	0
-Freshwater Biology	11	6	11	0	0
+Freshwater Biology	12	6	12	0	0
+Frontiers in Cardiovascular Medicine	7	6	7	0	0
 Frontiers in Cell and Developmental Biology	8	6	8	0	0
+Frontiers in Digital Health	8	6	7	0	0
 Frontiers in Education	10	6	9	0	0
-Frontiers in Medicine	8	6	8	0	0
+Frontiers in Forests and Global Change	11	6	11	0	0
+Frontiers in Medicine	10	6	10	0	0
+Frontiers in Public Health	7	6	6	0	0
 Frontiers in Sustainable Food Systems	7	6	6	0	0
-Genomics	7	6	7	0	0
-Human Brain Mapping	7	6	7	0	0
+Genomics	8	6	8	0	0
 Industrial & Engineering Chemistry Research	7	6	6	1	0.143
-Journal of Biogeography	14	6	12	0	0
-Journal of Biomechanics	9	6	9	0	0
+International Journal of Solids and Structures	6	6	6	1	0.167
+JMIR mHealth and uHealth	8	6	8	3	0.375
+Journal of Biogeography	15	6	13	0	0
 Journal of Biomedical Informatics	6	6	6	0	0
-Journal of Cleaner Production	8	6	8	0	0
-Journal of Experimental Biology	8	6	8	1	0.125
+Journal of Experimental Social Psychology	7	6	6	0	0
 Journal of Marine Science and Engineering	7	6	7	1	0.143
-Journal of Materials Chemistry A	13	6	11	8	0.615
-Journal of Personalized Medicine	8	6	8	0	0
-Journal of The Royal Society Interface	6	6	6	2	0.333
-Land	9	6	9	1	0.111
-mSphere	13	6	12	3	0.231
+Journal of Materials Chemistry A	14	6	12	8	0.571
+Journal of Molecular Biology	6	6	6	0	0
+Journal of Vision	8	6	8	0	0
+Marine Ecology Progress Series	13	6	12	0	0
+Marine Pollution Bulletin	11	6	10	0	0
+mSphere	14	6	13	3	0.214
 Nature Computational Science	8	6	8	0	0
 Neuron	6	6	6	1	0.167
 Neuropsychologia	11	6	9	0	0
-Nutrients	11	6	11	0	0
-Oecologia	14	6	13	0	0
+Oecologia	15	6	14	0	0
+Oikos	13	6	13	2	0.154
+Personality and Social Psychology Bulletin	7	6	6	0	0
 Physica A: Statistical Mechanics and its Applications	6	6	6	0	0
+Physical Review X	6	6	6	2	0.333
 Political Science Research and Methods	8	6	8	0	0
-Preventive Veterinary Medicine	8	6	8	0	0
+Preventive Veterinary Medicine	9	6	9	0	0
 Proceedings of the VLDB Endowment	7	6	6	0	0
-Publications of the Astronomical Society of Australia	11	6	9	0	0
+Publications of the Astronomical Society of Japan	6	6	6	0	0
 Reference Module in Earth Systems and Environmental Sciences	7	6	4	0	0
-Renewable and Sustainable Energy Reviews	12	6	11	1	0.0833
+Resources, Conservation and Recycling	8	6	8	0	0
 Sleep	7	6	7	1	0.143
 Statistics and Computing	6	6	3	3	0.5
+Statistics in Medicine	6	6	6	2	0.333
 Systematic Biology	8	6	8	0	0
-The Journal of Physical Chemistry A	6	6	6	1	0.167
-The Journal of Wildlife Management	8	6	7	0	0
-Translational Psychiatry	7	6	7	1	0.143
+The Journal of Supercomputing	7	6	7	1	0.143
+Translational Psychiatry	8	6	8	1	0.125
 Transportation Research Part C: Emerging Technologies	7	6	6	0	0
 Vaccines	12	6	12	0	0
 Accident Analysis & Prevention	6	5	5	0	0
+ACM Transactions on Software Engineering and Methodology	7	5	7	1	0.143
+Acta Materialia	5	5	5	0	0
 Acta Psychologica	7	5	7	0	0
 Advanced Engineering Informatics	5	5	5	0	0
 Advances in Computational Intelligence,Lecture Notes in Computer Science	5	5	5	0	0
+Aerospace	7	5	6	0	0
 Algorithms	5	5	5	1	0.2
 Analytical and Bioanalytical Chemistry	9	5	9	0	0
+Animal Behaviour	9	5	9	0	0
 Applied Network Science	5	5	5	0	0
 Applied Physics Letters	5	5	5	1	0.2
-Astronomy &amp; Astrophysics	6	5	5	2	0.333
-Behavioral Ecology	8	5	8	0	0
 Behavioral Ecology and Sociobiology	6	5	6	0	0
-Behavioural Brain Research	7	5	7	0	0
+Behaviour Research and Therapy	5	5	5	0	0
 Biodiversity and Conservation	7	5	7	0	0
-BMC Public Health	7	5	6	0	0
+Biology Open	7	5	7	1	0.143
 BMJ Open	8	5	7	0	0
-Cerebral Cortex	9	5	8	0	0
+Cells	8	5	8	0	0
+Chemical Reviews	5	5	4	0	0
 Communications in Computer and Information Science,Machine Learning and Principles and Practice of Knowledge Discovery in Databases	8	5	6	0	0
 Communications in Nonlinear Science and Numerical Simulation	7	5	7	2	0.286
+Computers, Environment and Urban Systems	6	5	6	0	0
+Conservation Science and Practice	6	5	6	0	0
 Cortex	9	5	9	1	0.111
 CPT: Pharmacometrics & Systems Pharmacology	7	5	7	0	0
+Current Zoology	5	5	5	0	0
 Data Science	5	5	4	0	0
-Diversity	9	5	9	0	0
 Ecography	6	5	5	0	0
-Energy	11	5	10	0	0
+Education Sciences	5	5	5	0	0
 Energy & Environmental Science	5	5	5	0	0
 Energy Informatics	6	5	4	0	0
-Frontiers in Cardiovascular Medicine	6	5	6	0	0
-Frontiers in Forests and Global Change	10	5	10	0	0
+Energy Policy	5	5	5	0	0
+Environmental Research	9	5	9	0	0
+Food Quality and Preference	5	5	4	0	0
+Frontiers in Molecular Biosciences	5	5	5	0	0
+Frontiers in Pharmacology	7	5	7	0	0
 Frontiers in Physics	5	5	4	0	0
-Frontiers in Public Health	5	5	4	0	0
-Frontiers in Water	7	5	7	0	0
+Frontiers in Water	8	5	8	0	0
 Geochemistry, Geophysics, Geosystems	5	5	5	0	0
 GEOPHYSICS	6	5	6	0	0
 Global Ecology and Conservation	11	5	11	0	0
 Global Environmental Change	6	5	6	0	0
-Hydrobiologia	6	5	6	1	0.167
+Hydrological Processes	10	5	10	0	0
 IFIP Advances in Information and Communication Technology,Artificial Intelligence Applications and Innovations	5	5	5	0	0
+International Journal for Numerical Methods in Engineering	5	5	5	2	0.4
+International Journal for Numerical Methods in Fluids	5	5	4	2	0.4
 International Journal of Remote Sensing	7	5	7	0	0
-International Journal of Solids and Structures	5	5	5	1	0.2
 IOP Conference Series: Materials Science and Engineering	7	5	7	0	0
-JMIR mHealth and uHealth	7	5	7	2	0.286
-Journal of Applied Physics	6	5	6	2	0.333
 Journal of Big Data	7	5	7	0	0
 Journal of Child Psychology and Psychiatry	5	5	4	0	0
+Journal of Clinical Microbiology	5	5	5	0	0
 Journal of Computational Social Science	5	5	5	2	0.4
+Journal of Ecology	6	5	5	0	0
 Journal of Environmental Management	6	5	6	0	0
-Journal of Experimental Social Psychology	5	5	4	0	0
+Journal of Experimental Botany	5	5	4	0	0
 Journal of Fish Biology	6	5	6	0	0
 Journal of Geographical Systems	5	5	4	1	0.2
 Journal of Materials Chemistry C	9	5	7	6	0.667
@@ -345,71 +393,81 @@ Journal of Neuroscience Methods	5	5	5	0	0
 Journal of Proteome Research	6	5	6	1	0.167
 Journal of Psychiatric Research	8	5	7	0	0
 Journal of Sleep Research	7	5	7	1	0.143
-Journal of Speech, Language, and Hearing Research	9	5	9	0	0
+Journal of Speech, Language, and Hearing Research	11	5	11	0	0
+Journal of Statistical Mechanics: Theory and Experiment	5	5	4	0	0
 Journal of Systems and Software	5	5	5	1	0.2
-Journal of The Electrochemical Society	11	5	11	4	0.364
+Journal of The Electrochemical Society	12	5	12	4	0.333
 Journal of Theoretical Biology	5	5	5	0	0
+Languages	5	5	5	0	0
 Life	5	5	5	0	0
-Marine Ecology Progress Series	11	5	10	0	0
-Marine Pollution Bulletin	9	5	9	0	0
-Molecular Phylogenetics and Evolution	8	5	8	0	0
+Limnology and Oceanography	10	5	10	0	0
+Microscopy and Microanalysis	9	5	9	1	0.111
+Modelling and Simulation in Materials Science and Engineering	5	5	5	0	0
+Molecular Oncology	5	5	5	0	0
+Molecular Phylogenetics and Evolution	9	5	9	0	0
+Molecular Physics	5	5	5	1	0.2
 Molecular Systems Biology	9	5	9	0	0
-NAR Genomics and Bioinformatics	9	5	9	0	0
+NAR Genomics and Bioinformatics	11	5	11	0	0
 Nature Ecology & Evolution	6	5	6	1	0.167
 Nature Microbiology	5	5	5	0	0
 NeuroImage: Clinical	5	5	5	1	0.2
-Nonlinear Dynamics	5	5	5	0	0
+Neuroinformatics	5	5	5	0	0
+New Journal of Physics	7	5	7	1	0.143
+Nonlinear Dynamics	6	5	6	0	0
 npj Systems Biology and Applications	5	5	5	0	0
-Physical Review X	5	5	5	1	0.2
+Open Research Europe	9	5	7	2	0.222
+Optics Letters	8	5	8	1	0.125
+Physics of Plasmas	7	5	7	2	0.286
 Proceedings of the ACM on Human-Computer Interaction	6	5	6	0	0
 Proceedings of the Genetic and Evolutionary Computation Conference Companion	5	5	4	0	0
 Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis	6	5	6	0	0
-Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences	6	5	5	2	0.333
 Processes	6	5	6	0	0
 Progress in Oceanography	7	5	7	0	0
-Publications of the Astronomical Society of Japan	5	5	5	0	0
-Remote Sensing in Ecology and Conservation	6	5	5	1	0.167
-Renewable Energy	12	5	12	0	0
+Renewable Energy	14	5	14	0	0
 Review of Scientific Instruments	6	5	6	1	0.167
-SIAM Journal on Scientific Computing	6	5	6	0	0
 Soft Matter	6	5	6	1	0.167
-Solar Physics	6	5	6	2	0.333
-Statistics in Medicine	5	5	5	2	0.4
+Solar Physics	7	5	7	2	0.286
+Structural and Multidisciplinary Optimization	13	5	13	1	0.0769
 Sustainable Cities and Society	8	5	8	0	0
-Technological Forecasting and Social Change	7	5	7	0	0
-The Journal of Supercomputing	6	5	6	1	0.167
 The Plant Journal	6	5	6	0	0
+Transportation Research Interdisciplinary Perspectives	5	5	5	0	0
+Veterinary Record	6	5	5	0	0
+Virus Evolution	6	5	6	0	0
 Water Research	8	5	8	1	0.125
+27th International Conference on Intelligent User Interfaces	5	4	4	0	0
+ACM Computing Surveys	4	4	4	0	0
 ACM Transactions on Graphics	9	4	9	0	0
 ACS Applied Energy Materials	6	4	5	3	0.5
+ACS Catalysis	4	4	4	1	0.25
 Acta Astronautica	5	4	4	0	0
-Acta Materialia	4	4	4	0	0
 Acta Neuropathologica	9	4	7	0	0
 Addiction	5	4	5	0	0
 Advanced Energy Materials	4	4	4	1	0.25
+Advanced Materials	4	4	4	0	0
 Advanced Science	4	4	4	0	0
-Aerospace	6	4	5	0	0
+Advances in Space Research	4	4	4	0	0
 Agricultural and Forest Meteorology	7	4	6	0	0
 AIAA Journal	6	4	6	2	0.333
-Animal Behaviour	7	4	7	0	0
+Ambio	4	4	4	0	0
 Annals of Botany	5	4	5	0	0
+Annals of Operations Research	4	4	4	0	0
 Applied Geography	4	4	4	1	0.25
+Applied Intelligence	4	4	4	0	0
+Atmospheric Chemistry and Physics	6	4	6	0	0
 Atmospheric Measurement Techniques	4	4	4	0	0
 Attention, Perception, & Psychophysics	6	4	6	1	0.167
+Autism Research	4	4	4	0	0
 Automation in Construction	6	4	6	0	0
-Behaviour Research and Therapy	4	4	4	0	0
 Biogeochemistry	4	4	4	0	0
-Biogeosciences	5	4	5	0	0
-Biomolecules	8	4	8	2	0.25
+Biomolecules	9	4	9	2	0.222
 BMC Cancer	6	4	6	0	0
-BMC Research Notes	4	4	4	0	0
 Brain	4	4	3	0	0
-Brain Structure and Function	4	4	2	3	0.75
 British Politics	4	4	1	0	0
-Building and Environment	11	4	11	0	0
+Canadian Journal of Fisheries and Aquatic Sciences	7	4	7	0	0
 Carbon	4	4	4	0	0
 Cell Reports Medicine	6	4	6	1	0.167
-Chemical Reviews	4	4	3	0	0
+Cell Reports Methods	5	4	5	0	0
+Cell Stem Cell	8	4	8	1	0.125
 Chemical Science	5	4	5	1	0.2
 Clinical Biomechanics	5	4	5	0	0
 Clinical Infectious Diseases	6	4	6	0	0
@@ -422,217 +480,228 @@ Computational Methods in Systems Biology,Lecture Notes in Computer Science	4	4	4
 Computational Science – ICCS 2021,Lecture Notes in Computer Science	4	4	4	0	0
 Computational Statistics & Data Analysis	5	4	5	0	0
 Computer Methods and Programs in Biomedicine	4	4	4	0	0
-Computers, Environment and Urban Systems	5	4	5	0	0
 Conservation Biology	4	4	4	0	0
 Crop Science	8	4	8	0	0
+Current Protocols	4	4	4	0	0
 Development	12	4	11	0	0
 Developmental Cell	6	4	6	0	0
+Drug and Alcohol Dependence	4	4	4	0	0
 Earth Surface Processes and Landforms	4	4	4	0	0
-Earth's Future	4	4	3	0	0
 EBioMedicine	6	4	6	1	0.167
 Ecohydrology	5	4	5	1	0.2
-Ecological Solutions and Evidence	5	4	4	0	0
-Ecology	7	4	7	1	0.143
-Education Sciences	4	4	4	0	0
+Ecological Solutions and Evidence	6	4	5	0	0
+Ecology	9	4	9	1	0.111
 Electoral Studies	5	4	5	0	0
-Energy Policy	4	4	4	0	0
+Electrochimica Acta	5	4	5	0	0
+EMBO Molecular Medicine	4	4	4	1	0.25
+Empirical Software Engineering	4	4	4	0	0
+Energy Conversion and Management	4	4	4	1	0.25
 Engineering Applications of Artificial Intelligence	4	4	4	0	0
-European Journal of Personality	4	4	3	0	0
+Environmental Monitoring and Assessment	4	4	4	1	0.25
+European Journal of Personality	5	4	4	0	0
+European Journal of Political Economy	7	4	4	0	0
+Eurosurveillance	5	4	5	0	0
+Evolution	4	4	4	0	0
 Evolution Letters	7	4	7	0	0
 Experimental Astronomy	5	4	5	1	0.2
 FEMS Microbiology Ecology	5	4	5	0	0
-Food Quality and Preference	4	4	3	0	0
-Foods	5	4	5	0	0
+Foods	6	4	6	0	0
 Frontiers in Aging Neuroscience	5	4	5	0	0
 Frontiers in Applied Mathematics and Statistics	4	4	3	0	0
 Frontiers in Chemistry	4	4	4	0	0
 Frontiers in Computational Neuroscience	4	4	4	0	0
 Frontiers in Computer Science	4	4	3	0	0
 Frontiers in Endocrinology	5	4	5	0	0
-Frontiers in Molecular Biosciences	4	4	4	0	0
 Frontiers in Molecular Neuroscience	4	4	2	0	0
 Frontiers in Robotics and AI	8	4	8	0	0
 Frontiers in Systems Neuroscience	4	4	4	0	0
+Fuel	5	4	5	0	0
 Functional Ecology	5	4	5	0	0
 GCB Bioenergy	4	4	4	0	0
 Genetics	5	4	5	2	0.4
+Genome Biology and Evolution	6	4	5	0	0
 Geomorphology	4	4	4	0	0
 Heredity	4	4	4	0	0
-Hormones and Behavior	9	4	9	0	0
-Hydrological Processes	6	4	6	0	0
+Hormones and Behavior	10	4	10	0	0
 Hydrology	4	4	4	1	0.25
 Icarus	6	4	6	0	0
 ICES Journal of Marine Science	10	4	9	0	0
-Infection, Genetics and Evolution	4	4	4	0	0
+Infection, Genetics and Evolution	5	4	5	0	0
 Information Processing & Management	6	4	5	0	0
 Information Sciences	7	4	7	0	0
 International Journal for Numerical Methods in Biomedical Engineering	4	4	4	1	0.25
-International Journal for Numerical Methods in Engineering	4	4	4	1	0.25
 International Journal of Applied Earth Observation and Geoinformation	4	4	4	0	0
 International Journal of Data Science and Analytics	4	4	4	0	0
-International Journal of Geographical Information Science	4	4	4	0	0
 International Journal of Pharmaceutics	4	4	4	0	0
-JAWRA Journal of the American Water Resources Association	4	4	4	1	0.25
+JAWRA Journal of the American Water Resources Association	5	4	5	1	0.2
 JMIR Medical Informatics	4	4	4	0	0
-JMIR Public Health and Surveillance	6	4	6	0	0
+JMIR Public Health and Surveillance	8	4	8	0	0
 Journal of Allergy and Clinical Immunology	5	4	5	0	0
 Journal of Anatomy	4	4	4	1	0.25
 Journal of Biomechanical Engineering	5	4	5	0	0
-Journal of Clinical Microbiology	4	4	4	0	0
-Journal of Dairy Science	13	4	13	0	0
-Journal of Ecology	5	4	4	0	0
-Journal of Experimental Botany	4	4	3	0	0
+Journal of Cognitive Neuroscience	4	4	4	0	0
+Journal of Geophysical Research: Planets	4	4	4	1	0.25
 Journal of Health Psychology	4	4	2	0	0
 Journal of Intelligent & Fuzzy Systems	4	4	4	0	0
-Journal of Molecular Biology	4	4	4	0	0
 Journal of NeuroEngineering and Rehabilitation	4	4	4	0	0
 Journal of Neurophysiology	5	4	4	1	0.2
 Journal of Petroleum Science and Engineering	6	4	6	0	0
 Journal of Physics: Condensed Matter	4	4	4	1	0.25
-Journal of Sports Sciences	6	4	6	0	0
-Journal of Statistical Mechanics: Theory and Experiment	4	4	3	0	0
+Journal of Sports Sciences	7	4	7	0	0
 Journal of the American Chemical Society	5	4	5	2	0.4
 Journal of the American Society of Nephrology	5	4	5	0	0
+Journal of the American Statistical Association	5	4	5	0	0
 Journal of the Mechanics and Physics of Solids	5	4	5	0	0
 Journal of Transport Geography	7	4	6	0	0
-Journal of Vision	5	4	5	0	0
+Journal of Volcanology and Geothermal Research	4	4	4	0	0
 Journal of Youth and Adolescence	6	4	5	0	0
 JuliaCon Proceedings	5	4	3	0	0
 Landscape and Urban Planning	4	4	4	0	0
-Languages	4	4	4	0	0
 Lecture Notes in Computer Science,Computational Science – ICCS 2020	5	4	5	0	0
-Limnology and Oceanography	8	4	8	0	0
+Machine Learning	8	4	8	1	0.125
 Medical Image Analysis	4	4	4	1	0.25
 Microbiology Spectrum	7	4	7	0	0
-Microbiome	8	4	7	0	0
-Microscopy and Microanalysis	8	4	8	1	0.125
+Microbiome	9	4	8	0	0
+Mindfulness	4	4	4	0	0
 Minerals	4	4	4	0	0
-Modelling and Simulation in Materials Science and Engineering	4	4	4	0	0
-Molecular Physics	4	4	4	1	0.25
-Multimedia Tools and Applications	8	4	8	0	0
+Molecular Cell	11	4	11	0	0
+Molecular Psychiatry	4	4	4	0	0
 Nature Aging	6	4	5	0	0
 Nature Protocols	12	4	10	0	0
 Neural Networks	5	4	5	0	0
 Neuroimage: Reports	4	4	4	0	0
 Neuroscience	4	4	4	0	0
 Neuroscience & Biobehavioral Reviews	5	4	5	0	0
-New Journal of Physics	5	4	5	1	0.2
 New Media & Society	6	4	6	0	0
-Oikos	11	4	11	1	0.0909
-Open Research Europe	8	4	6	2	0.25
+npj Quantum Information	5	4	4	0	0
 Optics Express	12	4	12	2	0.167
 Parallel Computing	6	4	6	2	0.333
 Pattern Recognition. ICPR International Workshops and Challenges,Lecture Notes in Computer Science	8	4	8	0	0
-Pest Management Science	5	4	5	0	0
+Pest Management Science	6	4	6	0	0
 Pharmaceutics	5	4	5	0	0
-Physical Review Applied	4	4	4	0	0
+Physical Review Applied	5	4	5	0	0
 Physics in Medicine & Biology	5	4	5	2	0.4
-Physics of Plasmas	5	4	5	1	0.2
 PLOS Neglected Tropical Diseases	5	4	5	0	0
 Political Research Exchange	4	4	3	0	0
-Procedia CIRP	7	4	7	0	0
+Procedia CIRP	10	4	10	0	0
 Proceedings of the Genetic and Evolutionary Computation Conference	4	4	3	0	0
 Proceedings of the Human Factors and Ergonomics Society Annual Meeting	4	4	4	0	0
 Protein Science	5	4	5	0	0
 PRX Quantum	7	4	7	1	0.143
+Psychological Science	4	4	3	0	0
 Quantum	4	4	3	1	0.25
 Quantum Science and Technology	5	4	5	1	0.2
 Quaternary Science Reviews	4	4	4	0	0
-Regional Environmental Change	4	4	4	1	0.25
-Resources, Conservation and Recycling	5	4	5	0	0
+Reaction Chemistry &amp; Engineering	4	4	1	0	0
+Regional Environmental Change	5	4	5	1	0.2
 Reviews in Fish Biology and Fisheries	4	4	4	0	0
 Risk Analysis	4	4	4	0	0
-Science Translational Medicine	8	4	8	2	0.25
-Scientometrics	5	4	5	0	0
+Science Translational Medicine	9	4	9	2	0.222
+Scientometrics	6	4	6	0	0
+SciPost Physics	6	4	6	0	0
+SN Applied Sciences	4	4	4	2	0.5
 Social Science & Medicine	4	4	4	0	0
+Soil Biology and Biochemistry	7	4	7	0	0
 STAR Protocols	6	4	6	0	0
+Stochastic Environmental Research and Risk Assessment	4	4	4	0	0
+The American Naturalist	4	4	2	0	0
 The International Journal of Advanced Manufacturing Technology	4	4	4	0	0
+The International Journal of Life Cycle Assessment	12	4	11	1	0.0833
 Theoretical and Applied Genetics	8	4	8	0	0
-Transboundary and Emerging Diseases	5	4	5	0	0
-Transportation Research Interdisciplinary Perspectives	4	4	4	0	0
-Virus Evolution	4	4	4	0	0
+Transboundary and Emerging Diseases	6	4	6	0	0
+Universe	4	4	4	2	0.5
+Weather and Climate Extremes	4	4	4	0	0
+Wind Energy Science	5	4	5	2	0.4
+WIREs Computational Molecular Science	4	4	4	0	0
 WIREs Mechanisms of Disease	4	4	2	1	0.25
 2021 Computing in Cardiology (CinC)	3	3	3	0	0
 Accounts of Chemical Research	3	3	2	0	0
-ACM Computing Surveys	3	3	3	0	0
-ACM Transactions on Knowledge Discovery from Data	4	3	4	0	0
+ACM Transactions on Knowledge Discovery from Data	6	3	5	0	0
 ACM Transactions on Mathematical Software	5	3	5	1	0.2
-ACM Transactions on Software Engineering and Methodology	4	3	4	1	0.25
-ACS Catalysis	3	3	3	1	0.333
+ACS Nano	3	3	3	2	0.667
 ACS Synthetic Biology	3	3	3	1	0.333
 Advanced Functional Materials	3	3	3	0	0
-Advanced Materials	3	3	3	0	0
 Advanced Materials Interfaces	3	3	2	0	0
 Advanced Theory and Simulations	3	3	3	0	0
 Advances in Geosciences	3	3	3	0	0
 Advances in Intelligent Systems and Computing,International Conference on Innovative Computing and Communications	3	3	3	0	0
-Advances in Space Research	3	3	3	0	0
 AERA Open	3	3	2	0	0
 Aging	3	3	3	0	0
 Agricultural Systems	4	3	4	0	0
+Agricultural Water Management	3	3	3	0	0
+Agriculture	5	3	5	0	0
 Agronomy Journal	6	3	6	0	0
 AIAA AVIATION 2020 FORUM	3	3	3	0	0
 AIAA Scitech 2020 Forum	3	3	3	0	0
 Alpine Botany	3	3	3	0	0
 Alzheimer's Research & Therapy	3	3	3	0	0
-Ambio	3	3	3	0	0
 American Journal of Evaluation	4	3	2	0	0
 American Journal of Political Science	4	3	4	0	0
 Animal Cognition	5	3	3	0	0
 Annals of Clinical and Translational Neurology	5	3	5	0	0
 Annals of Nuclear Energy	3	3	3	0	0
-Appetite	3	3	2	0	0
+Appetite	4	3	3	0	0
 Applied Data Science in Tourism,Tourism on the Verge	3	3	3	0	0
+Applied Ergonomics	4	3	4	1	0.25
 Applied Psycholinguistics	3	3	3	0	0
+Applied Surface Science	3	3	3	0	0
 Aquaculture	5	3	5	0	0
 Arabian Journal for Science and Engineering	3	3	3	0	0
 Artificial Intelligence Review	4	3	3	0	0
-Atmospheric Chemistry and Physics	4	3	4	0	0
 Atmospheric Environment	3	3	3	0	0
+Atmospheric Pollution Research	3	3	3	0	0
 Biological Invasions	5	3	5	0	0
+Biological Psychiatry Global Open Science	3	3	3	0	0
 Biology	5	3	5	1	0.2
-Biology Open	4	3	4	1	0.25
 Biomedical Optics Express	3	3	3	0	0
 Biomedical Signal Processing and Control	5	3	4	0	0
+Biomedicines	3	3	3	0	0
+Biometrics	3	3	3	2	0.667
+Biotropica	3	3	3	0	0
+BMC Medical Genomics	3	3	3	0	0
 Botanical Journal of the Linnean Society	3	3	3	0	0
 Brain Communications	3	3	3	0	0
-Brain, Behavior, and Immunity	3	3	3	0	0
+Brain Sciences	4	3	4	0	0
+Brain, Behavior, and Immunity	5	3	5	0	0
 British Journal of Anaesthesia	3	3	3	0	0
 British Journal of Psychology	3	3	3	0	0
 Buildings	3	3	3	0	0
-Canadian Journal of Fisheries and Aquatic Sciences	5	3	5	0	0
 Canadian Journal of Zoology	4	3	4	0	0
 Cancer Research	4	3	4	0	0
 Cell Death & Disease	6	3	6	0	0
-Cell Reports Methods	4	3	4	0	0
-Cell Stem Cell	7	3	7	1	0.143
-Cells	5	3	5	0	0
+Cell Metabolism	3	3	3	0	0
 Chemical Engineering Science	3	3	3	0	0
 Climate Dynamics	3	3	3	0	0
+Climate of the Past	4	3	3	0	0
 Climatic Change	3	3	3	0	0
 Clinical and Translational Science	3	3	3	0	0
 Clinical Chemistry	3	3	3	0	0
 Clinical Epigenetics	3	3	2	0	0
 Clinical Microbiology and Infection	4	3	4	0	0
+Cognitive Research: Principles and Implications	4	3	3	0	0
 Communications in Computer and Information Science,Data Mining	3	3	3	0	0
 Communications Medicine	3	3	3	0	0
 Communications on Applied Mathematics and Computation	3	3	1	2	0.667
+Communications Physics	3	3	3	0	0
 Companion Proceedings of the Web Conference 2021	3	3	3	0	0
 Composites Part B: Engineering	3	3	3	0	0
 Computational and Mathematical Methods in Medicine	3	3	3	0	0
+Computational Economics	3	3	3	0	0
 Computational Geosciences	3	3	3	0	0
 Computer Vision – ECCV 2020,Lecture Notes in Computer Science	4	3	4	0	0
 Computers & Education	3	3	3	0	0
 Computers & Operations Research	3	3	3	0	0
 Computers & Structures	3	3	3	0	0
 Computers and Geotechnics	3	3	3	0	0
-Conservation Science and Practice	3	3	3	0	0
+Computing and Software for Big Science	3	3	3	0	0
+Conservation Physiology	3	3	3	0	0
 Current Landscape Ecology Reports	3	3	1	0	0
 Current Opinion in Structural Biology	3	3	2	0	0
-Current Protocols	3	3	3	0	0
-Current Zoology	3	3	3	0	0
-Cytometry Part A	7	3	7	0	0
+Cytometry Part A	8	3	8	0	0
+Development and Psychopathology	4	3	3	0	0
+Developmental Science	3	3	3	0	0
 Digital Journalism	3	3	3	1	0.333
+Digital Scholarship in the Humanities	4	3	4	0	0
 Discovery Science,Lecture Notes in Computer Science	6	3	6	0	0
 Drugs: Education, Prevention and Policy	3	3	2	0	0
 E3S Web of Conferences	5	3	5	0	0
@@ -643,152 +712,178 @@ ECML PKDD 2020 Workshops,Communications in Computer and Information Science	3	3	
 Ecological Informatics	5	3	5	0	0
 Ecosystem Services	3	3	3	0	0
 Educational Psychology	3	3	3	0	0
-Electrochimica Acta	3	3	3	0	0
-EMBO Molecular Medicine	3	3	3	1	0.333
-Empirical Software Engineering	3	3	3	0	0
-Energy Conversion and Management	3	3	3	1	0.333
+Engineering Fracture Mechanics	3	3	3	0	0
 Engineering Proceedings	3	3	3	0	0
 Entomologia Experimentalis et Applicata	3	3	3	0	0
-Environmental Pollution	7	3	7	0	0
-Environmental Research	5	3	5	0	0
-European Journal of Applied Physiology	3	3	2	0	0
+European Journal of Agronomy	3	3	2	0	0
+European Journal of Applied Physiology	4	3	3	0	0
+European Journal of Forest Research	4	3	3	0	0
 European Journal of Immunology	6	3	6	0	0
 European Journal of Operational Research	3	3	3	0	0
 European Radiology	4	3	4	0	0
-Evolution	3	3	3	0	0
 Evolutionary Applications	7	3	7	1	0.143
+Evolutionary Ecology	5	3	5	0	0
 Experimental Brain Research	5	3	4	0	0
+FEMS Microbes	3	3	2	0	0
 First International Meeting for Applied Geoscience & Energy Expanded Abstracts	3	3	3	0	0
-Forensic Science International	8	3	7	0	0
+Fisheries Research	4	3	4	0	0
+Food Microbiology	3	3	3	0	0
+Forensic Science International	9	3	8	0	0
 Forensic Science International: Genetics	3	3	3	0	0
+Forest Science	3	3	3	0	0
+Frontiers in Big Data	3	3	3	0	0
+Frontiers in Bioinformatics	3	3	3	0	0
 Frontiers in Conservation Science	4	3	3	0	0
-Frontiers in Digital Health	5	3	5	0	0
-Frontiers in Pharmacology	4	3	4	0	0
-Fuel	4	3	4	0	0
+Frontiers in Sociology	3	3	2	0	0
+Frontiers in Virtual Reality	3	3	2	0	0
 Future Generation Computer Systems	3	3	3	0	0
 Gastroenterology	3	3	3	0	0
-Genome Biology and Evolution	5	3	4	0	0
 GeoHealth	4	3	4	0	0
 Geoscience Data Journal	3	3	3	0	0
 Geothermics	3	3	3	1	0.333
 Herald of the Bauman Moscow State Technical University. Series Instrument Engineering	3	3	1	0	0
 Horticulture Research	4	3	4	1	0.25
 Human Factors: The Journal of the Human Factors and Ergonomics Society	3	3	3	0	0
-Infection and Immunity	5	3	4	0	0
+Infection and Immunity	6	3	5	0	0
 Infection Control & Hospital Epidemiology	3	3	3	0	0
+Informatics in Medicine Unlocked	3	3	3	0	0
 Information, Communication & Society	6	3	5	0	0
 Insect Science	3	3	3	0	0
+Insects	7	3	7	0	0
 Integrative Organismal Biology	3	3	2	0	0
-International Journal for Numerical Methods in Fluids	3	3	3	2	0.667
+International Interactions	3	3	3	1	0.333
 International Journal of Artificial Intelligence in Education	3	3	3	0	0
 International Journal of Biometeorology	3	3	3	0	0
 International Journal of Cancer	3	3	3	1	0.333
 International Journal of Climatology	3	3	3	0	0
 International Journal of Computer Assisted Radiology and Surgery	4	3	4	0	0
+International Journal of Disaster Risk Reduction	3	3	3	0	0
 International Journal of Electrical Power & Energy Systems	3	3	3	0	0
 International Journal of Heat and Mass Transfer	3	3	3	0	0
 International Journal of Human-Computer Studies	3	3	2	0	0
+International Journal of Intercultural Relations	4	3	3	0	0
+International Journal of Machine Learning and Cybernetics	3	3	3	0	0
+International Journal of Medical Informatics	3	3	3	0	0
 International Journal of Primatology	4	3	4	0	0
 Internet Interventions	3	3	3	0	0
 JAMIA Open	3	3	3	0	0
+JMIR Formative Research	3	3	3	0	0
 JMIR Mental Health	3	3	3	0	0
 Journal for ImmunoTherapy of Cancer	7	3	7	0	0
+Journal for Nature Conservation	3	3	3	0	0
 Journal of Affective Disorders	3	3	3	0	0
 Journal of Ambient Intelligence and Humanized Computing	3	3	3	0	0
-Journal of Applied Meteorology and Climatology	3	3	3	0	0
+Journal of Applied Meteorology and Climatology	4	3	4	0	0
 Journal of Applied Statistics	4	3	4	0	0
 Journal of Archaeological Science: Reports	6	3	6	0	0
 Journal of Building Engineering	4	3	4	0	0
+Journal of Business Economics	3	3	3	0	0
 Journal of Cheminformatics	3	3	3	1	0.333
 Journal of Climate	4	3	4	0	0
 Journal of Clinical and Translational Science	3	3	3	0	0
 Journal of Cognition	4	3	4	0	0
+Journal of Cognitive Psychology	3	3	3	0	0
+Journal of Computational Science	3	3	3	1	0.333
 Journal of Computer-Aided Molecular Design	4	3	4	1	0.25
-Journal of Evolutionary Biology	3	3	3	0	0
+Journal of Economic Entomology	8	3	8	0	0
+Journal of Evolutionary Biology	4	3	4	0	0
+Journal of Experimental Medicine	3	3	3	0	0
 Journal of Geophysical Research: Atmospheres	3	3	3	0	0
-Journal of Geophysical Research: Planets	3	3	3	0	0
 Journal of Human Genetics	5	3	5	0	0
 Journal of Hydroinformatics	3	3	3	0	0
 Journal of Hydrology: Regional Studies	3	3	3	0	0
 Journal of Hydrometeorology	3	3	3	0	0
-Journal of Industrial Ecology	12	3	10	2	0.167
+Journal of Industrial Ecology	14	3	12	2	0.143
 Journal of Intelligence	5	3	3	0	0
 Journal of Intelligent Manufacturing	3	3	3	0	0
 Journal of Marine Systems	3	3	2	0	0
 Journal of Mass Spectrometry and Advances in the Clinical Lab	6	3	4	0	0
+Journal of Materials Science &amp; Technology	3	3	3	0	0
 Journal of Mathematical Imaging and Vision	3	3	3	0	0
+Journal of Mechanical Design	3	3	3	0	0
 Journal of Medical Systems	3	3	3	0	0
 Journal of Microbiology	3	3	3	0	0
 Journal of Molecular Evolution	5	3	4	1	0.2
 Journal of Mountain Science	3	3	2	0	0
 Journal of Neurotrauma	4	3	3	0	0
-Journal of Open Source Education	4	3	4	2	0.5
+Journal of Open Source Education	5	3	5	2	0.4
 Journal of Pharmaceutical Sciences	3	3	3	0	0
 Journal of Pharmacokinetics and Pharmacodynamics	4	3	4	0	0
 Journal of Physics D: Applied Physics	3	3	3	0	0
 Journal of Power Sources	4	3	4	1	0.25
+Journal of Sound and Vibration	3	3	3	0	0
+Journal of South American Earth Sciences	3	3	3	0	0
 Journal of Statistical Computation and Simulation	3	3	3	0	0
 Journal of Statistics and Data Science Education	7	3	6	0	0
+Journal of Synchrotron Radiation	3	3	3	0	0
 Journal of the American Geriatrics Society	4	3	4	0	0
 Journal of the American Heart Association	3	3	3	0	0
-Journal of the American Statistical Association	4	3	4	0	0
 Journal of the Mechanical Behavior of Biomedical Materials	3	3	3	0	0
-Journal of Vegetation Science	6	3	5	0	0
-Journal of Volcanology and Geothermal Research	3	3	3	0	0
+Journal of the Royal Statistical Society: Series B (Statistical Methodology)	3	3	3	0	0
+Journal of Vegetation Science	7	3	6	0	0
+Journal of Visualization	5	3	5	0	0
 Journal of Zoology	4	3	4	0	0
 KI 2021: Advances in Artificial Intelligence,Lecture Notes in Computer Science	3	3	2	0	0
 Kidney International Reports	4	3	3	0	0
 Knowledge-Based Systems	3	3	3	0	0
 Language Resources and Evaluation	3	3	2	0	0
+Lecture Notes in Computer Science,AI 2021: Advances in Artificial Intelligence	4	3	3	0	0
 Lecture Notes in Computer Science,High Performance Computing	3	3	3	1	0.333
 Lecture Notes in Computer Science,Learning and Intelligent Optimization	3	3	3	0	0
-Machine Learning	7	3	7	1	0.143
 Machine Learning and Knowledge Discovery in Databases,Lecture Notes in Computer Science	7	3	6	0	0
+Machine Learning and Knowledge Extraction	3	3	3	0	0
 Machine Learning, Optimization, and Data Science,Lecture Notes in Computer Science	6	3	6	0	0
-Mammalian Biology	3	3	3	0	0
+Mammalian Biology	4	3	4	0	0
+Marine Drugs	3	3	3	0	0
+Marine Environmental Research	4	3	4	0	0
 Mathematical and Computational Applications	3	3	2	0	0
 Mathematical Geosciences	3	3	2	0	0
 Med	3	3	2	0	0
 Media and Communication	4	3	3	0	0
+Medical Decision Making	3	3	3	0	0
 Medical Image Computing and Computer Assisted Intervention – MICCAI 2020,Lecture Notes in Computer Science	3	3	3	0	0
 Metabolic Engineering Communications	3	3	3	0	0
 Methods in Molecular Biology,Evolutionary Genomics	3	3	2	0	0
 Methods in Molecular Biology,RNA Bioinformatics	4	3	3	0	0
-MethodsX	4	3	4	0	0
+MethodsX	5	3	5	0	0
 Microprocessors and Microsystems	5	3	5	0	0
-Mindfulness	3	3	3	0	0
 Mitochondrial DNA Part B	7	3	7	0	0
 Molecular & Cellular Proteomics	3	3	3	0	0
-Molecular Cell	10	3	10	0	0
-Molecular Oncology	3	3	3	0	0
-Molecular Psychiatry	3	3	3	0	0
 Multivariate Behavioral Research	3	3	3	0	0
+Nanoscale	3	3	3	1	0.333
+Nanoscale Advances	3	3	3	0	0
+Natural Hazards and Earth System Sciences	3	3	3	0	0
 Nature Biomedical Engineering	5	3	4	2	0.4
+Nature Cell Biology	7	3	6	1	0.143
 Nature Immunology	9	3	9	0	0
 Nature Machine Intelligence	7	3	7	0	0
 Nature Plants	3	3	3	0	0
 Nature Sustainability	4	3	4	0	0
+Network Neuroscience	4	3	4	3	0.75
 Neuro-Oncology	4	3	4	0	0
-Neuroinformatics	3	3	3	0	0
+Neuro-Oncology Advances	3	3	3	0	0
 NMR in Biomedicine	4	3	4	2	0.5
 North American Journal of Fisheries Management	3	3	3	0	0
 Nuclear Technology	3	3	3	1	0.333
+Ocean Science	3	3	3	0	0
 OCEANS 2021: San Diego – Porto	3	3	3	0	0
-Optics Letters	6	3	6	1	0.167
+One Earth	3	3	3	0	0
 Ore Geology Reviews	4	3	4	0	0
 Organisms Diversity & Evolution	3	3	3	0	0
+Ornithological Applications	3	3	3	0	0
 Pathogens	10	3	10	0	0
-Pattern Recognition	3	3	3	0	0
+Pattern Recognition	5	3	5	0	0
 Pattern Recognition Letters	3	3	3	1	0.333
-Personality and Social Psychology Bulletin	3	3	3	0	0
 Pharmaceuticals	3	3	3	0	0
-Physical Review C	8	3	8	0	0
+Physical Review C	9	3	9	0	0
 Physical Review Physics Education Research	3	3	3	0	0
 Physiological Measurement	3	3	3	1	0.333
 Phytopathology®	5	3	4	0	0
-Plant and Soil	6	3	6	1	0.167
+Plant and Soil	9	3	9	1	0.111
 Plant Methods	4	3	4	0	0
-Policy Sciences	4	3	2	0	0
+Policy Sciences	6	3	3	0	0
+Political Analysis	3	3	3	0	0
+Political Studies Review	3	3	3	0	0
 Practice and Experience in Advanced Research Computing	13	3	13	0	0
 Proceedings of the 12th ACM Conference on Bioinformatics, Computational Biology, and Health Informatics	3	3	3	0	0
 Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society	3	3	3	0	0
@@ -798,33 +893,30 @@ Proceedings of the 30th ACM International Conference on Information & Knowledge 
 Proceedings of the Platform for Advanced Scientific Computing Conference	3	3	3	0	0
 Proceedings of the Practice and Experience in Advanced Research Computing on Rise of the Machines (learning)	4	3	4	0	0
 Proceedings of the Twelfth ACM International Conference on Future Energy Systems	3	3	3	0	0
+Proceedings on Privacy Enhancing Technologies	3	3	3	0	0
 Psych	3	3	2	0	0
-Psychological Science	3	3	2	0	0
-Psychometrika	3	3	3	1	0.333
+Psychological Medicine	5	3	5	0	0
+Psychometrika	4	3	4	1	0.25
 Psychoneuroendocrinology	4	3	4	0	0
 Quantitative Science Studies	3	3	2	1	0.333
+Quarterly Journal of Experimental Psychology	3	3	3	0	0
 Reliability Engineering & System Safety	5	3	4	0	0
 Restoration Ecology	5	3	5	0	0
 Robotics	3	3	3	0	0
-Science Immunology	13	3	12	0	0
+Science Immunology	16	3	15	0	0
 Scientia Horticulturae	3	3	3	0	0
-SciPost Physics	5	3	5	0	0
 Sexual Medicine	3	3	3	0	0
 Smart Cities	3	3	3	0	0
-SN Applied Sciences	3	3	3	2	0.667
 Social Indicators Research	4	3	4	0	0
 Social Network Analysis and Mining	3	3	3	0	0
 Social Psychiatry and Psychiatric Epidemiology	3	3	1	0	0
 Social Science Quarterly	3	3	3	0	0
 Soft Computing	3	3	3	0	0
 Software: Practice and Experience	3	3	3	1	0.333
-Soil Biology and Biochemistry	6	3	6	0	0
-Solar Energy	23	3	23	0	0
+Solar Energy	24	3	24	0	0
 Spatial and Spatio-temporal Epidemiology	3	3	3	0	0
 Stat	5	3	5	0	0
 Statistical Methods in Medical Research	3	3	3	1	0.333
-Stochastic Environmental Research and Risk Assessment	3	3	3	0	0
-Structural and Multidisciplinary Optimization	8	3	8	0	0
 Sustainable Energy & Fuels	5	3	5	0	0
 Technology, Knowledge and Learning	3	3	3	0	0
 Tectonics	4	3	4	1	0.25
@@ -833,19 +925,23 @@ The American Journal of Human Genetics	3	3	3	0	0
 The American Statistician	3	3	3	0	0
 The Annals of Applied Statistics	3	3	3	0	0
 The European Physical Journal Plus	3	3	2	0	0
+The European Physical Journal Special Topics	3	3	3	0	0
+The FASEB Journal	4	3	4	0	0
 The International Journal of High Performance Computing Applications	5	3	5	4	0.8
-The International Journal of Life Cycle Assessment	11	3	10	1	0.0909
 The ISME Journal	7	3	7	0	0
 The Journal of Infectious Diseases	3	3	3	1	0.333
 The Plant Phenome Journal	3	3	3	0	0
 The Visual Computer	3	3	3	0	0
 Theoretical and Applied Climatology	4	3	4	0	0
 Transactions in GIS	3	3	3	0	0
-Universe	3	3	3	2	0.667
-Veterinary Record	4	3	4	0	0
+Transport in Porous Media	4	3	4	0	0
+Ultramicroscopy	4	3	4	0	0
 Waste Management	3	3	3	0	0
+xxAI - Beyond Explainable AI,Lecture Notes in Computer Science	3	3	2	2	0.667
 Zeitschrift für Erziehungswissenschaft	3	3	3	0	0
 Zeitschrift für Psychologie	3	3	3	0	0
+Zoological Journal of the Linnean Society	3	3	3	0	0
+11th International Conference on the Internet of Things	2	2	2	0	0
 2019 42nd International Convention on Information and Communication Technology, Electronics and Microelectronics (MIPRO)	2	2	2	0	0
 2021 4th International Conference on Algorithms, Computing and Artificial Intelligence	2	2	2	0	0
 2D Materials	2	2	2	1	0.5
@@ -854,7 +950,8 @@ ACM Transactions on Embedded Computing Systems	2	2	2	0	0
 ACS Applied Electronic Materials	3	2	3	0	0
 ACS Central Science	3	2	3	0	0
 ACS Earth and Space Chemistry	2	2	2	0	0
-ACS Nano	2	2	2	2	1
+ACS Measurement Science Au	2	2	2	0	0
+ACS Sensors	2	2	2	0	0
 ACS Sustainable Chemistry & Engineering	4	2	4	3	0.75
 Acta Anaesthesiologica Scandinavica	5	2	5	0	0
 Acta Biomaterialia	2	2	2	0	0
@@ -862,92 +959,100 @@ Acta Geologica Sinica - English Edition	2	2	1	0	0
 Acta Geotechnica	4	2	4	1	0.25
 Acta Horticulturae	3	2	3	0	0
 Acta Mechanica Sinica	2	2	2	0	0
-Acta Neuropathologica Communications	4	2	4	0	0
+Acta Neuropathologica Communications	7	2	7	0	0
 Advanced Drug Delivery Reviews	2	2	2	0	0
 Advanced Engineering Materials	3	2	3	1	0.333
 Advanced Intelligent Systems	2	2	2	0	0
 Advanced Modeling and Simulation in Engineering Sciences	3	2	2	1	0.333
 Advanced Robotics	2	2	2	0	0
+Advances in Applied Energy	2	2	2	0	0
 Advances in Artificial Intelligence,Lecture Notes in Computer Science	2	2	2	0	0
 Advances in Data Analysis and Classification	2	2	2	0	0
 Advances in Knowledge Discovery and Data Mining,Lecture Notes in Computer Science	2	2	2	0	0
 Advances in Molecular Pathology	2	2	1	0	0
 Advances in Science and Research	2	2	2	0	0
 Advances in Visual Computing,Lecture Notes in Computer Science	4	2	4	0	0
+African Journal of Marine Science	2	2	2	0	0
 African Journalism Studies	2	2	1	0	0
 Aging, Neuropsychology, and Cognition	2	2	2	1	0.5
 Agricultural and Forest Entomology	2	2	2	0	0
-Agricultural Water Management	2	2	2	0	0
-Agriculture	3	2	3	0	0
 Agriculture, Ecosystems & Environment	4	2	4	0	0
+Agriculture, Ecosystems &amp; Environment	2	2	2	0	0
 AIAA Propulsion and Energy 2021 Forum	2	2	2	0	0
+Alcoholism: Clinical and Experimental Research	2	2	2	1	0.5
 American Journal of Clinical Pathology	2	2	2	0	0
 American Journal of Physical Anthropology	2	2	2	0	0
 American Journal of Physiology-Gastrointestinal and Liver Physiology	2	2	2	0	0
+American Journal of Primatology	2	2	2	0	0
 American Journal of Reproductive Immunology	2	2	1	1	0.5
 Anaesthesia	2	2	2	0	0
 Analyses of Social Issues and Public Policy	2	2	2	0	0
 Anesthesia & Analgesia	2	2	2	0	0
+Animal Conservation	2	2	2	0	0
 Annals of Dyslexia	2	2	2	0	0
 Annals of Forest Science	2	2	2	0	0
-Annals of Operations Research	2	2	2	0	0
 Annals of Physics	2	2	2	0	0
 Annals of the American Association of Geographers	3	2	3	1	0.333
+Annals of the New York Academy of Sciences	2	2	2	0	0
 Annals of Vascular Surgery	2	2	1	0	0
 Annual Review of Biomedical Data Science	3	2	3	0	0
 Annual Review of Neuroscience	2	2	2	0	0
+Annual Review of Statistics and Its Application	2	2	2	0	0
 Antibiotics	4	2	4	0	0
 Aperture Neuro	2	2	1	0	0
-Applications of Evolutionary Computation,Lecture Notes in Computer Science	2	2	2	0	0
+Applications of Evolutionary Computation,Lecture Notes in Computer Science	3	2	3	0	0
 Applied Computing and Geosciences	2	2	2	0	0
-Applied Ergonomics	3	2	3	1	0.333
 Applied Mathematical Modelling	2	2	2	0	0
 Applied Mathematics and Computation	2	2	2	0	0
+Applied Physics Reviews	2	2	2	0	0
 Applied Psychology: Health and Well-Being	2	2	2	0	0
 Applied Soil Ecology	2	2	2	0	0
 Applied Statistics and Data Science,Springer Proceedings in Mathematics & Statistics	2	2	1	0	0
-Applied Surface Science	2	2	2	0	0
 Aquatic Conservation: Marine and Freshwater Ecosystems	4	2	4	0	0
 Aquatic Microbial Ecology	2	2	2	0	0
 Archives of Computational Methods in Engineering	2	2	2	0	0
 Arthritis Research & Therapy	2	2	2	0	0
 Artificial Intelligence	2	2	2	0	0
 Artificial Intelligence and Soft Computing,Lecture Notes in Computer Science	2	2	2	0	0
+Artificial Intelligence in Medicine	3	2	3	0	0
 ASEG Extended Abstracts	2	2	2	0	0
 AStA Advances in Statistical Analysis	2	2	2	1	0.5
-Atmospheric Pollution Research	2	2	2	0	0
+Atmospheric Research	2	2	2	0	0
 Austral Ecology	3	2	3	0	0
-Autism Research	2	2	2	0	0
+Autism	2	2	2	0	0
 Basic and Applied Ecology	3	2	3	0	0
 Behavioural Processes	3	2	2	0	0
+Big Data and Cognitive Computing	3	2	3	0	0
 Bilingualism: Language and Cognition	2	2	2	0	0
 BIO Web of Conferences	2	2	1	0	0
 Biochemical Society Transactions	2	2	2	0	0
 Biochemistry	2	2	2	0	0
+Biochimica et Biophysica Acta (BBA) - Bioenergetics	2	2	2	0	0
 Bioengineering and Biomedical Signal and Image Processing,Lecture Notes in Computer Science	2	2	1	0	0
 Bioinformatics Advances	3	2	3	0	0
 Biologia	2	2	2	0	0
 Biological Control	2	2	2	0	0
-Biological Psychiatry Global Open Science	2	2	2	0	0
+Biological Psychiatry	2	2	2	0	0
+Biological Reviews	3	2	2	0	0
 Biological Theory	2	2	1	0	0
 Biological Trace Element Research	2	2	2	0	0
 Biology Letters	3	2	3	0	0
-Biomedicines	2	2	2	0	0
+Biomechanics and Modeling in Mechanobiology	3	2	3	0	0
 BioMedInformatics	2	2	2	0	0
-Biometrics	2	2	2	2	1
 Biosensors	2	2	2	0	0
 Biotechnology and Bioengineering	2	2	2	0	0
-Biotropica	2	2	2	0	0
 Bird Study	2	2	1	0	0
 Blood	4	2	4	0	0
+BMC Ecology and Evolution	2	2	2	0	0
 BMC Health Services Research	5	2	4	0	0
 BMC Infectious Diseases	3	2	3	0	0
-BMC Medical Genomics	2	2	2	0	0
 BMC Medical Imaging	2	2	2	0	0
+BMC Musculoskeletal Disorders	2	2	2	0	0
+BMC Pregnancy and Childbirth	2	2	2	0	0
 BMJ Global Health	2	2	2	0	0
 BMJ Quality & Safety	2	2	2	0	0
 Bollettino dell'Unione Matematica Italiana	2	2	1	2	1
-Brain Sciences	3	2	3	0	0
+Brain Stimulation	2	2	2	0	0
 Brazilian Journal of Chemical Engineering	2	2	2	0	0
 British Food Journal	2	2	1	0	0
 British Journal of Social Psychology	2	2	1	0	0
@@ -955,40 +1060,44 @@ Building Research & Information	2	2	1	0	0
 Building Simulation	2	2	1	0	0
 Bulletin of Mathematical Biology	3	2	3	1	0.333
 Bulletin of the American Meteorological Society	2	2	2	0	0
+Cancer	2	2	2	0	0
 Cancer & Metabolism	2	2	2	0	0
 Cancer Cell	4	2	4	0	0
-Cancer Discovery	3	2	3	0	0
+Cancer Discovery	4	2	4	0	0
 Cancer Immunology Research	3	2	3	0	0
 Cancer Immunology, Immunotherapy	2	2	2	0	0
 Cartographica: The International Journal for Geographic Information and Geovisualization	2	2	1	0	0
 Cartography and Geographic Information Science	2	2	2	0	0
 CBE—Life Sciences Education	2	2	2	0	0
 Celestial Mechanics and Dynamical Astronomy	2	2	1	0	0
-Cell Metabolism	2	2	2	0	0
+Cell Host &amp; Microbe	2	2	1	0	0
 Cement and Concrete Research	3	2	3	0	0
+Cerebral Cortex Communications	2	2	2	0	0
 Chaos, Solitons & Fractals	2	2	2	0	0
+Chemical Engineering Research and Design	2	2	2	1	0.5
 Chemical Research in Toxicology	2	2	1	0	0
 Chemical Senses	2	2	2	0	0
 Child Abuse Review	2	2	1	0	0
+Child Development	2	2	2	0	0
 Child Psychiatry & Human Development	3	2	3	0	0
 Children	2	2	2	0	0
 Children and Youth Services Review	4	2	3	0	0
 Circulation: Cardiovascular Quality and Outcomes	2	2	1	0	0
 Cleaner Environmental Systems	2	2	2	1	0.5
 Climate Change Ecology	2	2	2	0	0
-Climate of the Past	2	2	2	0	0
 Clinical & Translational Immunology	2	2	2	0	0
 Clinical and Experimental Dental Research	2	2	2	0	0
+Clinical Cancer Research	3	2	3	0	0
 Clinical Neurophysiology	3	2	3	0	0
 Clinical Pharmacology & Therapeutics	3	2	3	0	0
 Clinical Psychological Science	2	2	1	0	0
+Cognitive Psychology	2	2	2	0	0
 Cognitive Science	3	2	3	0	0
 Communication & Sport	2	2	1	0	0
 Communication Methods and Measures	7	2	7	1	0.143
 Communications in Computer and Information Science,Digital Transformation and Global Society	2	2	2	0	0
 Communications in Computer and Information Science,High Performance Computing	2	2	2	0	0
 Communications of the ACM	2	2	2	0	0
-Communications Physics	2	2	2	0	0
 Comparative Biochemistry and Physiology Part A: Molecular & Integrative Physiology	3	2	3	0	0
 Complex & Intelligent Systems	2	2	2	0	0
 Complex Networks & Their Applications X,Studies in Computational Intelligence	2	2	2	0	0
@@ -996,18 +1105,24 @@ Computational Data and Social Networks,Lecture Notes in Computer Science	2	2	1	0
 Computational Intelligence and Neuroscience	2	2	2	0	0
 Computational Science and Its Applications – ICCSA 2021,Lecture Notes in Computer Science	2	2	2	0	0
 Computer Methods in Biomechanics and Biomedical Engineering: Imaging & Visualization	2	2	2	0	0
+Computer Networks	2	2	2	0	0
 Computer Security – ESORICS 2021,Lecture Notes in Computer Science	2	2	2	0	0
 Computer Speech & Language	2	2	1	0	0
+Computers	2	2	2	0	0
 Computers & Graphics	5	2	5	0	0
-Computing and Software for Big Science	2	2	2	0	0
+Computers &amp; Fluids	3	2	3	0	0
+Computers &amp; Geosciences	2	2	2	0	0
 Computing in Science & Engineering	2	2	1	0	0
 Comunicar	2	2	2	0	0
 Conservation Genetics	2	2	2	0	0
-Conservation Physiology	2	2	2	0	0
 Construction and Building Materials	2	2	2	0	0
+Construction Research Congress 2022	2	2	2	0	0
+Convergence: The International Journal of Research into New Media Technologies	2	2	1	0	0
 Coral Reefs	5	2	5	0	0
 Corpus Linguistics and Linguistic Theory	2	2	2	0	0
 Counselling and Psychotherapy Research	2	2	2	0	0
+CrystEngComm	2	2	2	0	0
+Current Oncology	2	2	2	0	0
 Current Opinion in Biotechnology	2	2	2	0	0
 Current Opinion in Systems Biology	2	2	1	0	0
 Czech Sociological Review	2	2	1	0	0
@@ -1020,66 +1135,72 @@ Database Systems for Advanced Applications,Lecture Notes in Computer Science	2	2
 Decision Support Systems	2	2	2	0	0
 Designing Interactive Systems Conference 2021	2	2	1	0	0
 Designs	2	2	2	0	0
-Developmental Science	2	2	2	0	0
+Developmental Psychobiology	2	2	2	0	0
 Developments in Earth Surface Processes,Remote Sensing of Geomorphology	2	2	2	0	0
 Diabetes Research and Clinical Practice	2	2	2	0	0
 Digestive Diseases and Sciences	2	2	2	0	0
-Digital Scholarship in the Humanities	2	2	2	0	0
-Drug and Alcohol Dependence	2	2	2	0	0
+Digital Communications and Networks	2	2	2	0	0
+Digital Discovery	2	2	2	0	0
 Ear & Hearing	2	2	1	0	0
+Earth and Planetary Science Letters	2	2	2	0	0
 Earth-Science Reviews	2	2	2	0	0
 eBioMedicine	4	2	4	0	0
-Ecological Entomology	3	2	3	0	0
+Ecological Entomology	4	2	4	0	0
 Ecological Processes	2	2	1	0	0
 Economics Letters	2	2	2	0	0
 Écoscience	2	2	2	0	0
 Ecosystems	3	2	3	0	0
-Ecotoxicology and Environmental Safety	3	2	3	0	0
+Ecotoxicology and Environmental Safety	4	2	4	0	0
+Educational and Psychological Measurement	2	2	2	0	0
 EFSA Supporting Publications	2	2	2	0	0
 El Profesional de la información	2	2	2	0	0
+Emu - Austral Ornithology	2	2	2	0	0
 Energy & Fuels	2	2	2	0	0
 Energy Conversion and Management: X	2	2	2	0	0
 Energy for Sustainable Development	2	2	2	0	0
+Energy Reports	2	2	2	0	0
 Energy Research & Social Science	2	2	2	0	0
 Energy Storage Materials	2	2	2	0	0
 Energy Strategy Reviews	3	2	3	1	0.333
-Engineering Fracture Mechanics	2	2	2	0	0
 Engineering Geology	2	2	2	0	0
-Engineering Multi-Agent Systems,Lecture Notes in Computer Science	2	2	2	0	0
+Engineering Multi-Agent Systems,Lecture Notes in Computer Science	4	2	4	0	0
 Environment and Planning B: Urban Analytics and City Science	3	2	3	2	0.667
 Environment, Development and Sustainability	2	2	2	0	0
+Environmental DNA	2	2	2	0	0
 Environmental Earth Sciences	2	2	2	0	0
 Environmental Modelling &amp; Software	2	2	2	0	0
-Environmental Monitoring and Assessment	2	2	2	1	0.5
 Environmental Research Communications	2	2	2	0	0
+Environmental Science &amp; Technology	3	2	3	1	0.333
 Environmental Science: Atmospheres	2	2	2	1	0.5
 Environmental Science: Nano	2	2	2	0	0
+Environmental Science: Water Research &amp; Technology	2	2	1	0	0
 Epidemiology and Infection	2	2	2	0	0
-Epigenetics	2	2	2	0	0
+Epigenetics	3	2	3	0	0
 Epilepsia	4	2	4	0	0
 EPJ Data Science	3	2	2	0	0
 Estuarine, Coastal and Shelf Science	2	2	2	0	0
+European Eating Disorders Review	2	2	2	0	0
 European Financial and Accounting Journal	2	2	1	0	0
-European Journal of Forest Research	2	2	2	0	0
+European Journal of Cancer	3	2	3	0	0
 European Journal of Mechanics - B/Fluids	2	2	2	0	0
 European Journal of Neurology	2	2	2	0	0
 European Journal of Physics	2	2	2	0	0
 European Journal of Political Research	3	2	2	1	0.333
 European Journal of Social Psychology	2	2	2	0	0
+European Journal of Soil Biology	2	2	1	0	0
 European Journal of Wildlife Research	2	2	2	0	0
 European Political Science Review	3	2	2	0	0
 European Radiology Experimental	2	2	2	0	0
+Experimental and Applied Acarology	2	2	2	0	0
+Experimental Results	2	2	2	0	0
+Expert Review of Proteomics	2	2	2	0	0
 Fifteenth ACM Conference on Recommender Systems	3	2	3	0	0
 Fish and Fisheries	3	2	2	0	0
+Fisheries Management and Ecology	2	2	2	0	0
 Fisheries Oceanography	2	2	1	0	0
-Fisheries Research	3	2	3	0	0
 Fluids	2	2	2	0	0
-Food Microbiology	2	2	2	0	0
 Forest Ecosystems	2	2	2	0	0
-Forest Science	2	2	2	0	0
 Foundations and Trends® in Machine Learning	2	2	1	0	0
-Frontiers in Big Data	2	2	2	0	0
-Frontiers in Bioinformatics	2	2	2	0	0
 Frontiers in Built Environment	2	2	2	0	0
 Frontiers in Communication	3	2	2	0	0
 Frontiers in Energy Research	2	2	2	0	0
@@ -1087,89 +1208,105 @@ Frontiers in Environmental Science	2	2	2	0	0
 Frontiers in Materials	2	2	2	0	0
 Frontiers in Neuroergonomics	2	2	2	0	0
 Frontiers in Pediatrics	3	2	3	0	0
-Frontiers in Sociology	2	2	1	0	0
+Frontiers in Signal Processing	2	2	2	0	0
 Frontiers in Sports and Active Living	4	2	4	0	0
-Frontiers in Virtual Reality	2	2	1	0	0
+Frontiers in Sustainability	3	2	3	0	0
 Frontiers in Zoology	2	2	2	0	0
 Functional Imaging and Modeling of the Heart,Lecture Notes in Computer Science	3	2	3	2	0.667
+Future Internet	2	2	2	0	0
 Gates Open Research	3	2	3	0	0
+GEM - International Journal on Geomathematics	3	2	3	0	0
 Gene	2	2	2	0	0
 Genes, Brain and Behavior	2	2	2	0	0
 Genetic Programming and Evolvable Machines	2	2	2	0	0
 Genetics Selection Evolution	7	2	7	0	0
 Genomics, Proteomics & Bioinformatics	3	2	3	0	0
+Geocarto International	2	2	2	0	0
 Geoderma	2	2	2	0	0
 Geology	2	2	2	0	0
 Geosciences	2	2	2	0	0
-Géotechnique	3	2	2	1	0.333
+Géotechnique	4	2	3	2	0.5
+German Journal of Exercise and Sport Research	2	2	2	0	0
 Gifted Child Quarterly	2	2	1	0	0
+Global Spine Journal	2	2	2	0	0
 Groundwater	2	2	2	0	0
 GSA Bulletin	2	2	1	0	0
 Gut Microbes	2	2	1	0	0
 Handbook of Research on Advanced Research Methodologies for a Digital Society,Advances in Knowledge Acquisition, Transfer, and Management	2	2	1	0	0
+Harmful Algae	2	2	2	0	0
 Harvard Kennedy School Misinformation Review	2	2	2	0	0
 Health Science Reports	2	2	2	0	0
 Heart Rhythm	2	2	2	0	0
 Hearts	2	2	2	1	0.5
+Heliyon	2	2	2	0	0
+Histochemistry and Cell Biology	2	2	2	0	0
 Horticulturae	2	2	1	0	0
-Human Genetics	2	2	2	0	0
+HortTechnology	2	2	2	0	0
+Human Genetics	3	2	3	0	0
 Human Genomics	2	2	2	0	0
 Human Molecular Genetics	3	2	3	0	0
+Human Reproduction	2	2	2	0	0
+Human Resources for Health	2	2	2	0	0
+Humanities and Social Sciences Communications	2	2	2	0	0
 Hydrogeology Journal	2	2	2	0	0
 Hydrological Sciences Journal	2	2	2	0	0
 Hydrology Research	2	2	2	0	0
 Hypertension	2	2	2	0	0
 Hypertension Research	2	2	1	0	0
 IEEJ Transactions on Electrical and Electronic Engineering	2	2	2	0	0
+IET Image Processing	2	2	2	0	0
 IFIP Advances in Information and Communication Technology,Advances in Production Management Systems. The Path to Digital Transformation and Innovation of Production Management Systems	2	2	1	0	0
-Immunity	7	2	7	0	0
+Immunity	8	2	8	0	0
 Implementation Science Communications	2	2	2	0	0
 Indoor Air	2	2	2	0	0
-Informatics in Medicine Unlocked	2	2	2	0	0
 Information Fusion	3	2	3	0	0
 Information Visualization	2	2	1	0	0
 Innovative Food Science & Emerging Technologies	2	2	1	0	0
 Inorganic Chemistry	9	2	9	1	0.111
-Insects	5	2	5	0	0
 Integrated Environmental Assessment and Management	4	2	3	0	0
 Integrating Materials and Manufacturing Innovation	2	2	2	0	0
+Intelligence	2	2	2	0	0
+Intelligent Systems Design and Applications,Lecture Notes in Networks and Systems	2	2	2	0	0
 Intelligent Systems Reference Library,Signal Processing Techniques for Computational Health Informatics	2	2	1	0	0
 Intelligent Systems,Lecture Notes in Computer Science	2	2	2	0	0
 Interdisciplinary Sciences: Computational Life Sciences	3	2	3	0	0
 International Conference on Computer Systems and Technologies '21	2	2	1	0	0
-International Interactions	2	2	2	0	0
 International Journal for Parasitology: Parasites and Wildlife	3	2	3	0	0
-International Journal of Audiology	2	2	2	0	0
+International Journal of Audiology	3	2	3	0	0
 International Journal of Behavioral Nutrition and Physical Activity	2	2	1	0	0
 International Journal of Biological Macromolecules	2	2	2	0	0
 International Journal of Computer Science in Sport	3	2	2	0	0
 International Journal of Computer Vision	2	2	2	0	0
-International Journal of Disaster Risk Reduction	2	2	2	0	0
 International Journal of Drug Policy	2	2	2	0	0
+International Journal of Environmental Science and Technology	2	2	2	0	0
 International Journal of Epidemiology	2	2	2	1	0.5
 International Journal of Food Microbiology	2	2	2	0	0
 International Journal of Hydrogen Energy	2	2	2	0	0
 International Journal of Hygiene and Environmental Health	2	2	2	0	0
 International Journal of Infectious Diseases	3	2	3	0	0
-International Journal of Machine Learning and Cybernetics	2	2	2	0	0
-International Journal of Medical Informatics	2	2	2	0	0
 International Journal of Plasticity	2	2	2	0	0
 International Journal of Quantum Chemistry	3	2	3	0	0
 International Journal of Radiation Oncology*Biology*Physics	2	2	2	0	0
 International Journal of Science Education	2	2	1	0	0
 International Journal of Thermophysics	2	2	1	2	1
+International Journal of Transportation Science and Technology	2	2	2	0	0
 International Journal of Wildland Fire	2	2	2	0	0
 Inverse Problems	2	2	2	0	0
+Irrigation Science	2	2	2	0	0
+ISME Communications	6	2	6	0	0
 ISPRS Journal of Photogrammetry and Remote Sensing	4	2	4	0	0
+JASA Express Letters	3	2	3	0	0
 JCO Clinical Cancer Informatics	3	2	3	0	0
-JMIR Formative Research	2	2	2	0	0
+JMIR Human Factors	2	2	2	0	0
 JNCI: Journal of the National Cancer Institute	3	2	3	0	0
-Journal for Nature Conservation	2	2	2	0	0
+Joule	2	2	2	0	0
 Journal of Addictive Diseases	2	2	1	0	0
 Journal of Adolescence	2	2	1	0	0
+Journal of Advanced Transportation	2	2	2	1	0.5
 Journal of Agricultural, Biological and Environmental Statistics	2	2	2	0	0
 Journal of Aircraft	4	2	4	1	0.25
 Journal of Applied and Computational Topology	2	2	2	1	0.5
+Journal of Applied Crystallography	4	2	4	0	0
 Journal of Applied Geophysics	2	2	2	0	0
 Journal of Applied Research in Memory and Cognition	2	2	1	0	0
 Journal of Applied Social Psychology	2	2	2	0	0
@@ -1177,40 +1314,41 @@ Journal of Archaeological Science	2	2	2	0	0
 Journal of Arid Environments	2	2	2	0	0
 Journal of Astrophysics and Astronomy	3	2	3	0	0
 Journal of Autism and Developmental Disorders	3	2	3	0	0
-Journal of Bacteriology	2	2	2	0	0
+Journal of Bacteriology	3	2	3	0	0
+Journal of Behavioral Medicine	2	2	2	0	0
+Journal of Biological Chemistry	2	2	2	0	0
 Journal of Building Performance Simulation	2	2	2	0	0
-Journal of Business Economics	2	2	2	0	0
 Journal of Cachexia, Sarcopenia and Muscle	2	2	2	0	0
 Journal of Cell Biology	2	2	2	0	0
 Journal of Cerebral Blood Flow & Metabolism	2	2	2	0	0
 Journal of Chemical Education	6	2	6	0	0
 Journal of Clinical Psychology	2	2	2	0	0
-Journal of Cognitive Neuroscience	2	2	2	0	0
-Journal of Cognitive Psychology	2	2	2	0	0
 Journal of Colloid and Interface Science	2	2	2	0	0
 Journal of Communication	3	2	3	0	0
-Journal of Computational Science	2	2	2	0	0
+Journal of Computational and Nonlinear Dynamics	2	2	2	0	0
 Journal of Computer Security	2	2	2	0	0
 Journal of Digital Imaging	2	2	2	0	0
 Journal of Documentation	2	2	2	1	0.5
-Journal of Economic Entomology	5	2	5	0	0
 Journal of Economic Surveys	2	2	1	0	0
 Journal of Elections, Public Opinion and Parties	2	2	2	0	0
 Journal of Engineering Mechanics	2	2	2	1	0.5
 Journal of Environmental Psychology	2	2	2	0	0
 Journal of Ethology	2	2	2	0	0
-Journal of Experimental Medicine	2	2	2	0	0
 Journal of Exposure Science & Environmental Epidemiology	2	2	2	0	0
 Journal of Fish Diseases	4	2	4	0	0
+Journal of Flood Risk Management	2	2	2	0	0
 Journal of Fourier Analysis and Applications	2	2	1	0	0
 Journal of Fungi	4	2	4	0	0
 Journal of Gambling Studies	4	2	4	0	0
 Journal of Geophysical Research: Biogeosciences	4	2	4	1	0.25
 Journal of Geophysical Research: Space Physics	2	2	2	0	0
 Journal of Glaciology	2	2	2	0	0
+Journal of Global Health	2	2	2	0	0
+Journal of Great Lakes Research	4	2	4	0	0
 Journal of Heredity	3	2	3	0	0
 Journal of Hospital Infection	3	2	3	0	0
 Journal of Hydrology X	2	2	2	1	0.5
+Journal of Imaging	2	2	2	0	0
 Journal of Infection	4	2	4	0	0
 Journal of Information Science	2	2	2	0	0
 Journal of Information Technology & Politics	3	2	3	0	0
@@ -1218,46 +1356,50 @@ Journal of Informetrics	2	2	2	0	0
 Journal of Insect Conservation	2	2	2	0	0
 Journal of Insect Physiology	2	2	1	0	0
 Journal of Interactive Advertising	2	2	2	0	0
+Journal of Investigative Dermatology	2	2	2	0	0
+Journal of Language Evolution	2	2	2	0	0
 Journal of Loss Prevention in the Process Industries	2	2	2	0	0
 Journal of Magnetic Resonance Imaging	2	2	2	0	0
 Journal of Manufacturing Science and Engineering	2	2	2	0	0
 Journal of Materials Chemistry B	2	2	2	1	0.5
 Journal of Mathematical Biology	2	2	2	0	0
-Journal of Mechanical Design	2	2	2	0	0
 Journal of Medical Virology	4	2	4	0	0
 Journal of Memory and Language	2	2	2	0	0
 Journal of Molecular and Cellular Cardiology	3	2	3	0	0
 Journal of Morphology	3	2	3	0	0
 Journal of Natural Gas Science and Engineering	2	2	2	0	0
+Journal of Network and Computer Applications	2	2	2	0	0
 Journal of Non-Crystalline Solids	2	2	2	0	0
+Journal of Nuclear Materials	2	2	2	0	0
+Journal of Numerical Cognition	2	2	2	0	0
+Journal of Obsessive-Compulsive and Related Disorders	3	2	2	0	0
 Journal of Ornithology	2	2	2	0	0
-Journal of Orthopaedic Research	2	2	2	0	0
+Journal of Orthopaedic Research	3	2	3	0	0
 Journal of Pathology Informatics	2	2	1	0	0
 Journal of Personality	3	2	3	0	0
 Journal of Phonetics	2	2	2	0	0
 Journal of Physics A: Mathematical and Theoretical	4	2	4	1	0.25
 Journal of Physics: Energy	2	2	2	1	0.5
+Journal of Policy and Practice in Intellectual Disabilities	2	2	1	0	0
 Journal of Pragmatics	2	2	2	0	0
 Journal of Psycholinguistic Research	2	2	2	0	0
 Journal of Public Administration Research and Theory	2	2	2	0	0
-Journal of Renewable and Sustainable Energy	9	2	9	0	0
+Journal of Renewable and Sustainable Energy	10	2	10	0	0
 Journal of Risk Research	2	2	2	0	0
 Journal of Scientific Computing	2	2	2	0	0
 Journal of Sensor and Actuator Networks	2	2	2	0	0
-Journal of Sound and Vibration	2	2	2	0	0
-Journal of South American Earth Sciences	2	2	2	0	0
+Journal of Signal Processing Systems	2	2	1	0	0
 Journal of Statistics Education	3	2	3	0	0
 Journal of Structural Biology	2	2	2	0	0
 Journal of Sustainable Metallurgy	2	2	1	1	0.5
-Journal of Synchrotron Radiation	2	2	2	0	0
 Journal of the Academy of Nutrition and Dietetics	2	2	2	0	0
 Journal of the American College of Emergency Physicians Open	2	2	2	0	0
 Journal of the American Medical Directors Association	3	2	2	0	0
 Journal of the Association for Information Science and Technology	5	2	5	0	0
+Journal of the Brazilian Society of Mechanical Sciences and Engineering	2	2	2	2	1
 Journal of Thermal Biology	2	2	2	0	0
 Journal of Tropical Ecology	2	2	2	0	0
 Journal of Turbomachinery	4	2	3	0	0
-Journal of Visualization	4	2	4	0	0
 Knowledge & Management of Aquatic Ecosystems	2	2	2	0	0
 Korean Journal of Journalism & Communication Studies	2	2	1	0	0
 Laboratory Phonology: Journal of the Association for Laboratory Phonology	2	2	2	0	0
@@ -1266,36 +1408,45 @@ Language, Cognition and Neuroscience	3	2	2	0	0
 Learning and Individual Differences	2	2	2	0	0
 Lecture Notes in Computer Science,Applied Cryptography and Network Security Workshops	2	2	2	0	0
 Lecture Notes in Computer Science,Artificial Neural Networks and Machine Learning – ICANN 2021	4	2	4	0	0
+Lecture Notes in Computer Science,Computational Processing of the Portuguese Language	2	2	1	0	0
 Lecture Notes in Computer Science,Computer Vision – ECCV 2018 Workshops	2	2	2	0	0
 Lecture Notes in Computer Science,Machine Learning and Knowledge Extraction	2	2	2	0	0
 Lecture Notes in Computer Science,Mathematical Software – ICMS 2020	2	2	1	0	0
 Lecture Notes in Computer Science,Medical Image Computing and Computer Assisted Intervention – MICCAI 2019	3	2	3	0	0
 Lecture Notes in Computer Science,Web Engineering	2	2	2	0	0
 Lecture Notes in Networks and Systems,Networks in the Global World V	2	2	2	0	0
-Life Science Alliance	4	2	4	0	0
+Legislative Studies Quarterly	3	2	2	1	0.333
+Life Science Alliance	5	2	5	0	0
 Life Sciences	2	2	2	0	0
 Livestock Science	2	2	2	0	0
 Machine Learning and Knowledge Discovery in Databases. Applied Data Science and Demo Track,Lecture Notes in Computer Science	2	2	2	0	0
-Machine Learning and Knowledge Extraction	2	2	2	0	0
 Machine Learning in Medical Imaging,Lecture Notes in Computer Science	2	2	2	0	0
 Machine Learning with Applications	2	2	2	0	0
 Macromolecules	2	2	1	0	0
 Magnetic Resonance Imaging	3	2	3	0	0
 Marine and Coastal Fisheries	2	2	2	0	0
-Marine Drugs	2	2	2	0	0
+Marine Biology	4	2	4	0	0
+Marine Mammal Science	2	2	2	0	0
 Materials Advances	3	2	2	0	0
 Materials Horizons	3	2	3	1	0.333
 Materials Letters	2	2	2	0	0
+Materials Today: Proceedings	2	2	2	0	0
+Mathematical Biosciences	3	2	3	0	0
 Mathematics in Engineering	2	2	1	0	0
 Matter	2	2	2	0	0
+Measurement	2	2	2	1	0.5
 Mechanical Systems and Signal Processing	2	2	2	0	0
-Medical Decision Making	2	2	2	0	0
+Medical and Veterinary Entomology	2	2	2	0	0
 Medical Image Computing and Computer Assisted Intervention – MICCAI 2021,Lecture Notes in Computer Science	4	2	4	0	0
 Medicina	2	2	2	0	0
 Memory & Cognition	2	2	2	0	0
+Memory &amp; Cognition	2	2	2	0	0
 Metabolomics	3	2	3	0	0
+Meteorological Applications	2	2	2	0	0
 Methods in Molecular Biology,Translational Bioinformatics for Therapeutic Development	3	2	3	0	0
 Microbial Ecology	4	2	4	0	0
+Military Medicine	2	2	2	0	0
+Minerals Engineering	2	2	2	0	0
 Mobile DNA	3	2	2	0	0
 Molecular and Cellular Biology	2	2	2	0	0
 Molecular Biology Reports	3	2	3	0	0
@@ -1305,25 +1456,28 @@ Molecular Pharmaceutics	2	2	2	0	0
 Molecular Plant-Microbe Interactions®	4	2	4	0	0
 Molecular Simulation	2	2	2	0	0
 Molecular Therapy - Nucleic Acids	2	2	2	0	0
+Monthly Weather Review	2	2	2	0	0
 Movement Disorders	2	2	2	1	0.5
+Movement Ecology	2	2	2	0	0
 MRS Communications	2	2	2	0	0
 MultiMedia Modeling,Lecture Notes in Computer Science	3	2	3	0	0
 Nanomaterials	4	2	4	0	0
-Nanoscale	2	2	2	1	0.5
-Nanoscale Advances	2	2	2	0	0
 Nanotechnology	2	2	1	2	1
-Natural Hazards and Earth System Sciences	2	2	2	0	0
 Nature and Science of Sleep	2	2	2	1	0.5
-Nature Medicine	11	2	11	0	0
+Nature Chemistry	2	2	2	0	0
+Nature Geoscience	2	2	2	1	0.5
+Nature Medicine	12	2	12	0	0
 Nature Metabolism	3	2	3	0	0
 Nature Photonics	2	2	1	1	0.5
 Nature Reviews Genetics	2	2	2	0	0
 Nature Reviews Physics	2	2	2	0	0
 NDT & E International	2	2	2	0	0
-Network Neuroscience	3	2	3	3	1
-Neuro-Oncology Advances	2	2	2	0	0
+Neural Processing Letters	2	2	2	0	0
 Neurology	3	2	3	0	0
+Neurosurgery	2	2	2	0	0
+NODYCON Conference Proceedings Series,Advances in Nonlinear Dynamics	2	2	2	0	0
 npj Aging and Mechanisms of Disease	2	2	1	0	0
+npj Biofilms and Microbiomes	2	2	2	0	0
 npj Precision Oncology	2	2	2	0	0
 npj Schizophrenia	2	2	2	0	0
 Nuclear Instruments and Methods in Physics Research Section B: Beam Interactions with Materials and Atoms	2	2	2	0	0
@@ -1331,13 +1485,11 @@ Numerical Linear Algebra with Applications	2	2	2	1	0.5
 Nurse Education Today	2	2	2	0	0
 Ocean Engineering	2	2	2	0	0
 Ocean Modelling	2	2	2	0	0
-Ocean Science	2	2	2	0	0
 Oncotarget	2	2	2	0	0
 Open Forum Infectious Diseases	3	2	3	0	0
 Optical Fiber Communication Conference (OFC) 2021	2	2	2	0	0
 Optical Materials Express	2	2	2	0	0
 Organizational Behavior and Human Decision Processes	3	2	3	0	0
-Ornithological Applications	2	2	2	0	0
 Orphanet Journal of Rare Diseases	2	2	2	0	0
 Osteoarthritis and Cartilage	2	2	2	0	0
 Parallel Problem Solving from Nature – PPSN XVI,Lecture Notes in Computer Science	2	2	2	1	0.5
@@ -1345,29 +1497,35 @@ Parasites & Vectors	3	2	3	0	0
 Parasitology	2	2	2	0	0
 Parasitology Research	3	2	3	0	0
 Party Politics	4	2	4	0	0
-Pattern Recognition and Image Analysis,Lecture Notes in Computer Science	2	2	2	0	0
+Pattern Recognition and Image Analysis,Lecture Notes in Computer Science	3	2	3	0	0
 Pediatric Nephrology	2	2	2	0	0
 Pediatrics	3	2	3	0	0
+People and Nature	2	2	2	0	0
 Personal and Ubiquitous Computing	2	2	2	0	0
 Pesquisa Agropecuária Brasileira	2	2	1	0	0
 Photosynthesis Research	2	2	2	0	0
-Physica B: Condensed Matter	2	2	2	0	0
+Physica B: Condensed Matter	3	2	3	0	0
+Physica D: Nonlinear Phenomena	2	2	2	1	0.5
 Physica Medica	2	2	2	0	0
 Physica Scripta	2	2	2	0	0
 Physics Letters B	2	2	2	0	0
 Physics of the Dark Universe	2	2	2	0	0
 Physiological Reports	3	2	2	0	0
-Planetary and Space Science	2	2	2	0	0
+Planetary and Space Science	3	2	3	0	0
+Plant Disease	5	2	5	0	0
 Plant Ecology	2	2	2	0	0
+Plant Gametogenesis,Methods in Molecular Biology	2	2	2	0	0
 Plant Physiology	2	2	2	1	0.5
+PLOS Climate	2	2	1	0	0
+PLOS Global Public Health	2	2	2	1	0.5
+PNAS Nexus	2	2	1	0	0
 Poetics	2	2	2	0	0
 Polar Biology	2	2	2	0	0
-Political Analysis	2	2	2	0	0
-Political Studies Review	2	2	2	0	0
 Politics and Religion	2	2	2	0	0
 Polymers	2	2	2	0	0
 Powder Technology	2	2	2	0	0
 Practical Radiation Oncology	2	2	2	0	0
+Precision Agriculture	2	2	2	0	0
 Preventive Medicine Reports	2	2	2	0	0
 Primates	2	2	2	0	0
 Proceedings of International Conference on Computational Intelligence,Algorithms for Intelligent Systems	2	2	1	0	0
@@ -1380,41 +1538,52 @@ Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery & Data Mini
 Proceedings of the 36th Annual ACM Symposium on Applied Computing	2	2	2	0	0
 Proceedings of the 3rd ACM SIGSPATIAL International Workshop on APIs and Libraries for Geospatial Data Science	2	2	1	0	0
 Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval	2	2	2	0	0
+Proceedings of the 9th International Performance Analysis Workshop and Conference &amp; 5th IACSS Conference,Advances in Intelligent Systems and Computing	2	2	1	0	0
 Proceedings of the ACM International Conference on Parallel Architectures and Compilation Techniques	2	2	1	0	0
 Proceedings of the ACM on Programming Languages	2	2	2	0	0
 Proceedings of the Combustion Institute	2	2	1	2	1
 Proceedings of the Design Society: DESIGN Conference	2	2	2	0	0
 Proceedings of the International Astronomical Union	2	2	2	1	0.5
-Proceedings on Privacy Enhancing Technologies	2	2	2	0	0
+Production Engineering	2	2	2	0	0
 Programming and Computer Software	2	2	1	0	0
+Progress in Energy	2	2	2	0	0
 Progress in Nuclear Energy	2	2	2	0	0
-Progress in Photovoltaics: Research and Applications	6	2	6	0	0
+Progress in Photovoltaics: Research and Applications	7	2	7	0	0
 Proteins: Structure, Function, and Bioinformatics	2	2	2	0	0
 PS: Political Science & Politics	3	2	3	1	0.333
 Psychiatry Research	3	2	3	0	0
-Psychological Medicine	4	2	4	0	0
 Psychology & Marketing	2	2	2	0	0
 Psychology of Music	2	2	2	0	0
+Psychonomic Bulletin &amp; Review	2	2	1	0	0
 Quality & Quantity	2	2	2	0	0
 Quality of Life Research	3	2	3	0	0
 Quantitative Plant Biology	2	2	2	0	0
-Quarterly Journal of Experimental Psychology	2	2	2	0	0
 Quarterly Journal of the Royal Meteorological Society	2	2	2	0	0
 Quaternary International	4	2	4	0	0
-Research Ideas and Outcomes	2	2	2	1	0.5
-Research Synthesis Methods	2	2	2	0	0
+Research Ideas and Outcomes	3	2	3	2	0.667
+Research in International Business and Finance	2	2	2	0	0
+Research Synthesis Methods	3	2	3	0	0
 Review of Policy Research	2	2	2	0	0
-Rheumatology	4	2	3	0	0
+Rheumatology	5	2	4	0	0
+Risks	2	2	1	0	0
 Rock Mechanics and Rock Engineering	2	2	2	0	0
+RSC Advances	2	2	2	0	0
+SAE Technical Paper Series	2	2	2	0	0
 Schizophrenia Research	2	2	2	0	0
+Scientific Programming	2	2	2	0	0
 Scripta Materialia	2	2	2	0	0
 Seismological Research Letters	2	2	2	0	0
 Sexes	2	2	2	0	0
 SIAM/ASA Journal on Uncertainty Quantification	3	2	3	0	0
+Signal Transduction and Targeted Therapy	3	2	3	0	0
 Signals	4	2	4	0	0
 SIMULATION	2	2	2	0	0
+Simulation Modelling Practice and Theory	2	2	2	0	0
+Smart Health	2	2	2	0	0
 Social Cognitive and Affective Neuroscience	2	2	2	0	0
 Social Networks	2	2	2	0	0
+Social Science &amp; Medicine	2	2	2	0	0
+Social Science Computer Review	2	2	2	0	0
 Soft Robotics	2	2	1	0	0
 Soil Science Society of America Journal	2	2	2	0	0
 Solar RRL	2	2	2	0	0
@@ -1426,61 +1595,66 @@ Sports Medicine - Open	2	2	2	0	0
 Statistica Neerlandica	2	2	2	1	0.5
 Statistical Language and Speech Processing,Lecture Notes in Computer Science	2	2	2	0	0
 Statistics Surveys	2	2	2	0	0
+Stem Cell Reports	2	2	2	0	0
 Stem Cell Research & Therapy	2	2	2	0	0
 Structure	3	2	3	0	0
 Structure and Infrastructure Engineering	2	2	2	0	0
+Suicide and Life-Threatening Behavior	2	2	2	0	0
 Surgery	3	2	3	0	0
 Surgery for Obesity and Related Diseases	2	2	2	0	0
+Sustainable Energy Technologies and Assessments	2	2	2	0	0
 Swarm and Evolutionary Computation	2	2	2	0	0
 Synthese	2	2	1	0	0
 Synthetic and Systems Biotechnology	2	2	1	0	0
 Systematic Entomology	5	2	5	0	0
-Tectonophysics	3	2	3	0	0
+Tectonophysics	5	2	5	0	0
 Terra Nova	2	2	1	0	0
 The 34th Annual ACM Symposium on User Interface Software and Technology	2	2	2	0	0
+The 9th OpenSky Symposium	2	2	2	0	0
 The Anatomical Record	2	2	2	0	0
 The Bone & Joint Journal	2	2	1	1	0.5
 The CRISPR Journal	2	2	2	0	0
 The EMBO Journal	2	2	2	0	0
+The European Physical Journal A	2	2	2	0	0
 The European Physical Journal B	2	2	2	0	0
 The European Physical Journal D	2	2	2	0	0
-The FASEB Journal	3	2	3	0	0
 The Journal of Clinical Endocrinology & Metabolism	3	2	3	0	0
 The Journal of Experimental Biology	3	2	3	0	0
 The Journal of Immunology	3	2	3	0	0
+The Journal of Physiology	2	2	2	0	0
+The Lancet Digital Health	2	2	2	0	0
+The Lancet Regional Health - Europe	2	2	2	0	0
 The Laryngoscope	2	2	2	0	0
 The Pharmacogenomics Journal	2	2	2	0	0
 The Plant Cell	2	2	2	0	0
-The Plant Genome	4	2	4	0	0
+The Plant Genome	5	2	5	0	0
 The Quantitative Methods for Psychology	3	2	2	0	0
 The Semantic Web,Lecture Notes in Computer Science	2	2	2	0	0
+Theoretical Computer Science	2	2	2	0	0
 Transactions of Japan Society of Kansei Engineering	2	2	1	0	0
-Transport in Porous Media	3	2	3	0	0
 Transportation Research Part A: Policy and Practice	2	2	2	0	0
+Transportation Research Part F: Traffic Psychology and Behaviour	3	2	3	0	0
+Transportation Research Record: Journal of the Transportation Research Board	4	2	4	0	0
 Trends in Hearing	2	2	2	0	0
-Ultramicroscopy	3	2	3	0	0
 Ultrasound in Medicine & Biology	2	2	2	0	0
 Urban Affairs Review	2	2	2	0	0
 Urban Forestry & Urban Greening	2	2	2	0	0
 Urban Science	2	2	2	0	0
 Urban Water Journal	2	2	2	0	0
-Vaccine	3	2	3	0	0
+Vaccine	4	2	4	0	0
 Veterinary Research	2	2	2	0	0
 Virchows Archiv	2	2	2	0	0
 Virus Research	2	2	2	0	0
 Vision	2	2	2	1	0.5
 Water Science and Technology	2	2	2	0	0
-Weather and Climate Extremes	2	2	2	0	0
 Wildlife Research	3	2	3	0	0
 Wiley StatsRef: Statistics Reference Online	3	2	3	0	0
 Wind Energy	2	2	2	1	0.5
-Wind Energy Science	3	2	3	2	0.667
-WIREs Computational Molecular Science	2	2	2	0	0
 WIREs Data Mining and Knowledge Discovery	3	2	3	0	0
 World Neurosurgery	2	2	2	0	0
+Yönetim ve Ekonomi Araştırmaları Dergisi	2	2	1	0	0
 Zoo Biology	2	2	2	0	0
 ZooKeys	2	2	2	0	0
-Zoological Journal of the Linnean Society	2	2	2	0	0
 11th Chaotic Modeling and Simulation International Conference,Springer Proceedings in Complexity	1	1	1	0	0
 19th International Conference on Mobile and Ubiquitous Multimedia	1	1	1	0	0
 2017 11th International Conference on Signal Processing and Communication Systems (ICSPCS)	1	1	1	0	0
@@ -1506,6 +1680,7 @@ Zoological Journal of the Linnean Society	2	2	2	0	0
 2021 5th International Conference on Digital Technology in Education	1	1	1	0	0
 2021 American Control Conference (ACC)	1	1	1	0	0
 2021 Design, Automation & Test in Europe Conference & Exhibition (DATE)	1	1	1	0	0
+2021 IEEE 24th International Conference on Information Fusion (FUSION)	1	1	1	0	0
 2021 The 5th International Conference on Machine Learning and Soft Computing	1	1	1	0	0
 26th ACM Symposium on Virtual Reality Software and Technology	1	1	1	0	0
 2D and Quasi-2D Composite and Nanocomposite Materials	2	1	2	0	0
@@ -1515,11 +1690,13 @@ Zoological Journal of the Linnean Society	2	2	2	0	0
 50th International Conference on Parallel Processing Workshop	1	1	1	0	0
 8th ACM IKDD CODS and 26th COMAD	1	1	1	0	0
 A Geoinformatics Approach to Water Erosion	1	1	1	0	0
+AAAI Workshop on Artificial Intelligence with Biased or Scarce Data (AIBSD)	1	1	1	0	0
 Academic Emergency Medicine	1	1	1	0	0
 Academic Radiology	1	1	1	0	0
 Accelerator Programming Using Directives,Lecture Notes in Computer Science	1	1	1	1	1
 Accident Analysis &amp; Prevention	1	1	1	0	0
 ACM Communications in Computer Algebra	1	1	1	0	0
+ACM SIGIR Conference on Human Information Interaction and Retrieval	1	1	1	0	0
 ACM SIGOPS Operating Systems Review	1	1	1	0	0
 ACM Symposium on Eye Tracking Research and Applications	1	1	1	0	0
 ACM Transactions on Architecture and Code Optimization	1	1	1	0	0
@@ -1534,12 +1711,12 @@ ACM Transactions on Sensor Networks	2	1	2	0	0
 ACS Applied Polymer Materials	1	1	1	0	0
 ACS Biomaterials Science & Engineering	1	1	1	0	0
 ACS Environmental Au	1	1	1	0	0
+ACS ES&amp;T Water	1	1	1	0	0
 ACS ES&T Engineering	1	1	1	0	0
 ACS ES&T Water	1	1	1	0	0
 ACS Food Science & Technology	1	1	1	0	0
 ACS In Focus	1	1	1	0	0
 ACS Materials Letters	1	1	1	1	1
-ACS Sensors	1	1	1	0	0
 Acta Acustica	1	1	1	0	0
 Acta Amazonica	1	1	1	0	0
 Acta Botanica Brasilica	1	1	1	0	0
@@ -1553,16 +1730,20 @@ Acta Oceanologica Sinica	1	1	1	0	0
 Acta Oncologica	1	1	1	0	0
 Acta Paediatrica	1	1	1	0	0
 Acta Parasitologica	1	1	1	0	0
+Acta Physiologica	1	1	1	0	0
 Acta Psychiatrica Scandinavica	1	1	1	0	0
 Acta Universitatis Sapientiae, Economics and Business	1	1	1	0	0
 Ad Hoc Networks	1	1	1	0	0
+Adaptive Human Behavior and Physiology	1	1	1	0	0
 ADBIS, TPDL and EDA 2020 Common Workshops and Doctoral Consortium,Communications in Computer and Information Science	1	1	1	0	0
+Addiction Research &amp; Theory	1	1	1	0	0
 Addictive Behaviors	1	1	1	0	0
 Adjunct Publication of the 23rd International Conference on Mobile Human-Computer Interaction	1	1	1	0	0
 Adjunct Publication of the 25th Conference on User Modeling, Adaptation and Personalization	1	1	1	0	0
 Adjunct Publication of the 28th ACM Conference on User Modeling, Adaptation and Personalization	1	1	1	0	0
 Administrative Sciences	1	1	1	0	0
 Adolescent Research Review	1	1	1	0	0
+Advanced Composite Materials	1	1	1	0	0
 Advanced Computational Intelligence in Healthcare-7,Studies in Computational Intelligence	1	1	1	0	0
 Advanced Concepts for Intelligent Vision Systems,Lecture Notes in Computer Science	1	1	1	0	0
 Advanced Electronic Materials	1	1	1	0	0
@@ -1571,8 +1752,8 @@ Advanced Information Networking and Applications,Advances in Intelligent Systems
 Advanced NanoBiomed Research	1	1	1	0	0
 Advanced Optical Materials	1	1	1	0	0
 Advanced Optical Technologies	1	1	1	0	0
+Advanced Practical Approaches to Web Mining Techniques and Application,Advances in Web Technologies and Engineering	1	1	1	0	0
 Advanced Sciences and Technologies for Security Applications,Cyber-Security in Critical Infrastructures	1	1	1	0	0
-Advances in Applied Energy	1	1	1	0	0
 Advances in Astronomy	1	1	1	0	0
 Advances in Atmospheric Sciences	1	1	1	0	0
 Advances in Bioinformatics and Computational Biology,Lecture Notes in Computer Science	1	1	1	0	0
@@ -1580,8 +1761,10 @@ Advances in Bridge Engineering	1	1	1	0	0
 Advances in Cartography and GIScience,Lecture Notes in Geoinformation and Cartography	1	1	1	0	0
 Advances in Colloid and Interface Science	1	1	1	0	0
 Advances in Computational Mathematics	1	1	1	0	0
+Advances in Continuous and Discrete Models	1	1	1	0	0
 Advances in Data Mining and Database Management,New Opportunities for Sentiment Analysis and Information Processing	1	1	1	0	0
 Advances in Experimental Medicine and Biology,Single-cell Sequencing and Methylation	1	1	1	0	0
+Advances in Geophysics, Tectonics and Petroleum Geosciences,Advances in Science, Technology &amp; Innovation	1	1	1	0	0
 Advances in Health Sciences Education	1	1	1	0	0
 Advances in High Performance Computing,Studies in Computational Intelligence	1	1	1	0	0
 Advances in Informatics and Computing in Civil and Construction Engineering	1	1	1	0	0
@@ -1599,13 +1782,16 @@ Advances in Intelligent Systems and Computing,The 11th International Conference 
 Advances in Intelligent Systems and Computing,The 8th International Conference on Computer Engineering and Networks (CENet2018)	1	1	1	0	0
 Advances in Intelligent Systems and Computing,Trends and Applications in Information Systems and Technologies	1	1	1	0	0
 Advances in Medical Education and Practice	1	1	1	0	0
+Advances in Meteorology	1	1	1	0	0
 Advances in Nutrition	1	1	1	0	0
+Advances in Parallel &amp; Distributed Processing, and Applications,Transactions on Computational Science and Computational Intelligence	1	1	1	0	0
 Advances in Robotics - 5th International Conference of The Robotics Society	1	1	1	0	0
 Advances in Smart Communication Technology and Information Processing,Lecture Notes in Networks and Systems	1	1	1	0	0
+Advances in Statistical Climatology, Meteorology and Oceanography	1	1	1	0	0
 Advances in Sustainability Science and Technology,Smart and Sustainable Technology for Resilient Cities and Communities	1	1	1	0	0
 Advances in Wound Care	1	1	1	0	0
 Aerobiologia	1	1	1	0	0
-African Journal of Marine Science	1	1	1	0	0
+African Journal of Ecology	1	1	1	0	0
 African Journal of Primary Health Care & Family Medicine	1	1	1	0	0
 African Journal of Range & Forage Science	2	1	2	0	0
 African Journal of Wildlife Research	1	1	1	0	0
@@ -1615,7 +1801,6 @@ Aging & Mental Health	1	1	1	1	1
 Aging Cell	1	1	1	0	0
 Agricultural & Environmental Letters	1	1	1	0	0
 Agriculture Automation and Control,Fundamentals of Agricultural and Field Robotics	1	1	1	0	0
-Agriculture, Ecosystems &amp; Environment	1	1	1	0	0
 AgriEngineering	1	1	1	0	0
 Agrosystems, Geosciences & Environment	2	1	2	0	0
 Agrosystems, Geosciences &amp; Environment	1	1	1	0	0
@@ -1629,11 +1814,12 @@ Ain Shams Engineering Journal	1	1	1	0	0
 AIP Advances	1	1	1	0	0
 Aircraft Engineering and Aerospace Technology	1	1	1	0	0
 Alcohol and Alcoholism	1	1	1	0	0
-Alcoholism: Clinical and Experimental Research	1	1	1	0	0
+Alexandria Engineering Journal	1	1	1	0	0
 Algal Research	1	1	1	0	0
 Algorithmic Aspects of Cloud Computing,Lecture Notes in Computer Science	1	1	1	0	0
 Algorithms for Intelligent Systems,Proceedings of 2nd International Conference on Artificial Intelligence: Advances and Applications	1	1	1	0	0
 Algorithms for Intelligent Systems,Proceedings of International Conference on Innovations in Information and Communication Technologies	1	1	1	0	0
+Alimentary Pharmacology &amp; Therapeutics	1	1	1	0	0
 Allergy	1	1	1	0	0
 Alzheimer's & Dementia	1	1	1	0	0
 Alzheimer's & Dementia: Diagnosis, Assessment & Disease Monitoring	1	1	1	0	0
@@ -1653,7 +1839,6 @@ American Journal of Orthodontics and Dentofacial Orthopedics	1	1	1	1	1
 American Journal of Physiology-Endocrinology and Metabolism	1	1	1	0	0
 American Journal of Physiology-Lung Cellular and Molecular Physiology	1	1	1	0	0
 American Journal of Physiology-Regulatory, Integrative and Comparative Physiology	1	1	1	0	0
-American Journal of Primatology	1	1	1	0	0
 American Journal of Speech-Language Pathology	1	1	1	0	0
 American Journal of Transplantation	1	1	1	0	0
 American Journal on Intellectual and Developmental Disabilities	1	1	1	0	0
@@ -1668,7 +1853,6 @@ Analysis and Mathematical Physics	1	1	1	0	0
 Analytical Methods	1	1	1	0	0
 Angewandte Chemie	1	1	1	0	0
 Angewandte Chemie International Edition	1	1	1	0	0
-Animal Conservation	1	1	1	0	0
 Animal Genetics	6	1	6	0	0
 Animal Models in Medicine and Biology [Working Title]	1	1	1	0	0
 Animal Production Science	1	1	1	0	0
@@ -1687,8 +1871,7 @@ Annals of Telecommunications	1	1	1	0	0
 Annals of the American Thoracic Society	1	1	1	0	0
 Annals of the Entomological Society of America	1	1	1	0	0
 Annals of the International Communication Association	1	1	1	0	0
-Annals of the New York Academy of Sciences	1	1	1	0	0
-Annals of the Rheumatic Diseases	1	1	1	0	0
+Annals of the Rheumatic Diseases	2	1	2	0	0
 Annals of Tourism Research	1	1	1	0	0
 Annals of Work Exposures and Health	1	1	1	0	0
 Annual Computer Security Applications Conference	1	1	1	0	0
@@ -1700,14 +1883,15 @@ Annual Review of Nutrition	1	1	1	0	0
 Annual Review of Pharmacology and Toxicology	1	1	1	0	0
 Annual Review of Physical Chemistry	1	1	1	0	0
 Annual Review of Plant Biology	1	1	1	0	0
-Annual Review of Statistics and Its Application	1	1	1	0	0
 Annual Review of Vision Science	1	1	1	0	0
 Anthropocene	1	1	1	0	0
 Antimicrobial Agents and Chemotherapy	1	1	1	0	0
 Antimicrobial Stewardship & Healthcare Epidemiology	1	1	1	0	0
 Antioxidants	1	1	1	0	0
+Antiquity	1	1	1	0	0
 Antonie van Leeuwenhoek	1	1	1	0	0
 Anxiety, Stress, & Coping	1	1	1	0	0
+Anxiety, Stress, &amp; Coping	1	1	1	0	0
 AoB PLANTS	2	1	2	0	0
 Aphasiology	1	1	1	0	0
 APL Bioengineering	1	1	1	0	0
@@ -1716,18 +1900,22 @@ APL Photonics	1	1	1	0	0
 Application of Intelligent Systems in Multi-modal Information Analytics,Advances in Intelligent Systems and Computing	1	1	1	0	0
 Applications in Plant Sciences	2	1	2	0	0
 Applications of Computational Intelligence,Communications in Computer and Information Science	1	1	1	0	0
+Applications of Computational Science in Artificial Intelligence,Advances in Computational Intelligence and Robotics	1	1	1	0	0
+Applications of Space Techniques on the Natural Hazards in the MENA Region	1	1	1	0	0
+Applied Acoustics	1	1	1	0	0
 Applied AI Letters	1	1	1	0	0
 Applied Analysis of Composite Media	2	1	2	0	0
-Applied Animal Behaviour Science	2	1	2	0	0
+Applied and Computational Harmonic Analysis	1	1	1	0	0
+Applied and Environmental Soil Science	1	1	1	0	0
+Applied Animal Behaviour Science	3	1	3	0	0
 Applied Cognitive Psychology	2	1	2	2	1
 Applied Geochemistry	1	1	1	0	0
-Applied Intelligence	1	1	1	0	0
 Applied Linguistics Review	1	1	1	1	1
 Applied Mechanics	1	1	1	0	0
 Applied Microbiology and Biotechnology	1	1	1	0	0
 Applied Neuropsychology: Adult	1	1	1	0	0
+Applied Ocean Research	1	1	1	0	0
 Applied Physics B	1	1	1	1	1
-Applied Physics Reviews	1	1	1	0	0
 Applied Physiology, Nutrition, and Metabolism	1	1	1	0	0
 Applied Psychophysiology and Biofeedback	1	1	1	1	1
 Applied Radiation and Isotopes	1	1	1	0	0
@@ -1740,25 +1928,29 @@ Aquatic Ecology	1	1	1	0	0
 Aquatic Sciences	1	1	1	1	1
 Aquatic Toxicology	1	1	1	0	0
 Archaeological and Anthropological Sciences	1	1	1	0	0
+Archaeology in Oceania	1	1	1	0	0
 Archives Animal Breeding	1	1	1	1	1
 Archives of Dermatological Research	1	1	1	0	0
 Archives of Endocrinology and Metabolism	1	1	1	0	0
 Archives of Gerontology and Geriatrics	1	1	1	0	0
 Archives of Microbiology	1	1	1	0	0
 Archives of Physical Medicine and Rehabilitation	1	1	1	0	0
+Archives of Public Health	3	1	3	0	0
 Archives of Sexual Behavior	1	1	1	0	0
 Archives of Toxicology	4	1	4	0	0
 Archives of Virology	1	1	1	0	0
 Arctic Science	1	1	1	0	0
+Array	1	1	1	0	0
 Arteriosclerosis, Thrombosis, and Vascular Biology	1	1	1	0	0
+Arthritis Research &amp; Therapy	1	1	1	0	0
 Arthroplasty Today	1	1	1	0	0
 Arthroscopy: The Journal of Arthroscopic & Related Surgery	1	1	1	0	0
+Artificial Intelligence in Agriculture	1	1	1	0	0
 Artificial Intelligence in Drug Design,Methods in Molecular Biology	1	1	1	0	0
 Artificial Intelligence in HCI,Lecture Notes in Computer Science	1	1	1	0	0
-Artificial Intelligence in Medicine	2	1	2	0	0
 Artificial Intelligence in Medicine,Lecture Notes in Computer Science	1	1	1	0	0
 Artificial Intelligence in Medicine: Knowledge Representation and Transparent and Explainable Systems,Lecture Notes in Computer Science	1	1	1	0	0
-Artificial Intelligence in Music, Sound, Art and Design,Lecture Notes in Computer Science	1	1	1	0	0
+Artificial Intelligence in Music, Sound, Art and Design,Lecture Notes in Computer Science	2	1	2	0	0
 Artificial Intelligence to Solve Pervasive Internet of Things Issues	1	1	1	0	0
 Artificial Neural Networks and Machine Learning – ICANN 2018,Lecture Notes in Computer Science	1	1	1	0	0
 Artificial Neural Networks and Machine Learning – ICANN 2019: Text and Time Series,Lecture Notes in Computer Science	1	1	1	0	0
@@ -1768,6 +1960,7 @@ ASCEND 2020	1	1	1	0	0
 Asia Communications and Photonics Conference/International Conference on Information Photonics and Optical Communications 2020 (ACP/IPOC)	1	1	1	0	0
 Asia Pacific Education Review	1	1	1	0	0
 Asia-Pacific Journal of Atmospheric Sciences	1	1	1	0	0
+Assessment	1	1	1	0	0
 Assessment & Evaluation in Higher Education	1	1	1	0	0
 Assessment for Effective Intervention	1	1	1	0	0
 Assistive Technology	1	1	1	0	0
@@ -1777,13 +1970,14 @@ Astronomische Nachrichten	2	1	2	0	0
 Astronomy Reports	1	1	1	0	0
 Astroparticle Physics	1	1	1	0	0
 Atherosclerosis	1	1	1	0	0
-Atmospheric Research	1	1	1	0	0
 Australian & New Zealand Journal of Statistics	1	1	1	1	1
+Australian &amp; New Zealand Journal of Statistics	1	1	1	0	0
+Australian Accounting Review	1	1	1	0	0
 Australian Archaeology	1	1	1	0	0
 Australian Journal of Botany	1	1	1	0	0
 Australian Journal of Linguistics	1	1	1	0	0
-Autism	1	1	1	0	0
 Automated Deduction – CADE 28,Lecture Notes in Computer Science	1	1	1	0	0
+Automatica	1	1	1	0	0
 Autonomous Agents and Multi-Agent Systems	1	1	1	0	0
 Autonomous Robots	1	1	1	0	0
 Avaliação: Revista da Avaliação da Educação Superior (Campinas)	1	1	1	0	0
@@ -1799,35 +1993,38 @@ Belgeo	1	1	1	0	0
 Beyond Databases, Architectures and Structures. Paving the Road to Smart Data Processing and Analysis,Communications in Computer and Information Science	1	1	1	0	0
 Big Data	1	1	1	0	0
 Big Data & Society	1	1	1	0	0
-Big Data and Cognitive Computing	2	1	2	0	0
+Bilişim Teknolojileri Dergisi	1	1	1	0	0
 Bio-inspired Information and Communication Technologies,Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering	1	1	1	1	1
+BIO-PROTOCOL	1	1	1	0	0
 Biochemical and Biophysical Research Communications	1	1	1	0	0
 Biochemical Journal	1	1	1	0	0
-Biochimica et Biophysica Acta (BBA) - Bioenergetics	1	1	1	0	0
 Biochimie	1	1	1	0	0
+BioData Mining	1	1	1	0	0
 Biodiversity Data Journal	1	1	1	0	0
-Bioengineering	1	1	1	0	0
+Biodiversity Islands: Strategies for Conservation in Human-Dominated Environments,Topics in Biodiversity and Conservation	1	1	1	0	0
+Bioengineering	2	1	2	0	0
 Bioengineering & Translational Medicine	1	1	1	1	1
 Biofuels, Bioproducts and Biorefining	1	1	1	0	0
 Biogerontology	2	1	2	0	0
 Bioinformatics and Biomedical Engineering,Lecture Notes in Computer Science	1	1	1	0	0
 Bioinformatics Research and Applications,Lecture Notes in Computer Science	1	1	1	0	0
 Bioinspiration & Biomimetics	1	1	1	1	1
+Biointerphases	1	1	1	0	0
 Biological Chemistry	1	1	1	0	0
 Biological Cybernetics	1	1	1	0	0
 Biological Imaging	1	1	1	0	0
-Biological Psychiatry	1	1	1	0	0
 Biological Research For Nursing	1	1	1	0	0
+Biology and Fertility of Soils	1	1	1	0	0
 Biology and Life Sciences Forum	1	1	1	0	0
 Biomarkers in Medicine	1	1	1	0	0
 Biomaterials	1	1	1	1	1
 Biomaterials Science	1	1	1	0	0
-Biomechanics and Modeling in Mechanobiology	2	1	2	0	0
 BioMed Research International	1	1	1	0	0
 Biomedical Engineering Letters	1	1	1	0	0
 BioMedical Engineering OnLine	1	1	1	1	1
 Biomedical Image Registration,Lecture Notes in Computer Science	1	1	1	0	0
 Biomedical Physics & Engineering Express	1	1	1	0	0
+Biomedical Physics &amp; Engineering Express	1	1	1	0	0
 Bioorganic Chemistry	1	1	1	0	0
 Biophotonics Congress 2021	1	1	1	0	0
 Biophysical Reports	1	1	1	0	0
@@ -1835,6 +2032,7 @@ Bioprocess and Biosystems Engineering	1	1	1	0	0
 Bioresource Technology	1	1	1	0	0
 BioScience	1	1	1	0	0
 Bioscience Reports	1	1	1	0	0
+Biosensors and Bioelectronics	1	1	1	0	0
 Biosystems & Biorobotics,Wearable Robotics: Challenges and Trends	1	1	1	0	0
 Biosystems Engineering	1	1	1	0	0
 BioTechniques	1	1	1	0	0
@@ -1848,18 +2046,16 @@ Blood Cancer Discovery	1	1	1	0	0
 Blood Cancer Journal	2	1	2	0	0
 BMC Anesthesiology	1	1	1	0	0
 BMC Chemistry	1	1	1	0	0
-BMC Ecology and Evolution	1	1	1	0	0
 BMC Emergency Medicine	1	1	1	0	0
-BMC Genomic Data	1	1	1	0	0
+BMC Genomic Data	2	1	2	0	0
 BMC Immunology	1	1	1	0	0
 BMC Medical Education	1	1	1	0	0
-BMC Musculoskeletal Disorders	1	1	1	0	0
+BMC Microbiology	1	1	1	0	0
 BMC Nephrology	1	1	1	0	0
 BMC Neurology	1	1	1	0	0
 BMC Pediatrics	1	1	1	0	0
 BMC Pharmacology and Toxicology	2	1	2	0	0
 BMC Plant Biology	1	1	1	0	0
-BMC Pregnancy and Childbirth	1	1	1	0	0
 BMC Psychology	2	1	2	0	0
 BMC Sports Science, Medicine and Rehabilitation	1	1	1	0	0
 BMC Systems Biology	1	1	1	0	0
@@ -1874,15 +2070,16 @@ BMJ Paediatrics Open	1	1	1	0	0
 Bone	1	1	1	0	0
 Bone & Joint Open	1	1	1	0	0
 Boreas	1	1	1	0	0
+Brachytherapy	1	1	1	0	0
 Brain and Cognition	1	1	1	0	0
 Brain Imaging and Behavior	1	1	1	0	0
 Brain Multiphysics	1	1	1	0	0
 Brain Research	1	1	1	0	0
 Brain Research Bulletin	1	1	1	0	0
-Brain Stimulation	1	1	1	0	0
 Brain Topography	1	1	1	0	0
 Brainlesion: Glioma, Multiple Sclerosis, Stroke and Traumatic Brain Injuries,Lecture Notes in Computer Science	3	1	3	0	0
-Brazilian Journal of Botany	1	1	1	0	0
+Brazilian Journal of Botany	2	1	2	0	0
+Brazilian Journal of Microbiology	1	1	1	0	0
 Breast Cancer Research and Treatment	1	1	1	0	0
 Breastfeeding Medicine	1	1	1	0	0
 Breeding Science	1	1	1	0	0
@@ -1891,8 +2088,10 @@ Bringing Innovative Robotic Technologies from Research Labs to Industrial End-us
 British Journal of Cancer	1	1	1	0	0
 British Journal of Clinical Psychology	1	1	1	0	0
 British Journal of Dermatology	1	1	1	0	0
+British Journal of Educational Psychology	1	1	1	0	0
 British Journal of General Practice	1	1	1	0	0
 British Journal of Haematology	1	1	1	0	0
+British Journal of Mathematical and Statistical Psychology	1	1	1	0	0
 British Journal of Nutrition	1	1	1	0	0
 British Journal of Political Science	1	1	1	0	0
 British Journal of Surgery	1	1	1	0	0
@@ -1907,13 +2106,16 @@ Business Process Management Workshops,Lecture Notes in Business Information Proc
 Business Recovery in Emerging Markets,Palgrave Studies in Democracy, Innovation, and Entrepreneurship for Growth	1	1	1	0	0
 CAAI Transactions on Intelligence Technology	1	1	1	0	0
 Cambridge Archaeological Journal	1	1	1	0	0
+Canadian Journal of Animal Science	1	1	1	0	0
 Canadian Journal of Earth Sciences	1	1	1	0	0
 Canadian Journal of Forest Research	1	1	1	0	0
 Canadian Journal of Plant Pathology	1	1	1	0	0
 Canadian Journal of Political Science	1	1	1	0	0
 Canadian Water Resources Journal / Revue canadienne des ressources hydriques	2	1	2	0	0
-Cancer	1	1	1	0	0
+Cancer Investigation	1	1	1	0	0
 Cancer Medicine	1	1	1	0	0
+Cannabis and Cannabinoid Research	1	1	1	0	0
+CardioVascular and Interventional Radiology	1	1	1	0	0
 Cardiovascular Engineering and Technology	1	1	1	0	0
 Cardiovascular Therapy and Prevention	1	1	1	0	0
 CARTILAGE	2	1	2	0	0
@@ -1923,23 +2125,27 @@ Case-Based Reasoning Research and Development,Lecture Notes in Computer Science	
 Catalysts	2	1	2	0	0
 CCF Transactions on Pervasive Computing and Interaction	1	1	1	0	0
 CEAS Space Journal	1	1	1	0	0
-Cell Biochemistry and Function	1	1	1	0	0
+Cell Biochemistry and Function	2	1	2	0	0
 Cell Chemical Biology	1	1	1	0	0
 Cell Discovery	2	1	2	0	0
+Cell Reports Physical Science	1	1	1	0	0
 Cell Research	3	1	3	0	0
 Cellular & Molecular Immunology	1	1	1	0	0
 Cellular and Molecular Approaches in Fish Biology	1	1	1	0	0
 Cellular and Molecular Gastroenterology and Hepatology	1	1	1	0	0
 Cellulose	1	1	1	0	0
-Cerebral Cortex Communications	1	1	1	0	0
 CHANCE	1	1	1	0	0
 Change Detection and Image Time Series Analysis 2	1	1	1	0	0
+Chaos, Solitons &amp; Fractals	1	1	1	0	0
 Chatbot Research and Design,Lecture Notes in Computer Science	1	1	1	0	0
+Chem Catalysis	1	1	1	0	0
+ChemBioChem	1	1	1	1	1
 ChemCatChem	2	1	2	0	0
 Chemical Data Collections	1	1	1	0	0
+Chemical Engineering &amp; Technology	1	1	1	0	0
 Chemical Engineering Communications	1	1	1	0	0
 Chemical Engineering Journal	1	1	1	0	0
-Chemical Engineering Research and Design	1	1	1	1	1
+Chemical Geology	1	1	1	0	0
 Chemical Physics	1	1	1	0	0
 Chemical Physics Letters	1	1	1	0	0
 Chemistry – A European Journal	1	1	1	0	0
@@ -1949,10 +2155,12 @@ Chemosphere	3	1	3	0	0
 ChemPhysChem	1	1	1	0	0
 ChemSusChem	1	1	1	0	0
 Chest	1	1	1	0	0
+CHI Conference on Human Factors in Computing Systems Extended Abstracts	1	1	1	0	0
 Child & Youth Care Forum	1	1	1	0	0
 Child Abuse & Neglect	1	1	1	0	0
-Child Development	1	1	1	0	0
 Child Neuropsychology	1	1	1	0	0
+Child Psychiatry &amp; Human Development	1	1	1	0	0
+Child's Nervous System	1	1	1	0	0
 Chinese Geographical Science	1	1	1	0	0
 Chinese Language and Discourse,Chinese Language and Discourse / An International and Interdisciplinary Journal,Chinese Language and Discourse. An International and Interdisciplinary Journal	1	1	1	0	0
 Chiropractic & Manual Therapies	3	1	3	0	0
@@ -1966,13 +2174,19 @@ Circulation: Cardiovascular Imaging	1	1	1	0	0
 Circulation: Cardiovascular Interventions	1	1	1	0	0
 Climate Policy	1	1	1	0	0
 Climate Risk Management	1	1	1	0	0
-Clinical Cancer Research	2	1	2	0	0
+Clinica Chimica Acta	1	1	1	0	0
+Clinical Biochemistry	1	1	1	0	0
+Clinical Chemistry and Laboratory Medicine (CCLM)	1	1	1	0	0
 Clinical Colorectal Cancer	1	1	1	1	1
+Clinical Epidemiology	1	1	1	1	1
 Clinical Gastroenterology and Hepatology	1	1	1	0	0
 Clinical Imaging	1	1	1	0	0
+Clinical Lung Cancer	1	1	1	0	0
+Clinical Neurology and Neurosurgery	1	1	1	0	0
 Clinical Nutrition	1	1	1	0	0
 Clinical Nutrition ESPEN	1	1	1	0	0
 Clinical Oral Implants Research	1	1	1	0	0
+Clinical Oral Investigations	1	1	1	0	0
 Clinical Orthopaedics & Related Research	1	1	1	0	0
 Clinical Pharmacokinetics	1	1	1	0	0
 Clinical Psychology Review	1	1	1	0	0
@@ -1982,20 +2196,20 @@ Clinics	1	1	1	0	0
 Cluster Computing	1	1	1	0	0
 Coastal Management	1	1	1	0	0
 Cogent Engineering	1	1	1	0	0
+Cognitive and Behavioral Practice	1	1	1	0	0
 Cognitive Linguistics	1	1	1	0	0
 Cognitive Neuropsychology	1	1	1	0	0
-Cognitive Psychology	1	1	1	0	0
-Cognitive Research: Principles and Implications	1	1	1	0	0
 Cognitive Systems Research	1	1	1	0	0
 Cognitive Therapy and Research	1	1	1	0	0
 Cold Regions Science and Technology	1	1	1	0	0
 Collabra: Psychology	1	1	1	0	0
 Colloids and Surfaces A: Physicochemical and Engineering Aspects	1	1	1	0	0
 Combustion Theory and Modelling	1	1	1	0	0
-Communication Monographs	1	1	1	0	0
+Communication Monographs	2	1	2	0	0
 Communication Studies	1	1	1	0	0
 Communication, Smart Technologies and Innovation for Society,Smart Innovation, Systems and Technologies	1	1	1	0	0
 Communications	1	1	1	0	0
+Communications Earth &amp; Environment	1	1	1	0	0
 Communications in Applied Mathematics and Computational Science	1	1	1	0	0
 Communications in Computer and Information Science,Advances in Bias and Fairness in Information Retrieval	1	1	1	0	0
 Communications in Computer and Information Science,Applied Computer Sciences in Engineering	1	1	1	0	0
@@ -2023,7 +2237,9 @@ Communications in Computer and Information Science,Supercomputing	1	1	1	0	0
 Communications in Computer and Information Science,Tools and Techniques for High Performance Computing	1	1	1	1	1
 Communications in Soil Science and Plant Analysis	1	1	1	0	0
 Communications in Statistics - Simulation and Computation	1	1	1	0	0
+Communications in Statistics: Case Studies, Data Analysis and Applications	1	1	1	0	0
 Communications Materials	1	1	1	0	0
+Community College Journal of Research and Practice	1	1	1	0	0
 Companion of the 2020 ACM/IEEE International Conference on Human-Robot Interaction	1	1	1	0	0
 Companion Proceedings of the Web Conference 2020	1	1	1	0	0
 Companion Publication of the 2021 International Conference on Multimodal Interaction	1	1	1	0	0
@@ -2037,9 +2253,9 @@ Comptes Rendus Mécanique	1	1	1	0	0
 Comptes Rendus. Physique	1	1	1	0	0
 Computation	1	1	1	0	0
 Computational Collective Intelligence,Lecture Notes in Computer Science	1	1	1	0	0
-Computational Economics	1	1	1	0	0
 Computational Intelligence in Pattern Recognition,Advances in Intelligent Systems and Computing	1	1	1	0	0
 Computational Intelligence in the Internet of Things,Advances in Computational Intelligence and Robotics	1	1	1	0	0
+Computational Intelligence Methodologies Applied to Sustainable Development Goals,Studies in Computational Intelligence	1	1	1	0	0
 Computational Linguistics	1	1	1	0	0
 Computational Management Science	1	1	1	1	1
 Computational Optimization and Applications	1	1	1	0	0
@@ -2051,8 +2267,8 @@ Computer Aided Geometric Design	1	1	1	0	0
 Computer Aided Systems Theory – EUROCAST 2019,Lecture Notes in Computer Science	1	1	1	0	0
 Computer Analysis of Images and Patterns,Lecture Notes in Computer Science	1	1	1	0	0
 Computer Communications	1	1	1	0	0
-Computer Networks	1	1	1	0	0
 Computer Optics	1	1	1	0	0
+Computer Science and Application	1	1	1	0	0
 Computer Security – ESORICS 2020,Lecture Notes in Computer Science	1	1	1	0	0
 Computer Speech &amp; Language	1	1	1	0	0
 Computer Vision	4	1	4	0	0
@@ -2062,10 +2278,8 @@ Computer Vision and Image Understanding	1	1	1	0	0
 Computer-Aided Civil and Infrastructure Engineering	1	1	1	0	0
 Computer-Aided Design	1	1	1	0	0
 Computerized Medical Imaging and Graphics	1	1	1	0	0
-Computers	1	1	1	0	0
 Computers & Security	1	1	1	0	0
 Computers &amp; Chemical Engineering	1	1	1	0	0
-Computers &amp; Fluids	1	1	1	0	0
 Computers &amp; Mathematics with Applications	1	1	1	0	0
 Computers &amp; Security	1	1	1	0	0
 Computers and Education Open	1	1	1	0	0
@@ -2075,13 +2289,15 @@ Conference Proceedings of the Society for Experimental Mechanics Series,Dynamic 
 Congenital Anomalies	1	1	1	0	0
 Connections	1	1	1	0	0
 Conservation Letters	1	1	1	0	0
+Construction Robotics	1	1	1	0	0
 Consumer Psychology Review	1	1	1	0	0
 Continental Shelf Research	1	1	1	0	0
 Contributions to Plasma Physics	1	1	1	0	0
+Counselor Education and Supervision	1	1	1	0	0
 Creative Education	1	1	1	0	0
 Creative Education Studies	1	1	1	0	0
 Creative Industries Journal	1	1	1	0	0
-Critical Care	1	1	1	0	0
+Critical Care	2	1	2	0	0
 Critical Care Explorations	1	1	1	0	0
 Critical Care Medicine	1	1	1	0	0
 Critical Discourse Studies	1	1	1	0	0
@@ -2090,19 +2306,21 @@ Critical Reviews in Biochemistry and Molecular Biology	1	1	1	0	0
 Critical Studies in Television: The International Journal of Television Studies	1	1	1	0	0
 Crop Breeding and Applied Biotechnology	1	1	1	0	0
 Crops	1	1	1	0	0
+Cross-Cultural Research	1	1	1	0	0
 Cryobiology	1	1	1	0	0
 Crystal Growth & Design	1	1	1	0	0
+Crystal Growth &amp; Design	1	1	1	0	0
+Crystal Research and Technology	1	1	1	0	0
 Crystals	1	1	1	0	0
-CrystEngComm	1	1	1	0	0
 Cureus	2	1	2	0	0
 Current Cardiology Reports	1	1	1	0	0
 Current Climate Change Reports	1	1	1	0	0
 Current Molecular Medicine	1	1	1	0	0
-Current Oncology	1	1	1	0	0
 Current Opinion in Chemical Engineering	1	1	1	0	0
 Current Opinion in Genetics & Development	1	1	1	0	0
 Current Opinion in Neurobiology	1	1	1	0	0
 Current Opinion in Plant Biology	1	1	1	0	0
+Current Opinion in Solid State and Materials Science	1	1	1	0	0
 Current Opinion in Virology	1	1	1	0	0
 Current Protocols in Bioinformatics	1	1	1	0	0
 Current Protocols in Human Genetics	1	1	1	0	0
@@ -2134,6 +2352,7 @@ Death Studies	1	1	1	0	0
 Decision Sciences	1	1	1	0	0
 Decisions in Economics and Finance	1	1	1	0	0
 Deep Learning for Robot Perception and Cognition	1	1	1	0	0
+Deep Sea Research Part II: Topical Studies in Oceanography	1	1	1	0	0
 Democratization	1	1	1	0	0
 Demographic Research	1	1	1	0	0
 Dendrochronologia	2	1	2	0	0
@@ -2145,19 +2364,17 @@ Desalination	2	1	2	0	0
 Design Studies	1	1	1	0	0
 Design, User Experience, and Usability. Design for Contemporary Interactive Environments,Lecture Notes in Computer Science	1	1	1	0	0
 Detritus,Volume 16 - September 2021	1	1	1	0	0
-Development and Psychopathology	1	1	1	0	0
 Developmental Biology	1	1	1	0	0
 Developmental Dynamics	2	1	2	0	0
 Developmental Review	1	1	1	0	0
 Developments in Information & Knowledge Management for Business Applications,Studies in Systems, Decision and Control	1	1	1	0	0
 Deviant Behavior	1	1	1	0	0
 Diabetes Technology & Therapeutics	1	1	1	0	0
+Diabetes Therapy	1	1	1	0	0
 Diagnostic and Prognostic Research	1	1	1	0	0
 Die zukünftigen Lehrerinnen und Lehrer	1	1	1	0	0
 Diffusion Foundations	1	1	1	0	0
 Digital Biomarkers	1	1	1	0	0
-Digital Communications and Networks	1	1	1	0	0
-Digital Discovery	1	1	1	0	0
 DIGITAL HEALTH	1	1	1	0	0
 Digital Heritage. Progress in Cultural Heritage: Documentation, Preservation, and Protection,Lecture Notes in Computer Science	1	1	1	0	0
 Digital Human Modeling and Applications in Health, Safety, Ergonomics and Risk Management. AI, Product and Service,Lecture Notes in Computer Science	1	1	1	0	0
@@ -2171,6 +2388,7 @@ Distributed Applications and Interoperable Systems,Lecture Notes in Computer Sci
 DNA Research	1	1	1	0	0
 Document Analysis and Recognition – ICDAR 2021 Workshops,Lecture Notes in Computer Science	1	1	1	0	0
 Document Analysis and Recognition – ICDAR 2021,Lecture Notes in Computer Science	1	1	1	0	0
+Drone Systems and Applications	1	1	1	0	0
 Drones	1	1	1	0	0
 Drying Technology	2	1	2	0	0
 Düzce Üniversitesi Bilim ve Teknoloji Dergisi	1	1	1	0	0
@@ -2192,12 +2410,14 @@ Economic Research-Ekonomska Istraživanja	1	1	1	0	0
 ECS Journal of Solid State Science and Technology	1	1	1	1	1
 Education for Chemical Engineers	1	1	1	0	0
 Education Research International	1	1	1	0	0
+Educational Evaluation and Policy Analysis	1	1	1	0	0
 Educational Measurement: Issues and Practice	1	1	1	0	0
 Educational Psychology Review	1	1	1	0	0
 Educational Studies	1	1	1	0	0
 Educational Technology Research and Development	1	1	1	0	0
 EFORT Open Reviews	1	1	1	0	0
 Egyptian Journal of Medical Human Genetics	1	1	1	0	0
+Einfache Datenauswertung mit R	4	1	4	0	0
 Ekonomi İşletme ve Maliye Araştırmaları Dergisi	1	1	1	0	0
 El profesional de la información	1	1	1	0	0
 Electric Power Components and Systems	1	1	1	0	0
@@ -2215,14 +2435,14 @@ EMBO reports	1	1	1	1	1
 Emerging Frontiers in Nonlinear Science,Nonlinear Systems and Complexity	1	1	1	0	0
 Emerging Infectious Diseases	1	1	1	0	0
 Emerging Topics in Life Sciences	1	1	1	0	0
-Emu - Austral Ornithology	1	1	1	0	0
 Encyclopedia of Geology	1	1	1	0	0
 Encyclopedia of Solid Earth Geophysics,Encyclopedia of Earth Sciences Series	2	1	2	0	0
 Endangered Species Research	1	1	1	0	0
 Endocrinology, Diabetes & Metabolism	1	1	1	0	0
+Energy &amp; Environmental Science	1	1	1	0	0
 Energy and Climate Change	1	1	1	0	0
 Energy Economics	1	1	1	0	0
-Energy Reports	1	1	1	0	0
+Energy Sources, Part A: Recovery, Utilization, and Environmental Effects	1	1	1	0	0
 Energy, Environment, and Sustainability,Two-Phase Flow for Automotive and Power Generation Sectors	1	1	1	0	0
 Energy, Sustainability and Society	1	1	1	0	0
 Engineering	1	1	1	0	0
@@ -2238,14 +2458,17 @@ Environmental and Molecular Mutagenesis	1	1	1	0	0
 Environmental and Sustainability Indicators	1	1	1	0	0
 Environmental Chemistry Letters	1	1	1	0	0
 Environmental Communication	1	1	1	0	0
-Environmental DNA	1	1	1	0	0
 Environmental Engineering Science	1	1	1	0	0
-Environmental Epigenetics	1	1	1	0	0
+Environmental Entomology	1	1	1	0	0
+Environmental Epigenetics	2	1	2	0	0
 Environmental Evidence	1	1	1	0	0
+Environmental Health	1	1	1	0	0
+Environmental Health Perspectives	1	1	1	1	1
 Environmental Impact Assessment Review	1	1	1	0	0
 Environmental Management	1	1	1	0	0
 Environmental Microbiology Reports	1	1	1	0	0
 Environmental Politics	2	1	2	0	0
+Environmental Research: Infrastructure and Sustainability	1	1	1	0	0
 Environmental Science & Policy	1	1	1	0	0
 Environmental Science: Processes & Impacts	1	1	1	0	0
 Environmental Science: Water Research & Technology	1	1	1	0	0
@@ -2261,26 +2484,27 @@ Epilepsy &amp; Behavior	1	1	1	0	0
 EPL (Europhysics Letters)	1	1	1	0	0
 Ergonomics	1	1	1	0	0
 Estuaries and Coasts	1	1	1	0	0
+Ethnic and Racial Studies	1	1	1	0	0
 Ethology	2	1	2	0	0
 Ethology Ecology & Evolution	1	1	1	0	0
 Ethology Ecology &amp; Evolution	1	1	1	0	0
 Euphytica	1	1	1	0	0
 Eurasian Soil Science	1	1	1	0	0
-EURASIP Journal on Audio, Speech, and Music Processing	2	1	2	0	0
+EURASIP Journal on Audio, Speech, and Music Processing	3	1	3	0	0
 EURASIP Journal on Wireless Communications and Networking	2	1	2	0	0
 EURO Journal on Computational Optimization	1	1	1	0	0
 Euro-Par 2021: Parallel Processing,Lecture Notes in Computer Science	1	1	1	0	0
 Europawahlkampf 2019	1	1	1	0	0
 European Actuarial Journal	1	1	1	0	0
 European Archives of Oto-Rhino-Laryngology	1	1	1	0	0
+European Archives of Psychiatry and Clinical Neuroscience	1	1	1	0	0
 European Child & Adolescent Psychiatry	1	1	1	0	0
-European Eating Disorders Review	1	1	1	0	0
 European Heart Journal	2	1	2	0	0
 European Journal for Security Research	1	1	1	0	0
-European Journal of Agronomy	1	1	1	0	0
 European Journal of Anaesthesiology	1	1	1	0	0
-European Journal of Cancer	2	1	2	0	0
+European Journal of Applied Mathematics	1	1	1	0	0
 European Journal of Cardio-Thoracic Surgery	2	1	2	0	0
+European Journal of Clinical Investigation	1	1	1	0	0
 European Journal of Clinical Microbiology & Infectious Diseases	1	1	1	0	0
 European Journal of Criminology	1	1	1	0	0
 European Journal of Entomology	1	1	1	0	0
@@ -2292,24 +2516,26 @@ European Journal of Orthodontics	1	1	1	0	0
 European Journal of Paediatric Neurology	1	1	1	0	0
 European Journal of Pain	1	1	1	0	0
 European Journal of Phycology	1	1	1	0	0
+European Journal of Physical and Rehabilitation Medicine	1	1	1	0	0
 European Journal of Plant Pathology	5	1	5	0	0
-European Journal of Political Economy	2	1	2	0	0
 European Journal of Preventive Cardiology	1	1	1	0	0
 European Journal of Radiology	1	1	1	0	0
 European Journal of Radiology Open	1	1	1	0	0
-European Journal of Soil Science	1	1	1	0	0
+European Journal of Soil Science	2	1	2	0	0
 European Journal of Sport Science	1	1	1	0	0
 European Journal of Training and Development	1	1	1	0	0
 European Journal of Wood and Wood Products	1	1	1	0	0
 European Journal on Criminal Policy and Research	1	1	1	0	0
 European Political Science	1	1	1	0	0
 European Respiratory Review	1	1	1	0	0
+European Review of Agricultural Economics	1	1	1	0	0
 European Societies	1	1	1	0	0
 European Sociological Review	1	1	1	0	0
+European Spine Journal	1	1	1	0	0
+European Stroke Journal	1	1	1	0	0
 European Symposium on Usable Security 2021	1	1	1	0	0
 European Urology Focus	1	1	1	0	0
 European Urology Oncology	1	1	1	0	0
-Eurosurveillance	1	1	1	0	0
 EVALITA Evaluation of NLP and Speech Tools for Italian - December 17th, 2020	1	1	1	0	0
 Evaluation	1	1	1	0	0
 Evidence-Based Complementary and Alternative Medicine	1	1	1	0	0
@@ -2317,62 +2543,72 @@ Evidence-Based Practice in Child and Adolescent Mental Health	1	1	1	0	0
 Evolution and Human Behavior	1	1	1	0	0
 Evolutionary and Institutional Economics Review	1	1	1	0	0
 Evolutionary Biology	1	1	1	0	0
-Evolutionary Ecology	2	1	2	0	0
 Evolving Systems	1	1	1	1	1
 Experimental & Molecular Medicine	1	1	1	0	0
-Experimental and Applied Acarology	1	1	1	0	0
 Experimental and Molecular Pathology	1	1	1	0	0
 Experimental Dermatology	1	1	1	0	0
 Experimental Eye Research	1	1	1	0	0
+Experimental Hematology	1	1	1	0	0
 Experimental Lung Research	1	1	1	0	0
-Experimental Results	1	1	1	0	0
-Expert Review of Proteomics	1	1	1	0	0
 Expert Systems	1	1	1	0	0
 Explainable and Transparent AI and Multi-Agent Systems,Lecture Notes in Computer Science	2	1	2	0	0
 Exploration Geophysics	1	1	1	0	0
+Exploration of Immunology	1	1	1	0	0
 Extreme Mechanics Letters	1	1	1	0	0
 Eye	1	1	1	0	0
 FACE	1	1	1	0	0
 FACETS	1	1	1	0	0
 Familial Cancer	1	1	1	0	0
 Family Medicine and Community Health	1	1	1	0	0
-FEMS Microbes	1	1	1	0	0
 FEMS Microbiology Reviews	1	1	1	0	0
-Field Crops Research	1	1	1	0	0
+Fermentation	1	1	1	0	0
+Field Crops Research	2	1	2	0	0
 Finance Research Letters	1	1	1	0	0
+Financial Data Analytics,Contributions to Finance and Accounting	1	1	1	0	0
+Finite Elements in Analysis and Design	1	1	1	0	0
 Fire Safety Journal	1	1	1	0	0
-Fisheries Management and Ecology	1	1	1	0	0
+Fish &amp; Shellfish Immunology	1	1	1	0	0
 Flexible Query Answering Systems,Lecture Notes in Computer Science	1	1	1	0	0
-Flora	1	1	1	0	0
+Flora	2	1	2	0	0
 Fluid Phase Equilibria	1	1	1	0	0
 Folia Geobotanica	1	1	1	0	0
+Food &amp; Function	1	1	1	0	0
 Food and Bioproducts Processing	1	1	1	0	0
 Food Biophysics	1	1	1	0	0
+Food Chemistry	1	1	1	0	0
 Food Hydrocolloids	1	1	1	0	0
 Food Security	1	1	1	0	0
 Food, Culture & Society	1	1	1	0	0
+Foodborne Pathogens and Disease	1	1	1	0	0
 Forecasting	1	1	1	0	0
 Forestry: An International Journal of Forest Research	1	1	1	0	0
 Formal Methods and Software Engineering,Lecture Notes in Computer Science	1	1	1	0	0
 Forum for Information Retrieval Evaluation	1	1	1	0	0
+Foundations of Computational Mathematics	1	1	1	0	0
+Foundations of Data Science	1	1	1	0	0
 Fourteenth ACM Conference on Recommender Systems	1	1	1	0	0
 French Politics	1	1	1	0	0
 From Reactive Systems to Cyber-Physical Systems,Lecture Notes in Computer Science	1	1	1	0	0
-Frontiers in Agronomy	1	1	1	0	0
+Frontiers in Agronomy	2	1	2	0	0
 Frontiers in Astronomy and Space Sciences	1	1	1	0	0
 Frontiers in Cellular Neuroscience	1	1	1	0	0
+Frontiers in Climate	1	1	1	0	0
+Frontiers in Clinical Diabetes and Healthcare	1	1	1	0	0
+Frontiers in Control Engineering	1	1	1	0	0
 Frontiers in Digital Humanities	1	1	1	0	0
 Frontiers in Fungal Biology	1	1	1	0	0
 Frontiers in Medical Technology	1	1	1	0	0
 Frontiers in Neural Circuits	2	1	2	0	0
 Frontiers in Neuroanatomy	1	1	1	0	0
+Frontiers in Neurorobotics	1	1	1	0	0
 Frontiers in Nutrition	1	1	1	0	0
 Frontiers in Pain Research	1	1	1	0	0
 Frontiers in Political Science	1	1	1	0	0
+Frontiers in Rehabilitation Sciences	1	1	1	0	0
+Frontiers in Remote Sensing	1	1	1	0	0
 Frontiers in Reproductive Health	1	1	1	0	0
 Frontiers in Research Metrics and Analytics	1	1	1	0	0
-Frontiers in Signal Processing	1	1	1	0	0
-Frontiers in Sustainability	2	1	2	0	0
+Frontiers in Systems Biology	1	1	1	0	0
 Frontiers in Toxicology	1	1	1	0	0
 Frontiers of Architectural Research	1	1	1	0	0
 Functional & Integrative Genomics	1	1	1	0	0
@@ -2381,7 +2617,6 @@ Fundamentals of Craniofacial Malformations	1	1	1	0	0
 Fungal Biology Reviews	1	1	1	0	0
 Fungal Diversity	1	1	1	0	0
 Fungal Ecology	1	1	1	0	0
-Future Internet	1	1	1	0	0
 Future of Business and Finance,Transforming Japanese Business	1	1	1	0	0
 Future Oncology	1	1	1	1	1
 Future Transportation	1	1	1	0	0
@@ -2390,21 +2625,24 @@ G3&amp;#58; Genes|Genomes|Genetics	1	1	1	0	0
 Gait & Posture	1	1	1	0	0
 Galaxies	1	1	1	0	0
 Gefässchirurgie	1	1	1	0	0
-GEM - International Journal on Geomathematics	2	1	2	0	0
+GEN Biotechnology	1	1	1	0	0
 Gene Reports	1	1	1	0	0
+General Hospital Psychiatry	1	1	1	0	0
 General Reanimatology	1	1	1	0	0
 Genetic and Evolutionary Computation,Genetic Programming Theory and Practice XVI	1	1	1	0	0
 Genetic Epidemiology	1	1	1	0	0
 Genetics and Molecular Biology	1	1	1	0	0
+Genomics, Proteomics &amp; Bioinformatics	1	1	1	0	0
 Geobiology	1	1	1	0	0
-Geocarto International	1	1	1	0	0
+Geoderma Regional	1	1	1	0	0
 Geographical Modeling	1	1	1	0	0
 GeoInformatica	1	1	1	0	0
 Geological Journal	1	1	1	0	0
 Geomatics	1	1	1	0	0
+Geophysical &amp; Astrophysical Fluid Dynamics	1	1	1	1	1
 Geoscientific Instrumentation, Methods and Data Systems	1	1	1	0	0
+Geosphere	1	1	1	0	0
 geotechnik	1	1	1	0	0
-German Journal of Exercise and Sport Research	1	1	1	0	0
 German Politics	1	1	1	0	0
 GeroScience	1	1	1	0	0
 Gestão & Produção	1	1	1	0	0
@@ -2414,11 +2652,12 @@ Global Biogeochemical Cycles	1	1	1	0	0
 Global Environmental Politics	1	1	1	0	0
 Global Epidemiology	1	1	1	0	0
 Global Food Security	1	1	1	0	0
-Global Spine Journal	1	1	1	0	0
 Globalizations	1	1	1	0	0
 Glossa: a journal of general linguistics	2	1	2	0	0
+Glossa: a journal of general linguistics,Volume 7	1	1	1	0	0
 Government and Opposition	1	1	1	0	0
-Granular Matter	1	1	1	0	0
+Government Information Quarterly	1	1	1	0	0
+Granular Matter	2	1	2	0	0
 Graphical Models	1	1	1	0	0
 Green Chemistry	1	1	1	0	0
 Gruppe. Interaktion. Organisation. Zeitschrift für Angewandte Organisationspsychologie (GIO)	1	1	1	0	0
@@ -2429,7 +2668,6 @@ Handbook of Research on Deep Learning Innovations and Trends,Advances in Computa
 Handbook of Research on Digital Violence and Discrimination Studies,Advances in Human and Social Aspects of Technology	1	1	1	0	0
 Handbook of Research on Intrusion Detection Systems,Advances in Information Security, Privacy, and Ethics	1	1	1	0	0
 HardwareX	1	1	1	0	0
-Harmful Algae	1	1	1	0	0
 Harran Üniversitesi Mühendislik Dergisi	1	1	1	0	0
 Health & Place	1	1	1	0	0
 Health Care Management Science	1	1	1	0	0
@@ -2441,15 +2679,13 @@ Health Security	1	1	1	0	0
 Healthcare	1	1	1	0	0
 Healthcare Analytics	1	1	1	0	0
 Heart Rhythm O2	1	1	1	0	0
-Heliyon	1	1	1	0	0
 Hemodialysis International	1	1	1	0	0
 Hepatology	1	1	1	0	0
-Hepatology Research	1	1	1	0	0
+Hepatology Research	2	1	2	0	0
 High Altitude Medicine & Biology	1	1	1	0	0
 High Power Laser Science and Engineering	1	1	1	0	0
-Higher Education	1	1	1	0	0
+Higher Education	2	1	2	0	0
 Higher Education Research & Development	1	1	1	0	0
-Histochemistry and Cell Biology	1	1	1	0	0
 Horticultural Plant Journal	1	1	1	0	0
 Housing Policy Debate	1	1	1	0	0
 HRB Open Research	1	1	1	0	0
@@ -2459,26 +2695,26 @@ Human Dimensions of Wildlife	1	1	1	0	0
 Human Genetics and Genomics Advances	1	1	1	0	0
 Human Movement Science	3	1	3	0	0
 Human Performance	1	1	1	0	0
-Human Reproduction	1	1	1	0	0
 Human Resource Development Quarterly	1	1	1	0	0
-Human Resources for Health	1	1	1	0	0
+Human Vaccines &amp; Immunotherapeutics	1	1	1	0	0
 Human-centric Computing and Information Sciences	1	1	1	0	0
 Human-Computer Interaction. Perspectives on Design,Lecture Notes in Computer Science	1	1	1	0	0
-Humanities and Social Sciences Communications	1	1	1	0	0
 Hydrology, hydrochemistry and hydroecology	1	1	1	0	0
 Hyperspectral Image Analysis,Advances in Computer Vision and Pattern Recognition	1	1	1	0	0
 Hypertension in Pregnancy	1	1	1	0	0
-Ibis	2	1	2	0	0
+i-com	1	1	1	0	0
+Ibis	3	1	3	0	0
 IEEE Access	1	1	1	1	1
 IEEE Robotics and Automation Letters	1	1	1	1	1
 IEEE Transactions on Applied Superconductivity	1	1	1	0	0
 IEEE Transactions on Pattern Analysis and Machine Intelligence	1	1	1	0	0
 IEEE Transactions on Visualization and Computer Graphics	1	1	1	0	0
+IEEE/WIC/ACM International Conference on Web Intelligence	1	1	1	0	0
 IEEE/WIC/ACM International Conference on Web Intelligence on   - WI '19	1	1	1	0	0
 IEEJ Transactions on Electronics, Information and Systems	1	1	1	0	0
 IEICE Transactions on Fundamentals of Electronics, Communications and Computer Sciences	1	1	1	0	0
 IET Electric Power Applications	1	1	1	0	0
-IET Image Processing	1	1	1	0	0
+IET Generation, Transmission &amp; Distribution	1	1	1	0	0
 IET Smart Cities	1	1	1	0	0
 IETE Journal of Research	1	1	1	0	0
 IFIP Advances in Information and Communication Technology,Computational Intelligence in Data Science	1	1	1	0	0
@@ -2486,38 +2722,47 @@ IFLA Journal	1	1	1	0	0
 IMA Journal of Numerical Analysis	1	1	1	0	0
 Immunity, Inflammation and Disease	1	1	1	0	0
 ImmunoInformatics	1	1	1	0	0
+Immunology Letters	1	1	1	0	0
 in silico Plants	1	1	1	0	0
 India HCI 2021	1	1	1	0	0
+Indian Journal of Community Medicine	1	1	1	0	0
 Indian Phytopathology	1	1	1	0	0
 Industrial Marketing Management	1	1	1	0	0
 Infancy	1	1	1	0	0
 Infection and Drug Resistance	1	1	1	0	0
 Infectious Diseases of Poverty	1	1	1	0	0
 Inflammation	1	1	1	0	0
+Influenza and Other Respiratory Viruses	1	1	1	0	0
+InfoMat	1	1	1	0	0
 INFOR: Information Systems and Operational Research	1	1	1	0	0
 Informatics	1	1	1	0	0
 Informatics in Control, Automation and Robotics,Lecture Notes in Electrical Engineering	1	1	1	0	0
 Information and Communication Technologies in Tourism 2021	1	1	1	0	0
 Information and Communications Security,Lecture Notes in Computer Science	1	1	1	0	0
 Information and Software Technology	1	1	1	0	0
+Information Management and Big Data,Communications in Computer and Information Science	1	1	1	0	0
+Information Processing &amp; Management	1	1	1	0	0
 Information Systems	1	1	1	0	0
 Information Systems,Lecture Notes in Business Information Processing	1	1	1	0	0
 Information Technology & Tourism	1	1	1	0	0
 Information Technology for Management: Current Research and Future Directions,Lecture Notes in Business Information Processing	1	1	1	0	0
+INFORMS Journal on Computing	1	1	1	0	0
 Injury	1	1	1	0	0
 Injury Epidemiology	1	1	1	0	0
 Innovation and Development	1	1	1	0	0
+Innovation in Construction	1	1	1	0	0
 Innovations in Education and Teaching International	1	1	1	0	0
 Innovations in Land, Water and Energy for Vietnam’s Sustainable Development,UNIPA Springer Series	1	1	1	0	0
 Insect Conservation and Diversity	2	1	2	0	0
 Insect Systematics and Diversity	3	1	3	0	0
 Insectes Sociaux	1	1	1	0	0
+Insights into Imaging	2	1	2	0	0
 Instructional Science	1	1	1	0	0
 Integrated Population Models	1	1	1	0	0
 Integrated Series in Information Systems,EURO Working Group on DSS	1	1	1	0	0
 Integration of Constraint Programming, Artificial Intelligence, and Operations Research,Lecture Notes in Computer Science	1	1	1	0	0
 Integrative and Comparative Biology	1	1	1	0	0
-Intelligence	1	1	1	0	0
+Integrative Zoology	1	1	1	0	0
 Intelligence and National Security	1	1	1	0	0
 Intelligence-Based Medicine	1	1	1	0	0
 Intelligent Computing for Interactive System Design	1	1	1	0	0
@@ -2532,7 +2777,10 @@ Intelligent Robotics and Applications,Lecture Notes in Computer Science	1	1	1	0	
 Intelligent Tutoring Systems,Lecture Notes in Computer Science	1	1	1	0	0
 Intensive Care Medicine	2	1	2	0	0
 Interaktive Datenvisualisierung in Wissenschaft und Unternehmenspraxis	1	1	1	0	0
+Interdisciplinary Science Reviews	1	1	1	0	0
+Intermetallics	1	1	1	0	0
 Internal and Emergency Medicine	1	1	1	0	0
+International Archives of Occupational and Environmental Health	1	1	1	0	0
 International Criminal Justice Review	1	1	1	0	0
 International Environmental Agreements: Politics, Law and Economics	1	1	1	0	0
 International Gambling Studies	1	1	1	0	0
@@ -2564,7 +2812,6 @@ International Journal of Energy Research	1	1	1	0	0
 International Journal of Engineering and Advanced Technology	1	1	1	0	0
 International Journal of Environment and Geoinformatics	1	1	1	0	0
 International Journal of Environmental Analytical Chemistry	1	1	1	0	0
-International Journal of Environmental Science and Technology	1	1	1	0	0
 International Journal of Forecasting	1	1	1	0	0
 International Journal of Forensic Mental Health	1	1	1	0	0
 International Journal of Forest Engineering	1	1	1	0	0
@@ -2574,15 +2821,18 @@ International Journal of Hospitality Management	1	1	1	0	0
 International Journal of Human–Computer Interaction	1	1	1	0	0
 International Journal of Hypertension	1	1	1	0	0
 International Journal of Impact Engineering	1	1	1	0	0
+International Journal of Information and Education Technology	1	1	1	0	0
 International Journal of Information Management	1	1	1	0	0
 International Journal of Information Management Data Insights	1	1	1	0	0
 International Journal of Information Technology and Web Engineering	1	1	1	0	0
-International Journal of Intercultural Relations	2	1	2	0	0
+International Journal of Knowledge-Based Organizations	1	1	1	0	0
 International Journal of Learner Corpus Research	1	1	1	0	0
 International Journal of Listening	2	1	2	0	0
 International Journal of Management and Accounting	1	1	1	0	0
 International Journal of Managing Projects in Business	1	1	1	0	0
+International Journal of Manpower	1	1	1	0	0
 International Journal of Market Research	1	1	1	0	0
+International Journal of Mathematical Education in Science and Technology	1	1	1	0	0
 International Journal of Methods in Psychiatric Research	1	1	1	0	0
 International Journal of Modern Physics C	1	1	1	0	0
 International Journal of Modern Physics D	1	1	1	0	0
@@ -2592,12 +2842,13 @@ International Journal of Nursing Studies	1	1	1	0	0
 International Journal of Obesity	1	1	1	0	0
 International Journal of Organizational Analysis	1	1	1	0	0
 International Journal of Parallel Programming	1	1	1	0	0
-International Journal of Pattern Recognition and Artificial Intelligence	1	1	1	0	0
+International Journal of Pattern Recognition and Artificial Intelligence	2	1	2	0	0
 International Journal of Pavement Engineering	1	1	1	0	0
 International Journal of Pediatric Otorhinolaryngology	1	1	1	0	0
 International Journal of Performance Analysis in Sport	1	1	1	0	0
 International Journal of Production Economics	1	1	1	0	0
 International Journal of Production Research	1	1	1	0	0
+International Journal of Psychophysiology	1	1	1	0	0
 International Journal of Quality and Service Sciences	1	1	1	0	0
 International Journal of Quantum Information	1	1	1	0	0
 International Journal of Radiation Biology	2	1	2	0	0
@@ -2605,22 +2856,25 @@ International Journal of Rail Transportation	1	1	1	0	0
 International Journal of Research & Method in Education	1	1	1	0	0
 International Journal of Risk & Safety in Medicine	2	1	2	0	0
 International Journal of Rock Mechanics and Mining Sciences	3	1	3	0	0
+International Journal of Science Education, Part B	1	1	1	0	0
 International Journal of Social Robotics	1	1	1	0	0
 International Journal of Sociology	1	1	1	0	0
 International Journal of Software Engineering and Knowledge Engineering	1	1	1	0	0
-International Journal of Sports Physiology and Performance	1	1	1	0	0
+International Journal of Sports Physiology and Performance	2	1	2	0	0
 International Journal of Sports Science & Coaching	1	1	1	0	0
-International Journal of Transportation Science and Technology	1	1	1	0	0
+International Journal of Sports Science &amp; Coaching	1	1	1	0	0
 International Journal of Tropical Insect Science	1	1	1	0	0
 International Journal on Artificial Intelligence Tools	1	1	1	0	0
 International Political Science Review	1	1	1	0	0
 International Review of Administrative Sciences	1	1	1	0	0
+International Review of Sociology	1	1	1	0	0
 International Sociology	1	1	1	0	0
 International Soil and Water Conservation Research	1	1	1	1	1
 International Studies Quarterly	2	1	2	1	0.5
 International Studies Review	1	1	1	0	0
 International Turfgrass Society Research Journal	1	1	1	0	0
 Internet Archaeology	1	1	1	0	0
+Internet of Things	1	1	1	0	0
 Internet of Vehicles. Technologies and Services Toward Smart Cities,Lecture Notes in Computer Science	1	1	1	0	0
 Internet Pragmatics	1	1	1	0	0
 Internet Technology Letters	1	1	1	0	0
@@ -2634,9 +2888,7 @@ IOP SciNotes	1	1	1	1	1
 IoT	1	1	1	0	0
 IoT Sensor-Based Activity Recognition,Intelligent Systems Reference Library	1	1	1	0	0
 Irish Political Studies	1	1	1	0	0
-Irrigation Science	1	1	1	0	0
 ISAV'20 In Situ Infrastructures for Enabling Extreme-Scale Analysis and Visualization	1	1	1	0	0
-ISME Communications	5	1	5	0	0
 Isokinetics and Exercise Science	1	1	1	0	0
 it - Information Technology	1	1	1	0	0
 IUCrJ	1	1	1	0	0
@@ -2647,23 +2899,22 @@ Javnost - The Public	1	1	1	0	0
 JCI Insight	3	1	3	0	0
 JCMS: Journal of Common Market Studies	2	1	2	0	0
 JCPP Advances	1	1	1	0	0
+JMIR Cancer	1	1	1	0	0
 JMIR Diabetes	1	1	1	0	0
-JMIR Human Factors	1	1	1	0	0
 JMIR Pediatrics and Parenting	2	1	2	0	0
 JMIR Rehabilitation and Assistive Technologies	1	1	1	1	1
 JOM	1	1	1	1	1
-Joule	1	1	1	0	0
 Journal for STEM Education Research	1	1	1	0	0
 Journal for the Study of Education and Development	1	1	1	0	0
 Journal of Addiction Medicine	1	1	1	0	0
 Journal of Adult Development	1	1	1	0	0
 Journal of Advanced Nursing	1	1	1	0	0
 Journal of Advanced Research	1	1	1	0	0
-Journal of Advanced Transportation	1	1	1	0	0
 Journal of Advertising	1	1	1	0	0
 Journal of Aerospace Information Systems	1	1	1	0	0
 Journal of African Earth Sciences	1	1	1	0	0
 Journal of Aggression, Maltreatment & Trauma	1	1	1	0	0
+Journal of Aging and Health	1	1	1	0	0
 Journal of Aging and Physical Activity	1	1	1	0	0
 Journal of Agribusiness in Developing and Emerging Economies	1	1	1	0	0
 Journal of Agricultural and Food Chemistry	2	1	2	0	0
@@ -2679,10 +2930,10 @@ Journal of Animal Science	1	1	1	0	0
 Journal of Anxiety Disorders	2	1	2	0	0
 Journal of Applied Biobehavioral Research	1	1	1	0	0
 Journal of Applied Clinical Medical Physics	1	1	1	0	0
-Journal of Applied Crystallography	3	1	3	0	0
 Journal of Applied Entomology	1	1	1	0	0
 Journal of Applied Microbiology	1	1	1	0	0
 Journal of Applied Phycology	2	1	2	0	0
+Journal of Applied Physiology	1	1	1	0	0
 Journal of Applied Polymer Science	1	1	1	0	0
 Journal of Applied Research in Intellectual Disabilities	1	1	1	0	0
 Journal of Archaeological Method and Theory	1	1	1	0	0
@@ -2694,9 +2945,7 @@ Journal of Autonomous Vehicles and Systems	1	1	1	0	0
 Journal of Avian Biology	1	1	1	0	0
 Journal of Basic and Applied Genetics	1	1	1	0	0
 Journal of Behavioral Addictions	1	1	1	0	0
-Journal of Behavioral Medicine	1	1	1	0	0
 Journal of Bio-X Research	1	1	1	0	0
-Journal of Biological Chemistry	1	1	1	0	0
 Journal of Biological Physics	1	1	1	1	1
 Journal of Biological Research-Thessaloniki	1	1	1	0	0
 Journal of Biomedical Semantics	1	1	1	0	0
@@ -2713,12 +2962,14 @@ Journal of Chemical & Engineering Data	2	1	2	2	1
 Journal of Chemical Ecology	1	1	1	0	0
 Journal of Chemometrics	1	1	1	1	1
 Journal of Child and Family Studies	1	1	1	0	0
-Journal of Child Language	1	1	1	0	0
+Journal of Child Language	3	1	3	0	0
 Journal of Choice Modelling	1	1	1	0	0
 Journal of Chromatography A	1	1	1	0	0
 Journal of Climate Change Research	1	1	1	0	0
 Journal of Clinical Child & Adolescent Psychology	1	1	1	0	0
+Journal of Clinical Child &amp; Adolescent Psychology	1	1	1	0	0
 Journal of Clinical Epidemiology	1	1	1	0	0
+Journal of Clinical Laboratory Analysis	1	1	1	0	0
 Journal of Clinical Monitoring and Computing	1	1	1	0	0
 Journal of Clinical Pathology	1	1	1	0	0
 Journal of Clinical Sport Psychology	1	1	1	0	0
@@ -2730,7 +2981,6 @@ Journal of Comparative Pathology	1	1	1	0	0
 Journal of Comparative Physiology A	2	1	2	0	0
 Journal of Complex Networks	1	1	1	0	0
 Journal of Computational and Applied Mathematics	1	1	1	0	0
-Journal of Computational and Nonlinear Dynamics	1	1	1	0	0
 Journal of Computational Design and Engineering	1	1	1	0	0
 Journal of Computational Neuroscience	1	1	1	0	0
 Journal of Computational Physics: X	1	1	1	0	0
@@ -2766,10 +3016,12 @@ Journal of Elasticity	1	1	1	0	0
 Journal of Electroanalytical Chemistry	1	1	1	0	0
 Journal of Electrocardiology	5	1	5	2	0.4
 Journal of Electromyography and Kinesiology	2	1	2	0	0
+Journal of Empirical Legal Studies	1	1	1	0	0
 Journal of Energy Storage	1	1	1	0	0
 Journal of Engineering Education	1	1	1	0	0
 Journal of Engineering Mathematics	1	1	1	0	0
 Journal of Environmental Chemical Engineering	1	1	1	0	0
+Journal of Environmental Quality	1	1	1	0	0
 Journal of Environmental Radioactivity	1	1	1	0	0
 Journal of Environmental Sciences	1	1	1	0	0
 Journal of Equine Veterinary Science	1	1	1	0	0
@@ -2778,39 +3030,42 @@ Journal of Ethnopharmacology	1	1	1	0	0
 Journal of European Integration	1	1	1	0	0
 Journal of European Public Policy	1	1	1	0	0
 Journal of Experimental & Clinical Cancer Research	1	1	1	0	0
-Journal of Experimental Marine Biology and Ecology	1	1	1	0	0
+Journal of Experimental &amp; Theoretical Artificial Intelligence	1	1	1	0	0
+Journal of Experimental Criminology	1	1	1	0	0
+Journal of Experimental Marine Biology and Ecology	2	1	2	0	0
+Journal of Experimental Zoology Part A: Ecological and Integrative Physiology	1	1	1	0	0
 Journal of Field Ornithology	1	1	1	0	0
 Journal of Fish and Wildlife Management	2	1	2	0	0
-Journal of Flood Risk Management	1	1	1	0	0
 Journal of Fluids and Structures	3	1	3	0	0
 Journal of Food Engineering	2	1	2	0	0
 Journal of Food Protection	1	1	1	0	0
 Journal of Food Science	1	1	1	0	0
+Journal of Food System Research	1	1	1	0	0
 Journal of Forensic Nursing	1	1	1	0	0
 Journal of Forestry	1	1	1	0	0
 Journal of Functional Morphology and Kinesiology	1	1	1	0	0
 Journal of Gastroenterology and Hepatology	1	1	1	0	0
 Journal of Gastrointestinal Surgery	1	1	1	0	0
-Journal of General Virology	1	1	1	0	0
+Journal of General Virology	2	1	2	0	0
 Journal of Genetics and Genomics	2	1	2	0	0
 Journal of Geochemical Exploration	1	1	1	0	0
 Journal of Geovisualization and Spatial Analysis	1	1	1	0	0
 Journal of Global Antimicrobial Resistance	1	1	1	0	0
-Journal of Global Health	1	1	1	0	0
 Journal of Global Optimization	1	1	1	1	1
 Journal of Global Security Studies	1	1	1	0	0
-Journal of Great Lakes Research	2	1	2	0	0
 Journal of Guidance, Control, and Dynamics	1	1	1	0	0
 Journal of Health and Pollution	1	1	1	0	0
 Journal of Health Sciences and Medicine	1	1	1	0	0
 Journal of Hematology &amp; Oncology	1	1	1	0	0
 Journal of Hispanic Higher Education	1	1	1	0	0
+Journal of Historical Linguistics	1	1	1	0	0
+Journal of Hospitality and Tourism Insights	1	1	1	0	0
 Journal of Human Evolution	1	1	1	0	0
 Journal of Human Kinetics	1	1	1	0	0
 Journal of Huntington's Disease	1	1	1	0	0
 Journal of Hydrodynamics	1	1	1	0	0
 Journal of Hypertension	1	1	1	0	0
-Journal of Imaging	1	1	1	0	0
+Journal of Immigrant &amp; Refugee Studies	1	1	1	0	0
 Journal of Immigrant and Minority Health	1	1	1	0	0
 Journal of Immunology Research	1	1	1	0	0
 Journal of Infection and Chemotherapy	1	1	1	0	0
@@ -2827,7 +3082,6 @@ Journal of Intelligent Material Systems and Structures	1	1	1	1	1
 Journal of Intensive Care Medicine	1	1	1	0	0
 Journal of Internal Medicine	1	1	1	0	0
 Journal of International Business Studies	1	1	1	0	0
-Journal of Investigative Dermatology	1	1	1	0	0
 Journal of Islamic Marketing	1	1	1	0	0
 Journal of Japan Society for Fuzzy Theory and Intelligent Informatics	1	1	1	0	0
 Journal of Japan Society of Civil Engineers, Ser. A2 (Applied Mechanics (AM))	1	1	1	0	0
@@ -2835,13 +3089,14 @@ Journal of Japan Society of Civil Engineers, Ser. D3 (Infrastructure Planning an
 Journal of King Saud University - Computer and Information Sciences	1	1	1	0	0
 Journal of Korean Society of Coastal and Ocean Engineers	1	1	1	0	0
 Journal of Land Use Science	1	1	1	0	0
-Journal of Language Evolution	1	1	1	0	0
 Journal of Legal Affairs and Dispute Resolution in Engineering and Construction	1	1	1	0	0
 Journal of Limnology	1	1	1	0	0
+Journal of Linguistic Geography	1	1	1	0	0
+Journal of Lipid Research	1	1	1	0	0
 Journal of Logic and Computation	1	1	1	0	0
 Journal of Magnetism and Magnetic Materials	1	1	1	0	0
 Journal of Mammalian Evolution	1	1	1	0	0
-Journal of Mammalogy	3	1	3	0	0
+Journal of Mammalogy	4	1	4	0	0
 Journal of Manufacturing and Materials Processing	1	1	1	0	0
 Journal of Materials in Civil Engineering	1	1	1	0	0
 Journal of Materials Processing Technology	1	1	1	0	0
@@ -2856,28 +3111,29 @@ Journal of Medical Entomology	1	1	1	0	0
 Journal of Medical Microbiology	1	1	1	0	0
 Journal of Membrane Science	1	1	1	0	0
 Journal of Microbiological Methods	1	1	1	0	0
+Journal of microbiology, epidemiology and immunobiology	1	1	1	0	0
 Journal of Molecular Liquids	2	1	2	0	0
+Journal of Molecular Modeling	1	1	1	0	0
 Journal of Molecular Neuroscience	1	1	1	0	0
 Journal of Molecular Structure	1	1	1	0	0
+Journal of Multilingual and Multicultural Development	1	1	1	0	0
 Journal of Multivariate Analysis	1	1	1	0	0
 Journal of Near Infrared Spectroscopy	1	1	1	0	0
 Journal of Nephrology	1	1	1	0	0
-Journal of Network and Computer Applications	1	1	1	0	0
 Journal of Neuro-Oncology	1	1	1	0	0
-Journal of Neuroendocrinology	1	1	1	0	0
+Journal of Neurodevelopmental Disorders	1	1	1	0	0
+Journal of Neuroendocrinology	2	1	2	0	0
 Journal of Neurogenetics	1	1	1	0	0
 Journal of Neuroimaging	1	1	1	1	1
 Journal of Neuroimmune Pharmacology	1	1	1	0	0
 Journal of Neuroimmunology	1	1	1	0	0
-Journal of Neuroinflammation	1	1	1	0	0
+Journal of Neuroinflammation	2	1	2	0	0
 Journal of Neurology	1	1	1	0	0
 Journal of Neurosurgery: Pediatrics	1	1	1	0	0
 Journal of Non-Newtonian Fluid Mechanics	1	1	1	0	0
-Journal of Nuclear Materials	1	1	1	0	0
 Journal of Nuclear Science and Technology	1	1	1	0	0
-Journal of Numerical Cognition	1	1	1	0	0
 Journal of Nursing Scholarship	1	1	1	0	0
-Journal of Obsessive-Compulsive and Related Disorders	1	1	1	0	0
+Journal of Occupational &amp; Environmental Medicine	1	1	1	0	0
 Journal of Occupational and Environmental Hygiene	1	1	1	0	0
 Journal of Official Statistics	1	1	1	0	0
 Journal of Open Archaeology Data	2	1	2	0	0
@@ -2895,6 +3151,7 @@ Journal of Pediatric Oncology Nursing	1	1	1	0	0
 Journal of Personality Assessment	1	1	1	0	0
 Journal of Personnel Psychology	1	1	1	0	0
 Journal of Pest Science	1	1	1	0	0
+Journal of Physical and Chemical Reference Data	1	1	1	1	1
 Journal of Physics and Chemistry of Solids	3	1	3	0	0
 Journal of Physics B: Atomic, Molecular and Optical Physics	2	1	2	0	0
 Journal of Physics Communications	1	1	1	1	1
@@ -2903,9 +3160,11 @@ Journal of Physics: Photonics	1	1	1	0	0
 Journal of Plant Diseases and Protection	1	1	1	0	0
 Journal of Plant Pathology	1	1	1	0	0
 Journal of Plant Research	1	1	1	0	0
+Journal of Plasma Physics	1	1	1	0	0
 Journal of Political Science Education	1	1	1	0	0
 Journal of Promotion Management	1	1	1	0	0
 Journal of Propulsion and Power	1	1	1	1	1
+Journal of Proteomics	1	1	1	0	0
 Journal of Public Affairs	1	1	1	0	0
 Journal of Public Child Welfare	1	1	1	0	0
 Journal of Public Health in Africa	1	1	1	0	0
@@ -2914,17 +3173,18 @@ Journal of Public Health Research	1	1	1	0	0
 Journal of Quantitative Criminology	1	1	1	0	0
 Journal of Renal Nutrition	1	1	1	0	0
 Journal of Research in Innovative Teaching & Learning	1	1	1	0	0
-Journal of Research in Personality	1	1	1	0	0
+Journal of Research in Personality	2	1	2	0	0
 Journal of Responsible Technology	1	1	1	0	0
 Journal of Rock Mechanics and Geotechnical Engineering	1	1	1	0	0
 Journal of Science and Medicine in Sport	1	1	1	0	0
 Journal of Second Language Studies,Studies of Bilingual Processing Presented to Kenneth I. Forster	1	1	1	0	0
 Journal of Sedimentary Research	1	1	1	0	0
 Journal of Sensors	1	1	1	0	0
+Journal of Sensory Studies	1	1	1	0	0
 Journal of Sex & Marital Therapy	1	1	1	0	0
 Journal of Shellfish Research	1	1	1	0	0
 Journal of Simulation	1	1	1	0	0
-Journal of Social Structure	1	1	1	0	0
+Journal of Social Structure	2	1	2	0	0
 Journal of Solid State Chemistry	1	1	1	0	0
 Journal of Space Weather and Space Climate	1	1	1	0	0
 Journal of Spacecraft and Rockets	1	1	1	1	1
@@ -2933,8 +3193,10 @@ Journal of Stroke and Cerebrovascular Diseases	1	1	1	0	0
 Journal of Structural Engineering	1	1	1	0	0
 Journal of Structural Geology	1	1	1	0	0
 Journal of Surgical Education	1	1	1	0	0
+Journal of Survey Statistics and Methodology	1	1	1	0	0
 Journal of Sustainable Forestry	1	1	1	0	0
 Journal of Sustainable Tourism	1	1	1	0	0
+Journal of Teaching in International Business	1	1	1	0	0
 Journal of Technology in Human Services	1	1	1	0	0
 Journal of Telecommunications and Information Technology	1	1	1	0	0
 Journal of Telecommunictions and Information Technology	1	1	1	0	0
@@ -2948,20 +3210,23 @@ Journal of the American Podiatric Medical Association	1	1	1	0	0
 Journal of the American Society for Mass Spectrometry	2	1	2	0	0
 Journal of the American Society of Brewing Chemists	1	1	1	0	0
 Journal of the Atmospheric Sciences	2	1	2	0	0
-Journal of the Brazilian Society of Mechanical Sciences and Engineering	1	1	1	1	1
 Journal of the Institute of Brewing	1	1	1	0	0
 Journal of the International Phonetic Association	1	1	1	0	0
 Journal of the Korean Society of Hazard Mitigation	1	1	1	0	0
 Journal of the Neurological Sciences	2	1	2	0	0
 Journal of the Operational Research Society	1	1	1	0	0
 Journal of the Optical Society of America A	1	1	1	0	0
+Journal of the Royal Statistical Society: Series A (Statistics in Society)	1	1	1	1	1
 Journal of the Royal Statistical Society: Series C (Applied Statistics)	1	1	1	0	0
 Journal of the Science of Food and Agriculture	1	1	1	0	0
+Journal of Theoretical and Applied Electronic Commerce Research	1	1	1	0	0
 Journal of Thoracic Oncology	1	1	1	0	0
 Journal of Time Series Econometrics	1	1	1	0	0
 Journal of Trace Elements in Medicine and Biology	1	1	1	0	0
 Journal of Translational Medicine	1	1	1	0	0
 Journal of Transport & Health	1	1	1	0	0
+Journal of Transportation Engineering, Part A: Systems	1	1	1	0	0
+Journal of Trauma &amp; Dissociation	1	1	1	0	0
 Journal of Trauma and Acute Care Surgery	1	1	1	0	0
 Journal of Traumatic Stress	1	1	1	0	0
 Journal of Tribology	1	1	1	0	0
@@ -2992,26 +3257,32 @@ Labour Economics	1	1	1	0	0
 LAK21: 11th International Learning Analytics and Knowledge Conference	1	1	1	0	0
 Lanaguage Research	1	1	1	0	0
 Land Degradation & Development	1	1	1	0	0
+Land Degradation &amp; Development	1	1	1	0	0
 Land Use Policy	1	1	1	0	0
 Landscape Research	1	1	1	0	0
 Landslides	1	1	1	0	0
-Language and Cognition	3	1	3	0	0
+Language and Cognition	4	1	4	0	0
 Language and Linguistics Compass	1	1	1	0	0
 Language and Literature: International Journal of Stylistics	1	1	1	0	0
 Language Learning and Development	1	1	1	0	0
 Language, Speech, and Hearing Services in Schools	1	1	1	0	0
 Languages and Compilers for Parallel Computing,Lecture Notes in Computer Science	1	1	1	0	0
 Large-Scale Scientific Computing,Lecture Notes in Computer Science	1	1	1	0	0
+Laser &amp; Photonics Reviews	1	1	1	0	0
 Laterality	1	1	1	0	0
+Latin American Policy	1	1	1	0	0
 Learned Publishing	1	1	1	0	0
 Learning and Motivation	1	1	1	0	0
 Learning Health Systems	1	1	1	0	0
+Learning, Media and Technology	1	1	1	0	0
 Lecture Notes in Business Information Processing,Information Technology for Management: Emerging Research and Applications	1	1	1	0	0
 Lecture Notes in Civil Engineering,18th International Probabilistic Workshop	1	1	1	0	0
 Lecture Notes in Civil Engineering,Climate Change and Water Security	1	1	1	0	0
+Lecture Notes in Civil Engineering,Recent Developments in Sustainable Infrastructure (ICRDSI-2020)—GEO-TRA-ENV-WRM	1	1	1	0	0
 Lecture Notes in Computational Science and Engineering,Quantification of Uncertainty: Improving Efficiency and Technology	1	1	1	0	0
 Lecture Notes in Computer Science,Advances in Information Retrieval	2	1	2	0	0
 Lecture Notes in Computer Science,Advances in Intelligent Data Analysis XVIII	1	1	1	0	0
+Lecture Notes in Computer Science,Advances in Intelligent Data Analysis XX	2	1	2	0	0
 Lecture Notes in Computer Science,Advances in Swarm Intelligence	1	1	1	0	0
 Lecture Notes in Computer Science,Agents and Artificial Intelligence	1	1	1	0	0
 Lecture Notes in Computer Science,Algorithms and Models for the Web Graph	1	1	1	0	0
@@ -3024,6 +3295,7 @@ Lecture Notes in Computer Science,Evolutionary Multi-Criterion Optimization	1	1	
 Lecture Notes in Computer Science,Geometric Science of Information	1	1	1	0	0
 Lecture Notes in Computer Science,Graph Drawing and Network Visualization	1	1	1	0	0
 Lecture Notes in Computer Science,HCI International 2020 – Late Breaking Papers: Interaction, Knowledge and Social Media	1	1	1	0	0
+Lecture Notes in Computer Science,Head and Neck Tumor Segmentation and Outcome Prediction	3	1	3	0	0
 Lecture Notes in Computer Science,Human Interface and the Management of Information. Information-Rich and Intelligent Environments	1	1	1	0	0
 Lecture Notes in Computer Science,Hybrid Artificial Intelligent Systems	1	1	1	0	0
 Lecture Notes in Computer Science,Image Analysis and Recognition	1	1	1	0	0
@@ -3043,6 +3315,8 @@ Lecture Notes in Computer Science,Towards Open and Trustworthy Digital Societies
 Lecture Notes in Electrical Engineering,China Satellite Navigation Conference (CSNC) 2018 Proceedings	1	1	1	0	0
 Lecture Notes in Electrical Engineering,Evolving Technologies for Computing, Communication and Smart World	1	1	1	0	0
 Lecture Notes in Electrical Engineering,Modelling, Simulation and Intelligent Computing	1	1	1	0	0
+Lecture Notes in Electrical Engineering,Recent Innovations in Computing	1	1	1	0	0
+Lecture Notes in Electrical Engineering,Sustainable Advanced Computing	1	1	1	0	0
 Lecture Notes in Geoinformation and Cartography,Geospatial Technologies for All	1	1	1	0	0
 Lecture Notes in Information Systems and Organisation,Innovation Through Information Systems	1	1	1	0	0
 Lecture Notes in Mechanical Engineering,Digitizing Production Systems	1	1	1	0	0
@@ -3050,14 +3324,15 @@ Lecture Notes in Mechanical Engineering,Industry 4.0 and Advanced Manufacturing	
 Lecture Notes in Mechanical Engineering,Proceedings of the 5th International Symposium on Uncertainty Quantification and Stochastic Modelling	1	1	1	0	0
 Lecture Notes in Mechanical Engineering,Uncertainty in Mechanical Engineering	1	1	1	0	0
 Lecture Notes in Networks and Systems,Advanced Technologies, Systems, and Applications VI	1	1	1	0	0
+Lecture Notes in Networks and Systems,Advances in Information and Communication	1	1	1	0	0
 Lecture Notes in Networks and Systems,Advances in Usability, User Experience, Wearable and Assistive Technology	1	1	1	0	0
 Lecture Notes in Networks and Systems,Intelligent Computing	1	1	1	0	0
 Lecture Notes in Networks and Systems,Intelligent Systems and Applications	1	1	1	0	0
 Lecture Notes in Networks and Systems,Proceedings of International Conference on Sustainable Expert Systems	1	1	1	0	0
 Lecture Notes in Networks and Systems,Sustainability, Energy and City	1	1	1	0	0
 Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering,Mobile Networks and Management	1	1	1	0	0
+Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering,Pervasive Computing Technologies for Healthcare	1	1	1	0	0
 Legal and Criminological Psychology	1	1	1	0	0
-Legislative Studies Quarterly	1	1	1	1	1
 Leisure Studies	1	1	1	0	0
 Letters in Spatial and Resource Sciences	1	1	1	0	0
 Leukemia & Lymphoma	1	1	1	0	0
@@ -3069,12 +3344,14 @@ Limnology	1	1	1	0	0
 Limnology and Oceanography Bulletin	1	1	1	0	0
 Limnology and Oceanography Letters	1	1	1	1	1
 Limnology and Oceanography: Methods	1	1	1	0	0
+Lingua	1	1	1	0	0
 Linguistic Typology	1	1	1	0	0
 Linguistics Vanguard	1	1	1	0	0
 Lithic Technology	1	1	1	0	0
 Liver Transplantation	1	1	1	0	0
 Living Reviews in Relativity	1	1	1	0	0
 Low Resource Social Media Text Mining,SpringerBriefs in Computer Science	1	1	1	0	0
+Lung Cancer	1	1	1	0	0
 mAbs	1	1	1	0	0
 Machine Learning and Knowledge Discovery in Databases,Communications in Computer and Information Science	2	1	2	0	0
 Machine Learning and Knowledge Discovery in Databases: Applied Data Science Track,Lecture Notes in Computer Science	1	1	1	0	0
@@ -3091,13 +3368,12 @@ Malaria Journal	3	1	3	0	0
 Mammal Research	1	1	1	0	0
 Mammal Review	1	1	1	0	0
 Management & Organizational History	1	1	1	0	0
+Management Science	1	1	1	0	0
 Marine and Freshwater Research	1	1	1	0	0
 Marine and Petroleum Geology	2	1	2	0	0
-Marine Biology	3	1	3	0	0
 Marine Biotechnology	1	1	1	0	0
-Marine Environmental Research	2	1	2	0	0
 Marine Genomics	1	1	1	0	0
-Marine Mammal Science	1	1	1	0	0
+Marine Micropaleontology	1	1	1	0	0
 Marine Policy	1	1	1	0	0
 Marketing Science	1	1	1	0	0
 Marriage & Family Review	1	1	1	0	0
@@ -3111,8 +3387,6 @@ Materials Theory	1	1	1	0	0
 Materials Today	1	1	1	0	0
 Materials Today Bio	1	1	1	0	0
 Materials Today Physics	1	1	1	0	0
-Materials Today: Proceedings	1	1	1	0	0
-Mathematical Biosciences	2	1	2	0	0
 Mathematical Biosciences and Engineering	1	1	1	0	0
 Mathematical Optimization Theory and Operations Research,Communications in Computer and Information Science	1	1	1	0	0
 Mathematical Problems in Engineering	1	1	1	0	0
@@ -3120,7 +3394,6 @@ Mathematical Software – ICMS 2018,Lecture Notes in Computer Science	1	1	1	0	0
 Mathematical Thinking and Learning	1	1	1	0	0
 Mathematics and Computation in Music,Lecture Notes in Computer Science	1	1	1	1	1
 Mathematics and Mechanics of Solids	1	1	1	0	0
-Measurement	1	1	1	1	1
 Measurement Science and Technology	1	1	1	1	1
 Measurement Techniques	1	1	1	0	0
 Meat Science	1	1	1	0	0
@@ -3129,22 +3402,23 @@ Mechanics Research Communications	1	1	1	0	0
 Mechanisms and Machine Science,Cable-Driven Parallel Robots	1	1	1	0	0
 Mediators of Inflammation	1	1	1	0	0
 Medical & Biological Engineering & Computing	1	1	1	0	0
-Medical and Veterinary Entomology	1	1	1	0	0
+Medical Education	1	1	1	0	0
 Medical Reference Services Quarterly	1	1	1	0	0
 Medicine	1	1	1	0	0
 Medicine & Science in Sports & Exercise	1	1	1	0	0
 MedienPädagogik: Zeitschrift für Theorie und Praxis der Medienbildung	1	1	1	0	0
 Meditari Accountancy Research	1	1	1	0	0
 Memory	1	1	1	0	0
-Memory &amp; Cognition	1	1	1	0	0
 Mensch und Computer 2021	1	1	1	0	0
 Mental Health & Prevention	1	1	1	0	0
 Metabolic Engineering	1	1	1	0	0
+Metabolomics Perspectives	1	1	1	0	0
 Metacognition and Learning	1	1	1	0	0
+Metalearning,Cognitive Technologies	1	1	1	0	0
 Metallurgical and Materials Transactions A	1	1	1	0	0
 Metals	1	1	1	0	0
 Meteoritics & Planetary Science	1	1	1	0	0
-Meteorological Applications	1	1	1	0	0
+Meteorology	1	1	1	0	0
 Meteorology and Atmospheric Physics	1	1	1	0	0
 Methods in Cell Biology,Plant Cell Biology	1	1	1	0	0
 Methods in Molecular Biology,Computational Design of Membrane Proteins	1	1	1	0	0
@@ -3157,15 +3431,15 @@ Methods in Molecular Biology,Plant Transposable Elements	1	1	1	0	0
 Methods in Molecular Biology,Single Cell Methods	1	1	1	0	0
 Methods in Molecular Biology,Stable Isotope Probing	1	1	1	0	0
 Micro-Pollutant Regulation in the River Rhine	1	1	1	0	0
+Microbial Drug Resistance	1	1	1	0	0
 Microbiological Research	1	1	1	0	0
+Microbiology	1	1	1	0	0
 Microelectronic Engineering	1	1	1	0	0
 Microelectronics Reliability	1	1	1	0	0
 Microplastics and Nanoplastics	1	1	1	0	0
 Microscopy Research and Technique	1	1	1	0	0
-Military Medicine	1	1	1	0	0
 Minds and Machines	1	1	1	0	0
 Mineral Processing and Extractive Metallurgy Review	1	1	1	0	0
-Minerals Engineering	1	1	1	0	0
 Mining, Metallurgy & Exploration	1	1	1	0	0
 Mitteilungen der Vereinigung Österreichischer Bibliothekarinnen und Bibliothekare	1	1	1	1	1
 Mobile Information Systems	1	1	1	0	0
@@ -3175,28 +3449,30 @@ Modality and Diachronic Construction Grammar,Constructional Approaches to Langua
 Modelling and Development of Intelligent Systems,Communications in Computer and Information Science	1	1	1	0	0
 Modelling and Simulation for Autonomous Systems,Lecture Notes in Computer Science	1	1	1	0	0
 Modern Pathology	2	1	2	0	0
+Mokslas - Lietuvos ateitis	1	1	1	0	0
 Molecular & Cellular Toxicology	1	1	1	0	0
 Molecular Autism	2	1	2	0	0
 Molecular Cancer Therapeutics	1	1	1	0	0
 Molecular Diversity	1	1	1	0	0
 Molecular Imaging and Biology	1	1	1	0	0
+Molecular Metabolism	1	1	1	0	0
+Molecular Microbiology	1	1	1	1	1
 Molecular Neurodegeneration	1	1	1	0	0
 Molecular Omics	1	1	1	0	0
 Molecular Plant	1	1	1	0	0
 Molecular Plant Pathology	1	1	1	0	0
 Molecular Systems Design & Engineering	1	1	1	0	0
 Molecular Therapy - Oncolytics	1	1	1	0	0
-Monthly Weather Review	1	1	1	0	0
 Morphology	1	1	1	0	0
-Movement Ecology	1	1	1	0	0
 MRS Advances	1	1	1	0	0
 MRS Bulletin	1	1	1	0	0
 Mühendislik Bilimleri ve Tasarım Dergisi	1	1	1	0	0
 Multi-Agent Systems and Agreement Technologies,Lecture Notes in Computer Science	1	1	1	0	0
 Multimodal Technologies and Interaction	1	1	1	0	0
 Multiple Sclerosis and Related Disorders	2	1	2	0	0
+Multistability in Physical and Living Systems,Springer Series in Synergetics	1	1	1	0	0
 Music & Science	1	1	1	0	0
-Music Perception	1	1	1	0	0
+Music Perception	2	1	2	0	0
 Mycologia	1	1	1	0	0
 Nachrichten aus der Chemie	1	1	1	0	0
 Nano Convergence	1	1	1	0	0
@@ -3208,13 +3484,14 @@ Natural Resource Modeling	1	1	1	0	0
 Natural Resources Research	1	1	1	0	0
 Natural Sciences Education	1	1	1	0	0
 Nature Cancer	3	1	3	0	0
-Nature Cell Biology	5	1	5	0	0
-Nature Ecology &amp; Evolution	1	1	1	0	0
+Nature Ecology &amp; Evolution	3	1	3	0	0
 Nature Energy	1	1	1	0	0
 Nature Genetics	8	1	8	0	0
-Nature Geoscience	1	1	1	1	1
+Nature Physics	1	1	1	1	1
+Nature Reviews Chemistry	1	1	1	0	0
 Nature Reviews Drug Discovery	1	1	1	0	0
 Nature Reviews Gastroenterology & Hepatology	1	1	1	0	0
+Nature Reviews Methods Primers	1	1	1	0	0
 Nature Reviews Molecular Cell Biology	1	1	1	0	0
 Nature Reviews Nephrology	1	1	1	0	0
 Nature Structural & Molecular Biology	1	1	1	0	0
@@ -3227,7 +3504,7 @@ Networks	1	1	1	0	0
 Neural Computation	1	1	1	0	0
 Neural Engineering Techniques for Autism Spectrum Disorder	1	1	1	0	0
 Neural Information Processing,Lecture Notes in Computer Science	1	1	1	0	0
-Neural Processing Letters	1	1	1	0	0
+Neural Plasticity	1	1	1	0	0
 Neurobiology of Aging	3	1	3	0	0
 Neurobiology of Learning and Memory	1	1	1	0	0
 Neurobiology of Stress	1	1	1	0	0
@@ -3239,8 +3516,8 @@ Neuroradiology	1	1	1	0	0
 Neuroscience &amp; Biobehavioral Reviews	1	1	1	0	0
 Neuroscience Bulletin	1	1	1	0	0
 Neuroscience Research	1	1	1	0	0
-Neurosurgery	1	1	1	0	0
 Neurotherapeutics	1	1	1	0	0
+Neurotrauma Reports	1	1	1	0	0
 New England Journal of Medicine	1	1	1	0	0
 New Media Spectacles and Multimodal Creativity in a Globalised Asia,Digital Culture and Humanities	1	1	1	0	0
 New Methods and Sensors for Membrane and Cell Volume Research,Current Topics in Membranes	1	1	1	0	0
@@ -3256,7 +3533,6 @@ North American Actuarial Journal	1	1	1	0	0
 npj Breast Cancer	1	1	1	0	0
 npj Climate and Atmospheric Science	1	1	1	0	0
 npj Materials Degradation	1	1	1	1	1
-npj Quantum Information	2	1	2	0	0
 npj Regenerative Medicine	1	1	1	0	0
 npj Science of Food	1	1	1	0	0
 npj Vaccines	1	1	1	0	0
@@ -3264,6 +3540,7 @@ Nuclear Engineering and Design	2	1	2	0	0
 Nuclear Engineering and Technology	1	1	1	0	0
 Nuclear Fusion	1	1	1	1	1
 Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment	1	1	1	0	0
+Nuclear Medicine and Molecular Imaging	1	1	1	0	0
 Nuclear Science and Engineering	1	1	1	0	0
 Nucleus	1	1	1	0	0
 Numerische Mathematik	1	1	1	0	0
@@ -3276,10 +3553,11 @@ Ocean &amp; Coastal Management	1	1	1	0	0
 Ocean Science Data	1	1	1	0	0
 OMEGA - Journal of Death and Dying	1	1	1	0	0
 OMICS: A Journal of Integrative Biology	1	1	1	0	0
+On Spatio-Temporal Data Modelling and Uncertainty Quantification Using Machine Learning and Information Theory,Springer Theses	1	1	1	0	0
 Oncogene	1	1	1	0	0
 OncoImmunology	1	1	1	0	0
-One Earth	1	1	1	0	0
 Online Social Networks and Media	1	1	1	0	0
+Open Archaeology	1	1	1	0	0
 Open Source Systems: Towards Robust Practices,IFIP Advances in Information and Communication Technology	1	1	1	0	0
 OpenMP: Enabling Massive Node-Level Parallelism,Lecture Notes in Computer Science	1	1	1	0	0
 Operations Research Perspectives	1	1	1	0	0
@@ -3297,11 +3575,13 @@ Organic Process Research & Development	1	1	1	0	0
 Orthodontics & Craniofacial Research	1	1	1	1	1
 Orthopaedic Journal of Sports Medicine	1	1	1	0	0
 Ostrich	1	1	1	0	0
+Otolaryngology–Head and Neck Surgery	1	1	1	0	0
 Pain	2	1	2	0	0
 Palaeogeography, Palaeoclimatology, Palaeoecology	1	1	1	0	0
 Paleobiology	1	1	1	0	0
 Palgrave Communications	1	1	1	0	0
 PAMM	1	1	1	0	0
+Parasites &amp; Vectors	1	1	1	0	0
 Parkinsonism & Related Disorders	1	1	1	0	0
 Partial Differential Equations and Applications	1	1	1	1	1
 Particle and Fibre Toxicology	1	1	1	0	0
@@ -3312,21 +3592,23 @@ Pattern Analysis and Applications	1	1	1	0	0
 Pattern Recognition and Image Analysis	1	1	1	0	0
 Pediatric Blood & Cancer	1	1	1	0	0
 Pediatric Diabetes	1	1	1	0	0
+Pediatric Hematology and Oncology	1	1	1	0	0
 Pediatric Radiology	1	1	1	0	0
 Pediatric Research	1	1	1	0	0
+Pediatric Rheumatology	1	1	1	0	0
 Pediatric Transplantation	1	1	1	0	0
 Peer Community Journal	1	1	1	0	0
 Peer-to-Peer Networking and Applications	1	1	1	0	0
-People and Nature	1	1	1	0	0
 Peptides	1	1	1	0	0
 Perception	1	1	1	1	1
 Perceptual and Motor Skills	1	1	1	0	0
-Personality and Individual Differences	1	1	1	0	0
+Personality and Individual Differences	3	1	3	0	0
 Perspectives in Public Health	1	1	1	0	0
 Perspectives on Behavior Science	1	1	1	0	0
 Perspectives on Psychological Science	1	1	1	0	0
 Pervasive and Mobile Computing	1	1	1	0	0
 PHAGE	1	1	1	0	0
+Pharmaceutical Research	1	1	1	0	0
 Pharmaceutical Statistics	1	1	1	1	1
 Pharmacology Biochemistry and Behavior	1	1	1	0	0
 Pharmacopsychiatry	1	1	1	0	0
@@ -3334,15 +3616,16 @@ Pharmacy	1	1	1	0	0
 Phonetica	1	1	1	0	0
 Phonetics and Speech Sciences	1	1	1	0	0
 Phonology	1	1	1	0	0
+Photogrammetric Engineering &amp; Remote Sensing	1	1	1	0	0
 Photonics	1	1	1	0	0
 Photosynthetica	1	1	1	0	0
-Physica D: Nonlinear Phenomena	1	1	1	0	0
 Physical and Engineering Sciences in Medicine	1	1	1	0	0
 Physical Review Accelerators and Beams	1	1	1	0	0
 Physical Therapy	1	1	1	0	0
 Physics Education	1	1	1	0	0
 Physics Letters A	1	1	1	0	0
 Physics of the Earth and Planetary Interiors	1	1	1	0	0
+Physiology &amp; Behavior	1	1	1	0	0
 Physiotherapy Theory and Practice	1	1	1	0	0
 Phytobiomes Journal	2	1	2	0	0
 PhytoFrontiers™	2	1	2	0	0
@@ -3352,17 +3635,17 @@ Plant Biology	2	1	2	0	0
 Plant Biotechnology Journal	1	1	1	0	0
 Plant Breeding	1	1	1	0	0
 Plant Direct	1	1	1	0	0
-Plant Disease	3	1	3	0	0
 Plant Genetic Resources: Characterization and Utilization	1	1	1	0	0
 Plant Pathology	1	1	1	0	0
 Plant Phenomics	1	1	1	1	1
+Plant Science	1	1	1	0	0
 Plant, Cell & Environment	1	1	1	0	0
 Plant, Cell &amp; Environment	1	1	1	0	0
 Planta	1	1	1	0	0
 PLANTS, PEOPLE, PLANET	1	1	1	0	0
 Plasma Sources Science and Technology	2	1	2	0	0
 Platelets	1	1	1	0	0
-PLOS Global Public Health	1	1	1	1	1
+PLOS Medicine	1	1	1	0	0
 Policing and Society	1	1	1	0	0
 Policy & Internet	1	1	1	0	0
 Policy Studies Journal	1	1	1	0	0
@@ -3379,9 +3662,8 @@ Practical Applications of Computational Biology and Bioinformatics, 13th Interna
 Practical Text Analytics,Advances in Analytics and Data Science	2	1	2	0	0
 Precambrian Research	1	1	1	0	0
 Precipitation	1	1	1	0	0
-Precision Agriculture	1	1	1	0	0
 Prediction in Second Language Processing and Learning,Bilingual Processing and Acquisition	1	1	1	0	0
-Pregnancy Hypertension	1	1	1	0	0
+Pregnancy Hypertension	2	1	2	0	0
 Presidential Studies Quarterly	1	1	1	0	0
 Preventing Chronic Disease	2	1	2	0	0
 Prevention Science	1	1	1	0	0
@@ -3435,6 +3717,7 @@ Proceedings of the 2021 IEEE/ACM International Conference on Advances in Social 
 Proceedings of the 2021 International Conference on Management of Data	1	1	1	0	0
 Proceedings of the 2021 on Great Lakes Symposium on VLSI	1	1	1	0	0
 Proceedings of the 2021 Workshop on Additive Manufacturing (3D Printing) Security	1	1	1	0	0
+Proceedings of the 2022 ACM on International Workshop on Security and Privacy Analytics	1	1	1	0	0
 Proceedings of the 21st ACM Symposium on Document Engineering	1	1	1	0	0
 Proceedings of the 21th ACM/IEEE International Conference on Model Driven Engineering Languages and Systems - MODELS '18	1	1	1	0	0
 Proceedings of the 22nd International Academic Mindtrek Conference on - Mindtrek '18	1	1	1	0	0
@@ -3492,6 +3775,7 @@ Proceedings of the Entomological Society of Washington	1	1	1	0	0
 Proceedings of the Fifteenth ACM International Conference on Web Search and Data Mining	1	1	1	0	0
 Proceedings of the Future Technologies Conference (FTC) 2020, Volume 1,Advances in Intelligent Systems and Computing	1	1	1	0	0
 Proceedings of the IEEE	1	1	1	1	1
+Proceedings of the Institution of Civil Engineers - Smart Infrastructure and Construction	1	1	1	0	0
 Proceedings of the Institution of Mechanical Engineers, Part L: Journal of Materials: Design and Applications	1	1	1	0	0
 Proceedings of the Institution of Mechanical Engineers, Part O: Journal of Risk and Reliability	1	1	1	0	0
 Proceedings of the International Conference on Advanced Visual Interfaces	1	1	1	0	0
@@ -3501,6 +3785,7 @@ Proceedings of the International Conference on Omni-Layer Intelligent Systems	1	
 Proceedings of the International Symposium on Quality of Service	1	1	1	0	0
 Proceedings of the International Workshop on OpenCL	1	1	1	0	0
 Proceedings of the Practice and Experience on Advanced Research Computing	1	1	1	0	0
+Proceedings of the Seventeenth European Conference on Computer Systems	1	1	1	0	0
 Proceedings of the SIGCOMM '21 Poster and Demo Sessions	1	1	1	0	0
 Proceedings of the South African Institute of Computer Scientists and Information Technologists 2019 on ZZZ  - SAICSIT '19	1	1	1	0	0
 Proceedings of the Symposium on Applied Computing - SAC '17	1	1	1	0	0
@@ -3508,33 +3793,37 @@ Proceedings of the Tenth ACM International Conference on Future Energy Systems	1
 Proceedings of the Tenth International Conference on Learning Analytics & Knowledge	1	1	1	0	0
 Proceedings of the The 8th International Virtual Conference on Applied Computing & Information Technology	1	1	1	0	0
 Proceedings of the Thirteenth International Conference on Tangible, Embedded, and Embodied Interaction	1	1	1	0	0
+Proceedings of the Thirteenth International Workshop on Programming Models and Applications for Multicores and Manycores	1	1	1	0	0
 Proceedings of the Twelfth ACM International Conference on Web Search and Data Mining	1	1	1	0	0
 Proceedings on applied botany, genetics and breeding	1	1	1	0	0
+Proceedings,22. Internationales Stuttgarter Symposium	1	1	1	0	0
 Proceedings,Internationaler Motorenkongress 2021	1	1	1	0	0
 Process Integration and Optimization for Sustainability	1	1	1	0	0
 Process Safety and Environmental Protection	1	1	1	0	0
-Production Engineering	1	1	1	0	0
 Progress in Artificial Intelligence and Pattern Recognition,Lecture Notes in Computer Science	1	1	1	0	0
 Progress in Artificial Intelligence,Lecture Notes in Computer Science	1	1	1	0	0
 Progress in Biophysics and Molecular Biology	1	1	1	1	1
 Progress in Earth and Planetary Science	1	1	1	0	0
-Progress in Energy	1	1	1	0	0
 Projections	1	1	1	0	0
 PROneft’. Proffessional’no o nefti	1	1	1	0	0
 Prosthesis	1	1	1	1	1
+Prosthetics &amp; Orthotics International	1	1	1	0	0
 Proteomes	1	1	1	0	0
 Psychiatric Quarterly	1	1	1	0	0
 Psychiatrische Praxis	1	1	1	0	0
+Psychiatry and Clinical Neurosciences	1	1	1	0	0
 Psychiatry Investigation	1	1	1	0	0
 PSYCHOLOGIA	1	1	1	0	0
 Psychology in the Schools	1	1	1	0	0
 Psychology Learning & Teaching	1	1	1	0	0
 Psychology of Learning and Motivation,The Context of Cognition: Emerging Perspectives	1	1	1	0	0
 Psychology of Sport and Exercise	1	1	1	0	0
+Psychopharmacology	1	1	1	0	0
 Psychotherapy Research	3	1	3	0	0
 Public Administration	1	1	1	0	0
 Public Health	2	1	2	0	0
 Public Health Reviews	1	1	1	0	0
+Public Management Review	1	1	1	0	0
 Public Opinion Quarterly	1	1	1	0	0
 Public Understanding of Science	1	1	1	0	0
 Pure and Applied Geophysics	1	1	1	0	0
@@ -3558,9 +3847,11 @@ Rangeland Ecology &amp; Management	1	1	1	0	0
 Rapid Communications in Mass Spectrometry	1	1	1	0	0
 Reaction Kinetics, Mechanisms and Catalysis	1	1	1	0	0
 Real Estate Management and Valuation	1	1	1	0	0
+Recent Advances in Applied Mechanics,Lecture Notes in Mechanical Engineering	1	1	1	0	0
 Recent Challenges in Intelligent Information and Database Systems,Communications in Computer and Information Science	1	1	1	0	0
 Recent Developments and the New Direction in Soft-Computing Foundations and Applications,Studies in Fuzziness and Soft Computing	1	1	1	0	0
 Rechtsmedizin	2	1	2	0	0
+Recommender Systems Handbook	1	1	1	0	0
 Redox Biology	1	1	1	0	0
 Reference Module in Biomedical Sciences	1	1	1	0	0
 Reference Module in Materials Science and Materials Engineering	1	1	1	0	0
@@ -3578,6 +3869,8 @@ Research in Occupational Stress and Well Being,Examining and Exploring the Shift
 Research in Veterinary Science	1	1	1	0	0
 Research Methods in Medicine & Health Sciences	1	1	1	0	0
 Research on Child and Adolescent Psychopathology	1	1	1	0	0
+Research Quarterly for Exercise and Sport	1	1	1	0	0
+Resilience in a Digital Age,Contributions to Management Science	1	1	1	0	0
 Resilient Infrastructure,Lecture Notes in Civil Engineering	1	1	1	0	0
 Resuscitation	1	1	1	0	0
 Retina	1	1	1	0	0
@@ -3590,7 +3883,8 @@ Revista Brasileira de Epidemiologia	1	1	1	0	0
 Revista Brasileira de Meteorologia	1	1	1	0	0
 Revista de Teledetección	1	1	1	0	0
 Revista Mexicana de Astronomía y Astrofísica Serie de Conferencias	1	1	1	0	0
-Revue Internationale des Sciences Administratives	2	1	2	0	0
+Revista Punto Cero	1	1	1	0	0
+Revue Internationale des Sciences Administratives	3	1	3	0	0
 Rhetoric Review	1	1	1	0	0
 Rheumatology and Therapy	1	1	1	0	0
 Rhinology Online	1	1	1	0	0
@@ -3603,17 +3897,16 @@ RoboCup 2019: Robot World Cup XXIII,Lecture Notes in Computer Science	1	1	1	0	0
 ROBOMECH Journal	1	1	1	0	0
 Robotics and Computer-Integrated Manufacturing	1	1	1	0	0
 RöFo - Fortschritte auf dem Gebiet der Röntgenstrahlen und der bildgebenden Verfahren	1	1	1	0	0
-RSC Advances	1	1	1	0	0
 RSC Chemical Biology	1	1	1	0	0
 Runtime Verification,Lecture Notes in Computer Science	1	1	1	0	0
 Russian Physics Journal	1	1	1	0	0
 Sādhanā	1	1	1	0	0
-SAE Technical Paper Series	1	1	1	0	0
 Safety Science	2	1	2	0	0
 SAGE Open	1	1	1	0	0
 Scandinavian Economic History Review	1	1	1	0	0
 Scandinavian Journal of Clinical and Laboratory Investigation	1	1	1	0	0
 Scandinavian Journal of Educational Research	1	1	1	0	0
+Scandinavian Journal of Immunology	1	1	1	0	0
 Scandinavian Journal of Public Health	2	1	2	0	0
 Scandinavian Journal of Surgery	1	1	1	0	0
 Scandology 3	1	1	1	0	0
@@ -3626,13 +3919,13 @@ Science and Technology of Advanced Materials	1	1	1	1	1
 Science and Technology of Advanced Materials: Methods	1	1	1	0	0
 Science China Earth Sciences	1	1	1	0	0
 Science China Life Sciences	1	1	1	0	0
+Science China Physics, Mechanics &amp; Astronomy	1	1	1	0	0
 Science Communication	1	1	1	0	0
 Science Robotics	1	1	1	0	0
 Science Signaling	1	1	1	0	0
 Scientific African	1	1	1	0	0
 Scientific Bulletin of UNFU	1	1	1	0	0
 Scientific journal of the Ternopil national technical university	1	1	1	0	0
-Scientific Programming	1	1	1	0	0
 Second Language Research	1	1	1	0	0
 Secure Knowledge Management In The Artificial Intelligence Era,Communications in Computer and Information Science	1	1	1	0	0
 Security, Privacy, and Applied Cryptography Engineering,Lecture Notes in Computer Science	1	1	1	0	0
@@ -3642,6 +3935,7 @@ Semantic Web	1	1	1	0	0
 Semiconductor Science and Technology	1	1	1	0	0
 Seminars in Cell & Developmental Biology	1	1	1	0	0
 Seminars in Thoracic and Cardiovascular Surgery	1	1	1	0	0
+Sensing and Bio-Sensing Research	1	1	1	0	0
 Sensors and Actuators A: Physical	1	1	1	0	0
 Service-Oriented Computing,Lecture Notes in Computer Science	1	1	1	0	0
 Sexologies	1	1	1	0	0
@@ -3657,13 +3951,11 @@ SIAM Journal on Imaging Sciences	1	1	1	0	0
 SIAM Journal on Mathematics of Data Science	1	1	1	0	0
 SIAM Journal on Matrix Analysis and Applications	1	1	1	0	0
 SICOT-J	1	1	1	0	0
-Signal Transduction and Targeted Therapy	2	1	2	0	0
 Signal, Image and Video Processing	1	1	1	0	0
 Signo y Pensamiento	1	1	1	0	0
 Silvae Genetica	1	1	1	0	0
 Similarity Search and Applications,Lecture Notes in Computer Science	1	1	1	0	0
 Simulation &amp; Gaming	1	1	1	0	0
-Simulation Modelling Practice and Theory	1	1	1	0	0
 Single-Cell Omics	1	1	1	0	0
 Sixteenth International Conference on Tangible, Embedded, and Embodied Interaction	1	1	1	0	0
 Sixth International Conference on Engineering Geophysics, Virtual, 25–28 October 2021	1	1	1	0	0
@@ -3672,18 +3964,20 @@ SLAS Discovery	1	1	1	0	0
 SLAS DISCOVERY: Advancing the Science of Drug Discovery	3	1	3	0	0
 SLAS Technology	1	1	1	0	0
 SLAS TECHNOLOGY: Translating Life Sciences Innovation	1	1	1	0	0
+Smart Agricultural Technology	1	1	1	0	0
 Smart and Sustainable Manufacturing Systems	1	1	1	0	0
 Smart Computing Techniques and Applications,Smart Innovation, Systems and Technologies	1	1	1	0	0
 Smart Energy	2	1	2	0	0
-Smart Health	1	1	1	0	0
 Smart Innovation, Systems and Technologies,Proceedings of the 8th International Conference on Sciences of Electronics, Technologies of Information and Telecommunications (SETIT’18), Vol.2	1	1	1	0	0
 Smart Materials and Structures	1	1	1	0	0
 Social Computing and Social Media: Applications in Marketing, Learning, and Health,Lecture Notes in Computer Science	1	1	1	0	0
 Social Movement Studies	1	1	1	0	0
+Social Politics: International Studies in Gender, State &amp; Society	1	1	1	0	0
 Social Psychological Bulletin	1	1	1	0	0
-Social Science Computer Review	1	1	1	0	0
 Social Sciences	1	1	1	0	0
+Social Semiotics	1	1	1	0	0
 Social, Cultural, and Behavioral Modeling,Lecture Notes in Computer Science	2	1	2	0	0
+Socio-Economic Planning Sciences	1	1	1	0	0
 Sociological Methods & Research	1	1	1	0	0
 Sociology Compass	1	1	1	0	0
 Sociology of Sport Journal	1	1	1	0	0
@@ -3693,9 +3987,11 @@ Software Engineering for Robotics	1	1	1	0	0
 Software Technologies: Applications and Foundations,Lecture Notes in Computer Science	1	1	1	0	0
 Software Testing, Verification and Reliability	1	1	1	0	0
 SOIL	3	1	3	0	0
+Soil and Tillage Research	1	1	1	0	0
 Soil Erosion - Rainfall Erosivity and Risk Assessment	1	1	1	0	0
 Soil Research	1	1	1	0	0
 Soil Use and Management	1	1	1	0	0
+Solar	1	1	1	0	0
 Solar Energy Materials and Solar Cells	1	1	1	0	0
 Solid State Communications	1	1	1	0	0
 Solid State Sciences	1	1	1	0	0
@@ -3705,8 +4001,10 @@ Space Weather	1	1	1	0	0
 Spatial Cognition & Computation	1	1	1	0	0
 Spatial Data and Intelligence,Lecture Notes in Computer Science	1	1	1	0	0
 SPE Journal	1	1	1	0	0
+Spectrochimica Acta Part B: Atomic Spectroscopy	2	1	2	0	0
 Speech Communication	1	1	1	0	0
-Sports	1	1	1	0	0
+Sports	2	1	2	0	0
+Sports Biomechanics	1	1	1	1	1
 Sports Engineering	1	1	1	0	0
 Sports Medicine	2	1	2	0	0
 Springer Optimization and Its Applications,Artificial Intelligence, Machine Learning, and Optimization Tools for Smart Cities	1	1	1	0	0
@@ -3723,12 +4021,14 @@ Statistical Papers	1	1	1	0	0
 Statistics in Biopharmaceutical Research	1	1	1	0	0
 Statistics, Politics and Policy	1	1	1	0	0
 Stats	1	1	1	0	0
-Stem Cell Reports	1	1	1	0	0
+Strain	1	1	1	0	0
 Stroke	1	1	1	0	0
 Structural Equation Modeling: A Multidisciplinary Journal	1	1	1	0	0
 Structural Health Monitoring	1	1	1	0	0
+Structures	1	1	1	0	0
 Studies in Ancient Art and Civilisation	1	1	1	0	0
 Studies in Applied Mathematics	1	1	1	0	0
+Studies in Computational Intelligence,Explainable Artificial Intelligence for Cyber Security	1	1	1	0	0
 Studies in Corpus Linguistics,Corpus Approaches to Social Media	1	1	1	0	0
 Studies in Educational Evaluation	1	1	1	0	0
 Studies in Nonlinear Dynamics & Econometrics	1	1	1	0	0
@@ -3737,7 +4037,6 @@ Studies in Systems, Decision and Control,Soft Modeling in Industrial Manufacturi
 Studies on Neotropical Fauna and Environment	1	1	1	0	0
 Substance Abuse Treatment, Prevention, and Policy	1	1	1	0	0
 Substance Use & Misuse	1	1	1	0	0
-Suicide and Life-Threatening Behavior	1	1	1	0	0
 Supercomputing Frontiers,Lecture Notes in Computer Science	1	1	1	0	0
 Superlattices and Microstructures	1	1	1	0	0
 Supply Management Research,Advanced Studies in Supply Management	1	1	1	0	0
@@ -3746,7 +4045,6 @@ Surgical Infections	2	1	2	0	0
 Surveys in Geophysics	1	1	1	0	0
 Sustainable Communication Networks and Application,Lecture Notes on Data Engineering and Communications Technologies	1	1	1	0	0
 Sustainable Development	1	1	1	0	0
-Sustainable Energy Technologies and Assessments	1	1	1	0	0
 Sustainable Energy, Grids and Networks	1	1	1	0	0
 Sustainable Production and Consumption	1	1	1	1	1
 Sustainable Production, Life Cycle Engineering and Management,Integrated Computational Life Cycle Engineering for Traction Batteries	3	1	3	0	0
@@ -3757,6 +4055,7 @@ Symbiosis	3	1	3	0	0
 Symposium on Eye Tracking Research and Applications	1	1	1	0	0
 Systematic and Applied Microbiology	1	1	1	0	0
 Systematics and Biodiversity	1	1	1	0	0
+Systems &amp; Control Letters	1	1	1	0	0
 Systems Engineering	1	1	1	0	0
 Systems Medicine	1	1	1	0	0
 Systems Simulation and Modeling for Cloud Computing and Big Data Applications	1	1	1	0	0
@@ -3766,6 +4065,7 @@ Teaching Statistics	3	1	3	0	0
 Team Performance Management: An International Journal	1	1	1	0	0
 Techniques in Coloproctology	1	1	1	0	0
 Technological and Economic Development of Economy	1	1	1	0	0
+Technology in Cancer Research &amp; Treatment	1	1	1	0	0
 Technometrics	1	1	1	0	0
 Telangana Journal of Psychiatry	1	1	1	0	0
 Telematics and Informatics	1	1	1	0	0
@@ -3775,20 +4075,20 @@ TESOL Quarterly	1	1	1	0	0
 The 14th International Symposium on Visual Information Communication and Interaction	1	1	1	0	0
 The 2021 International Conference on Computer, Control, Informatics and Its Applications	1	1	1	0	0
 THE 2ND SCIENCE AND MATHEMATICS INTERNATIONAL CONFERENCE (SMIC 2020): Transforming Research and Education of Science and Mathematics in the Digital Age	1	1	1	0	0
-The 9th OpenSky Symposium	1	1	1	0	0
 The AAPS Journal	1	1	1	0	0
+The American Biology Teacher	1	1	1	0	0
 The American Journal of Cardiology	1	1	1	0	0
 The American Journal of Clinical Nutrition	1	1	1	0	0
 The American Journal of Medicine	1	1	1	0	0
 The American Journal of Pathology	1	1	1	0	0
 The Asia-Pacific Education Researcher	1	1	1	0	0
 The Canadian Geographer / Le Géographe canadien	1	1	1	0	0
+The Canadian Journal of Human Sexuality	1	1	1	0	0
 The Cerebellum	1	1	1	0	0
 The Computer Journal	1	1	1	0	0
+The Crop Journal	1	1	1	0	0
 The Cryosphere	1	1	1	0	0
 The Depositional Record	1	1	1	0	0
-The European Physical Journal A	1	1	1	0	0
-The European Physical Journal Special Topics	1	1	1	0	0
 The Holocene	1	1	1	0	0
 The International Journal of Biostatistics	1	1	1	0	0
 The International Journal of Cardiovascular Imaging	1	1	1	0	0
@@ -3800,8 +4100,10 @@ The Journal of Applied Laboratory Medicine	1	1	1	0	0
 The Journal of Arthroplasty	1	1	1	0	0
 The Journal of Cardiovascular Surgery	1	1	1	0	0
 The Journal of Clinical Endocrinology &amp; Metabolism	1	1	1	0	0
+The Journal of Clinical Hypertension	1	1	1	0	0
 The Journal of Creative Behavior	1	1	1	0	0
 The Journal of Defense Modeling and Simulation: Applications, Methodology, Technology	1	1	1	0	0
+The Journal of Engineering	1	1	1	0	0
 The Journal of Genetic Psychology	1	1	1	0	0
 The Journal of Heart and Lung Transplantation	1	1	1	0	0
 The Journal of Molecular Diagnostics	1	1	1	0	0
@@ -3810,14 +4112,13 @@ The Journal of Organic Chemistry	1	1	1	0	0
 The Journal of Pain	1	1	1	0	0
 The Journal of Pathology	1	1	1	0	0
 The Journal of Pathology: Clinical Research	1	1	1	0	0
+The Journal of Sexual Medicine	1	1	1	0	0
 The Journal of Social Psychology	1	1	1	0	0
 The Journal of the Astronautical Sciences	1	1	1	1	1
 The Journals of Gerontology: Series A	1	1	1	0	0
 The Knee	1	1	1	0	0
-The Lancet Digital Health	1	1	1	0	0
 The Lancet Microbe	1	1	1	0	0
 The Lancet Planetary Health	1	1	1	0	0
-The Lancet Regional Health - Europe	1	1	1	0	0
 The Lancet Regional Health - Western Pacific	1	1	1	0	0
 The Leadership Quarterly	1	1	1	0	0
 The Leading Edge	1	1	1	0	0
@@ -3833,7 +4134,6 @@ The World Journal of Biological Psychiatry	1	1	1	0	0
 The World Wide Web Conference	1	1	1	0	0
 Theoretical and Computational Fluid Dynamics	1	1	1	0	0
 Theoretical and Mathematical Physics	1	1	1	0	0
-Theoretical Computer Science	1	1	1	0	0
 Theory & Research in Social Education	1	1	1	0	0
 Theory and Decision	1	1	1	0	0
 Theory and Engineering of Dependable Computer Systems and Networks,Advances in Intelligent Systems and Computing	1	1	1	0	0
@@ -3850,6 +4150,7 @@ Thyroid	1	1	1	0	0
 Ticks and Tick-borne Diseases	1	1	1	0	0
 Tin Oxide Materials	1	1	1	0	0
 TMS 2021 150th Annual Meeting & Exhibition Supplemental Proceedings,The Minerals, Metals & Materials Series	1	1	1	0	0
+Tomography	1	1	1	0	0
 Tools and Algorithms for the Construction and Analysis of Systems,Lecture Notes in Computer Science	1	1	1	0	0
 TOP	1	1	1	0	0
 Topics in Applied Physics,Chirality, Magnetism and Magnetoelectricity	1	1	1	0	0
@@ -3860,25 +4161,28 @@ Towards a Sustainable Future - Life Cycle Management	1	1	1	0	0
 Towards User-Centric Transport in Europe 2,Lecture Notes in Mobility	1	1	1	0	0
 Toxicologic Pathology	1	1	1	0	0
 Toxicological Sciences	1	1	1	0	0
+Toxicology in Vitro	1	1	1	0	0
 Toxicology Letters	1	1	1	0	0
 Toxins	1	1	1	0	0
+Traffic Safety Research	1	1	1	0	0
 Transactions of the American Fisheries Society	2	1	2	0	0
 Transactions of the Institute of Measurement and Control	1	1	1	0	0
 Transactions of The Royal Society of Tropical Medicine and Hygiene	1	1	1	0	0
-Transfusion	3	1	3	0	0
+Transfusion	4	1	4	0	0
 Translational Oncology	1	1	1	0	0
 Translational Research	1	1	1	0	0
 Transplant International	1	1	1	0	0
 Transplantation	1	1	1	0	0
 Transportation	1	1	1	0	0
 Transportation Research Part B: Methodological	1	1	1	0	0
-Transportation Research Part F: Traffic Psychology and Behaviour	2	1	2	0	0
-Transportation Research Record: Journal of the Transportation Research Board	3	1	3	0	0
+Transportation Research Procedia	1	1	1	0	0
 Travel Behaviour and Society	1	1	1	0	0
 Tree Physiology	1	1	1	0	0
 Trees	1	1	1	0	0
+Trees, Forests and People	1	1	1	0	0
 Trends in Cognitive Sciences	1	1	1	0	0
 Trends in Ecology & Evolution	1	1	1	0	0
+Trends in Immunology	1	1	1	0	0
 Trends in Neuroscience and Education	1	1	1	0	0
 Trends in Neurosciences	1	1	1	0	0
 Trends in Pharmacological Sciences	1	1	1	0	0
@@ -3888,6 +4192,7 @@ Tropical Medicine and Infectious Disease	2	1	2	0	0
 Tropical Plant Pathology	1	1	1	0	0
 Tuberculosis	1	1	1	0	0
 Tyumen State University Herald. Physical and Mathematical Modeling. Oil, Gas, Energy	1	1	1	0	0
+Ultrasonics Sonochemistry	1	1	1	0	0
 Uncertainty for Safe Utilization of Machine Learning in Medical Imaging, and Graphs in Biomedical Image Analysis,Lecture Notes in Computer Science	1	1	1	0	0
 Uncertainty Modeling for Engineering Applications,PoliTO Springer Series	1	1	1	0	0
 Understanding COVID-19: The Role of Computational Intelligence,Studies in Computational Intelligence	1	1	1	0	0
@@ -3900,6 +4205,8 @@ Vegetation History and Archaeobotany	1	1	1	0	0
 Veterinary Anaesthesia and Analgesia	1	1	1	0	0
 Veterinary Record Open	1	1	1	0	0
 Veterinary Research Communications	1	1	1	0	0
+Veterinary Sciences	1	1	1	0	0
+Veterinary World	1	1	1	0	0
 Vibration	1	1	1	0	0
 Vietnam Journal of Mathematics	1	1	1	0	0
 VINE Journal of Information and Knowledge Management Systems	1	1	1	0	0
@@ -3918,8 +4225,10 @@ Vox Sanguinis	1	1	1	0	0
 Water and Environment Journal	1	1	1	0	0
 Water Research X	2	1	2	0	0
 Water Resources Management	1	1	1	0	0
+Waterbirds	1	1	1	0	0
 Wave Motion	1	1	1	0	0
 Wearable Technologies	1	1	1	0	0
+Weather and Climate Dynamics	1	1	1	0	0
 Weather Forecasting	1	1	1	0	0
 Web Intelligence	1	1	1	0	0
 Weed Biology and Management	1	1	1	0	0
@@ -3928,12 +4237,14 @@ Weed Technology	1	1	1	0	0
 WEENTECH Proceedings in Energy	1	1	1	0	0
 Western Journal of Emergency Medicine	1	1	1	0	0
 Wetlands Ecology and Management	1	1	1	0	0
+Wiener klinische Wochenschrift	1	1	1	0	0
 Wildlife Society Bulletin	1	1	1	0	0
 Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery	1	1	1	0	0
 WIREs Computational Statistics	1	1	1	0	0
 WIREs Water	1	1	1	0	0
 WMU Journal of Maritime Affairs	1	1	1	0	0
 Women's Health Issues	1	1	1	0	0
+Women's Reproductive Health	1	1	1	0	0
 Women's Studies International Forum	1	1	1	0	0
 World Archaeology	1	1	1	1	1
 World Development	1	1	1	0	0
@@ -3945,8 +4256,12 @@ World Journal of Pediatrics	1	1	1	0	0
 World Journal of Surgery	1	1	1	0	0
 World Medical &amp; Health Policy	1	1	1	0	0
 WSEAS TRANSACTIONS ON SYSTEMS AND CONTROL	1	1	1	0	0
+XXVII Brazilian Congress on Biomedical Engineering,IFMBE Proceedings	1	1	1	0	0
 Yeast	1	1	1	0	0
+ZAMM - Journal of Applied Mathematics and Mechanics / Zeitschrift für Angewandte Mathematik und Mechanik	1	1	1	0	0
+Zeitschrift für anorganische und allgemeine Chemie	1	1	1	0	0
 Zeitschrift für Medizinische Physik	1	1	1	0	0
 Zeitschrift für Physikalische Chemie	1	1	1	0	0
 Zeitschrift für Vergleichende Politikwissenschaft	3	1	3	0	0
 Информационные технологии и математическое моделирование систем 2020	1	1	1	0	0
+Психологические исследования	1	1	1	0	0

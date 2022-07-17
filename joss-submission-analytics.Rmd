@@ -411,7 +411,7 @@ DT::datatable(
 
 # Number of published papers per month and year
 
-```{r papers-month, class.source = 'fold-hide', fig.width = 8, message = FALSE}
+```{r papers-month, class.source = 'fold-hide', fig.width = 10, message = FALSE}
 ggplot(papers %>% 
          dplyr::mutate(pubmonth = lubridate::floor_date(published.date, "month")) %>%
          dplyr::group_by(pubmonth) %>%
@@ -438,7 +438,7 @@ ggplot(papers %>%
 The plots below illustrate the fraction of pre-review and review issues closed 
 during each month that have the 'rejected' label attached. 
 
-```{r rejections, class.source = 'fold-hide', fig.width = 8, fig.height = 8, message = FALSE}
+```{r rejections, class.source = 'fold-hide', fig.width = 10, fig.height = 8, message = FALSE}
 ggplot(all_rejected, 
        aes(x = factor(closedmonth), y = nbr_rejections/nbr_issues_closed)) + 
   geom_bar(stat = "identity") + 
@@ -503,7 +503,7 @@ plotly::ggplotly(
 
 Here, we plot the citation count for all papers published within each half year, sorted in decreasing order. 
 
-```{r power-law-citations, class.source = 'fold-hide'}
+```{r power-law-citations, class.source = 'fold-hide', fig.width = 10, fig.height = 10}
 ggplot(papers %>% dplyr::group_by(halfyear) %>% 
          dplyr::arrange(desc(citation_count)) %>%
          dplyr::mutate(idx = seq_along(citation_count)), 
@@ -620,7 +620,7 @@ ggplot(papers, aes(x = as.numeric(prerev_opened - repo_created))) +
 
 # Distribution of time between JOSS acceptance and last commit
 
-```{r acceptance-to-commit, class.source = 'fold-hide', warning = FALSE, fig.width = 8}
+```{r acceptance-to-commit, class.source = 'fold-hide', warning = FALSE, fig.width = 8, fig.height = 8}
 ggplot(papers, aes(x = as.numeric(repo_pushed - review_closed))) +
   geom_histogram(bins = 50) + 
   theme_bw() + 
@@ -641,7 +641,7 @@ papers %>% dplyr::arrange(desc(nbr_authors)) %>%
   as.data.frame() %>% head(10)
 ```
 
-```{r nbr-authors, class.source = 'fold-hide', message = FALSE}
+```{r nbr-authors, class.source = 'fold-hide', message = FALSE, fig.width = 8, fig.height = 8}
 nbins <- max(papers$nbr_authors[papers$nbr_authors <= 20])
 ggplot(papers %>% dplyr::filter(nbr_authors <= 20),
   aes(x = nbr_authors)) + 
@@ -652,7 +652,9 @@ ggplot(papers %>% dplyr::filter(nbr_authors <= 20),
   labs(x = "Number of authors",
        y = "Number of publications with\na given number of authors", 
        caption = dcap)
+```
 
+```{r nbr-authors-all, class.source = 'fold-hide', message = FALSE}
 ggplot(papers %>% 
          dplyr::mutate(nbr_authors = replace(nbr_authors, nbr_authors > 5, ">5")) %>%
          dplyr::mutate(nbr_authors = factor(nbr_authors, levels = c("1", "2", "3", 
@@ -696,7 +698,7 @@ plotly::ggplotly(
 
 Submissions associated with rOpenSci and pyOpenSci are not considered here, since they are not explicitly reviewed at JOSS. 
 
-```{r nbr-reviewers, class.source = 'fold-hide', message = FALSE}
+```{r nbr-reviewers, class.source = 'fold-hide', message = FALSE, fig.width = 8, fig.height = 8}
 ggplot(papers %>%
          dplyr::filter(!grepl("rOpenSci|pyOpenSci", prerev_labels)) %>%
          dplyr::mutate(year = year(published.date)),
@@ -731,7 +733,7 @@ DT::datatable(
 
 # Number of papers per editor and year
 
-```{r papers-per-editor, class.source = 'fold-hide', message = FALSE, fig.width = 10, fig.height = 10}
+```{r papers-per-editor, class.source = 'fold-hide', message = FALSE, fig.width = 13, fig.height = 10}
 ggplot(papers %>% 
          dplyr::mutate(year = year(published.date),
                        `r/pyOpenSci` = factor(
@@ -747,7 +749,7 @@ ggplot(papers %>%
 
 # Distribution of software repo licenses
 
-```{r repo-license, class.source = 'fold-hide', warning = FALSE, message = FALSE}
+```{r repo-license, class.source = 'fold-hide', warning = FALSE, message = FALSE, fig.width = 8, fig.height = 8}
 all_licenses <- sort(unique(papers$repo_license))
 license_levels = c(grep("apache", all_licenses, value = TRUE),
                    grep("bsd", all_licenses, value = TRUE),

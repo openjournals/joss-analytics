@@ -517,18 +517,59 @@ ggplot(papers %>% dplyr::group_by(halfyear) %>%
 
 # Pre-review/review time over time
 
-In these plots we investigate whether the time a submission spends in the pre-review or review stage has changed over time. 
+In these plots we investigate whether the time a submission spends in the pre-review or review stage (or their sum) has changed over time. The blue curve corresponds to a rolling median for submissions over 60 days. 
+
+```{r smoothing-helpers, class.source = 'fold-hide'}
+## Helper functions (modified from https://stackoverflow.com/questions/65147186/geom-smooth-with-median-instead-of-mean)
+rolling_median <- function(formula, data, xwindow = 60, ...) {
+  ## Get order of x-values and sort x/y
+  ordr <- order(data$x)
+  x <- data$x[ordr]
+  y <- data$y[ordr]
+  
+  ## Initialize vector for smoothed y-values
+  ys <- rep(NA, length(x))
+  ## Calculate median y-value for each unique x-value
+  for (xs in setdiff(unique(x), NA)) {
+    ## Get x-values in the window, and calculate median of corresponding y
+    j <- ((xs - xwindow/2) < x) & (x < (xs + xwindow/2))
+    ys[x == xs] <- median(y[j], na.rm = TRUE)
+  }
+  y <- ys
+  structure(list(x = x, y = y, f = approxfun(x, y)), class = "rollmed")
+}
+
+predict.rollmed <- function(mod, newdata, ...) {
+  setNames(mod$f(newdata$x), newdata$x)
+}
+```
 
 ```{r review-time, class.source = 'fold-hide', message = FALSE, warning = FALSE}
 ggplot(papers, aes(x = prerev_opened, y = as.numeric(days_in_pre))) + 
-  geom_point() + geom_smooth() + theme_bw() + 
+  geom_point() + 
+  geom_smooth(formula = y ~ x, method = "rolling_median", 
+              se = FALSE, method.args = list(xwindow = 60)) + 
+  theme_bw() + 
   labs(x = "Date of pre-review opening", y = "Number of days in pre-review", 
        caption = dcap) + 
   theme(axis.title = element_text(size = 15))
 
 ggplot(papers, aes(x = review_opened, y = as.numeric(days_in_rev))) + 
-  geom_point() + geom_smooth() + theme_bw() + 
+  geom_point() +
+  geom_smooth(formula = y ~ x, method = "rolling_median", 
+              se = FALSE, method.args = list(xwindow = 60)) +
+  theme_bw() + 
   labs(x = "Date of review opening", y = "Number of days in review", 
+       caption = dcap) + 
+  theme(axis.title = element_text(size = 15))
+
+ggplot(papers, aes(x = prerev_opened, 
+                   y = as.numeric(days_in_pre) + as.numeric(days_in_rev))) + 
+  geom_point() +
+  geom_smooth(formula = y ~ x, method = "rolling_median", 
+              se = FALSE, method.args = list(xwindow = 60)) +
+  theme_bw() + 
+  labs(x = "Date of pre-review opening", y = "Number of days in pre-review + review", 
        caption = dcap) + 
   theme(axis.title = element_text(size = 15))
 ```

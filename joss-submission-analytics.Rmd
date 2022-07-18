@@ -517,11 +517,11 @@ ggplot(papers %>% dplyr::group_by(halfyear) %>%
 
 # Pre-review/review time over time
 
-In these plots we investigate whether the time a submission spends in the pre-review or review stage (or their sum) has changed over time. The blue curve corresponds to a rolling median for submissions over 60 days. 
+In these plots we investigate whether the time a submission spends in the pre-review or review stage (or their sum) has changed over time. The blue curve corresponds to a rolling median for submissions over 120 days. 
 
 ```{r smoothing-helpers, class.source = 'fold-hide'}
 ## Helper functions (modified from https://stackoverflow.com/questions/65147186/geom-smooth-with-median-instead-of-mean)
-rolling_median <- function(formula, data, xwindow = 60, ...) {
+rolling_median <- function(formula, data, xwindow = 120, ...) {
   ## Get order of x-values and sort x/y
   ordr <- order(data$x)
   x <- data$x[ordr]
@@ -548,7 +548,7 @@ predict.rollmed <- function(mod, newdata, ...) {
 ggplot(papers, aes(x = prerev_opened, y = as.numeric(days_in_pre))) + 
   geom_point() + 
   geom_smooth(formula = y ~ x, method = "rolling_median", 
-              se = FALSE, method.args = list(xwindow = 60)) + 
+              se = FALSE, method.args = list(xwindow = 120)) + 
   theme_bw() + 
   labs(x = "Date of pre-review opening", y = "Number of days in pre-review", 
        caption = dcap) + 
@@ -557,7 +557,7 @@ ggplot(papers, aes(x = prerev_opened, y = as.numeric(days_in_pre))) +
 ggplot(papers, aes(x = review_opened, y = as.numeric(days_in_rev))) + 
   geom_point() +
   geom_smooth(formula = y ~ x, method = "rolling_median", 
-              se = FALSE, method.args = list(xwindow = 60)) +
+              se = FALSE, method.args = list(xwindow = 120)) +
   theme_bw() + 
   labs(x = "Date of review opening", y = "Number of days in review", 
        caption = dcap) + 
@@ -567,7 +567,7 @@ ggplot(papers, aes(x = prerev_opened,
                    y = as.numeric(days_in_pre) + as.numeric(days_in_rev))) + 
   geom_point() +
   geom_smooth(formula = y ~ x, method = "rolling_median", 
-              se = FALSE, method.args = list(xwindow = 60)) +
+              se = FALSE, method.args = list(xwindow = 120)) +
   theme_bw() + 
   labs(x = "Date of pre-review opening", y = "Number of days in pre-review + review", 
        caption = dcap) + 

@@ -124,9 +124,12 @@ a <- jsonlite::fromJSON(
 while (length(a) > 0) {
   whedon <- c(whedon, a)
   p <- p + 1
-  a <- jsonlite::fromJSON(
-    url(paste0("https://joss.theoj.org/papers/published.json?page=", p)),
-    simplifyDataFrame = FALSE
+  a <- tryCatch({
+    jsonlite::fromJSON(
+      url(paste0("https://joss.theoj.org/papers/published.json?page=", p)),
+      simplifyDataFrame = FALSE
+    )}, 
+    error = function(e) return(numeric(0))
   )
 }
 

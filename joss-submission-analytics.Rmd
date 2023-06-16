@@ -117,13 +117,15 @@ For each published paper, we use the Whedon API to get information about pre-rev
 ```{r pull-whedon, class.source = 'fold-show'}
 whedon <- list()
 p <- 1
+a0 <- NULL
 a <- jsonlite::fromJSON(
   url(paste0("https://joss.theoj.org/papers/published.json?page=", p)),
   simplifyDataFrame = FALSE
 )
-while (length(a) > 0) {
+while (length(a) > 0 && !identical(a, a0)) {
   whedon <- c(whedon, a)
   p <- p + 1
+  a0 <- a
   a <- tryCatch({
     jsonlite::fromJSON(
       url(paste0("https://joss.theoj.org/papers/published.json?page=", p)),
@@ -777,7 +779,7 @@ DT::datatable(
 
 # Number of papers per editor and year
 
-```{r papers-per-editor, class.source = 'fold-hide', message = FALSE, fig.width = 13, fig.height = 10}
+```{r papers-per-editor, class.source = 'fold-hide', message = FALSE, fig.width = 13, fig.height = 15}
 ggplot(papers %>% 
          dplyr::mutate(year = year(published.date),
                        `r/pyOpenSci` = factor(

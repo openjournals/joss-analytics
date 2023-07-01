@@ -138,16 +138,16 @@ while (length(a) > 0 && !identical(a, a0)) {
 whedon <- do.call(dplyr::bind_rows, lapply(whedon, function(w) {
   data.frame(api_title = w$title, 
              api_state = w$state,
-             editor = paste(w$metadata$paper$editor, collapse = ","),
+             editor = paste(w$editor, collapse = ","),
              reviewers = paste(w$reviewers, collapse = ","),
              nbr_reviewers = length(w$reviewers),
-             repo_url = w$repository_url,
-             review_issue_id = w$review_issue_id,
+             repo_url = w$software_repository,
+             review_issue_id = sub("https://github.com/openjournals/joss-reviews/issues/", "", w$paper_review),
              doi = w$doi,
              prereview_issue_id = ifelse(!is.null(w$meta_review_issue_id),
                                          w$meta_review_issue_id, NA_integer_),
-             languages = paste(w$metadata$paper$languages, collapse = ","),
-             archive_doi = w$metadata$paper$archive_doi)
+             languages = paste(w$languages, collapse = ","),
+             archive_doi = w$software_archive)
 }))
 
 papers <- papers %>% dplyr::left_join(whedon, by = c("alternative.id" = "doi"))

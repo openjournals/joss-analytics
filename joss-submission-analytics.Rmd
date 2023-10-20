@@ -146,7 +146,8 @@ whedon <- do.call(dplyr::bind_rows, lapply(whedon, function(w) {
              doi = w$doi,
              prereview_issue_id = ifelse(!is.null(w$meta_review_issue_id),
                                          w$meta_review_issue_id, NA_integer_),
-             languages = paste(w$languages, collapse = ","),
+             languages = gsub(", ", ",", w$languages),
+             # languages = paste(w$languages, collapse = ","),
              archive_doi = w$software_archive)
 }))
 

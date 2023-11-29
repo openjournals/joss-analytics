@@ -1,7 +1,7 @@
 container.title	nbr_citations_of_joss_papers	nbr_cited_joss_papers	nbr_citing_papers	nbr_selfcitations_of_joss_papers	fraction_selfcitations
 bioRxiv	8288	388	4489	408	0.0492
 The Journal of Open Source Software	982	316	409	296	0.301
-NA	727	153	523	22	0.0303
+NA	728	154	523	22	0.0302
 Scientific Reports	1211	152	677	10	0.00826
 Monthly Notices of the Royal Astronomical Society	2026	129	1043	178	0.0879
 Nature Communications	912	115	499	36	0.0395
@@ -173,6 +173,7 @@ Ecological Modelling	39	15	21	0	0
 Ecology Letters	40	15	21	2	0.05
 Ecosphere	75	15	44	1	0.0133
 Environmental Modelling & Software	33	15	31	1	0.0303
+IEEE Robotics and Automation Letters	57	15	33	12	0.211
 Journal of Geophysical Research: Oceans	30	15	16	10	0.333
 Journal of the American Chemical Society	35	15	22	8	0.229
 Remote Sensing of Environment	42	15	24	0	0
@@ -189,7 +190,6 @@ Ecological Informatics	32	14	21	0	0
 Energy	49	14	26	7	0.143
 Energy and Buildings	46	14	27	1	0.0217
 Frontiers in Veterinary Science	61	14	36	0	0
-IEEE Robotics and Automation Letters	56	14	32	12	0.214
 IEEE Transactions on Visualization and Computer Graphics	43	14	27	1	0.0233
 Journal of Geophysical Research: Earth Surface	37	14	18	19	0.514
 Magnetic Resonance in Medicine	46	14	25	18	0.391
@@ -390,7 +390,7 @@ Geographical Analysis	21	9	9	6	0.286
 Horticulture Research	17	9	8	2	0.118
 Humanities and Social Sciences Communications	21	9	13	0	0
 Hydrobiologia	26	9	15	2	0.0769
-IEEE Transactions on Robotics	16	9	10	0	0
+IEEE Transactions on Robotics	17	9	10	0	0
 ISPRS Journal of Photogrammetry and Remote Sensing	18	9	11	0	0
 International Journal of Climatology	21	9	10	0	0
 International Journal of Remote Sensing	19	9	11	1	0.0526
@@ -2696,6 +2696,7 @@ IEEE Transactions on Biometrics, Behavior, and Identity Science	4	2	2	0	0
 IEEE Transactions on Cloud Computing	2	2	2	0	0
 IEEE Transactions on Energy Conversion	6	2	3	0	0
 IEEE Transactions on Fuzzy Systems	4	2	2	0	0
+IEEE Transactions on Haptics	5	2	3	0	0
 IEEE Transactions on Information Theory	6	2	3	0	0
 IEEE Transactions on Nuclear Science	3	2	2	0	0
 IEEE Transactions on Power Delivery	3	2	2	0	0
@@ -5787,7 +5788,6 @@ IEEE Transactions on Computational Social Systems	2	1	1	2	1
 IEEE Transactions on Control Systems Technology	1	1	1	0	0
 IEEE Transactions on Dielectrics and Electrical Insulation	2	1	1	0	0
 IEEE Transactions on Engineering Management	3	1	2	0	0
-IEEE Transactions on Haptics	4	1	2	0	0
 IEEE Transactions on Human-Machine Systems	1	1	1	0	0
 IEEE Transactions on Image Processing	2	1	1	0	0
 IEEE Transactions on Industrial Electronics	2	1	1	0	0

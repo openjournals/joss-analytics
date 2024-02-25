@@ -357,6 +357,11 @@ df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
                 repo_pushed = as.Date(repo_pushed)) %>%
   dplyr::distinct() %>%
   dplyr::mutate(repo_info_obtained = lubridate::today())
+if (length(unique(df$repo_url)) != length(df$repo_url)) {
+  print(length(unique(df$repo_url)))
+  print(length(df$repo_url))
+  print(df$repo_url[duplicated(df$repo_url)])
+}
 stopifnot(length(unique(df$repo_url)) == length(df$repo_url))
 dim(df)
 

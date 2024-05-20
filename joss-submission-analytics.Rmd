@@ -166,7 +166,7 @@ From each pre-review and review issue, we extract information about review times
 ```{r pull-github, class.source = 'fold-show', message = FALSE}
 ## Pull down info on all issues in the joss-reviews repository
 issues <- gh("/repos/openjournals/joss-reviews/issues", 
-             .limit = 5000, state = "all")
+             .limit = 10000, state = "all")
 ```
 
 ```{r extract-github, class.source = 'fold-show', message = FALSE}
@@ -785,7 +785,7 @@ DT::datatable(
 
 # Number of papers per editor and year
 
-```{r papers-per-editor, class.source = 'fold-hide', message = FALSE, fig.width = 13, fig.height = 15}
+```{r papers-per-editor, class.source = 'fold-hide', message = FALSE, fig.width = 16, fig.height = 15}
 ggplot(papers %>% 
          dplyr::mutate(year = year(published.date),
                        `r/pyOpenSci` = factor(

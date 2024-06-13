@@ -36,6 +36,9 @@ suppressPackageStartupMessages({
   library(plotly)
   library(citecorp)
   library(readr)
+  library(rworldmap)
+  library(gt)
+  library(stringr)
 })
 ```
 
@@ -50,6 +53,21 @@ if (add_date_caption) {
 } else {
   dcap <- ""
 }
+```
+
+```{r}
+## Get list of countries and populations (2022) from the rworldmap/gt packages
+data("countrySynonyms")
+country_names <- countrySynonyms |>
+  select(-ID) |>
+  pivot_longer(names_to = "tmp", values_to = "name", -ISO3) |>
+  filter(name != "") |>
+  select(-tmp)
+
+## Country population data from the World Bank (https://data.worldbank.org/indicator/SP.POP.TOTL),
+## distributed via the gt R package
+country_populations <- countrypops |> 
+  filter(year == 2022)
 ```
 
 ```{r}
@@ -135,14 +153,47 @@ while (length(a) > 0 && !identical(a, a0)) {
   )
 }
 
+## Helper function to extract countries from affiliations. Note that this is 
+## only approximate and should be interpreted with some caution - 
+## not all authors explicitly indicate the country of their 
+## affiliation, and in addition any part of the affiliation that matches a 
+## known country is extracted and recorded.
+.get_affiliation_countries <- function(auths, choice = "all", 
+                                       country_names) {
+  affiliations <- unlist(lapply(auths, function(y) y$affiliation))
+  if (choice == "all") {
+    ## All countries (possibly multiple ones per author)
+    paste(toupper(unique(unlist(lapply(affiliations, function(y) {
+      unique(country_names$ISO3[match(str_extract_all(y, paste(country_names$name, collapse = "|"), 
+                                                      simplify = TRUE), 
+                                      country_names$name)])
+    })))), collapse = ";")
+  } else if (choice == "one_per_author") {
+    ## One country per author (first affiliation)
+    tmp <- paste(toupper(unique(unlist(lapply(affiliations, function(y) {
+      unique(country_names$ISO3[match(str_extract(y, paste(country_names$name, collapse = "|")), 
+                                      country_names$name)])
+    })))), collapse = ";")
+    if (tmp == "NA") tmp <- ""
+    tmp
+  } else {
+    stop("Unsupported value of 'choice'")
+  }
+}
+
 whedon <- do.call(dplyr::bind_rows, lapply(whedon, function(w) {
   data.frame(api_title = w$title, 
              api_state = w$state,
              editor = paste(w$editor, collapse = ","),
              reviewers = paste(w$reviewers, collapse = ","),
              nbr_reviewers = length(w$reviewers),
+             affiliation_countries_all = .get_affiliation_countries(
+               w$authors, choice = "all", country_names = country_names),
+             affiliation_countries_one_per_author = .get_affiliation_countries(
+               w$authors, choice = "one_per_author", country_names = country_names),
              repo_url = w$software_repository,
-             review_issue_id = sub("https://github.com/openjournals/joss-reviews/issues/", "", w$paper_review),
+             review_issue_id = sub("https://github.com/openjournals/joss-reviews/issues/", 
+                                   "", w$paper_review),
              doi = w$doi,
              prereview_issue_id = ifelse(!is.null(w$meta_review_issue_id),
                                          w$meta_review_issue_id, NA_integer_),

@@ -107,6 +107,7 @@ while (nrow(papers) == i * lim) {
 }
 papers <- papers %>%
   dplyr::filter(type == "journal-article") 
+dim(papers)
 
 ## A few papers don't have DOIs - generate them from the URL
 noaltid <- which(is.na(papers$alternative.id))
@@ -122,6 +123,7 @@ papers <- papers %>% dplyr::left_join(
 
 ## Remove one duplicated paper
 papers <- papers %>% dplyr::filter(alternative.id != "10.21105/joss.00688")
+dim(papers)
 
 source_track <- c(source_track, 
                   structure(rep("crossref", ncol(papers)), 
@@ -187,10 +189,10 @@ whedon <- do.call(dplyr::bind_rows, lapply(whedon, function(w) {
              editor = paste(w$editor, collapse = ","),
              reviewers = paste(w$reviewers, collapse = ","),
              nbr_reviewers = length(w$reviewers),
-             affiliation_countries_all = .get_affiliation_countries(
-               w$authors, choice = "all", country_names = country_names),
-             affiliation_countries_one_per_author = .get_affiliation_countries(
-               w$authors, choice = "one_per_author", country_names = country_names),
+             # affiliation_countries_all = .get_affiliation_countries(
+             #   w$authors, choice = "all", country_names = country_names),
+             # affiliation_countries_one_per_author = .get_affiliation_countries(
+             #   w$authors, choice = "one_per_author", country_names = country_names),
              repo_url = w$software_repository,
              review_issue_id = sub("https://github.com/openjournals/joss-reviews/issues/", 
                                    "", w$paper_review),
@@ -203,6 +205,7 @@ whedon <- do.call(dplyr::bind_rows, lapply(whedon, function(w) {
 }))
 
 papers <- papers %>% dplyr::left_join(whedon, by = c("alternative.id" = "doi"))
+dim(papers)
 
 source_track <- c(source_track, 
                   structure(rep("whedon", length(setdiff(colnames(papers),
@@ -217,7 +220,7 @@ From each pre-review and review issue, we extract information about review times
 ```{r pull-github, class.source = 'fold-show', message = FALSE}
 ## Pull down info on all issues in the joss-reviews repository
 issues <- gh("/repos/openjournals/joss-reviews/issues", 
-             .limit = 10000, state = "all")
+             .limit = 15000, state = "all")
 ```
 
 ```{r extract-github, class.source = 'fold-show', message = FALSE}
@@ -304,6 +307,7 @@ papers <- papers %>% dplyr::left_join(issrev, by = "alternative.id") %>%
   dplyr::mutate(days_in_pre = prerev_closed - prerev_opened,
                 days_in_rev = review_closed - review_opened,
                 to_review = !is.na(review_opened))
+dim(papers)
 
 source_track <- c(source_track, 
                   structure(rep("joss-github", length(setdiff(colnames(papers),
@@ -424,6 +428,7 @@ dfarchive <- papers_archive %>%
 df <- dplyr::bind_rows(df, dfarchive)
 
 papers <- papers %>% dplyr::left_join(df, by = "repo_url")
+dim(papers)
 
 source_track <- c(source_track, 
                   structure(rep("sw-github", length(setdiff(colnames(papers),
@@ -447,7 +452,9 @@ papers <- papers %>% dplyr::select(-reference, -license, -link) %>%
                       levels = paste0(rep(sort(unique(year(published.date))), 
                                           each = 2), c("H1", "H2")))
   ) %>% dplyr::mutate(nbr_authors = vapply(author, function(a) nrow(a), NA_integer_))
+dim(papers)
 papers <- papers %>% dplyr::distinct()
+dim(papers)
 
 source_track <- c(source_track, 
                   structure(rep("cleanup", length(setdiff(colnames(papers),

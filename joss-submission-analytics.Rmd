@@ -134,11 +134,42 @@ source_track <- c(source_track,
 
 ```{r}
 ## Get info from openalexR and merge with paper details
+## Helper function to extract countries from affiliations. Note that this 
+## information is not available for all papers.
+.get_countries <- function(df, wh = "first") {
+    if (length(df) == 1 && is.na(df)) {
+        ""
+    } else {
+        if (wh == "first") {
+            ## Only first affiliation for each author
+            tmp <- df |> 
+                dplyr::filter(!duplicated(au_id) & !is.na(institution_country_code)) |>
+                pull(institution_country_code)
+        } else {
+            ## All affiliations
+            tmp <- df |> 
+                dplyr::filter(!is.na(institution_country_code)) |>
+                pull(institution_country_code)
+        }
+        if (length(tmp) > 0) {
+            tmp |>
+                unique() |>
+                paste(collapse = ";")
+        } else {
+            ""
+        }
+    }
+}
+
 oa <- oa_fetch(entity = "works", 
-               primary_location.source.id = "s4210214273")
+               primary_location.source.id = "s4210214273") |>
+    mutate(affil_countries_all = vapply(author, .get_countries, "", wh = "all"),
+           affil_countries_first = vapply(author, .get_countries, "", wh = "first"))
+
 papers <- papers %>% dplyr::left_join(
     oa %>% dplyr::mutate(alternative.id = sub("https://doi.org/", "", doi)) %>%
-        dplyr::select(alternative.id, cited_by_count, id) %>%
+        dplyr::select(alternative.id, cited_by_count, id,
+                      affil_countries_all, affil_countries_first) %>%
         dplyr::rename(citation_count = cited_by_count, 
                       openalex_id = id),
     by = "alternative.id"
@@ -175,44 +206,12 @@ while (length(a) > 0 && !identical(a, a0)) {
     )
 }
 
-## Helper function to extract countries from affiliations. Note that this is 
-## only approximate and should be interpreted with some caution - 
-## not all authors explicitly indicate the country of their 
-## affiliation, and in addition any part of the affiliation that matches a 
-## known country is extracted and recorded.
-.get_affiliation_countries <- function(auths, choice = "all", 
-                                       country_names) {
-    affiliations <- unlist(lapply(auths, function(y) y$affiliation))
-    if (choice == "all") {
-        ## All countries (possibly multiple ones per author)
-        paste(toupper(unique(unlist(lapply(affiliations, function(y) {
-            unique(country_names$ISO3[match(str_extract_all(y, paste(country_names$name, collapse = "|"), 
-                                                            simplify = TRUE), 
-                                            country_names$name)])
-        })))), collapse = ";")
-    } else if (choice == "one_per_author") {
-        ## One country per author (first affiliation)
-        tmp <- paste(toupper(unique(unlist(lapply(affiliations, function(y) {
-            unique(country_names$ISO3[match(str_extract(y, paste(country_names$name, collapse = "|")), 
-                                            country_names$name)])
-        })))), collapse = ";")
-        if (tmp == "NA") tmp <- ""
-        tmp
-    } else {
-        stop("Unsupported value of 'choice'")
-    }
-}
-
 whedon <- do.call(dplyr::bind_rows, lapply(whedon, function(w) {
     data.frame(api_title = w$title, 
                api_state = w$state,
                editor = paste(w$editor, collapse = ","),
                reviewers = paste(w$reviewers, collapse = ","),
                nbr_reviewers = length(w$reviewers),
-               # affiliation_countries_all = .get_affiliation_countries(
-               #   w$authors, choice = "all", country_names = country_names),
-               # affiliation_countries_one_per_author = .get_affiliation_countries(
-               #   w$authors, choice = "one_per_author", country_names = country_names),
                repo_url = w$software_repository,
                review_issue_id = sub("https://github.com/openjournals/joss-reviews/issues/", 
                                      "", w$paper_review),
@@ -220,7 +219,6 @@ whedon <- do.call(dplyr::bind_rows, lapply(whedon, function(w) {
                prereview_issue_id = ifelse(!is.null(w$meta_review_issue_id),
                                            w$meta_review_issue_id, NA_integer_),
                languages = gsub(", ", ",", w$languages),
-               # languages = paste(w$languages, collapse = ","),
                archive_doi = w$software_archive)
 }))
 

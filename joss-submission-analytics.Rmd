@@ -4,9 +4,10 @@ date: "`r Sys.time()`"
 output: 
   html_document:
     code_folding: hide
-    theme: sandstone
+    theme: united
     highlight: tango
     toc: true
+    toc_float: true
 editor_options: 
   chunk_output_type: console
 ---
@@ -23,22 +24,22 @@ In this report, we extract information about published JOSS papers and generate 
 
 ```{r load-packages, class.source = 'fold-show'}
 suppressPackageStartupMessages({
-  library(tibble)
-  library(rcrossref)
-  library(dplyr)
-  library(tidyr)
-  library(ggplot2)
-  library(lubridate)
-  library(gh)
-  library(purrr)
-  library(jsonlite)
-  library(DT)
-  library(plotly)
-  library(citecorp)
-  library(readr)
-  library(rworldmap)
-  library(gt)
-  library(stringr)
+    library(tibble)
+    library(rcrossref)
+    library(dplyr)
+    library(tidyr)
+    library(ggplot2)
+    library(lubridate)
+    library(gh)
+    library(purrr)
+    library(jsonlite)
+    library(DT)
+    library(plotly)
+    library(citecorp)
+    library(readr)
+    library(rworldmap)
+    library(gt)
+    library(stringr)
 })
 ```
 
@@ -49,9 +50,9 @@ source_track <- c()
 ## Determine whether to add a caption with today's date to the (non-interactive) plots
 add_date_caption <- TRUE
 if (add_date_caption) {
-  dcap <- lubridate::today()
+    dcap <- lubridate::today()
 } else {
-  dcap <- ""
+    dcap <- ""
 }
 ```
 
@@ -59,15 +60,15 @@ if (add_date_caption) {
 ## Get list of countries and populations (2022) from the rworldmap/gt packages
 data("countrySynonyms")
 country_names <- countrySynonyms |>
-  select(-ID) |>
-  pivot_longer(names_to = "tmp", values_to = "name", -ISO3) |>
-  filter(name != "") |>
-  select(-tmp)
+    select(-ID) |>
+    pivot_longer(names_to = "tmp", values_to = "name", -ISO3) |>
+    filter(name != "") |>
+    select(-tmp)
 
 ## Country population data from the World Bank (https://data.worldbank.org/indicator/SP.POP.TOTL),
 ## distributed via the gt R package
 country_populations <- countrypops |> 
-  filter(year == 2022)
+    filter(year == 2022)
 ```
 
 ```{r}
@@ -75,14 +76,14 @@ country_populations <- countrypops |>
 ## information about software repositories (due to limit on API requests)
 ## Sort by the date when software repo info was last obtained
 papers_archive <- readRDS(gzcon(url("https://github.com/openjournals/joss-analytics/blob/gh-pages/joss_submission_analytics.rds?raw=true"))) %>%
-  dplyr::arrange(!is.na(repo_info_obtained), repo_info_obtained)
+    dplyr::arrange(!is.na(repo_info_obtained), repo_info_obtained)
 
 ## Similarly for citation analysis, to avoid having to pull down the 
 ## same information multiple times
 citations_archive <- readr::read_delim(
-  url("https://github.com/openjournals/joss-analytics/blob/gh-pages/joss_submission_citations.tsv?raw=true"),
-  col_types = cols(.default = "c"), col_names = TRUE,
-  delim = "\t")
+    url("https://github.com/openjournals/joss-analytics/blob/gh-pages/joss_submission_citations.tsv?raw=true"),
+    col_types = cols(.default = "c"), col_names = TRUE,
+    delim = "\t")
 ```
 
 # Collect information about papers
@@ -99,14 +100,14 @@ papers <- rcrossref::cr_works(filter = c(issn = "2475-9066"),
                               limit = lim)$data
 i <- 1
 while (nrow(papers) == i * lim) {
-  papers <- dplyr::bind_rows(
-    papers, 
-    rcrossref::cr_works(filter = c(issn = "2475-9066"), 
-                        limit = lim, offset = i * lim)$data)
-  i <- i + 1
+    papers <- dplyr::bind_rows(
+        papers, 
+        rcrossref::cr_works(filter = c(issn = "2475-9066"), 
+                            limit = lim, offset = i * lim)$data)
+    i <- i + 1
 }
 papers <- papers %>%
-  dplyr::filter(type == "journal-article") 
+    dplyr::filter(type == "journal-article") 
 dim(papers)
 
 ## A few papers don't have DOIs - generate them from the URL
@@ -117,8 +118,8 @@ papers$alternative.id[noaltid] <- gsub("http://dx.doi.org/", "",
 ## Get citation info from Crossref and merge with paper details
 cit <- rcrossref::cr_citation_count(doi = papers$alternative.id)
 papers <- papers %>% dplyr::left_join(
-  cit %>% dplyr::rename(citation_count = count), 
-  by = c("alternative.id" = "doi")
+    cit %>% dplyr::rename(citation_count = count), 
+    by = c("alternative.id" = "doi")
 )
 
 ## Remove one duplicated paper
@@ -139,20 +140,20 @@ whedon <- list()
 p <- 1
 a0 <- NULL
 a <- jsonlite::fromJSON(
-  url(paste0("https://joss.theoj.org/papers/published.json?page=", p)),
-  simplifyDataFrame = FALSE
+    url(paste0("https://joss.theoj.org/papers/published.json?page=", p)),
+    simplifyDataFrame = FALSE
 )
 while (length(a) > 0 && !identical(a, a0)) {
-  whedon <- c(whedon, a)
-  p <- p + 1
-  a0 <- a
-  a <- tryCatch({
-    jsonlite::fromJSON(
-      url(paste0("https://joss.theoj.org/papers/published.json?page=", p)),
-      simplifyDataFrame = FALSE
-    )}, 
-    error = function(e) return(numeric(0))
-  )
+    whedon <- c(whedon, a)
+    p <- p + 1
+    a0 <- a
+    a <- tryCatch({
+        jsonlite::fromJSON(
+            url(paste0("https://joss.theoj.org/papers/published.json?page=", p)),
+            simplifyDataFrame = FALSE
+        )}, 
+        error = function(e) return(numeric(0))
+    )
 }
 
 ## Helper function to extract countries from affiliations. Note that this is 
@@ -162,46 +163,46 @@ while (length(a) > 0 && !identical(a, a0)) {
 ## known country is extracted and recorded.
 .get_affiliation_countries <- function(auths, choice = "all", 
                                        country_names) {
-  affiliations <- unlist(lapply(auths, function(y) y$affiliation))
-  if (choice == "all") {
-    ## All countries (possibly multiple ones per author)
-    paste(toupper(unique(unlist(lapply(affiliations, function(y) {
-      unique(country_names$ISO3[match(str_extract_all(y, paste(country_names$name, collapse = "|"), 
-                                                      simplify = TRUE), 
-                                      country_names$name)])
-    })))), collapse = ";")
-  } else if (choice == "one_per_author") {
-    ## One country per author (first affiliation)
-    tmp <- paste(toupper(unique(unlist(lapply(affiliations, function(y) {
-      unique(country_names$ISO3[match(str_extract(y, paste(country_names$name, collapse = "|")), 
-                                      country_names$name)])
-    })))), collapse = ";")
-    if (tmp == "NA") tmp <- ""
-    tmp
-  } else {
-    stop("Unsupported value of 'choice'")
-  }
+    affiliations <- unlist(lapply(auths, function(y) y$affiliation))
+    if (choice == "all") {
+        ## All countries (possibly multiple ones per author)
+        paste(toupper(unique(unlist(lapply(affiliations, function(y) {
+            unique(country_names$ISO3[match(str_extract_all(y, paste(country_names$name, collapse = "|"), 
+                                                            simplify = TRUE), 
+                                            country_names$name)])
+        })))), collapse = ";")
+    } else if (choice == "one_per_author") {
+        ## One country per author (first affiliation)
+        tmp <- paste(toupper(unique(unlist(lapply(affiliations, function(y) {
+            unique(country_names$ISO3[match(str_extract(y, paste(country_names$name, collapse = "|")), 
+                                            country_names$name)])
+        })))), collapse = ";")
+        if (tmp == "NA") tmp <- ""
+        tmp
+    } else {
+        stop("Unsupported value of 'choice'")
+    }
 }
 
 whedon <- do.call(dplyr::bind_rows, lapply(whedon, function(w) {
-  data.frame(api_title = w$title, 
-             api_state = w$state,
-             editor = paste(w$editor, collapse = ","),
-             reviewers = paste(w$reviewers, collapse = ","),
-             nbr_reviewers = length(w$reviewers),
-             # affiliation_countries_all = .get_affiliation_countries(
-             #   w$authors, choice = "all", country_names = country_names),
-             # affiliation_countries_one_per_author = .get_affiliation_countries(
-             #   w$authors, choice = "one_per_author", country_names = country_names),
-             repo_url = w$software_repository,
-             review_issue_id = sub("https://github.com/openjournals/joss-reviews/issues/", 
-                                   "", w$paper_review),
-             doi = w$doi,
-             prereview_issue_id = ifelse(!is.null(w$meta_review_issue_id),
-                                         w$meta_review_issue_id, NA_integer_),
-             languages = gsub(", ", ",", w$languages),
-             # languages = paste(w$languages, collapse = ","),
-             archive_doi = w$software_archive)
+    data.frame(api_title = w$title, 
+               api_state = w$state,
+               editor = paste(w$editor, collapse = ","),
+               reviewers = paste(w$reviewers, collapse = ","),
+               nbr_reviewers = length(w$reviewers),
+               # affiliation_countries_all = .get_affiliation_countries(
+               #   w$authors, choice = "all", country_names = country_names),
+               # affiliation_countries_one_per_author = .get_affiliation_countries(
+               #   w$authors, choice = "one_per_author", country_names = country_names),
+               repo_url = w$software_repository,
+               review_issue_id = sub("https://github.com/openjournals/joss-reviews/issues/", 
+                                     "", w$paper_review),
+               doi = w$doi,
+               prereview_issue_id = ifelse(!is.null(w$meta_review_issue_id),
+                                           w$meta_review_issue_id, NA_integer_),
+               languages = gsub(", ", ",", w$languages),
+               # languages = paste(w$languages, collapse = ","),
+               archive_doi = w$software_archive)
 }))
 
 papers <- papers %>% dplyr::left_join(whedon, by = c("alternative.id" = "doi"))
@@ -226,39 +227,39 @@ issues <- gh("/repos/openjournals/joss-reviews/issues",
 ```{r extract-github, class.source = 'fold-show', message = FALSE}
 ## From each issue, extract required information
 iss <- do.call(dplyr::bind_rows, lapply(issues, function(i) {
-  data.frame(title = i$title, 
-             number = i$number,
-             state = i$state,
-             opened = i$created_at,
-             closed = ifelse(!is.null(i$closed_at),
-                             i$closed_at, NA_character_),
-             ncomments = i$comments,
-             labels = paste(setdiff(
-               vapply(i$labels, getElement, 
-                      name = "name", character(1L)),
-               c("review", "pre-review", "query-scope", "paused")),
-               collapse = ","))
+    data.frame(title = i$title, 
+               number = i$number,
+               state = i$state,
+               opened = i$created_at,
+               closed = ifelse(!is.null(i$closed_at),
+                               i$closed_at, NA_character_),
+               ncomments = i$comments,
+               labels = paste(setdiff(
+                   vapply(i$labels, getElement, 
+                          name = "name", character(1L)),
+                   c("review", "pre-review", "query-scope", "paused")),
+                   collapse = ","))
 }))
 
 ## Split into REVIEW, PRE-REVIEW, and other issues (the latter category 
 ## is discarded)
 issother <- iss %>% dplyr::filter(!grepl("\\[PRE REVIEW\\]", title) & 
-                                    !grepl("\\[REVIEW\\]", title))
+                                      !grepl("\\[REVIEW\\]", title))
 dim(issother)
 head(issother)
 
 ## For REVIEW issues, generate the DOI of the paper from the issue number
 getnbrzeros <- function(s) {
-  paste(rep(0, 5 - nchar(s)), collapse = "")
+    paste(rep(0, 5 - nchar(s)), collapse = "")
 }
 issrev <- iss %>% dplyr::filter(grepl("\\[REVIEW\\]", title)) %>%
-  dplyr::mutate(nbrzeros = purrr::map_chr(number, getnbrzeros)) %>%
-  dplyr::mutate(alternative.id = paste0("10.21105/joss.", 
-                                        nbrzeros,
-                                        number)) %>%
-  dplyr::select(-nbrzeros) %>% 
-  dplyr::mutate(title = gsub("\\[REVIEW\\]: ", "", title)) %>%
-  dplyr::rename_at(vars(-alternative.id), ~ paste0("review_", .))
+    dplyr::mutate(nbrzeros = purrr::map_chr(number, getnbrzeros)) %>%
+    dplyr::mutate(alternative.id = paste0("10.21105/joss.", 
+                                          nbrzeros,
+                                          number)) %>%
+    dplyr::select(-nbrzeros) %>% 
+    dplyr::mutate(title = gsub("\\[REVIEW\\]: ", "", title)) %>%
+    dplyr::rename_at(vars(-alternative.id), ~ paste0("review_", .))
 ```
 
 ```{r get-rejection-info, class.source = 'fold-show', message = FALSE}
@@ -266,22 +267,22 @@ issrev <- iss %>% dplyr::filter(grepl("\\[REVIEW\\]", title)) %>%
 ## issues closed each month, and the number of those that have the 
 ## 'rejected' label
 review_rejected <- iss %>% 
-  dplyr::filter(grepl("\\[REVIEW\\]", title)) %>% 
-  dplyr::filter(!is.na(closed)) %>%
-  dplyr::mutate(closedmonth = lubridate::floor_date(as.Date(closed), "month")) %>%
-  dplyr::group_by(closedmonth) %>%
-  dplyr::summarize(nbr_issues_closed = length(labels),
-                   nbr_rejections = sum(grepl("rejected", labels))) %>%
-  dplyr::mutate(itype = "review")
+    dplyr::filter(grepl("\\[REVIEW\\]", title)) %>% 
+    dplyr::filter(!is.na(closed)) %>%
+    dplyr::mutate(closedmonth = lubridate::floor_date(as.Date(closed), "month")) %>%
+    dplyr::group_by(closedmonth) %>%
+    dplyr::summarize(nbr_issues_closed = length(labels),
+                     nbr_rejections = sum(grepl("rejected", labels))) %>%
+    dplyr::mutate(itype = "review")
 
 prereview_rejected <- iss %>% 
-  dplyr::filter(grepl("\\[PRE REVIEW\\]", title)) %>% 
-  dplyr::filter(!is.na(closed)) %>%
-  dplyr::mutate(closedmonth = lubridate::floor_date(as.Date(closed), "month")) %>%
-  dplyr::group_by(closedmonth) %>%
-  dplyr::summarize(nbr_issues_closed = length(labels),
-                   nbr_rejections = sum(grepl("rejected", labels))) %>%
-  dplyr::mutate(itype = "pre-review")
+    dplyr::filter(grepl("\\[PRE REVIEW\\]", title)) %>% 
+    dplyr::filter(!is.na(closed)) %>%
+    dplyr::mutate(closedmonth = lubridate::floor_date(as.Date(closed), "month")) %>%
+    dplyr::group_by(closedmonth) %>%
+    dplyr::summarize(nbr_issues_closed = length(labels),
+                     nbr_rejections = sum(grepl("rejected", labels))) %>%
+    dplyr::mutate(itype = "pre-review")
 
 all_rejected <- dplyr::bind_rows(review_rejected, prereview_rejected)
 ```
@@ -290,23 +291,23 @@ all_rejected <- dplyr::bind_rows(review_rejected, prereview_rejected)
 ## For PRE-REVIEW issues, add information about the corresponding REVIEW 
 ## issue number
 isspre <- iss %>% dplyr::filter(grepl("\\[PRE REVIEW\\]", title)) %>%
-  dplyr::filter(!grepl("withdrawn", labels)) %>%
-  dplyr::filter(!grepl("rejected", labels))
+    dplyr::filter(!grepl("withdrawn", labels)) %>%
+    dplyr::filter(!grepl("rejected", labels))
 ## Some titles have multiple pre-review issues. In these cases, keep the latest
 isspre <- isspre %>% dplyr::arrange(desc(number)) %>% 
-  dplyr::filter(!duplicated(title)) %>% 
-  dplyr::mutate(title = gsub("\\[PRE REVIEW\\]: ", "", title)) %>%
-  dplyr::rename_all(~ paste0("prerev_", .))
+    dplyr::filter(!duplicated(title)) %>% 
+    dplyr::mutate(title = gsub("\\[PRE REVIEW\\]: ", "", title)) %>%
+    dplyr::rename_all(~ paste0("prerev_", .))
 
 papers <- papers %>% dplyr::left_join(issrev, by = "alternative.id") %>% 
-  dplyr::left_join(isspre, by = c("prereview_issue_id" = "prerev_number")) %>%
-  dplyr::mutate(prerev_opened = as.Date(prerev_opened),
-                prerev_closed = as.Date(prerev_closed),
-                review_opened = as.Date(review_opened),
-                review_closed = as.Date(review_closed)) %>% 
-  dplyr::mutate(days_in_pre = prerev_closed - prerev_opened,
-                days_in_rev = review_closed - review_opened,
-                to_review = !is.na(review_opened))
+    dplyr::left_join(isspre, by = c("prereview_issue_id" = "prerev_number")) %>%
+    dplyr::mutate(prerev_opened = as.Date(prerev_opened),
+                  prerev_closed = as.Date(prerev_closed),
+                  review_opened = as.Date(review_opened),
+                  review_closed = as.Date(review_closed)) %>% 
+    dplyr::mutate(days_in_pre = prerev_closed - prerev_opened,
+                  days_in_rev = review_closed - review_opened,
+                  to_review = !is.na(review_opened))
 dim(papers)
 
 source_track <- c(source_track, 
@@ -331,91 +332,91 @@ software_urls[!is_github]
 
 ```{r get-software-repos, class.source = 'fold-show', message = FALSE, results = 'hide', warning = FALSE}
 df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
-  u0 <- gsub("^http://", "https://", gsub("\\.git$", "", gsub("/$", "", u)))
-  if (grepl("/tree/", u0)) {
-    u0 <- strsplit(u0, "/tree/")[[1]][1]
-  }
-  if (grepl("/blob/", u0)) {
-    u0 <- strsplit(u0, "/blob/")[[1]][1]
-  }
-  info <- try({
-    gh(gsub("(https://)?(www.)?github.com/", "/repos/", u0))
-  })
-  languages <- try({
-    gh(paste0(gsub("(https://)?(www.)?github.com/", "/repos/", u0), "/languages"), 
-       .limit = 500)
-  })
-  topics <- try({
-    gh(paste0(gsub("(https://)?(www.)?github.com/", "/repos/", u0), "/topics"), 
-       .accept = "application/vnd.github.mercy-preview+json", .limit = 500)
-  })
-  contribs <- try({
-    gh(paste0(gsub("(https://)?(www.)?github.com/", "/repos/", u0), "/contributors"), 
-       .limit = 500)
-  })
-  if (!is(info, "try-error") && length(info) > 1) {
-    if (!is(contribs, "try-error")) {
-      if (length(contribs) == 0) {
-        repo_nbr_contribs <- repo_nbr_contribs_2ormore <- NA_integer_
-      } else {
-        repo_nbr_contribs <- length(contribs)
-        repo_nbr_contribs_2ormore <- sum(vapply(contribs, function(x) x$contributions >= 2, NA_integer_))
-        if (is.na(repo_nbr_contribs_2ormore)) {
-          print(contribs)
+    u0 <- gsub("^http://", "https://", gsub("\\.git$", "", gsub("/$", "", u)))
+    if (grepl("/tree/", u0)) {
+        u0 <- strsplit(u0, "/tree/")[[1]][1]
+    }
+    if (grepl("/blob/", u0)) {
+        u0 <- strsplit(u0, "/blob/")[[1]][1]
+    }
+    info <- try({
+        gh(gsub("(https://)?(www.)?github.com/", "/repos/", u0))
+    })
+    languages <- try({
+        gh(paste0(gsub("(https://)?(www.)?github.com/", "/repos/", u0), "/languages"), 
+           .limit = 500)
+    })
+    topics <- try({
+        gh(paste0(gsub("(https://)?(www.)?github.com/", "/repos/", u0), "/topics"), 
+           .accept = "application/vnd.github.mercy-preview+json", .limit = 500)
+    })
+    contribs <- try({
+        gh(paste0(gsub("(https://)?(www.)?github.com/", "/repos/", u0), "/contributors"), 
+           .limit = 500)
+    })
+    if (!is(info, "try-error") && length(info) > 1) {
+        if (!is(contribs, "try-error")) {
+            if (length(contribs) == 0) {
+                repo_nbr_contribs <- repo_nbr_contribs_2ormore <- NA_integer_
+            } else {
+                repo_nbr_contribs <- length(contribs)
+                repo_nbr_contribs_2ormore <- sum(vapply(contribs, function(x) x$contributions >= 2, NA_integer_))
+                if (is.na(repo_nbr_contribs_2ormore)) {
+                    print(contribs)
+                }
+            }
+        } else {
+            repo_nbr_contribs <- repo_nbr_contribs_2ormore <- NA_integer_
         }
-      }
+        
+        if (!is(languages, "try-error")) {
+            if (length(languages) == 0) {
+                repolang <- ""
+            } else {
+                repolang <- paste(paste(names(unlist(languages)), 
+                                        unlist(languages), sep = ":"), collapse = ",")
+            }
+        } else {
+            repolang <- ""
+        }
+        
+        if (!is(topics, "try-error")) {
+            if (length(topics$names) == 0) {
+                repotopics <- ""
+            } else {
+                repotopics <- paste(unlist(topics$names), collapse = ",")
+            }
+        } else {
+            repotopics <- ""
+        }
+        
+        data.frame(repo_url = u, 
+                   repo_created = info$created_at,
+                   repo_updated = info$updated_at,
+                   repo_pushed = info$pushed_at,
+                   repo_nbr_stars = info$stargazers_count,
+                   repo_language = ifelse(!is.null(info$language),
+                                          info$language, NA_character_),
+                   repo_languages_bytes = repolang,
+                   repo_topics = repotopics,
+                   repo_license = ifelse(!is.null(info$license),
+                                         info$license$key, NA_character_),
+                   repo_nbr_contribs = repo_nbr_contribs,
+                   repo_nbr_contribs_2ormore = repo_nbr_contribs_2ormore
+        )
     } else {
-      repo_nbr_contribs <- repo_nbr_contribs_2ormore <- NA_integer_
+        NULL
     }
-    
-    if (!is(languages, "try-error")) {
-      if (length(languages) == 0) {
-        repolang <- ""
-      } else {
-        repolang <- paste(paste(names(unlist(languages)), 
-                                unlist(languages), sep = ":"), collapse = ",")
-      }
-    } else {
-      repolang <- ""
-    }
-    
-    if (!is(topics, "try-error")) {
-      if (length(topics$names) == 0) {
-        repotopics <- ""
-      } else {
-        repotopics <- paste(unlist(topics$names), collapse = ",")
-      }
-    } else {
-      repotopics <- ""
-    }
-    
-    data.frame(repo_url = u, 
-               repo_created = info$created_at,
-               repo_updated = info$updated_at,
-               repo_pushed = info$pushed_at,
-               repo_nbr_stars = info$stargazers_count,
-               repo_language = ifelse(!is.null(info$language),
-                                      info$language, NA_character_),
-               repo_languages_bytes = repolang,
-               repo_topics = repotopics,
-               repo_license = ifelse(!is.null(info$license),
-                                     info$license$key, NA_character_),
-               repo_nbr_contribs = repo_nbr_contribs,
-               repo_nbr_contribs_2ormore = repo_nbr_contribs_2ormore
-    )
-  } else {
-    NULL
-  }
 })) %>%
-  dplyr::mutate(repo_created = as.Date(repo_created),
-                repo_updated = as.Date(repo_updated),
-                repo_pushed = as.Date(repo_pushed)) %>%
-  dplyr::distinct() %>%
-  dplyr::mutate(repo_info_obtained = lubridate::today())
+    dplyr::mutate(repo_created = as.Date(repo_created),
+                  repo_updated = as.Date(repo_updated),
+                  repo_pushed = as.Date(repo_pushed)) %>%
+    dplyr::distinct() %>%
+    dplyr::mutate(repo_info_obtained = lubridate::today())
 if (length(unique(df$repo_url)) != length(df$repo_url)) {
-  print(length(unique(df$repo_url)))
-  print(length(df$repo_url))
-  print(df$repo_url[duplicated(df$repo_url)])
+    print(length(unique(df$repo_url)))
+    print(length(df$repo_url))
+    print(df$repo_url[duplicated(df$repo_url)])
 }
 stopifnot(length(unique(df$repo_url)) == length(df$repo_url))
 dim(df)
@@ -423,8 +424,8 @@ dim(df)
 ## For papers not in df (i.e., for which we didn't get a valid response
 ## from the GitHub API query), use information from the archived data frame
 dfarchive <- papers_archive %>% 
-  dplyr::select(colnames(df)[colnames(df) %in% colnames(papers_archive)]) %>%
-  dplyr::filter(!(repo_url %in% df$repo_url))
+    dplyr::select(colnames(df)[colnames(df) %in% colnames(papers_archive)]) %>%
+    dplyr::filter(!(repo_url %in% df$repo_url))
 df <- dplyr::bind_rows(df, dfarchive)
 
 papers <- papers %>% dplyr::left_join(df, by = "repo_url")
@@ -443,15 +444,15 @@ source_track <- c(source_track,
 ## Add information about the half year (H1, H2) of publication
 ## Count number of authors
 papers <- papers %>% dplyr::select(-reference, -license, -link) %>%
-  dplyr::mutate(published.date = as.Date(published.print)) %>% 
-  dplyr::mutate(
-    halfyear = paste0(year(published.date), 
-                      ifelse(month(published.date) <= 6, "H1", "H2"))
-  ) %>% dplyr::mutate(
-    halfyear = factor(halfyear, 
-                      levels = paste0(rep(sort(unique(year(published.date))), 
-                                          each = 2), c("H1", "H2")))
-  ) %>% dplyr::mutate(nbr_authors = vapply(author, function(a) nrow(a), NA_integer_))
+    dplyr::mutate(published.date = as.Date(published.print)) %>% 
+    dplyr::mutate(
+        halfyear = paste0(year(published.date), 
+                          ifelse(month(published.date) <= 6, "H1", "H2"))
+    ) %>% dplyr::mutate(
+        halfyear = factor(halfyear, 
+                          levels = paste0(rep(sort(unique(year(published.date))), 
+                                              each = 2), c("H1", "H2")))
+    ) %>% dplyr::mutate(nbr_authors = vapply(author, function(a) nrow(a), NA_integer_))
 dim(papers)
 papers <- papers %>% dplyr::distinct()
 dim(papers)
@@ -468,12 +469,12 @@ In some cases, fetching information from (e.g.) the GitHub API fails for a subse
 
 ```{r nbr-missing, class.source = 'fold-hide'}
 DT::datatable(
-  data.frame(variable = colnames(papers),
-             nbr_missing = colSums(is.na(papers))) %>%
-    dplyr::mutate(source = source_track[variable]),
-  escape = FALSE, rownames = FALSE, 
-  filter = list(position = 'top', clear = FALSE),
-  options = list(scrollX = TRUE)
+    data.frame(variable = colnames(papers),
+               nbr_missing = colSums(is.na(papers))) %>%
+        dplyr::mutate(source = source_track[variable]),
+    escape = FALSE, rownames = FALSE, 
+    filter = list(position = 'top', clear = FALSE),
+    options = list(scrollX = TRUE)
 )
 ```
 
@@ -482,26 +483,26 @@ DT::datatable(
 
 ```{r papers-month, class.source = 'fold-hide', fig.width = 10, message = FALSE}
 ggplot(papers %>% 
-         dplyr::mutate(pubmonth = lubridate::floor_date(published.date, "month")) %>%
-         dplyr::group_by(pubmonth) %>%
-         dplyr::summarize(npub = n()), 
+           dplyr::mutate(pubmonth = lubridate::floor_date(published.date, "month")) %>%
+           dplyr::group_by(pubmonth) %>%
+           dplyr::summarize(npub = n()), 
        aes(x = factor(pubmonth), y = npub)) + 
-  geom_bar(stat = "identity") + theme_minimal() + 
-  labs(x = "", y = "Number of published papers per month", caption = dcap) + 
-  theme(axis.title = element_text(size = 15),
-        axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+    geom_bar(stat = "identity") + theme_minimal() + 
+    labs(x = "", y = "Number of published papers per month", caption = dcap) + 
+    theme(axis.title = element_text(size = 15),
+          axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
 ```
 
 ```{r papers-year, class.source = 'fold-hide', fig.width = 8, message = FALSE}
 ggplot(papers %>% 
-         dplyr::mutate(pubyear = lubridate::year(published.date)) %>%
-         dplyr::group_by(pubyear) %>%
-         dplyr::summarize(npub = n()), 
+           dplyr::mutate(pubyear = lubridate::year(published.date)) %>%
+           dplyr::group_by(pubyear) %>%
+           dplyr::summarize(npub = n()), 
        aes(x = factor(pubyear), y = npub)) + 
-  geom_bar(stat = "identity") + theme_minimal() + 
-  labs(x = "", y = "Number of published papers per year", caption = dcap) + 
-  theme(axis.title = element_text(size = 15),
-        axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+    geom_bar(stat = "identity") + theme_minimal() + 
+    labs(x = "", y = "Number of published papers per year", caption = dcap) + 
+    theme(axis.title = element_text(size = 15),
+          axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
 ```
 
 The plots below illustrate the fraction of pre-review and review issues closed 
@@ -510,13 +511,13 @@ during each month that have the 'rejected' label attached.
 ```{r rejections, class.source = 'fold-hide', fig.width = 10, fig.height = 8, message = FALSE}
 ggplot(all_rejected, 
        aes(x = factor(closedmonth), y = nbr_rejections/nbr_issues_closed)) + 
-  geom_bar(stat = "identity") + 
-  theme_minimal() + 
-  facet_wrap(~ itype, ncol = 1) + 
-  labs(x = "Month of issue closing", y = "Fraction of issues rejected",
-       caption = dcap) + 
-  theme(axis.title = element_text(size = 15),
-        axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+    geom_bar(stat = "identity") + 
+    theme_minimal() + 
+    facet_wrap(~ itype, ncol = 1) + 
+    labs(x = "Month of issue closing", y = "Fraction of issues rejected",
+         caption = dcap) + 
+    theme(axis.title = element_text(size = 15),
+          axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
 ```
 
 # Citation distribution
@@ -525,16 +526,16 @@ Papers with 20 or more citations are grouped in the ">=20" category.
 
 ```{r citation-distribution, class.source = 'fold-hide'}
 ggplot(papers %>% 
-         dplyr::mutate(citation_count = replace(citation_count,
-                                                citation_count >= 20, ">=20")) %>%
-         dplyr::mutate(citation_count = factor(citation_count, 
-                                               levels = c(0:20, ">=20"))) %>%
-         dplyr::group_by(citation_count) %>%
-         dplyr::tally(),
+           dplyr::mutate(citation_count = replace(citation_count,
+                                                  citation_count >= 20, ">=20")) %>%
+           dplyr::mutate(citation_count = factor(citation_count, 
+                                                 levels = c(0:20, ">=20"))) %>%
+           dplyr::group_by(citation_count) %>%
+           dplyr::tally(),
        aes(x = citation_count, y = n)) + 
-  geom_bar(stat = "identity") + 
-  theme_minimal() + 
-  labs(x = "Crossref citation count", y = "Number of publications", caption = dcap)
+    geom_bar(stat = "identity") + 
+    theme_minimal() + 
+    labs(x = "Crossref citation count", y = "Number of publications", caption = dcap)
 ```
 
 
@@ -544,14 +545,14 @@ The table below sorts the JOSS papers in decreasing order by the number of citat
 
 ```{r most-cited, class.source = 'fold-hide'}
 DT::datatable(
-  papers %>% 
-    dplyr::mutate(url = paste0("<a href='", url, "' target='_blank'>", 
-                               url,"</a>")) %>% 
-    dplyr::arrange(desc(citation_count)) %>% 
-    dplyr::select(title, url, published.date, citation_count),
-  escape = FALSE,
-  filter = list(position = 'top', clear = FALSE),
-  options = list(scrollX = TRUE)
+    papers %>% 
+        dplyr::mutate(url = paste0("<a href='", url, "' target='_blank'>", 
+                                   url,"</a>")) %>% 
+        dplyr::arrange(desc(citation_count)) %>% 
+        dplyr::select(title, url, published.date, citation_count),
+    escape = FALSE,
+    filter = list(position = 'top', clear = FALSE),
+    options = list(scrollX = TRUE)
 )
 ```
 
@@ -559,12 +560,12 @@ DT::datatable(
 
 ```{r citations-vs-time, class.source = 'fold-hide', message = FALSE}
 plotly::ggplotly(
-  ggplot(papers, aes(x = published.date, y = citation_count, label = title)) + 
-    geom_point(alpha = 0.5) + theme_bw() + scale_y_sqrt() + 
-    geom_smooth() + 
-    labs(x = "Date of publication", y = "Crossref citation count", caption = dcap) + 
-    theme(axis.title = element_text(size = 15)),
-  tooltip = c("label", "x", "y")
+    ggplot(papers, aes(x = published.date, y = citation_count, label = title)) + 
+        geom_point(alpha = 0.5) + theme_bw() + scale_y_sqrt() + 
+        geom_smooth() + 
+        labs(x = "Date of publication", y = "Crossref citation count", caption = dcap) + 
+        theme(axis.title = element_text(size = 15)),
+    tooltip = c("label", "x", "y")
 )
 ```
 
@@ -574,13 +575,13 @@ Here, we plot the citation count for all papers published within each half year,
 
 ```{r power-law-citations, class.source = 'fold-hide', fig.width = 10, fig.height = 10}
 ggplot(papers %>% dplyr::group_by(halfyear) %>% 
-         dplyr::arrange(desc(citation_count)) %>%
-         dplyr::mutate(idx = seq_along(citation_count)), 
+           dplyr::arrange(desc(citation_count)) %>%
+           dplyr::mutate(idx = seq_along(citation_count)), 
        aes(x = idx, y = citation_count)) + 
-  geom_point(alpha = 0.5) + 
-  facet_wrap(~ halfyear, scales = "free") + 
-  theme_bw() + 
-  labs(x = "Index", y = "Crossref citation count", caption = dcap)
+    geom_point(alpha = 0.5) + 
+    facet_wrap(~ halfyear, scales = "free") + 
+    theme_bw() + 
+    labs(x = "Index", y = "Crossref citation count", caption = dcap)
 ```
 
 
@@ -591,56 +592,56 @@ In these plots we investigate whether the time a submission spends in the pre-re
 ```{r smoothing-helpers, class.source = 'fold-hide'}
 ## Helper functions (modified from https://stackoverflow.com/questions/65147186/geom-smooth-with-median-instead-of-mean)
 rolling_median <- function(formula, data, xwindow = 120, ...) {
-  ## Get order of x-values and sort x/y
-  ordr <- order(data$x)
-  x <- data$x[ordr]
-  y <- data$y[ordr]
-  
-  ## Initialize vector for smoothed y-values
-  ys <- rep(NA, length(x))
-  ## Calculate median y-value for each unique x-value
-  for (xs in setdiff(unique(x), NA)) {
-    ## Get x-values in the window, and calculate median of corresponding y
-    j <- ((xs - xwindow/2) < x) & (x < (xs + xwindow/2))
-    ys[x == xs] <- median(y[j], na.rm = TRUE)
-  }
-  y <- ys
-  structure(list(x = x, y = y, f = approxfun(x, y)), class = "rollmed")
+    ## Get order of x-values and sort x/y
+    ordr <- order(data$x)
+    x <- data$x[ordr]
+    y <- data$y[ordr]
+    
+    ## Initialize vector for smoothed y-values
+    ys <- rep(NA, length(x))
+    ## Calculate median y-value for each unique x-value
+    for (xs in setdiff(unique(x), NA)) {
+        ## Get x-values in the window, and calculate median of corresponding y
+        j <- ((xs - xwindow/2) < x) & (x < (xs + xwindow/2))
+        ys[x == xs] <- median(y[j], na.rm = TRUE)
+    }
+    y <- ys
+    structure(list(x = x, y = y, f = approxfun(x, y)), class = "rollmed")
 }
 
 predict.rollmed <- function(mod, newdata, ...) {
-  setNames(mod$f(newdata$x), newdata$x)
+    setNames(mod$f(newdata$x), newdata$x)
 }
 ```
 
 ```{r review-time, class.source = 'fold-hide', message = FALSE, warning = FALSE}
 ggplot(papers, aes(x = prerev_opened, y = as.numeric(days_in_pre))) + 
-  geom_point() + 
-  geom_smooth(formula = y ~ x, method = "rolling_median", 
-              se = FALSE, method.args = list(xwindow = 120)) + 
-  theme_bw() + 
-  labs(x = "Date of pre-review opening", y = "Number of days in pre-review", 
-       caption = dcap) + 
-  theme(axis.title = element_text(size = 15))
+    geom_point() + 
+    geom_smooth(formula = y ~ x, method = "rolling_median", 
+                se = FALSE, method.args = list(xwindow = 120)) + 
+    theme_bw() + 
+    labs(x = "Date of pre-review opening", y = "Number of days in pre-review", 
+         caption = dcap) + 
+    theme(axis.title = element_text(size = 15))
 
 ggplot(papers, aes(x = review_opened, y = as.numeric(days_in_rev))) + 
-  geom_point() +
-  geom_smooth(formula = y ~ x, method = "rolling_median", 
-              se = FALSE, method.args = list(xwindow = 120)) +
-  theme_bw() + 
-  labs(x = "Date of review opening", y = "Number of days in review", 
-       caption = dcap) + 
-  theme(axis.title = element_text(size = 15))
+    geom_point() +
+    geom_smooth(formula = y ~ x, method = "rolling_median", 
+                se = FALSE, method.args = list(xwindow = 120)) +
+    theme_bw() + 
+    labs(x = "Date of review opening", y = "Number of days in review", 
+         caption = dcap) + 
+    theme(axis.title = element_text(size = 15))
 
 ggplot(papers, aes(x = prerev_opened, 
                    y = as.numeric(days_in_pre) + as.numeric(days_in_rev))) + 
-  geom_point() +
-  geom_smooth(formula = y ~ x, method = "rolling_median", 
-              se = FALSE, method.args = list(xwindow = 120)) +
-  theme_bw() + 
-  labs(x = "Date of pre-review opening", y = "Number of days in pre-review + review", 
-       caption = dcap) + 
-  theme(axis.title = element_text(size = 15))
+    geom_point() +
+    geom_smooth(formula = y ~ x, method = "rolling_median", 
+                se = FALSE, method.args = list(xwindow = 120)) +
+    theme_bw() + 
+    labs(x = "Date of pre-review opening", y = "Number of days in pre-review + review", 
+         caption = dcap) + 
+    theme(axis.title = element_text(size = 15))
 ```
 
 # Languages
@@ -652,68 +653,68 @@ Next, we consider the languages used by the submissions, both as reported by Whe
 sspl <- strsplit(papers$languages, ",")
 all_languages <- unique(unlist(sspl))
 langs <- do.call(dplyr::bind_rows, lapply(all_languages, function(l) {
-  data.frame(language = l,
-             nbr_submissions_Whedon = sum(vapply(sspl, function(v) l %in% v, 0)))
+    data.frame(language = l,
+               nbr_submissions_Whedon = sum(vapply(sspl, function(v) l %in% v, 0)))
 }))
 
 ## Language information from GitHub software repos
 a <- lapply(strsplit(papers$repo_languages_bytes, ","), function(w) strsplit(w, ":"))
 a <- a[sapply(a, length) > 0]
 langbytes <- as.data.frame(t(as.data.frame(a))) %>% 
-  setNames(c("language", "bytes")) %>%
-  dplyr::mutate(bytes = as.numeric(bytes)) %>%
-  dplyr::filter(!is.na(language)) %>%
-  dplyr::group_by(language) %>%
-  dplyr::summarize(nbr_bytes_GitHub = sum(bytes),
-                   nbr_repos_GitHub = length(bytes)) %>%
-  dplyr::arrange(desc(nbr_bytes_GitHub))
+    setNames(c("language", "bytes")) %>%
+    dplyr::mutate(bytes = as.numeric(bytes)) %>%
+    dplyr::filter(!is.na(language)) %>%
+    dplyr::group_by(language) %>%
+    dplyr::summarize(nbr_bytes_GitHub = sum(bytes),
+                     nbr_repos_GitHub = length(bytes)) %>%
+    dplyr::arrange(desc(nbr_bytes_GitHub))
 
 langs <- dplyr::full_join(langs, langbytes, by = "language")
 ```
 
 ```{r language-plot, class.source = 'fold-hide', message = FALSE}
 ggplot(langs %>% dplyr::arrange(desc(nbr_submissions_Whedon)) %>%
-         dplyr::filter(nbr_submissions_Whedon > 10) %>%
-         dplyr::mutate(language = factor(language, levels = language)),
+           dplyr::filter(nbr_submissions_Whedon > 10) %>%
+           dplyr::mutate(language = factor(language, levels = language)),
        aes(x = language, y = nbr_submissions_Whedon)) + 
-  geom_bar(stat = "identity") + 
-  theme_bw() + 
-  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) + 
-  labs(x = "", y = "Number of submissions", caption = dcap) + 
-  theme(axis.title = element_text(size = 15))
+    geom_bar(stat = "identity") + 
+    theme_bw() + 
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) + 
+    labs(x = "", y = "Number of submissions", caption = dcap) + 
+    theme(axis.title = element_text(size = 15))
 ```
 
 ```{r language-bytes, class.source = 'fold-hide', message = FALSE}
 DT::datatable(
-  langs %>% dplyr::arrange(desc(nbr_bytes_GitHub)),
-  escape = FALSE,
-  filter = list(position = 'top', clear = FALSE),
-  options = list(scrollX = TRUE)
+    langs %>% dplyr::arrange(desc(nbr_bytes_GitHub)),
+    escape = FALSE,
+    filter = list(position = 'top', clear = FALSE),
+    options = list(scrollX = TRUE)
 )
 ```
 
 ```{r language-bytes-plot, class.source = 'fold-hide', message = FALSE, warning = FALSE}
 ggplot(langs, aes(x = nbr_repos_GitHub, y = nbr_bytes_GitHub)) + 
-  geom_point() + scale_x_log10() + scale_y_log10() + geom_smooth() + 
-  theme_bw() + 
-  labs(x = "Number of repos using the language",
-       y = "Total number of bytes of code\nwritten in the language", 
-       caption = dcap) + 
-  theme(axis.title = element_text(size = 15))
+    geom_point() + scale_x_log10() + scale_y_log10() + geom_smooth() + 
+    theme_bw() + 
+    labs(x = "Number of repos using the language",
+         y = "Total number of bytes of code\nwritten in the language", 
+         caption = dcap) + 
+    theme(axis.title = element_text(size = 15))
 ```
 
 # Association between number of citations and number of stars of the GitHub repo
 
 ```{r citation-stars, class.source = 'fold-hide'}
 ggplotly(
-  ggplot(papers, aes(x = citation_count, y = repo_nbr_stars,
-                     label = title)) + 
-    geom_point(alpha = 0.5) + scale_x_sqrt() + scale_y_sqrt() + 
-    theme_bw() + 
-    labs(x = "Crossref citation count", y = "Number of stars, GitHub repo", 
-         caption = dcap) + 
-    theme(axis.title = element_text(size = 15)),
-  tooltip = c("label", "x", "y")
+    ggplot(papers, aes(x = citation_count, y = repo_nbr_stars,
+                       label = title)) + 
+        geom_point(alpha = 0.5) + scale_x_sqrt() + scale_y_sqrt() + 
+        theme_bw() + 
+        labs(x = "Crossref citation count", y = "Number of stars, GitHub repo", 
+             caption = dcap) + 
+        theme(axis.title = element_text(size = 15)),
+    tooltip = c("label", "x", "y")
 )
 ```
 
@@ -721,23 +722,23 @@ ggplotly(
 
 ```{r creation-to-submission, class.source = 'fold-hide', warning = FALSE}
 ggplot(papers, aes(x = as.numeric(prerev_opened - repo_created))) +
-  geom_histogram(bins = 50) + 
-  theme_bw() + 
-  labs(x = "Time (days) from repo creation to JOSS pre-review start", 
-       caption = dcap) + 
-  theme(axis.title = element_text(size = 15))
+    geom_histogram(bins = 50) + 
+    theme_bw() + 
+    labs(x = "Time (days) from repo creation to JOSS pre-review start", 
+         caption = dcap) + 
+    theme(axis.title = element_text(size = 15))
 ```
 
 # Distribution of time between JOSS acceptance and last commit
 
 ```{r acceptance-to-commit, class.source = 'fold-hide', warning = FALSE, fig.width = 8, fig.height = 8}
 ggplot(papers, aes(x = as.numeric(repo_pushed - review_closed))) +
-  geom_histogram(bins = 50) + 
-  theme_bw() + 
-  labs(x = "Time (days) from closure of JOSS review to most recent commit in repo",
-       caption = dcap) + 
-  theme(axis.title = element_text(size = 15)) + 
-  facet_wrap(~ year(published.date), scales = "free_y")
+    geom_histogram(bins = 50) + 
+    theme_bw() + 
+    labs(x = "Time (days) from closure of JOSS review to most recent commit in repo",
+         caption = dcap) + 
+    theme(axis.title = element_text(size = 15)) + 
+    facet_wrap(~ year(published.date), scales = "free_y")
 ```
 
 # Number of authors per paper
@@ -747,40 +748,40 @@ List the papers with the largest number of authors, and display the distribution
 ```{r nbr-authors-top, class.source = 'fold-show'}
 ## Papers with largest number of authors
 papers %>% dplyr::arrange(desc(nbr_authors)) %>% 
-  dplyr::select(title, published.date, url, nbr_authors) %>%
-  as.data.frame() %>% head(10)
+    dplyr::select(title, published.date, url, nbr_authors) %>%
+    as.data.frame() %>% head(10)
 ```
 
 ```{r nbr-authors, class.source = 'fold-hide', message = FALSE, fig.width = 8, fig.height = 8}
 nbins <- max(papers$nbr_authors[papers$nbr_authors <= 20])
 ggplot(papers %>% dplyr::filter(nbr_authors <= 20),
-  aes(x = nbr_authors)) + 
-  geom_histogram(bins = nbins, fill = "lightgrey", color = "grey50") + 
-  theme_bw() + 
-  facet_wrap(~ year(published.date), scales = "free_y") + 
-  theme(axis.title = element_text(size = 15)) + 
-  labs(x = "Number of authors",
-       y = "Number of publications with\na given number of authors", 
-       caption = dcap)
+       aes(x = nbr_authors)) + 
+    geom_histogram(bins = nbins, fill = "lightgrey", color = "grey50") + 
+    theme_bw() + 
+    facet_wrap(~ year(published.date), scales = "free_y") + 
+    theme(axis.title = element_text(size = 15)) + 
+    labs(x = "Number of authors",
+         y = "Number of publications with\na given number of authors", 
+         caption = dcap)
 ```
 
 ```{r nbr-authors-all, class.source = 'fold-hide', message = FALSE}
 ggplot(papers %>% 
-         dplyr::mutate(nbr_authors = replace(nbr_authors, nbr_authors > 5, ">5")) %>%
-         dplyr::mutate(nbr_authors = factor(nbr_authors, levels = c("1", "2", "3", 
-                                                                    "4", "5", ">5"))) %>%
-         dplyr::mutate(year = year(published.date)) %>%
-         dplyr::mutate(year = factor(year)) %>%
-         dplyr::group_by(year, nbr_authors, .drop = FALSE) %>%
-         dplyr::summarize(n = n()) %>%
-         dplyr::mutate(freq = n/sum(n)) %>%
-         dplyr::mutate(year = as.integer(as.character(year))), 
+           dplyr::mutate(nbr_authors = replace(nbr_authors, nbr_authors > 5, ">5")) %>%
+           dplyr::mutate(nbr_authors = factor(nbr_authors, levels = c("1", "2", "3", 
+                                                                      "4", "5", ">5"))) %>%
+           dplyr::mutate(year = year(published.date)) %>%
+           dplyr::mutate(year = factor(year)) %>%
+           dplyr::group_by(year, nbr_authors, .drop = FALSE) %>%
+           dplyr::summarize(n = n()) %>%
+           dplyr::mutate(freq = n/sum(n)) %>%
+           dplyr::mutate(year = as.integer(as.character(year))), 
        aes(x = year, y = freq, fill = nbr_authors)) + geom_area() + 
-  theme_minimal() + 
-  scale_fill_brewer(palette = "Set1", name = "Number of\nauthors", 
-                    na.value = "grey") + 
-  theme(axis.title = element_text(size = 15)) + 
-  labs(x = "Year", y = "Fraction of submissions", caption = dcap)
+    theme_minimal() + 
+    scale_fill_brewer(palette = "Set1", name = "Number of\nauthors", 
+                      na.value = "grey") + 
+    theme(axis.title = element_text(size = 15)) + 
+    labs(x = "Year", y = "Fraction of submissions", caption = dcap)
 
 ```
 
@@ -790,17 +791,17 @@ Note that points are slightly jittered to reduce the overlap.
 
 ```{r nbr-authors-contribs, class.source = 'fold-hide', message = FALSE}
 plotly::ggplotly(
-  ggplot(papers, aes(x = nbr_authors, y = repo_nbr_contribs_2ormore, label = title)) + 
-    geom_abline(slope = 1, intercept = 0) + 
-    geom_jitter(width = 0.05, height = 0.05, alpha = 0.5) + 
-    # geom_point(alpha = 0.5) + 
-    theme_bw() + 
-    scale_x_sqrt() + scale_y_sqrt() + 
-    labs(x = "Number of authors", 
-         y = "Number of contributors\nwith at least 2 commits", 
-         caption = dcap) + 
-    theme(axis.title = element_text(size = 15)),
-  tooltip = c("label", "x", "y")
+    ggplot(papers, aes(x = nbr_authors, y = repo_nbr_contribs_2ormore, label = title)) + 
+        geom_abline(slope = 1, intercept = 0) + 
+        geom_jitter(width = 0.05, height = 0.05, alpha = 0.5) + 
+        # geom_point(alpha = 0.5) + 
+        theme_bw() + 
+        scale_x_sqrt() + scale_y_sqrt() + 
+        labs(x = "Number of authors", 
+             y = "Number of contributors\nwith at least 2 commits", 
+             caption = dcap) + 
+        theme(axis.title = element_text(size = 15)),
+    tooltip = c("label", "x", "y")
 )
 ```
 
@@ -810,11 +811,11 @@ Submissions associated with rOpenSci and pyOpenSci are not considered here, sinc
 
 ```{r nbr-reviewers, class.source = 'fold-hide', message = FALSE, fig.width = 8, fig.height = 8}
 ggplot(papers %>%
-         dplyr::filter(!grepl("rOpenSci|pyOpenSci", prerev_labels)) %>%
-         dplyr::mutate(year = year(published.date)),
+           dplyr::filter(!grepl("rOpenSci|pyOpenSci", prerev_labels)) %>%
+           dplyr::mutate(year = year(published.date)),
        aes(x = nbr_reviewers)) + geom_bar() + 
-  facet_wrap(~ year) + theme_bw() + 
-  labs(x = "Number of reviewers", y = "Number of submissions", caption = dcap)
+    facet_wrap(~ year) + theme_bw() + 
+    labs(x = "Number of reviewers", y = "Number of submissions", caption = dcap)
 ```
 
 # Most active reviewers
@@ -823,21 +824,21 @@ Submissions associated with rOpenSci and pyOpenSci are not considered here, sinc
 
 ```{r most-reviewers, class.source = 'fold-hide', message = FALSE}
 reviewers <- papers %>% 
-  dplyr::filter(!grepl("rOpenSci|pyOpenSci", prerev_labels)) %>%
-  dplyr::mutate(year = year(published.date)) %>%
-  dplyr::select(reviewers, year) %>%
-  tidyr::separate_rows(reviewers, sep = ",")
+    dplyr::filter(!grepl("rOpenSci|pyOpenSci", prerev_labels)) %>%
+    dplyr::mutate(year = year(published.date)) %>%
+    dplyr::select(reviewers, year) %>%
+    tidyr::separate_rows(reviewers, sep = ",")
 
 ## Most active reviewers
 DT::datatable(
-  reviewers %>% dplyr::group_by(reviewers) %>%
-    dplyr::summarize(nbr_reviews = length(year),
-                     timespan = paste(unique(c(min(year), max(year))), 
-                                      collapse = " - ")) %>%
-    dplyr::arrange(desc(nbr_reviews)),
-  escape = FALSE, rownames = FALSE, 
-  filter = list(position = 'top', clear = FALSE),
-  options = list(scrollX = TRUE)
+    reviewers %>% dplyr::group_by(reviewers) %>%
+        dplyr::summarize(nbr_reviews = length(year),
+                         timespan = paste(unique(c(min(year), max(year))), 
+                                          collapse = " - ")) %>%
+        dplyr::arrange(desc(nbr_reviews)),
+    escape = FALSE, rownames = FALSE, 
+    filter = list(position = 'top', clear = FALSE),
+    options = list(scrollX = TRUE)
 )
 ```
 
@@ -845,15 +846,15 @@ DT::datatable(
 
 ```{r papers-per-editor, class.source = 'fold-hide', message = FALSE, fig.width = 16, fig.height = 15}
 ggplot(papers %>% 
-         dplyr::mutate(year = year(published.date),
-                       `r/pyOpenSci` = factor(
-                         grepl("rOpenSci|pyOpenSci", prerev_labels),
-                         levels = c("TRUE", "FALSE"))), 
+           dplyr::mutate(year = year(published.date),
+                         `r/pyOpenSci` = factor(
+                             grepl("rOpenSci|pyOpenSci", prerev_labels),
+                             levels = c("TRUE", "FALSE"))), 
        aes(x = editor)) + geom_bar(aes(fill = `r/pyOpenSci`)) + 
-  theme_bw() + facet_wrap(~ year, ncol = 1) + 
-  scale_fill_manual(values = c(`TRUE` = "grey65", `FALSE` = "grey35")) + 
-  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) + 
-  labs(x = "Editor", y = "Number of submissions", caption = dcap)
+    theme_bw() + facet_wrap(~ year, ncol = 1) + 
+    scale_fill_manual(values = c(`TRUE` = "grey65", `FALSE` = "grey35")) + 
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) + 
+    labs(x = "Editor", y = "Number of submissions", caption = dcap)
 ```
 
 
@@ -868,15 +869,15 @@ license_levels = c(grep("apache", all_licenses, value = TRUE),
                    grep("mpl", all_licenses, value = TRUE))
 license_levels <- c(license_levels, setdiff(all_licenses, license_levels))
 ggplot(papers %>% 
-         dplyr::mutate(repo_license = factor(repo_license, 
-                                             levels = license_levels)),
+           dplyr::mutate(repo_license = factor(repo_license, 
+                                               levels = license_levels)),
        aes(x = repo_license)) +
-  geom_bar() + 
-  theme_bw() + 
-  labs(x = "Software license", y = "Number of submissions", caption = dcap) + 
-  theme(axis.title = element_text(size = 15),
-        axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) + 
-  facet_wrap(~ year(published.date), scales = "free_y")
+    geom_bar() + 
+    theme_bw() + 
+    labs(x = "Software license", y = "Number of submissions", caption = dcap) + 
+    theme(axis.title = element_text(size = 15),
+          axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) + 
+    facet_wrap(~ year(published.date), scales = "free_y")
 ```
 
 ```{r repl-license, class.source = 'fold-show', warning = FALSE, message = FALSE}
@@ -888,45 +889,45 @@ to_replace <- names(tbl[tbl <= 0.025 * nrow(papers)])
 
 ```{r plot-repo-license, class.source = 'fold-hide', warning = FALSE, message = FALSE}
 ggplot(papers %>% 
-         dplyr::mutate(year = year(published.date)) %>%
-         dplyr::mutate(repo_license = replace(repo_license, 
-                                              repo_license %in% to_replace,
-                                              "other")) %>%
-         dplyr::mutate(year = factor(year), 
-                       repo_license = factor(
-                         repo_license, 
-                         levels = license_levels[license_levels %in% repo_license]
-                       )) %>%
-         dplyr::group_by(year, repo_license, .drop = FALSE) %>%
-         dplyr::count() %>%
-         dplyr::mutate(year = as.integer(as.character(year))), 
+           dplyr::mutate(year = year(published.date)) %>%
+           dplyr::mutate(repo_license = replace(repo_license, 
+                                                repo_license %in% to_replace,
+                                                "other")) %>%
+           dplyr::mutate(year = factor(year), 
+                         repo_license = factor(
+                             repo_license, 
+                             levels = license_levels[license_levels %in% repo_license]
+                         )) %>%
+           dplyr::group_by(year, repo_license, .drop = FALSE) %>%
+           dplyr::count() %>%
+           dplyr::mutate(year = as.integer(as.character(year))), 
        aes(x = year, y = n, fill = repo_license)) + geom_area() + 
-  theme_minimal() + 
-  scale_fill_brewer(palette = "Set1", name = "Software\nlicense", 
-                    na.value = "grey") + 
-  theme(axis.title = element_text(size = 15)) + 
-  labs(x = "Year", y = "Number of submissions", caption = dcap)
+    theme_minimal() + 
+    scale_fill_brewer(palette = "Set1", name = "Software\nlicense", 
+                      na.value = "grey") + 
+    theme(axis.title = element_text(size = 15)) + 
+    labs(x = "Year", y = "Number of submissions", caption = dcap)
 
 ggplot(papers %>% 
-         dplyr::mutate(year = year(published.date)) %>%
-         dplyr::mutate(repo_license = replace(repo_license, 
-                                              repo_license %in% to_replace,
-                                              "other")) %>%
-         dplyr::mutate(year = factor(year), 
-                       repo_license = factor(
-                         repo_license, 
-                         levels = license_levels[license_levels %in% repo_license]
-                       )) %>%
-         dplyr::group_by(year, repo_license, .drop = FALSE) %>%
-         dplyr::summarize(n = n()) %>%
-         dplyr::mutate(freq = n/sum(n)) %>%
-         dplyr::mutate(year = as.integer(as.character(year))), 
+           dplyr::mutate(year = year(published.date)) %>%
+           dplyr::mutate(repo_license = replace(repo_license, 
+                                                repo_license %in% to_replace,
+                                                "other")) %>%
+           dplyr::mutate(year = factor(year), 
+                         repo_license = factor(
+                             repo_license, 
+                             levels = license_levels[license_levels %in% repo_license]
+                         )) %>%
+           dplyr::group_by(year, repo_license, .drop = FALSE) %>%
+           dplyr::summarize(n = n()) %>%
+           dplyr::mutate(freq = n/sum(n)) %>%
+           dplyr::mutate(year = as.integer(as.character(year))), 
        aes(x = year, y = freq, fill = repo_license)) + geom_area() + 
-  theme_minimal() + 
-  scale_fill_brewer(palette = "Set1", name = "Software\nlicense", 
-                    na.value = "grey") + 
-  theme(axis.title = element_text(size = 15)) + 
-  labs(x = "Year", y = "Fraction of submissions", caption = dcap)
+    theme_minimal() + 
+    scale_fill_brewer(palette = "Set1", name = "Software\nlicense", 
+                      na.value = "grey") + 
+    theme(axis.title = element_text(size = 15)) + 
+    labs(x = "Year", y = "Fraction of submissions", caption = dcap)
 ```
 
 # Most common GitHub repo topics
@@ -939,18 +940,18 @@ topicfreq <- table(a)
 colors <- viridis::viridis(100)
 set.seed(1234)
 wordcloud::wordcloud(
-  names(topicfreq), sqrt(topicfreq), min.freq = 1, max.words = 300,
-  random.order = FALSE, rot.per = 0.05, use.r.layout = FALSE, 
-  colors = colors, scale = c(10, 0.1), random.color = TRUE,
-  ordered.colors = FALSE, vfont = c("serif", "plain")
+    names(topicfreq), sqrt(topicfreq), min.freq = 1, max.words = 300,
+    random.order = FALSE, rot.per = 0.05, use.r.layout = FALSE, 
+    colors = colors, scale = c(10, 0.1), random.color = TRUE,
+    ordered.colors = FALSE, vfont = c("serif", "plain")
 )
 
 DT::datatable(as.data.frame(topicfreq) %>% 
-                dplyr::rename(topic = a, nbr_repos = Freq) %>%
-                dplyr::arrange(desc(nbr_repos)),
-  escape = FALSE, rownames = FALSE, 
-  filter = list(position = 'top', clear = FALSE),
-  options = list(scrollX = TRUE))
+                  dplyr::rename(topic = a, nbr_repos = Freq) %>%
+                  dplyr::arrange(desc(nbr_repos)),
+              escape = FALSE, rownames = FALSE, 
+              filter = list(position = 'top', clear = FALSE),
+              options = list(scrollX = TRUE))
 ```
 
 
@@ -962,50 +963,50 @@ Here, we take a more detailed look at the papers that cite JOSS papers, using da
 
 ```{r get-citing-papers, class.source = 'fold-show', warning = FALSE, message = FALSE}
 citations <- tryCatch({
-  citecorp::oc_coci_cites(doi = papers$alternative.id) %>%
-    dplyr::distinct() %>%
-    dplyr::mutate(citation_info_obtained = as.character(lubridate::today()))
+    citecorp::oc_coci_cites(doi = papers$alternative.id) %>%
+        dplyr::distinct() %>%
+        dplyr::mutate(citation_info_obtained = as.character(lubridate::today()))
 }, error = function(e) {
-  NULL
+    NULL
 })
 dim(citations)
 
 if (!is.null(citations)) {
-  citations <- citations %>% 
-    dplyr::filter(!(oci %in% citations_archive$oci))
-  
-  tmpj <- rcrossref::cr_works(dois = unique(citations$citing))$data %>%
-    dplyr::select(contains("doi"), contains("container.title"), contains("issn"),
-                  contains("type"), contains("publisher"), contains("prefix"))
-  citations <- citations %>% dplyr::left_join(tmpj, by = c("citing" = "doi"))
-  
-  ## bioRxiv preprints don't have a 'container.title' or 'issn', but we'll assume 
-  ## that they can be 
-  ## identified from the prefix 10.1101 - set the container.title 
-  ## for these records manually; we may or may not want to count these
-  ## (would it count citations twice, both preprint and publication?)
-  citations$container.title[citations$prefix == "10.1101"] <- "bioRxiv"
-  
-  ## JOSS is represented by 'The Journal of Open Source Software' as well as 
-  ## 'Journal of Open Source Software'
-  citations$container.title[citations$container.title == 
-                              "Journal of Open Source Software"] <- 
-    "The Journal of Open Source Software"
-  
-  ## Remove real self citations (cited DOI = citing DOI)
-  citations <- citations %>% dplyr::filter(cited != citing)
-  
-  ## Merge with the archive
-  citations <- dplyr::bind_rows(citations, citations_archive)
+    citations <- citations %>% 
+        dplyr::filter(!(oci %in% citations_archive$oci))
+    
+    tmpj <- rcrossref::cr_works(dois = unique(citations$citing))$data %>%
+        dplyr::select(contains("doi"), contains("container.title"), contains("issn"),
+                      contains("type"), contains("publisher"), contains("prefix"))
+    citations <- citations %>% dplyr::left_join(tmpj, by = c("citing" = "doi"))
+    
+    ## bioRxiv preprints don't have a 'container.title' or 'issn', but we'll assume 
+    ## that they can be 
+    ## identified from the prefix 10.1101 - set the container.title 
+    ## for these records manually; we may or may not want to count these
+    ## (would it count citations twice, both preprint and publication?)
+    citations$container.title[citations$prefix == "10.1101"] <- "bioRxiv"
+    
+    ## JOSS is represented by 'The Journal of Open Source Software' as well as 
+    ## 'Journal of Open Source Software'
+    citations$container.title[citations$container.title == 
+                                  "Journal of Open Source Software"] <- 
+        "The Journal of Open Source Software"
+    
+    ## Remove real self citations (cited DOI = citing DOI)
+    citations <- citations %>% dplyr::filter(cited != citing)
+    
+    ## Merge with the archive
+    citations <- dplyr::bind_rows(citations, citations_archive)
 } else {
-  citations <- citations_archive
-  if (is.null(citations[["citation_info_obtained"]])) {
-    citations$citation_info_obtained <- NA_character_
-  }
+    citations <- citations_archive
+    if (is.null(citations[["citation_info_obtained"]])) {
+        citations$citation_info_obtained <- NA_character_
+    }
 }
 
 citations$citation_info_obtained[is.na(citations$citation_info_obtained)] <- 
-  "2021-08-11"
+    "2021-08-11"
 
 write.table(citations, file = "joss_submission_citations.tsv",
             row.names = FALSE, col.names = TRUE, sep = "\t", quote = FALSE)
@@ -1027,10 +1028,10 @@ length(which(papers$citation_count > 0))
 ```{r citation-merge, class.source = 'fold-hide', warning = FALSE, message = FALSE}
 ## Number of citations from Open Citations Corpus vs Crossref
 df0 <- papers %>% dplyr::select(doi, citation_count) %>%
-  dplyr::full_join(citations %>% dplyr::group_by(cited) %>%
-                     dplyr::tally() %>%
-                     dplyr::mutate(n = replace(n, is.na(n), 0)),
-                   by = c("doi" = "cited"))
+    dplyr::full_join(citations %>% dplyr::group_by(cited) %>%
+                         dplyr::tally() %>%
+                         dplyr::mutate(n = replace(n, is.na(n), 0)),
+                     by = c("doi" = "cited"))
 ```
 
 ```{r citation-fraction, class.source = 'fold-show', warning = FALSE, message = FALSE}
@@ -1046,20 +1047,20 @@ sum(df0$n, na.rm = TRUE)/sum(df0$citation_count, na.rm = TRUE)
 
 ```{r citation-plot-crossref, class.source = 'fold-hide', warning = FALSE, message = FALSE}
 ggplot(df0, aes(x = citation_count, y = n)) + 
-  geom_abline(slope = 1, intercept = 0) + 
-  geom_point(size = 3, alpha = 0.5) + 
-  labs(x = "Crossref citation count", y = "Open Citations Corpus citation count",
-       caption = dcap) + 
-  theme_bw()
+    geom_abline(slope = 1, intercept = 0) + 
+    geom_point(size = 3, alpha = 0.5) + 
+    labs(x = "Crossref citation count", y = "Open Citations Corpus citation count",
+         caption = dcap) + 
+    theme_bw()
 
 ## Zoom in
 ggplot(df0, aes(x = citation_count, y = n)) + 
-  geom_abline(slope = 1, intercept = 0) + 
-  geom_point(size = 3, alpha = 0.5) + 
-  labs(x = "Crossref citation count", y = "Open Citations Corpus citation count",
-       caption = dcap) + 
-  theme_bw() + 
-  coord_cartesian(xlim = c(0, 75), ylim = c(0, 75))
+    geom_abline(slope = 1, intercept = 0) + 
+    geom_point(size = 3, alpha = 0.5) + 
+    labs(x = "Crossref citation count", y = "Open Citations Corpus citation count",
+         caption = dcap) + 
+    theme_bw() + 
+    coord_cartesian(xlim = c(0, 75), ylim = c(0, 75))
 ```
 
 ```{r citation-nbr-journals, class.source = 'fold-show'}
@@ -1072,38 +1073,38 @@ length(unique(citations$issn))
 
 ```{r citation-top-journals, class.source = 'fold-hide', message = FALSE}
 topcit <- citations %>% dplyr::group_by(container.title) %>%
-  dplyr::summarize(nbr_citations_of_joss_papers = length(cited),
-                   nbr_cited_joss_papers = length(unique(cited)),
-                   nbr_citing_papers = length(unique(citing)),
-                   nbr_selfcitations_of_joss_papers = sum(author_sc == "yes"),
-                   fraction_selfcitations = signif(nbr_selfcitations_of_joss_papers /
-                     nbr_citations_of_joss_papers, digits = 3)) %>%
-  dplyr::arrange(desc(nbr_cited_joss_papers))
+    dplyr::summarize(nbr_citations_of_joss_papers = length(cited),
+                     nbr_cited_joss_papers = length(unique(cited)),
+                     nbr_citing_papers = length(unique(citing)),
+                     nbr_selfcitations_of_joss_papers = sum(author_sc == "yes"),
+                     fraction_selfcitations = signif(nbr_selfcitations_of_joss_papers /
+                                                         nbr_citations_of_joss_papers, digits = 3)) %>%
+    dplyr::arrange(desc(nbr_cited_joss_papers))
 DT::datatable(topcit,
-  escape = FALSE, rownames = FALSE, 
-  filter = list(position = 'top', clear = FALSE),
-  options = list(scrollX = TRUE))
+              escape = FALSE, rownames = FALSE, 
+              filter = list(position = 'top', clear = FALSE),
+              options = list(scrollX = TRUE))
 ```
 
 ```{r citation-journals-plot, class.source = 'fold-hide'}
 plotly::ggplotly(
-  ggplot(topcit, aes(x = nbr_citations_of_joss_papers, y = nbr_cited_joss_papers,
-                     label = container.title)) + 
-    geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "grey") + 
-    geom_point(size = 3, alpha = 0.5) + 
-    theme_bw() + 
-    labs(caption = dcap, x = "Number of citations of JOSS papers",
-         y = "Number of cited JOSS papers")
+    ggplot(topcit, aes(x = nbr_citations_of_joss_papers, y = nbr_cited_joss_papers,
+                       label = container.title)) + 
+        geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "grey") + 
+        geom_point(size = 3, alpha = 0.5) + 
+        theme_bw() + 
+        labs(caption = dcap, x = "Number of citations of JOSS papers",
+             y = "Number of cited JOSS papers")
 )
 plotly::ggplotly(
-  ggplot(topcit, aes(x = nbr_citations_of_joss_papers, y = nbr_cited_joss_papers,
-                     label = container.title)) + 
-    geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "grey") + 
-    geom_point(size = 3, alpha = 0.5) + 
-    theme_bw() + 
-    coord_cartesian(xlim = c(0, 100), ylim = c(0, 50)) + 
-    labs(caption = dcap, x = "Number of citations of JOSS papers",
-         y = "Number of cited JOSS papers")
+    ggplot(topcit, aes(x = nbr_citations_of_joss_papers, y = nbr_cited_joss_papers,
+                       label = container.title)) + 
+        geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "grey") + 
+        geom_point(size = 3, alpha = 0.5) + 
+        theme_bw() + 
+        coord_cartesian(xlim = c(0, 100), ylim = c(0, 50)) + 
+        labs(caption = dcap, x = "Number of citations of JOSS papers",
+             y = "Number of cited JOSS papers")
 )
 ```
 

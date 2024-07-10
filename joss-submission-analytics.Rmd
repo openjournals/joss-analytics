@@ -558,7 +558,7 @@ ggplot(papers %>%
 
 # Most cited papers
 
-The table below sorts the JOSS papers in decreasing order by the number of citations in Crossref.
+The table below sorts the JOSS papers in decreasing order by the number of citations in OpenAlex.
 
 ```{r most-cited, class.source = 'fold-hide'}
 DT::datatable(
@@ -988,7 +988,7 @@ citations <- tryCatch({
 })
 dim(citations)
 
-if (!is.null(citations)) {
+if (!is.null(citations) && is.data.frame(citations) && "oci" %in% colnames(citations)) {
     citations <- citations %>% 
         dplyr::filter(!(oci %in% citations_archive$oci))
     
@@ -1043,7 +1043,7 @@ length(which(papers$citation_count > 0))
 ```
 
 ```{r citation-merge, class.source = 'fold-hide', warning = FALSE, message = FALSE}
-## Number of citations from Open Citations Corpus vs Crossref
+## Number of citations from Open Citations Corpus vs OpenAlex
 df0 <- papers %>% dplyr::select(doi, citation_count) %>%
     dplyr::full_join(citations %>% dplyr::group_by(cited) %>%
                          dplyr::tally() %>%
@@ -1052,13 +1052,13 @@ df0 <- papers %>% dplyr::select(doi, citation_count) %>%
 ```
 
 ```{r citation-fraction, class.source = 'fold-show', warning = FALSE, message = FALSE}
-## Total citation count Crossref
+## Total citation count OpenAlex
 sum(df0$citation_count, na.rm = TRUE)
 
 ## Total citation count Open Citations Corpus
 sum(df0$n, na.rm = TRUE)
 
-## Ratio of total citation count Open Citations Corpus/Crossref
+## Ratio of total citation count Open Citations Corpus/OpenAlex
 sum(df0$n, na.rm = TRUE)/sum(df0$citation_count, na.rm = TRUE)
 ```
 
@@ -1066,7 +1066,7 @@ sum(df0$n, na.rm = TRUE)/sum(df0$citation_count, na.rm = TRUE)
 ggplot(df0, aes(x = citation_count, y = n)) + 
     geom_abline(slope = 1, intercept = 0) + 
     geom_point(size = 3, alpha = 0.5) + 
-    labs(x = "Crossref citation count", y = "Open Citations Corpus citation count",
+    labs(x = "OpenAlex citation count", y = "Open Citations Corpus citation count",
          caption = dcap) + 
     theme_bw()
 
@@ -1074,7 +1074,7 @@ ggplot(df0, aes(x = citation_count, y = n)) +
 ggplot(df0, aes(x = citation_count, y = n)) + 
     geom_abline(slope = 1, intercept = 0) + 
     geom_point(size = 3, alpha = 0.5) + 
-    labs(x = "Crossref citation count", y = "Open Citations Corpus citation count",
+    labs(x = "OpenAlex citation count", y = "Open Citations Corpus citation count",
          caption = dcap) + 
     theme_bw() + 
     coord_cartesian(xlim = c(0, 75), ylim = c(0, 75))

@@ -89,9 +89,9 @@ citations_archive <- readr::read_delim(
 
 # Collect information about papers
 
-## Pull down papers and citation info from Crossref
+## Pull down paper info from Crossref and citation information from OpenAlex
 
-We get the information about published JOSS papers from Crossref, using the `rcrossref` R package. This package is also used to extract citation counts.
+We get the information about published JOSS papers from Crossref, using the `rcrossref` R package. The `openalexR` R package is used to extract citation counts from OpenAlex.
 
 ```{r pull-crossref, class.source = 'fold-show'}
 ## Fetch JOSS papers from Crossref
@@ -552,7 +552,7 @@ ggplot(papers %>%
        aes(x = citation_count, y = n)) + 
     geom_bar(stat = "identity") + 
     theme_minimal() + 
-    labs(x = "Crossref citation count", y = "Number of publications", caption = dcap)
+    labs(x = "OpenAlex citation count", y = "Number of publications", caption = dcap)
 ```
 
 
@@ -580,7 +580,7 @@ plotly::ggplotly(
     ggplot(papers, aes(x = published.date, y = citation_count, label = title)) + 
         geom_point(alpha = 0.5) + theme_bw() + scale_y_sqrt() + 
         geom_smooth() + 
-        labs(x = "Date of publication", y = "Crossref citation count", caption = dcap) + 
+        labs(x = "Date of publication", y = "OpenAlex citation count", caption = dcap) + 
         theme(axis.title = element_text(size = 15)),
     tooltip = c("label", "x", "y")
 )
@@ -598,7 +598,7 @@ ggplot(papers %>% dplyr::group_by(halfyear) %>%
     geom_point(alpha = 0.5) + 
     facet_wrap(~ halfyear, scales = "free") + 
     theme_bw() + 
-    labs(x = "Index", y = "Crossref citation count", caption = dcap)
+    labs(x = "Index", y = "OpenAlex citation count", caption = dcap)
 ```
 
 
@@ -728,7 +728,7 @@ ggplotly(
                        label = title)) + 
         geom_point(alpha = 0.5) + scale_x_sqrt() + scale_y_sqrt() + 
         theme_bw() + 
-        labs(x = "Crossref citation count", y = "Number of stars, GitHub repo", 
+        labs(x = "OpenAlex citation count", y = "Number of stars, GitHub repo", 
              caption = dcap) + 
         theme(axis.title = element_text(size = 15)),
     tooltip = c("label", "x", "y")
@@ -979,13 +979,25 @@ Here, we take a more detailed look at the papers that cite JOSS papers, using da
 ## Get citing papers for each submission
 
 ```{r get-citing-papers, class.source = 'fold-show', warning = FALSE, message = FALSE}
-citations <- tryCatch({
-    citecorp::oc_coci_cites(doi = papers$alternative.id) %>%
-        dplyr::distinct() %>%
-        dplyr::mutate(citation_info_obtained = as.character(lubridate::today()))
-}, error = function(e) {
-    NULL
+## Split into several queries
+## Randomize the splitting since a whole query may fail if one ID is not recognized
+papidx <- seq_len(nrow(papers))
+idxL <- split(sample(papidx, length(papidx), replace = FALSE), ceiling(papidx / 50))
+citationsL <- lapply(idxL, function(idx) {
+    tryCatch({
+        citecorp::oc_coci_cites(doi = papers$alternative.id[idx]) %>%
+            dplyr::distinct() %>%
+            dplyr::mutate(citation_info_obtained = as.character(lubridate::today()))
+    }, error = function(e) {
+        NULL
+    })
 })
+citationsL <- citationsL[vapply(citationsL, function(df) !is.null(df) && nrow(df) > 0, FALSE)]
+if (length(citationsL) > 0) {
+    citations <- do.call(dplyr::bind_rows, citationsL)
+} else {
+    citations <- NULL
+}
 dim(citations)
 
 if (!is.null(citations) && is.data.frame(citations) && "oci" %in% colnames(citations)) {
@@ -1038,7 +1050,7 @@ max(as.Date(citations$citation_info_obtained))
 ## Number of JOSS papers with >0 citations included in this collection
 length(unique(citations$cited))
 
-## Number of JOSS papers with >0 citations according to Crossref
+## Number of JOSS papers with >0 citations according to OpenAlex
 length(which(papers$citation_count > 0))
 ```
 

@@ -93,12 +93,12 @@ jobs:
           cp -r joss_submission_citations_byjournal.tsv _site/
           cp -r joss_submission_citations.tsv _site/
           
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v4
-        with:
-          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: _site
+      # - name: Deploy 🚀
+      #   uses: JamesIves/github-pages-deploy-action@releases/v4
+      #   with:
+      #     ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     BRANCH: gh-pages
+      #     FOLDER: _site
 
       - name: Upload check results
         if: failure()

@@ -1,18 +1,18 @@
 container.title	nbr_citations_of_joss_papers	nbr_cited_joss_papers	nbr_citing_papers	nbr_selfcitations_of_joss_papers	fraction_selfcitations
-bioRxiv	8291	388	4489	408	0.0492
+bioRxiv	8293	389	4491	408	0.0492
 The Journal of Open Source Software	990	318	411	298	0.301
-NA	729	155	523	22	0.0302
+NA	730	156	524	22	0.0301
 Scientific Reports	1211	152	677	10	0.00826
-Monthly Notices of the Royal Astronomical Society	2043	129	1050	181	0.0886
+Monthly Notices of the Royal Astronomical Society	2045	129	1052	181	0.0885
 Nature Communications	913	116	500	36	0.0394
-The Astrophysical Journal	1947	113	970	323	0.166
+The Astrophysical Journal	1948	113	971	323	0.166
 PLOS ONE	688	99	374	27	0.0392
 IEEE Access	271	82	142	25	0.0923
 Astronomy &amp; Astrophysics	755	81	517	51	0.0675
 Applied Sciences	245	77	141	11	0.0449
 SSRN Electronic Journal	214	75	152	1	0.00467
 Sensors	294	68	168	6	0.0204
-PLOS Computational Biology	214	61	115	21	0.0981
+PLOS Computational Biology	216	63	117	21	0.0972
 Scientific Data	166	59	88	28	0.169
 Geoscientific Model Development	144	58	64	39	0.271
 Remote Sensing	251	56	147	11	0.0438
@@ -54,17 +54,17 @@ Physical Review Research	68	29	42	1	0.0147
 Environmental Modelling &amp; Software	72	28	57	1	0.0139
 Expert Systems with Applications	80	28	45	2	0.025
 Genome Biology	139	28	67	8	0.0576
+Methods in Ecology and Evolution	68	28	35	6	0.0882
 Physical Review E	66	28	36	13	0.197
 Water Resources Research	98	28	55	16	0.163
 Cell Reports	133	27	77	2	0.015
 Environmental Science &amp; Technology	79	27	59	3	0.038
 Frontiers in Microbiology	175	27	109	0	0
 Geophysical Research Letters	77	27	45	11	0.143
-Methods in Ecology and Evolution	67	27	34	6	0.0896
+GigaScience	56	27	29	8	0.143
 Physical Review B	120	27	67	11	0.0917
 Computer Physics Communications	69	26	37	6	0.087
 Frontiers in Neuroscience	60	26	37	0	0
-GigaScience	55	26	28	8	0.145
 Journal of Cosmology and Astroparticle Physics	175	26	103	1	0.00571
 Journal of Hydrology	85	26	52	0	0
 Journal of Physics: Conference Series	81	26	42	0	0
@@ -110,6 +110,7 @@ Proceedings of the Royal Society B: Biological Sciences	81	20	49	0	0
 The Journal of Physical Chemistry B	52	20	29	11	0.212
 Cerebral Cortex	56	19	30	0	0
 Computational and Structural Biotechnology Journal	72	19	41	0	0
+Computers and Electronics in Agriculture	33	19	18	1	0.0303
 Forests	84	19	52	0	0
 Frontiers in Ecology and Evolution	94	19	55	1	0.0106
 Frontiers in Oncology	63	19	36	0	0
@@ -121,7 +122,6 @@ Molecular Ecology	87	19	52	0	0
 ACS Omega	40	18	23	0	0
 Astronomy and Computing	42	18	23	6	0.143
 Chemistry of Materials	60	18	32	16	0.267
-Computers and Electronics in Agriculture	32	18	17	1	0.0312
 Frontiers in Human Neuroscience	40	18	24	0	0
 Journal of Chemical Information and Modeling	89	18	49	8	0.0899
 Journal of High Energy Physics	45	18	26	1	0.0222
@@ -892,6 +892,7 @@ Food Chemistry	6	5	4	0	0
 Frontiers in Communication	13	5	7	0	0
 Frontiers in Computational Neuroscience	9	5	5	0	0
 Frontiers in Pediatrics	13	5	7	0	0
+Frontiers in Sociology	9	5	4	0	0
 Gastroenterology	9	5	6	0	0
 Gene	11	5	7	0	0
 Genetics	15	5	8	4	0.267
@@ -932,7 +933,7 @@ Journal of Business Economics	8	5	5	0	0
 Journal of Business Research	7	5	5	0	0
 Journal of Cheminformatics	10	5	7	2	0.2
 Journal of Child Psychology and Psychiatry	10	5	4	0	0
-Journal of Chromatography A	8	5	5	0	0
+Journal of Chromatography A	9	5	6	0	0
 Journal of Geophysical Research: Atmospheres	13	5	8	0	0
 Journal of Great Lakes Research	13	5	8	0	0
 Journal of Information Science	7	5	5	0	0
@@ -1062,6 +1063,7 @@ Advanced Materials Interfaces	8	4	3	2	0.25
 Advances in Geosciences	9	4	5	0	0
 Advances in Knowledge Discovery and Data Mining,Lecture Notes in Computer Science	9	4	5	0	0
 Aging, Neuropsychology, and Cognition	8	4	3	2	0.25
+Agronomy for Sustainable Development	14	4	7	0	0
 Alcoholism: Clinical and Experimental Research	7	4	4	2	0.286
 Alexandria Engineering Journal	6	4	4	0	0
 American Journal of Political Science	11	4	6	0	0
@@ -1172,7 +1174,6 @@ Frontiers in Built Environment	7	4	4	0	0
 Frontiers in Conservation Science	14	4	7	0	0
 Frontiers in Materials	7	4	4	0	0
 Frontiers in Rehabilitation Sciences	7	4	4	0	0
-Frontiers in Sociology	8	4	3	0	0
 Frontiers in Sustainability	11	4	6	0	0
 Future Internet	7	4	4	0	0
 GEM - International Journal on Geomathematics	8	4	5	0	0
@@ -1361,6 +1362,7 @@ Surgery	11	4	6	0	0
 Technology, Knowledge and Learning	9	4	5	0	0
 Tectonophysics	16	4	9	1	0.0625
 The Aeronautical Journal	7	4	4	2	0.286
+The American Statistician	10	4	6	0	0
 The Annals of Applied Statistics	7	4	4	0	0
 The Bone &amp; Joint Journal	9	4	4	1	0.111
 The European Physical Journal Special Topics	9	4	6	0	0
@@ -1434,7 +1436,6 @@ Advances in Intelligent Systems and Computing,International Conference on Innova
 African Journal of Ecology	5	3	3	0	0
 Aging Clinical and Experimental Research	4	3	3	0	0
 AgriEngineering	6	3	3	0	0
-Agronomy for Sustainable Development	13	3	6	0	0
 Ain Shams Engineering Journal	4	3	3	0	0
 Alcohol and Alcoholism	4	3	2	0	0
 Algal Research	5	3	3	0	0
@@ -1962,6 +1963,7 @@ Robotics and Computer-Integrated Manufacturing	8	3	6	0	0
 Rock Mechanics and Rock Engineering	7	3	4	0	0
 SAGE Open	4	3	3	0	0
 SIAM Journal on Applied Dynamical Systems	4	3	3	0	0
+SIAM Journal on Numerical Analysis	4	3	3	0	0
 SLEEP	4	3	4	0	0
 SSM - Population Health	4	3	2	0	0
 Scandinavian Journal of Forest Research	7	3	3	0	0
@@ -2001,7 +2003,6 @@ Systematic Reviews	6	3	3	0	0
 Terra Nova	6	3	2	0	0
 The American Journal of Clinical Nutrition	8	3	5	0	0
 The American Journal of Human Genetics	9	3	6	0	0
-The American Statistician	9	3	5	0	0
 The Anatomical Record	7	3	4	0	0
 The CRISPR Journal	7	3	4	0	0
 The Depositional Record	4	3	3	1	0.25
@@ -3315,7 +3316,6 @@ Rice	3	2	2	0	0
 SHS Web of Conferences	4	2	2	0	0
 SIAM Journal on Applied Mathematics	4	2	2	0	0
 SIAM Journal on Mathematics of Data Science	3	2	2	0	0
-SIAM Journal on Numerical Analysis	3	2	2	0	0
 SIAM Journal on Optimization	4	2	3	0	0
 SIMULATION	4	2	2	0	0
 SLAS Discovery	5	2	4	0	0
@@ -4110,6 +4110,7 @@ tm - Technisches Messen	2	2	2	0	0
 2023 19th International Conference on the Design of Reliable Communication Networks (DRCN)	1	1	1	0	0
 2023 19th International Conference on the European Energy Market (EEM)	2	1	2	0	0
 2023 1st International Conference on Innovations in High Speed Communication and Signal Processing (IHCSP)	1	1	1	0	0
+2023 20th International Conference on Electrical Engineering, Computing Science and Automatic Control (CCE)	1	1	1	0	0
 2023 20th International Conference on Ubiquitous Robots (UR)	2	1	2	0	0
 2023 24th International Conference on Control Systems and Computer Science (CSCS)	1	1	1	0	0
 2023 24th International Conference on Process Control (PC)	1	1	1	0	0
@@ -4181,6 +4182,8 @@ tm - Technisches Messen	2	2	2	0	0
 2023 IEEE/ACM 45th International Conference on Software Engineering: New Ideas and Emerging Results (ICSE-NIER)	1	1	1	0	0
 2023 IEEE/ACM International Conference on Automation of Software Test (AST)	1	1	1	0	0
 2023 IEEE/ACM International Conference on Software and System Processes (ICSSP)	1	1	1	0	0
+2023 IEEE/CVF International Conference on Computer Vision (ICCV)	1	1	1	0	0
+2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)	1	1	1	0	0
 2023 IEEE/SICE International Symposium on System Integration (SII)	1	1	1	0	0
 2023 Integrated Communication, Navigation and Surveillance Conference (ICNS)	1	1	1	0	0
 2023 International Conference in Advances in Power, Signal, and Information Technology (APSIT)	1	1	1	0	0
@@ -4434,6 +4437,7 @@ Algorithms for Intelligent Systems,Proceedings of 2nd International Conference o
 Algorithms for Intelligent Systems,Proceedings of 3rd International Conference on Artificial Intelligence: Advances and Applications	1	1	1	0	0
 Algorithms for Intelligent Systems,Proceedings of International Conference on Innovations in Information and Communication Technologies	2	1	1	0	0
 Algorithms for Intelligent Systems,Smart Data Intelligence	2	1	1	0	0
+Algorithms for Molecular Biology	1	1	1	0	0
 Alimentary Pharmacology &amp; Therapeutics	2	1	1	0	0
 Alzheimer's & Dementia	1	1	1	0	0
 Alzheimer's & Dementia: Diagnosis, Assessment & Disease Monitoring	1	1	1	0	0

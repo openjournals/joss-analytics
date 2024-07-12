@@ -110,6 +110,7 @@ while (nrow(papers) == i * lim) {
 papers <- papers %>%
     dplyr::filter(type == "journal-article") 
 dim(papers)
+dim(papers %>% distinct())
 
 ## A few papers don't have DOIs - generate them from the URL
 noaltid <- which(is.na(papers$alternative.id))
@@ -126,6 +127,8 @@ papers$alternative.id[noaltid] <- gsub("http://dx.doi.org/", "",
 ## Remove one duplicated paper
 papers <- papers %>% dplyr::filter(alternative.id != "10.21105/joss.00688")
 dim(papers)
+dim(papers %>% distinct())
+papers$alternative.id[duplicated(papers$alternative.id)]
 
 source_track <- c(source_track, 
                   structure(rep("crossref", ncol(papers)), 
@@ -174,6 +177,8 @@ papers <- papers %>% dplyr::left_join(
                       openalex_id = id),
     by = "alternative.id"
 )
+dim(papers)
+dim(papers %>% distinct())
 
 source_track <- c(source_track, 
                   structure(rep("OpenAlex", length(setdiff(colnames(papers),

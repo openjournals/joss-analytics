@@ -354,7 +354,7 @@ sum(is_github)
 software_urls[!is_github]
 ```
 
-```{r get-software-repos, class.source = 'fold-show', message = FALSE, warning = FALSE}
+```{r get-software-repos, class.source = 'fold-show', message = FALSE, results = 'hide', warning = FALSE}
 df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
     u0 <- gsub("^http://", "https://", gsub("\\.git$", "", gsub("/$", "", u)))
     if (grepl("/tree/", u0)) {
@@ -437,6 +437,9 @@ df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
                   repo_pushed = as.Date(repo_pushed)) %>%
     dplyr::distinct() %>%
     dplyr::mutate(repo_info_obtained = lubridate::today())
+```
+
+```{r get-software-repos-print, class.source = 'fold-show', message = FALSE, warning = FALSE}
 if (length(unique(df$repo_url)) != length(df$repo_url)) {
     print(length(unique(df$repo_url)))
     print(length(df$repo_url))
@@ -451,6 +454,8 @@ dfarchive <- papers_archive %>%
     dplyr::select(colnames(df)[colnames(df) %in% colnames(papers_archive)]) %>%
     dplyr::filter(!(repo_url %in% df$repo_url))
 df <- dplyr::bind_rows(df, dfarchive)
+stopifnot(length(unique(df$repo_url)) == length(df$repo_url))
+dim(df)
 
 papers <- papers %>% dplyr::left_join(df, by = "repo_url")
 dim(papers)
@@ -478,6 +483,9 @@ papers <- papers %>% dplyr::select(-reference, -license, -link) %>%
                                               each = 2), c("H1", "H2")))
     ) %>% dplyr::mutate(nbr_authors = vapply(author, function(a) nrow(a), NA_integer_))
 dim(papers)
+dupidx <- which(papers$alternative.id %in% papers$alternative.id[duplicated(papers)])
+papers[dupidx, ] %>% arrange(alternative.id) %>% head(n = 10)
+
 papers <- papers %>% dplyr::distinct()
 dim(papers)
 

@@ -221,9 +221,14 @@ whedon <- do.call(dplyr::bind_rows, lapply(whedon, function(w) {
                languages = gsub(", ", ",", w$languages),
                archive_doi = w$software_archive)
 }))
+dim(whedon)
+dim(whedon %>% distinct())
+whedon$repo_url[duplicated(whedon$repo_url)]
 
 papers <- papers %>% dplyr::left_join(whedon, by = c("alternative.id" = "doi"))
 dim(papers)
+dim(papers %>% distinct())
+papers$repo_url[duplicated(papers$repo_url)]
 
 source_track <- c(source_track, 
                   structure(rep("whedon", length(setdiff(colnames(papers),
@@ -326,6 +331,7 @@ papers <- papers %>% dplyr::left_join(issrev, by = "alternative.id") %>%
                   days_in_rev = review_closed - review_opened,
                   to_review = !is.na(review_opened))
 dim(papers)
+dim(papers %>% distinct())
 
 source_track <- c(source_track, 
                   structure(rep("joss-github", length(setdiff(colnames(papers),
@@ -341,13 +347,14 @@ source_track <- c(source_track,
 tmporder <- order(match(papers$alternative.id, papers_archive$alternative.id),
                   na.last = FALSE)
 software_urls <- papers$repo_url[tmporder]
+software_urls[duplicated(software_urls)]
 is_github <- grepl("github", software_urls)
 length(is_github)
 sum(is_github)
 software_urls[!is_github]
 ```
 
-```{r get-software-repos, class.source = 'fold-show', message = FALSE, results = 'hide', warning = FALSE}
+```{r get-software-repos, class.source = 'fold-show', message = FALSE, warning = FALSE}
 df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
     u0 <- gsub("^http://", "https://", gsub("\\.git$", "", gsub("/$", "", u)))
     if (grepl("/tree/", u0)) {

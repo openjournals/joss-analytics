@@ -452,7 +452,11 @@ dim(df)
 ## from the GitHub API query), use information from the archived data frame
 dfarchive <- papers_archive %>% 
     dplyr::select(colnames(df)[colnames(df) %in% colnames(papers_archive)]) %>%
-    dplyr::filter(!(repo_url %in% df$repo_url))
+    dplyr::filter(!(repo_url %in% df$repo_url)) %>%
+    dplyr::arrange(desc(repo_info_obtained)) %>%
+    dplyr::filter(!duplicated(repo_url))
+head(dfarchive)
+dim(dfarchive)
 df <- dplyr::bind_rows(df, dfarchive)
 stopifnot(length(unique(df$repo_url)) == length(df$repo_url))
 dim(df)

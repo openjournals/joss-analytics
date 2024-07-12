@@ -5,7 +5,6 @@ output:
   html_document:
     code_folding: hide
     theme: united
-    highlight: tango
     toc: true
     toc_float: true
 editor_options: 
@@ -18,7 +17,9 @@ knitr::opts_chunk$set(echo = TRUE, dev = c("png", "pdf"))
 
 # Introduction
 
-In this report, we extract information about published JOSS papers and generate  graphics as well as a summary table that can be downloaded and used for further analyses. 
+In this report, we extract information about published JOSS papers and generate  
+graphics as well as a summary table that can be downloaded and used for further 
+analyses. 
 
 # Load required R packages
 
@@ -91,31 +92,31 @@ citations_archive <- readr::read_delim(
 
 ## Pull down paper info from Crossref and citation information from OpenAlex
 
-We get the information about published JOSS papers from Crossref, using the `rcrossref` R package. The `openalexR` R package is used to extract citation counts from OpenAlex.
+We get the information about published JOSS papers from Crossref, using the 
+`rcrossref` R package. The `openalexR` R package is used to extract citation 
+counts from OpenAlex.
 
 ```{r pull-crossref, class.source = 'fold-show'}
-## Fetch JOSS papers from Crossref
-## Only 1000 papers at the time can be pulled down
-lim <- 1000
-papers <- rcrossref::cr_works(filter = c(issn = "2475-9066"), 
-                              limit = lim)$data
-i <- 1
-while (nrow(papers) == i * lim) {
-    papers <- dplyr::bind_rows(
-        papers, 
-        rcrossref::cr_works(filter = c(issn = "2475-9066"), 
-                            limit = lim, offset = i * lim)$data)
-    i <- i + 1
-}
+## First check how many records there are in Crossref
+issn <- "2475-9066"
+joss_details <- rcrossref::cr_journals(issn, works = FALSE) %>%
+    pluck("data")
+joss_details$total_dois
+
+## Pull down all records from Crossref
+papers <- rcrossref::cr_journals(issn, works = TRUE, cursor = "*",
+    cursor_max = joss_details$total_dois) %>%
+    pluck("data")
+
+## Only keep articles
 papers <- papers %>%
     dplyr::filter(type == "journal-article") 
 dim(papers)
 dim(papers %>% distinct())
 
-## A few papers don't have DOIs - generate them from the URL
+## A few papers don't have alternative.ids - generate them from the DOI
 noaltid <- which(is.na(papers$alternative.id))
-papers$alternative.id[noaltid] <- gsub("http://dx.doi.org/", "",
-                                       papers$url[noaltid])
+papers$alternative.id[noaltid] <- papers$doi[noaltid]
 
 ## Get citation info from Crossref and merge with paper details
 # cit <- rcrossref::cr_citation_count(doi = papers$alternative.id)
@@ -168,6 +169,8 @@ oa <- oa_fetch(entity = "works",
                primary_location.source.id = "s4210214273") |>
     mutate(affil_countries_all = vapply(author, .get_countries, "", wh = "all"),
            affil_countries_first = vapply(author, .get_countries, "", wh = "first"))
+dim(oa)
+length(unique(oa$doi))
 
 papers <- papers %>% dplyr::left_join(
     oa %>% dplyr::mutate(alternative.id = sub("https://doi.org/", "", doi)) %>%
@@ -188,7 +191,8 @@ source_track <- c(source_track,
 
 ## Pull down info from Whedon API
 
-For each published paper, we use the Whedon API to get information about pre-review and review issue numbers, corresponding software repository etc.
+For each published paper, we use the Whedon API to get information about
+pre-review and review issue numbers, corresponding software repository etc.
 
 ```{r pull-whedon, class.source = 'fold-show'}
 whedon <- list()
@@ -243,7 +247,8 @@ source_track <- c(source_track,
 
 ## Combine with info from GitHub issues
 
-From each pre-review and review issue, we extract information about review times and assigned labels. 
+From each pre-review and review issue, we extract information about review 
+times and assigned labels. 
 
 ```{r pull-github, class.source = 'fold-show', message = FALSE}
 ## Pull down info on all issues in the joss-reviews repository
@@ -506,7 +511,11 @@ source_track <- c(source_track,
 
 # Tabulate number of missing values
 
-In some cases, fetching information from (e.g.) the GitHub API fails for a subset of the publications. There are also other reasons for missing values (for example, the earliest submissions do not have an associated pre-review issue). The table below lists the number of missing values for each of the variables in the data frame.
+In some cases, fetching information from (e.g.) the GitHub API fails for a 
+subset of the publications. There are also other reasons for missing values 
+(for example, the earliest submissions do not have an associated pre-review 
+issue). The table below lists the number of missing values for each of the 
+variables in the data frame.
 
 ```{r nbr-missing, class.source = 'fold-hide'}
 DT::datatable(
@@ -519,14 +528,14 @@ DT::datatable(
 )
 ```
 
-
-# Number of published papers per month and year
+# Number of published papers per month
 
 ```{r papers-month, class.source = 'fold-hide', fig.width = 10, message = FALSE}
-ggplot(papers %>% 
-           dplyr::mutate(pubmonth = lubridate::floor_date(published.date, "month")) %>%
-           dplyr::group_by(pubmonth) %>%
-           dplyr::summarize(npub = n()), 
+mothly_pubs <- papers %>% 
+    dplyr::mutate(pubmonth = lubridate::floor_date(published.date, "month")) %>%
+    dplyr::group_by(pubmonth) %>%
+    dplyr::summarize(npub = n())
+ggplot(monthly_pubs, 
        aes(x = factor(pubmonth), y = npub)) + 
     geom_bar(stat = "identity") + theme_minimal() + 
     labs(x = "", y = "Number of published papers per month", caption = dcap) + 
@@ -534,17 +543,44 @@ ggplot(papers %>%
           axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
 ```
 
+```{r}
+DT::datatable(
+    monthly_pubs %>% 
+        dplyr::rename("Number of papers" = "npub",
+                      "Month of publications" = "pubmonth"),
+    escape = FALSE, rownames = FALSE, 
+    filter = list(position = 'top', clear = FALSE),
+    options = list(scrollX = TRUE)
+)
+```
+
+# Number of published papers per year
+
 ```{r papers-year, class.source = 'fold-hide', fig.width = 8, message = FALSE}
-ggplot(papers %>% 
-           dplyr::mutate(pubyear = lubridate::year(published.date)) %>%
-           dplyr::group_by(pubyear) %>%
-           dplyr::summarize(npub = n()), 
+yearly_pubs <- papers %>% 
+    dplyr::mutate(pubyear = lubridate::year(published.date)) %>%
+    dplyr::group_by(pubyear) %>%
+    dplyr::summarize(npub = n())
+ggplot(yearly_pubs, 
        aes(x = factor(pubyear), y = npub)) + 
     geom_bar(stat = "identity") + theme_minimal() + 
     labs(x = "", y = "Number of published papers per year", caption = dcap) + 
     theme(axis.title = element_text(size = 15),
           axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
 ```
+
+```{r}
+DT::datatable(
+    yearly_pubs %>% 
+        dplyr::rename("Number of papers" = "npub",
+                      "Year of publications" = "pubyear"),
+    escape = FALSE, rownames = FALSE, 
+    filter = list(position = 'top', clear = FALSE),
+    options = list(scrollX = TRUE)
+)
+```
+
+# Fraction rejected papers
 
 The plots below illustrate the fraction of pre-review and review issues closed 
 during each month that have the 'rejected' label attached. 
@@ -582,7 +618,8 @@ ggplot(papers %>%
 
 # Most cited papers
 
-The table below sorts the JOSS papers in decreasing order by the number of citations in OpenAlex.
+The table below sorts the JOSS papers in decreasing order by the number of 
+citations in OpenAlex.
 
 ```{r most-cited, class.source = 'fold-hide'}
 DT::datatable(
@@ -612,7 +649,8 @@ plotly::ggplotly(
 
 # Power law of citation count within each half year
 
-Here, we plot the citation count for all papers published within each half year, sorted in decreasing order. 
+Here, we plot the citation count for all papers published within each half year, 
+sorted in decreasing order. 
 
 ```{r power-law-citations, class.source = 'fold-hide', fig.width = 10, fig.height = 10}
 ggplot(papers %>% dplyr::group_by(halfyear) %>% 
@@ -628,7 +666,9 @@ ggplot(papers %>% dplyr::group_by(halfyear) %>%
 
 # Pre-review/review time over time
 
-In these plots we investigate whether the time a submission spends in the pre-review or review stage (or their sum) has changed over time. The blue curve corresponds to a rolling median for submissions over 120 days. 
+In these plots we investigate whether the time a submission spends in the 
+pre-review or review stage (or their sum) has changed over time. The blue curve 
+corresponds to a rolling median for submissions over 120 days. 
 
 ```{r smoothing-helpers, class.source = 'fold-hide'}
 ## Helper functions (modified from https://stackoverflow.com/questions/65147186/geom-smooth-with-median-instead-of-mean)
@@ -687,7 +727,10 @@ ggplot(papers, aes(x = prerev_opened,
 
 # Languages
 
-Next, we consider the languages used by the submissions, both as reported by Whedon and based on the information encoded in available GitHub repositories (for the latter, we also record the number of bytes of code written in each language). Note that a given submission can use multiple languages. 
+Next, we consider the languages used by the submissions, both as reported by 
+Whedon and based on the information encoded in available GitHub repositories 
+(for the latter, we also record the number of bytes of code written in each 
+language). Note that a given submission can use multiple languages. 
 
 ```{r languages, class.source = 'fold-hide', fig.width = 9, message = FALSE}
 ## Language information from Whedon
@@ -784,7 +827,8 @@ ggplot(papers, aes(x = as.numeric(repo_pushed - review_closed))) +
 
 # Number of authors per paper
 
-List the papers with the largest number of authors, and display the distribution of the number of authors per paper, for papers with at most 20 authors.
+List the papers with the largest number of authors, and display the distribution 
+of the number of authors per paper, for papers with at most 20 authors.
 
 ```{r nbr-authors-top, class.source = 'fold-show'}
 ## Papers with largest number of authors
@@ -848,7 +892,8 @@ plotly::ggplotly(
 
 # Number of reviewers per paper
 
-Submissions associated with rOpenSci and pyOpenSci are not considered here, since they are not explicitly reviewed at JOSS. 
+Submissions associated with rOpenSci and pyOpenSci are not considered here, 
+since they are not explicitly reviewed at JOSS. 
 
 ```{r nbr-reviewers, class.source = 'fold-hide', message = FALSE, fig.width = 8, fig.height = 8}
 ggplot(papers %>%
@@ -861,7 +906,8 @@ ggplot(papers %>%
 
 # Most active reviewers
 
-Submissions associated with rOpenSci and pyOpenSci are not considered here, since they are not explicitly reviewed at JOSS. 
+Submissions associated with rOpenSci and pyOpenSci are not considered here, 
+since they are not explicitly reviewed at JOSS. 
 
 ```{r most-reviewers, class.source = 'fold-hide', message = FALSE}
 reviewers <- papers %>% 
@@ -998,7 +1044,8 @@ DT::datatable(as.data.frame(topicfreq) %>%
 
 # Citation analysis
 
-Here, we take a more detailed look at the papers that cite JOSS papers, using data from the Open Citations Corpus.
+Here, we take a more detailed look at the papers that cite JOSS papers, using 
+data from the Open Citations Corpus.
 
 ## Get citing papers for each submission
 
@@ -1169,14 +1216,16 @@ write.table(topcit, file = "joss_submission_citations_byjournal.tsv",
 
 # Save object
 
-The tibble object with all data collected above is serialized to a file that can be downloaded and reused.
+The tibble object with all data collected above is serialized to a file that 
+can be downloaded and reused.
 
 ```{r save-data}
 head(papers) %>% as.data.frame()
 saveRDS(papers, file = "joss_submission_analytics.rds")
 ```
 
-To read the current version of this file directly from GitHub, use the following code:
+To read the current version of this file directly from GitHub, use the 
+following code:
 
 ```{r, class.source = 'fold-show', eval = FALSE}
 papers <- readRDS(gzcon(url("https://github.com/openjournals/joss-analytics/blob/gh-pages/joss_submission_analytics.rds?raw=true")))

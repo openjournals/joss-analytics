@@ -449,7 +449,7 @@ df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
     dplyr::mutate(repo_info_obtained = lubridate::today())
 ```
 
-```{r get-software-repos-print, class.source = 'fold-show', message = FALSE, warning = FALSE}
+```{r get-software-repos-print1, class.source = 'fold-show', message = FALSE, warning = FALSE}
 if (length(unique(df$repo_url)) != length(df$repo_url)) {
     print(length(unique(df$repo_url)))
     print(length(df$repo_url))
@@ -457,7 +457,9 @@ if (length(unique(df$repo_url)) != length(df$repo_url)) {
 }
 stopifnot(length(unique(df$repo_url)) == length(df$repo_url))
 dim(df)
+```
 
+```{r get-software-repos-print2, class.source = 'fold-show', message = FALSE, warning = FALSE}
 ## For papers not in df (i.e., for which we didn't get a valid response
 ## from the GitHub API query), use information from the archived data frame
 dfarchive <- papers_archive %>% 

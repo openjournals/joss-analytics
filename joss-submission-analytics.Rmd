@@ -105,7 +105,7 @@ joss_details$total_dois
 
 ## Pull down all records from Crossref
 papers <- rcrossref::cr_journals(issn, works = TRUE, cursor = "*",
-    cursor_max = joss_details$total_dois) %>%
+    cursor_max = joss_details$total_dois * 2) %>%
     pluck("data")
 
 ## Only keep articles

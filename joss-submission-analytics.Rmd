@@ -365,7 +365,7 @@ software_urls[!is_github]
 ```
 
 ```{r get-software-repos, class.source = 'fold-show', message = FALSE, results = 'hide', warning = FALSE}
-df <- do.call(dplyr::bind_rows, lapply(software_urls[is_github], function(u) {
+df <- do.call(dplyr::bind_rows, lapply(unique(software_urls[is_github]), function(u) {
     u0 <- gsub("^http://", "https://", gsub("\\.git$", "", gsub("/$", "", u)))
     if (grepl("/tree/", u0)) {
         u0 <- strsplit(u0, "/tree/")[[1]][1]

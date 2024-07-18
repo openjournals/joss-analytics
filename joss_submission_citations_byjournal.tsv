@@ -7,7 +7,7 @@ Monthly Notices of the Royal Astronomical Society	2045	129	1052	181	0.0885
 Nature Communications	913	116	500	36	0.0394
 The Astrophysical Journal	1948	113	971	323	0.166
 PLOS ONE	688	99	374	27	0.0392
-IEEE Access	271	82	142	25	0.0923
+IEEE Access	273	82	144	26	0.0952
 Astronomy &amp; Astrophysics	755	81	517	51	0.0675
 Applied Sciences	245	77	141	11	0.0449
 SSRN Electronic Journal	214	75	152	1	0.00467
@@ -21,9 +21,9 @@ eLife	331	55	177	27	0.0816
 Bioinformatics	202	54	104	10	0.0495
 Nature	268	54	142	12	0.0448
 Physical Review D	560	54	304	70	0.125
-SoftwareX	121	53	63	3	0.0248
+SoftwareX	122	54	64	3	0.0246
 Sustainability	173	52	106	6	0.0347
-Science of The Total Environment	295	50	179	2	0.00678
+Science of The Total Environment	296	51	180	2	0.00676
 Astronomy & Astrophysics	241	48	219	14	0.0581
 The Astronomical Journal	667	48	333	85	0.127
 The Astrophysical Journal Letters	294	48	149	57	0.194
@@ -254,6 +254,7 @@ Global Ecology and Conservation	48	12	26	0	0
 IOP Conference Series: Earth and Environmental Science	23	12	11	0	0
 Journal of Biomedical Informatics	25	12	16	0	0
 Journal of Environmental Management	35	12	22	0	0
+Knowledge-Based Systems	22	12	14	0	0
 Microbiology Resource Announcements	41	12	25	0	0
 Nature Climate Change	22	12	13	0	0
 Psychological Research	37	12	16	1	0.027
@@ -277,7 +278,6 @@ International Journal for Numerical Methods in Engineering	20	11	11	5	0.25
 Journal of Applied Physics	32	11	19	6	0.188
 Journal of Biomechanics	27	11	16	3	0.111
 Journal of Dairy Science	64	11	37	0	0
-Knowledge-Based Systems	21	11	13	0	0
 Land	43	11	26	3	0.0698
 Nature Microbiology	26	11	15	0	0
 Nature Neuroscience	49	11	26	3	0.0612
@@ -549,6 +549,7 @@ Current Zoology	15	7	9	0	0
 Earth and Space Science	13	7	8	4	0.308
 Ecological Solutions and Evidence	23	7	10	0	0
 Energy &amp; Environmental Science	11	7	7	0	0
+Environmental Earth Sciences	11	7	8	0	0
 Environmental Microbiology	30	7	16	0	0
 Environmental Science: Water Research &amp; Technology	17	7	7	0	0
 Epilepsia	15	7	9	0	0
@@ -681,7 +682,6 @@ E3S Web of Conferences	16	6	10	0	0
 Energy Informatics	14	6	5	0	0
 Energy Research &amp; Social Science	9	6	7	1	0.111
 Engineering Structures	9	6	7	0	0
-Environmental Earth Sciences	10	6	7	0	0
 Environmental Microbiome	8	6	6	0	0
 Ethology	16	6	11	0	0
 European Journal of Applied Physiology	12	6	5	0	0
@@ -2108,6 +2108,7 @@ xxAI - Beyond Explainable AI,Lecture Notes in Computer Science	6	3	2	4	0.667
 2022 35th SIBGRAPI Conference on Graphics, Patterns and Images (SIBGRAPI)	2	2	2	0	0
 2022 3rd URSI Atlantic and Asia Pacific Radio Science Meeting (AT-AP-RASC)	4	2	2	0	0
 2022 5th International Conference on Mathematics and Statistics	4	2	2	0	0
+2022 8th Iranian Conference on Signal Processing and Intelligent Systems (ICSPIS)	2	2	2	0	0
 2022 ACM Conference on Fairness, Accountability, and Transparency	4	2	2	0	0
 2022 E-Health and Bioengineering Conference (EHB)	2	2	2	0	0
 2022 First International Workshop on Visualization in Testing of Hardware, Software, and Manufacturing (TestVis)	2	2	2	0	0
@@ -3968,7 +3969,6 @@ tm - Technisches Messen	2	2	2	0	0
 2022 6th International Conference on Information Technology, Information Systems and Electrical Engineering (ICITISEE)	1	1	1	0	0
 2022 6th International Conference on Intelligent Systems, Metaheuristics &amp; Swarm Intelligence	1	1	1	0	0
 2022 7th International Conference on Intelligent Computing and Signal Processing (ICSP)	2	1	1	0	0
-2022 8th Iranian Conference on Signal Processing and Intelligent Systems (ICSPIS)	1	1	1	0	0
 2022 9th IEEE RAS/EMBS International Conference for Biomedical Robotics and Biomechatronics (BioRob)	2	1	1	0	0
 2022 9th International Conference on Electrical Engineering, Computer Science and Informatics (EECSI)	2	1	1	0	0
 2022 9th Swiss Conference on Data Science (SDS)	2	1	1	0	0
@@ -4131,6 +4131,7 @@ tm - Technisches Messen	2	2	2	0	0
 2023 7th International Multi-Topic ICT Conference (IMTIC)	1	1	1	0	0
 2023 7th Network Traffic Measurement and Analysis Conference (TMA)	1	1	1	0	0
 2023 8th International Conference on Technology and Energy Management (ICTEM)	1	1	1	0	0
+2023 Eleventh International Symposium on Computing and Networking Workshops (CANDARW)	1	1	1	0	0
 2023 European Control Conference (ECC)	1	1	1	0	0
 2023 IEEE 13th International Conference on Control System, Computing and Engineering (ICCSCE)	1	1	1	0	0
 2023 IEEE 16th Pacific Visualization Symposium (PacificVis)	1	1	1	0	0
@@ -4138,6 +4139,7 @@ tm - Technisches Messen	2	2	2	0	0
 2023 IEEE 17th International Conference on Semantic Computing (ICSC)	1	1	1	0	0
 2023 IEEE 19th International Conference on Automation Science and Engineering (CASE)	1	1	1	0	0
 2023 IEEE 19th International Conference on e-Science (e-Science)	1	1	1	0	0
+2023 IEEE 23rd International Symposium on Computational Intelligence and Informatics (CINTI)	1	1	1	0	0
 2023 IEEE 24th International Conference of Young Professionals in Electron Devices and Materials (EDM)	1	1	1	0	0
 2023 IEEE 36th International Symposium on Computer-Based Medical Systems (CBMS)	1	1	1	0	0
 2023 IEEE 39th International Conference on Data Engineering (ICDE)	1	1	1	0	0
@@ -5792,6 +5794,7 @@ IEEE Transactions on Computational Imaging	2	1	1	0	0
 IEEE Transactions on Computational Social Systems	2	1	1	2	1
 IEEE Transactions on Control Systems Technology	1	1	1	0	0
 IEEE Transactions on Dielectrics and Electrical Insulation	2	1	1	0	0
+IEEE Transactions on Emerging Topics in Computational Intelligence	1	1	1	0	0
 IEEE Transactions on Engineering Management	3	1	2	0	0
 IEEE Transactions on Human-Machine Systems	1	1	1	0	0
 IEEE Transactions on Image Processing	2	1	1	0	0
@@ -6230,7 +6233,7 @@ Journal of Dynamic Behavior of Materials	1	1	1	0	0
 Journal of Dynamic Systems, Measurement, and Control	2	1	1	0	0
 Journal of East Asian Studies	2	1	1	0	0
 Journal of Ecohydraulics	2	1	1	2	1
-Journal of Economic Dynamics and Control	1	1	1	0	0
+Journal of Economic Dynamics and Control	2	1	2	0	0
 Journal of Economic Geography	1	1	1	0	0
 Journal of Education and Health Promotion	2	1	1	0	0
 Journal of Education for Sustainable Development	2	1	1	0	0

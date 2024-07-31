@@ -4,12 +4,12 @@ The Journal of Open Source Software	1019	334	432	300	0.294
 NA	817	173	609	24	0.0294
 Scientific Reports	1261	162	721	10	0.00793
 Monthly Notices of the Royal Astronomical Society	2120	137	1115	184	0.0868
-The Astrophysical Journal	2128	129	1118	336	0.158
+The Astrophysical Journal	2129	130	1119	336	0.158
 Nature Communications	958	123	542	36	0.0376
 PLOS ONE	709	107	395	28	0.0395
 IEEE Access	290	88	160	27	0.0931
 Astronomy &amp; Astrophysics	809	87	558	52	0.0643
-Applied Sciences	257	79	152	11	0.0428
+Applied Sciences	258	79	153	11	0.0426
 SSRN Electronic Journal	216	77	154	1	0.00463
 Sensors	300	68	173	6	0.02
 PLOS Computational Biology	222	63	123	21	0.0946
@@ -50,7 +50,7 @@ Behavior Research Methods	92	32	53	3	0.0326
 International Journal of Environmental Research and Public Health	184	31	97	6	0.0326
 Water Resources Research	103	31	60	16	0.155
 Environmental Science &amp; Technology	84	30	64	3	0.0357
-Expert Systems with Applications	83	30	48	2	0.0241
+Expert Systems with Applications	84	30	49	2	0.0238
 Frontiers in Genetics	147	30	78	1	0.0068
 Frontiers in Marine Science	196	30	110	1	0.0051
 Methods in Ecology and Evolution	72	30	39	6	0.0833
@@ -797,6 +797,7 @@ International Journal of Machine Learning and Cybernetics	11	6	6	0	0
 International Journal of Primatology	15	6	10	0	0
 International Journal of Social Robotics	7	6	5	0	0
 Inverse Problems	10	6	7	0	0
+JMIR Mental Health	10	6	6	0	0
 JMIR Public Health and Surveillance	20	6	11	0	0
 Joule	11	6	6	0	0
 Journal of Allergy and Clinical Immunology	17	6	10	0	0
@@ -980,6 +981,7 @@ IEEE Transactions on Plasma Science	7	5	3	0	0
 IEEE Transactions on Smart Grid	8	5	5	0	0
 Ibis	20	5	13	0	0
 Informatics in Medicine Unlocked	10	5	4	0	0
+Information and Software Technology	8	5	5	2	0.25
 Insect Conservation and Diversity	15	5	8	0	0
 Insect Science	9	5	5	0	0
 Integrating Materials and Manufacturing Innovation	8	5	6	0	0
@@ -994,7 +996,6 @@ International Journal of Wildland Fire	8	5	5	0	0
 Internet Interventions	8	5	5	0	0
 JACS Au	7	5	5	0	0
 JASA Express Letters	11	5	6	0	0
-JMIR Mental Health	9	5	5	0	0
 Journal for ImmunoTherapy of Cancer	22	5	14	0	0
 Journal for Nature Conservation	11	5	6	0	0
 Journal of Agricultural, Biological and Environmental Statistics	8	5	5	0	0
@@ -1326,7 +1327,6 @@ Infection Control &amp; Hospital Epidemiology	4	4	4	0	0
 Infection and Immunity	12	4	6	0	0
 Informatics	6	4	4	0	0
 Information Processing & Management	6	4	5	0	0
-Information and Software Technology	7	4	4	2	0.286
 Integrated Environmental Assessment and Management	11	4	6	0	0
 Integrative And Comparative Biology	5	4	4	0	0
 Integrative Organismal Biology	8	4	3	0	0
@@ -1941,6 +1941,7 @@ Journal of Infection and Public Health	4	3	3	0	0
 Journal of Information Technology &amp; Politics	8	3	6	0	0
 Journal of Insect Physiology	5	3	2	0	0
 Journal of Intelligent Information Systems	6	3	2	2	0.333
+Journal of King Saud University - Computer and Information Sciences	4	3	3	0	0
 Journal of Machine Learning for Modeling and Computing	5	3	2	0	0
 Journal of Mammalian Evolution	7	3	4	0	0
 Journal of Manufacturing Science and Engineering	5	3	3	0	0
@@ -2323,6 +2324,7 @@ xxAI - Beyond Explainable AI,Lecture Notes in Computer Science	6	3	2	4	0.667
 2023 ASEE Annual Conference &amp; Exposition Proceedings	2	2	2	0	0
 2023 Design, Automation &amp; Test in Europe Conference &amp; Exhibition (DATE)	2	2	2	0	0
 2023 European Control Conference (ECC)	2	2	2	0	0
+2023 IEEE 15th International Conference on Computational Intelligence and Communication Networks (CICN)	2	2	2	0	0
 2023 IEEE Conference on Control Technology and Applications (CCTA)	2	2	2	0	0
 2023 IEEE Conference on Software Testing, Verification and Validation (ICST)	2	2	2	0	0
 2023 IEEE Congress on Evolutionary Computation (CEC)	2	2	1	0	0
@@ -3143,7 +3145,6 @@ Journal of Intelligent Transportation Systems	3	2	2	0	0
 Journal of Interactive Advertising	4	2	2	0	0
 Journal of Invertebrate Pathology	2	2	2	0	0
 Journal of Investigative Dermatology	11	2	7	0	0
-Journal of King Saud University - Computer and Information Sciences	3	2	2	0	0
 Journal of Laboratory Medicine	2	2	2	0	0
 Journal of Language Evolution	4	2	2	0	0
 Journal of Leisure Research	2	2	1	0	0
@@ -4380,6 +4381,7 @@ tm - Technisches Messen	2	2	2	0	0
 2023 12th International Conference on Renewable Energy Research and Applications (ICRERA)	1	1	1	0	0
 2023 13th International Conference on Dependable Systems, Services and Technologies (DESSERT)	1	1	1	0	0
 2023 13th International Conference on Software Technology and Engineering (ICSTE)	1	1	1	0	0
+2023 14th International Conference on Intelligent Systems: Theories and Applications (SITA)	1	1	1	0	0
 2023 15th IEEE International Conference on Industry Applications (INDUSCON)	1	1	1	0	0
 2023 16th International Conference on Signal Processing and Communication System (ICSPCS)	1	1	1	0	0
 2023 18th Iberian Conference on Information Systems and Technologies (CISTI)	1	1	1	0	0
@@ -4417,12 +4419,12 @@ tm - Technisches Messen	2	2	2	0	0
 2023 7th International Multi-Topic ICT Conference (IMTIC)	1	1	1	0	0
 2023 7th Network Traffic Measurement and Analysis Conference (TMA)	1	1	1	0	0
 2023 8th International Conference on Technology and Energy Management (ICTEM)	1	1	1	0	0
+2023 ACM/IEEE International Conference on Model Driven Engineering Languages and Systems Companion (MODELS-C)	1	1	1	0	0
 2023 Asia Communications and Photonics Conference/2023 International Photonics and Optoelectronics Meetings (ACP/POEM)	1	1	1	0	0
 2023 Eleventh International Symposium on Computing and Networking (CANDAR)	1	1	1	0	0
 2023 Eleventh International Symposium on Computing and Networking Workshops (CANDARW)	1	1	1	0	0
 2023 First International Conference on Advances in Electrical, Electronics and Computational Intelligence (ICAEECI)	1	1	1	0	0
 2023 IEEE 13th International Conference on Control System, Computing and Engineering (ICCSCE)	1	1	1	0	0
-2023 IEEE 15th International Conference on Computational Intelligence and Communication Networks (CICN)	1	1	1	0	0
 2023 IEEE 16th International Symposium on Embedded Multicore/Many-core Systems-on-Chip (MCSoC)	1	1	1	0	0
 2023 IEEE 16th Pacific Visualization Symposium (PacificVis)	1	1	1	0	0
 2023 IEEE 17th International Conference on Industrial and Information Systems (ICIIS)	1	1	1	0	0
@@ -4561,7 +4563,7 @@ ACM Transactions on Management Information Systems	2	1	1	0	0
 ACM Transactions on Multimedia Computing, Communications, and Applications	1	1	1	0	0
 ACM Transactions on Privacy and Security	1	1	1	0	0
 ACM Transactions on Quantum Computing	2	1	1	0	0
-ACM Transactions on Recommender Systems	1	1	1	0	0
+ACM Transactions on Recommender Systems	2	1	2	0	0
 ACM Transactions on Reconfigurable Technology and Systems	1	1	1	0	0
 ACM Transactions on Sensor Networks	6	1	3	0	0
 ACM Transactions on the Web	1	1	1	0	0
@@ -4702,6 +4704,7 @@ Advances in Information and Communication Technology,Lecture Notes in Networks a
 Advances in Insect Physiology,Environmental Threats to Pollinator Health and Fitness	1	1	1	0	0
 Advances in Intelligent Data Analysis XXI,Lecture Notes in Computer Science	1	1	1	0	0
 Advances in Intelligent Information Hiding and Multimedia Signal Processing,Smart Innovation, Systems and Technologies	2	1	1	0	0
+Advances in Intelligent Manufacturing and Robotics,Lecture Notes in Networks and Systems	1	1	1	0	0
 Advances in Intelligent Networking and Collaborative Systems,Lecture Notes in Networks and Systems	2	1	1	0	0
 Advances in Intelligent Networking and Collaborative Systems,Lecture Notes on Data Engineering and Communications Technologies	1	1	1	0	0
 Advances in Intelligent Systems and Computing,15th International Conference on Soft Computing Models in Industrial and Environmental Applications (SOCO 2020)	2	1	1	0	0
@@ -4993,6 +4996,7 @@ Australian Systematic Botany	1	1	1	0	0
 Automated Deduction – CADE 28,Lecture Notes in Computer Science	2	1	1	0	0
 Automated Software Engineering	2	1	1	0	0
 Automated Technology for Verification and Analysis,Lecture Notes in Computer Science	2	1	1	0	0
+Automatika	1	1	1	0	0
 Autonomic Neuroscience	1	1	1	0	0
 Autonomous Agents and Multi-Agent Systems	2	1	1	0	0
 Avaliação: Revista da Avaliação da Educação Superior (Campinas)	2	1	1	0	0
@@ -6569,6 +6573,7 @@ Journal of Computational Mathematics and Data Science	2	1	1	0	0
 Journal of Computational and Theoretical Transport	1	1	1	0	0
 Journal of Computer Aided Chemistry	2	1	1	0	0
 Journal of Computer Applications in Archaeology	7	1	4	0	0
+Journal of Computer Languages	1	1	1	0	0
 Journal of Computer-Assisted Linguistic Research	2	1	1	0	0
 Journal of Computing in Civil Engineering	2	1	1	0	0
 Journal of Consumer Behaviour	1	1	1	0	0

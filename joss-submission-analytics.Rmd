@@ -189,13 +189,13 @@ source_track <- c(source_track,
                             names = setdiff(colnames(papers), names(source_track))))
 ```
 
-## Pull down info from Whedon API
+## Pull down info from JOSS API
 
-For each published paper, we use the Whedon API to get information about
+For each published paper, we use the JOSS API to get information about
 pre-review and review issue numbers, corresponding software repository etc.
 
-```{r pull-whedon, class.source = 'fold-show'}
-whedon <- list()
+```{r pull-joss-api, class.source = 'fold-show'}
+joss_api <- list()
 p <- 1
 a0 <- NULL
 a <- jsonlite::fromJSON(
@@ -203,7 +203,7 @@ a <- jsonlite::fromJSON(
     simplifyDataFrame = FALSE
 )
 while (length(a) > 0 && !identical(a, a0)) {
-    whedon <- c(whedon, a)
+    joss_api <- c(joss_api, a)
     p <- p + 1
     a0 <- a
     a <- tryCatch({
@@ -215,7 +215,7 @@ while (length(a) > 0 && !identical(a, a0)) {
     )
 }
 
-whedon <- do.call(dplyr::bind_rows, lapply(whedon, function(w) {
+joss_api <- do.call(dplyr::bind_rows, lapply(joss_api, function(w) {
     data.frame(api_title = w$title, 
                api_state = w$state,
                editor = paste(w$editor, collapse = ","),
@@ -230,18 +230,18 @@ whedon <- do.call(dplyr::bind_rows, lapply(whedon, function(w) {
                languages = gsub(", ", ",", w$languages),
                archive_doi = w$software_archive)
 }))
-dim(whedon)
-dim(whedon %>% distinct())
-whedon$repo_url[duplicated(whedon$repo_url)]
+dim(joss_api)
+dim(joss_api %>% distinct())
+joss_api$repo_url[duplicated(joss_api$repo_url)]
 
-papers <- papers %>% dplyr::left_join(whedon, by = c("alternative.id" = "doi"))
+papers <- papers %>% dplyr::left_join(joss_api, by = c("alternative.id" = "doi"))
 dim(papers)
 dim(papers %>% distinct())
 papers$repo_url[duplicated(papers$repo_url)]
 
 source_track <- c(source_track, 
-                  structure(rep("whedon", length(setdiff(colnames(papers),
-                                                         names(source_track)))), 
+                  structure(rep("JOSS_API", length(setdiff(colnames(papers),
+                                                           names(source_track)))), 
                             names = setdiff(colnames(papers), names(source_track))))
 ```
 
@@ -730,17 +730,17 @@ ggplot(papers, aes(x = prerev_opened,
 # Languages
 
 Next, we consider the languages used by the submissions, both as reported by 
-Whedon and based on the information encoded in available GitHub repositories 
+JOSS and based on the information encoded in available GitHub repositories 
 (for the latter, we also record the number of bytes of code written in each 
 language). Note that a given submission can use multiple languages. 
 
 ```{r languages, class.source = 'fold-hide', fig.width = 9, message = FALSE}
-## Language information from Whedon
+## Language information from JOSS
 sspl <- strsplit(papers$languages, ",")
 all_languages <- unique(unlist(sspl))
 langs <- do.call(dplyr::bind_rows, lapply(all_languages, function(l) {
     data.frame(language = l,
-               nbr_submissions_Whedon = sum(vapply(sspl, function(v) l %in% v, 0)))
+               nbr_submissions_JOSS_API = sum(vapply(sspl, function(v) l %in% v, 0)))
 }))
 
 ## Language information from GitHub software repos
@@ -759,10 +759,10 @@ langs <- dplyr::full_join(langs, langbytes, by = "language")
 ```
 
 ```{r language-plot, class.source = 'fold-hide', message = FALSE}
-ggplot(langs %>% dplyr::arrange(desc(nbr_submissions_Whedon)) %>%
-           dplyr::filter(nbr_submissions_Whedon > 10) %>%
+ggplot(langs %>% dplyr::arrange(desc(nbr_submissions_JOSS_API)) %>%
+           dplyr::filter(nbr_submissions_JOSS_API > 10) %>%
            dplyr::mutate(language = factor(language, levels = language)),
-       aes(x = language, y = nbr_submissions_Whedon)) + 
+       aes(x = language, y = nbr_submissions_JOSS_API)) + 
     geom_bar(stat = "identity") + 
     theme_bw() + 
     theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) + 

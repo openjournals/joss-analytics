@@ -141,19 +141,19 @@ source_track <- c(source_track,
 ## Helper function to extract countries from affiliations. Note that this 
 ## information is not available for all papers.
 .get_countries <- function(df, wh = "first") {
-    if (length(df) == 1 && is.na(df)) {
+    if ((length(df) == 1 && is.na(df)) || is.null(df$affiliations)) {
         ""
     } else {
         if (wh == "first") {
             ## Only first affiliation for each author
-            tmp <- df |> 
-                dplyr::filter(!duplicated(au_id) & !is.na(institution_country_code)) |>
-                pull(institution_country_code)
+            tmp <- unnest(df, cols = c(affiliations), names_sep = "_") |> 
+                dplyr::filter(!duplicated(id) & !is.na(affiliations_country_code)) |>
+                pull(affiliations_country_code)
         } else {
             ## All affiliations
-            tmp <- df |> 
-                dplyr::filter(!is.na(institution_country_code)) |>
-                pull(institution_country_code)
+            tmp <- unnest(df, cols = c(affiliations), names_sep = "_") |> 
+                dplyr::filter(!is.na(affiliations_country_code)) |>
+                pull(affiliations_country_code)
         }
         if (length(tmp) > 0) {
             tmp |>
@@ -167,8 +167,8 @@ source_track <- c(source_track,
 
 oa <- oa_fetch(entity = "works", 
                primary_location.source.id = "s4210214273") |>
-    mutate(affil_countries_all = vapply(author, .get_countries, "", wh = "all"),
-           affil_countries_first = vapply(author, .get_countries, "", wh = "first"))
+    mutate(affil_countries_all = vapply(authorships, .get_countries, "", wh = "all"),
+           affil_countries_first = vapply(authorships, .get_countries, "", wh = "first"))
 dim(oa)
 length(unique(oa$doi))
 

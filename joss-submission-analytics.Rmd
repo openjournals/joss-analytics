@@ -101,7 +101,7 @@ counts from OpenAlex.
 issn <- "2475-9066"
 joss_details <- rcrossref::cr_journals(issn, works = FALSE) %>%
     pluck("data")
-joss_details$total_dois
+(total_dois <- joss_details$total_dois)
 
 ## Pull down all records from Crossref
 papers <- rcrossref::cr_journals(issn, works = TRUE, cursor = "*",
@@ -113,6 +113,11 @@ papers <- papers %>%
     dplyr::filter(type == "journal-article") 
 dim(papers)
 dim(papers %>% distinct())
+
+## Check that all papers were pulled down and stop otherwise
+if (!(nrow(papers %>% distinct()) >= total_dois)) {
+    stop("Not all papers were pulled down from Crossref!")
+}
 
 ## A few papers don't have alternative.ids - generate them from the DOI
 noaltid <- which(is.na(papers$alternative.id))
@@ -232,6 +237,10 @@ joss_api <- do.call(dplyr::bind_rows, lapply(joss_api, function(w) {
 }))
 dim(joss_api)
 dim(joss_api %>% distinct())
+## Check that all papers were pulled down and stop otherwise
+if (!(nrow(joss_api %>% distinct()) >= total_dois)) {
+    stop("Not all papers were pulled down from the JOSS API!")
+}
 joss_api$repo_url[duplicated(joss_api$repo_url)]
 
 papers <- papers %>% dplyr::left_join(joss_api, by = c("alternative.id" = "doi"))
@@ -911,10 +920,58 @@ ggplot(papers %>%
 Submissions associated with rOpenSci and pyOpenSci are not considered here, 
 since they are not explicitly reviewed at JOSS. 
 
+## All time
+
 ```{r most-reviewers, class.source = 'fold-hide', message = FALSE}
 reviewers <- papers %>% 
     dplyr::filter(!grepl("rOpenSci|pyOpenSci", prerev_labels)) %>%
     dplyr::mutate(year = year(published.date)) %>%
+    dplyr::select(reviewers, year) %>%
+    tidyr::separate_rows(reviewers, sep = ",")
+
+## Most active reviewers
+DT::datatable(
+    reviewers %>% dplyr::group_by(reviewers) %>%
+        dplyr::summarize(nbr_reviews = length(year),
+                         timespan = paste(unique(c(min(year), max(year))), 
+                                          collapse = " - ")) %>%
+        dplyr::arrange(desc(nbr_reviews)),
+    escape = FALSE, rownames = FALSE, 
+    filter = list(position = 'top', clear = FALSE),
+    options = list(scrollX = TRUE)
+)
+```
+
+## Past 5 years
+
+```{r most-reviewers-past-5years, class.source = 'fold-hide', message = FALSE}
+reviewers <- papers %>% 
+    dplyr::filter(!grepl("rOpenSci|pyOpenSci", prerev_labels)) %>%
+    dplyr::mutate(year = year(published.date)) %>%
+    dplyr::filter(as.Date(published.date) >= (lubridate::today() - 5 * 365.25)) %>%
+    dplyr::select(reviewers, year) %>%
+    tidyr::separate_rows(reviewers, sep = ",")
+
+## Most active reviewers
+DT::datatable(
+    reviewers %>% dplyr::group_by(reviewers) %>%
+        dplyr::summarize(nbr_reviews = length(year),
+                         timespan = paste(unique(c(min(year), max(year))), 
+                                          collapse = " - ")) %>%
+        dplyr::arrange(desc(nbr_reviews)),
+    escape = FALSE, rownames = FALSE, 
+    filter = list(position = 'top', clear = FALSE),
+    options = list(scrollX = TRUE)
+)
+```
+
+## Past year
+
+```{r most-reviewers-past-year, class.source = 'fold-hide', message = FALSE}
+reviewers <- papers %>% 
+    dplyr::filter(!grepl("rOpenSci|pyOpenSci", prerev_labels)) %>%
+    dplyr::mutate(year = year(published.date)) %>%
+    dplyr::filter(as.Date(published.date) >= (lubridate::today() - 365.25)) %>%
     dplyr::select(reviewers, year) %>%
     tidyr::separate_rows(reviewers, sep = ",")
 

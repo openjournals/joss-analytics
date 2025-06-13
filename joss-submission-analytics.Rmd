@@ -223,6 +223,7 @@ while (length(a) > 0 && !identical(a, a0)) {
 joss_api <- do.call(dplyr::bind_rows, lapply(joss_api, function(w) {
     data.frame(api_title = w$title, 
                api_state = w$state,
+               author_affiliations = paste(unique(unlist(lapply(w$authors, "[[", "affiliation"))), collapse = ";"),
                editor = paste(w$editor, collapse = ","),
                reviewers = paste(w$reviewers, collapse = ","),
                nbr_reviewers = length(w$reviewers),

@@ -1133,7 +1133,8 @@ dim(citations)
 
 if (!is.null(citations) && is.data.frame(citations) && "oci" %in% colnames(citations)) {
     citations <- citations %>% 
-        dplyr::filter(!(oci %in% citations_archive$oci))
+        dplyr::filter(!(oci %in% citations_archive$oci) & 
+                          citing != "")
     
     tmpj <- rcrossref::cr_works(dois = unique(citations$citing))$data %>%
         dplyr::select(contains("doi"), contains("container.title"), contains("issn"),

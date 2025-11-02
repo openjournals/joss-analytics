@@ -329,6 +329,21 @@ prereview_rejected <- iss %>%
 all_rejected <- dplyr::bind_rows(review_rejected, prereview_rejected)
 ```
 
+```{r get-submission-info, class.source = 'fold-show', message = FALSE}
+## Get only pre-review issues plus review issues opened before 2016-09-18, 
+## will use these as a proxy for the number of submissions
+pi1 <- iss |>
+    dplyr::filter(grepl("\\[PRE REVIEW\\]", title)) |>
+    dplyr::mutate(opened = as.Date(opened))
+dim(pi1)
+pi2 <- iss |>
+    dplyr::filter(grepl("\\[REVIEW\\]", title)) |>
+    dplyr::mutate(opened = as.Date(opened)) |>
+    dplyr::filter(opened <= as.Date("2016-09-18"))
+dim(pi2)
+prereview_issues <- dplyr::bind_rows(pi1, pi2)
+```
+
 ```{r extract-github-2, class.source = 'fold-show', message = FALSE}
 ## For PRE-REVIEW issues, add information about the corresponding REVIEW 
 ## issue number
@@ -559,7 +574,7 @@ ggplot(monthly_pubs,
 DT::datatable(
     monthly_pubs %>% 
         dplyr::rename("Number of papers" = "npub",
-                      "Month of publications" = "pubmonth"),
+                      "Month of publication" = "pubmonth"),
     escape = FALSE, rownames = FALSE, 
     filter = list(position = 'top', clear = FALSE),
     options = list(scrollX = TRUE)
@@ -585,7 +600,36 @@ ggplot(yearly_pubs,
 DT::datatable(
     yearly_pubs %>% 
         dplyr::rename("Number of papers" = "npub",
-                      "Year of publications" = "pubyear"),
+                      "Year of publication" = "pubyear"),
+    escape = FALSE, rownames = FALSE, 
+    filter = list(position = 'top', clear = FALSE),
+    options = list(scrollX = TRUE)
+)
+```
+
+# Number of submissions per month
+
+We use the number of opened pre-review issues in a month as a proxy for the 
+number of submissions. 
+
+```{r submissions-month, class.source = 'fold-hide', fig.width = 10, message = FALSE}
+monthly_subs <- prereview_issues |>
+    dplyr::mutate(submonth = lubridate::floor_date(opened, "month")) |>
+    dplyr::group_by(submonth) |>
+    dplyr::summarize(nsub = n())
+ggplot(monthly_subs, 
+       aes(x = factor(submonth), y = nsub)) + 
+    geom_bar(stat = "identity") + theme_minimal() + 
+    labs(x = "", y = "Number of submissions per month", caption = dcap) + 
+    theme(axis.title = element_text(size = 15),
+          axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+```
+
+```{r}
+DT::datatable(
+    monthly_subs |> 
+        dplyr::rename("Number of submissions" = "nsub",
+                      "Month of submission" = "submonth"),
     escape = FALSE, rownames = FALSE, 
     filter = list(position = 'top', clear = FALSE),
     options = list(scrollX = TRUE)

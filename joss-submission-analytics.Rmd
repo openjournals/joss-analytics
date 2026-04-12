@@ -557,7 +557,7 @@ DT::datatable(
 
 # Number of published papers per month
 
-```{r papers-month, class.source = 'fold-hide', fig.width = 10, message = FALSE}
+```{r papers-month, class.source = 'fold-hide', fig.width = 11, message = FALSE}
 monthly_pubs <- papers %>% 
     dplyr::mutate(pubmonth = lubridate::floor_date(published.date, "month")) %>%
     dplyr::group_by(pubmonth) %>%
@@ -612,7 +612,7 @@ DT::datatable(
 We use the number of opened pre-review issues in a month as a proxy for the 
 number of submissions. 
 
-```{r submissions-month, class.source = 'fold-hide', fig.width = 10, message = FALSE}
+```{r submissions-month, class.source = 'fold-hide', fig.width = 11, message = FALSE}
 monthly_subs <- prereview_issues |>
     dplyr::mutate(submonth = lubridate::floor_date(opened, "month")) |>
     dplyr::group_by(submonth) |>
@@ -641,7 +641,7 @@ DT::datatable(
 The plots below illustrate the fraction of pre-review and review issues closed 
 during each month that have the 'rejected' label attached. 
 
-```{r rejections, class.source = 'fold-hide', fig.width = 10, fig.height = 8, message = FALSE}
+```{r rejections, class.source = 'fold-hide', fig.width = 11, fig.height = 8, message = FALSE}
 ggplot(all_rejected, 
        aes(x = factor(closedmonth), y = nbr_rejections/nbr_issues_closed)) + 
     geom_bar(stat = "identity") + 
@@ -1035,7 +1035,7 @@ DT::datatable(
 
 # Number of papers per editor and year
 
-```{r papers-per-editor, class.source = 'fold-hide', message = FALSE, fig.width = 16, fig.height = 15}
+```{r papers-per-editor, class.source = 'fold-hide', message = FALSE, fig.width = 18, fig.height = 15}
 ggplot(papers %>% 
            dplyr::mutate(year = year(published.date),
                          `r/pyOpenSci` = factor(
@@ -1051,7 +1051,7 @@ ggplot(papers %>%
 
 # Distribution of software repo licenses
 
-```{r repo-license, class.source = 'fold-hide', warning = FALSE, message = FALSE, fig.width = 8, fig.height = 8}
+```{r repo-license, class.source = 'fold-hide', warning = FALSE, message = FALSE, fig.width = 9, fig.height = 8}
 all_licenses <- sort(unique(papers$repo_license))
 license_levels = c(grep("apache", all_licenses, value = TRUE),
                    grep("bsd", all_licenses, value = TRUE),

@@ -616,7 +616,13 @@ number of submissions.
 monthly_subs <- prereview_issues |>
     dplyr::mutate(submonth = lubridate::floor_date(opened, "month")) |>
     dplyr::group_by(submonth) |>
-    dplyr::summarize(nsub = n())
+    dplyr::summarize(nsub = n()) |>
+    # fill in missing months (with 0 submissions)
+    tidyr::complete(
+        submonth = seq(min(submonth, na.rm = TRUE), 
+                       max(submonth, na.rm = TRUE), by = "month"),
+        fill = list(nsub = 0)
+     )
 ggplot(monthly_subs, 
        aes(x = factor(submonth), y = nsub)) + 
     geom_bar(stat = "identity") + theme_minimal() + 

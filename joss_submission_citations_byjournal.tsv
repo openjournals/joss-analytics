@@ -1,7 +1,7 @@
 container.title	nbr_citations_of_joss_papers	nbr_cited_joss_papers	nbr_citing_papers	nbr_selfcitations_of_joss_papers	fraction_selfcitations
-The Journal of Open Source Software	1409	510	704	333	0.236
+The Journal of Open Source Software	1411	512	704	333	0.236
 bioRxiv	11331	499	7225	443	0.0391
-NA	3665	488	3237	NA	NA
+NA	3667	490	3239	NA	NA
 Scientific Reports	1920	244	1329	10	0.00521
 Nature Communications	1523	219	1054	45	0.0295
 CRAN: Contributed Packages	243	201	238	156	0.642
@@ -12,7 +12,7 @@ Applied Sciences	386	130	261	13	0.0337
 Astronomy &amp; Astrophysics	1587	127	1191	75	0.0473
 IEEE Access	412	126	278	27	0.0655
 Scientific Data	294	100	203	31	0.105
-SoftwareX	196	94	124	5	0.0255
+SoftwareX	197	95	125	5	0.0254
 Nature	406	92	263	15	0.0369
 PLOS Computational Biology	313	92	207	23	0.0735
 Sensors	400	92	272	6	0.015
@@ -21,16 +21,16 @@ Science Advances	280	90	212	12	0.0429
 Proceedings of the National Academy of Sciences	313	87	212	17	0.0543
 The Astrophysical Journal Letters	580	85	372	72	0.124
 Geoscientific Model Development	188	80	103	43	0.229
+Physical Review D	918	77	599	80	0.0871
 Bioinformatics	275	76	168	10	0.0364
-Physical Review D	915	76	599	79	0.0863
 The Astronomical Journal	1077	76	605	105	0.0975
 Science of The Total Environment	477	73	351	2	0.00419
 Remote Sensing	349	71	240	12	0.0344
 eLife	524	71	348	31	0.0592
 Sustainability	245	70	172	6	0.0245
 iScience	310	70	229	4	0.0129
-The Journal of Chemical Physics	213	66	139	33	0.155
-Physical Review Letters	183	65	126	22	0.12
+The Journal of Chemical Physics	214	67	140	34	0.159
+Physical Review Letters	184	66	127	22	0.12
 The Astrophysical Journal Supplement Series	351	63	196	73	0.208
 Communications Biology	261	59	171	4	0.0153
 Energies	255	58	162	5	0.0196
@@ -87,10 +87,10 @@ Genome Biology	196	37	120	8	0.0408
 PeerJ Computer Science	71	37	38	1	0.0141
 Computational and Structural Biotechnology Journal	116	36	84	0	0
 IEEE Transactions on Visualization and Computer Graphics	128	36	104	2	0.0156
+Journal of Chemical Information and Modeling	163	36	120	8	0.0491
 Physical Review Materials	91	36	59	18	0.198
 The Journal of Physical Chemistry C	98	36	72	10	0.102
 Ecological Indicators	128	35	90	0	0
-Journal of Chemical Information and Modeling	162	35	119	8	0.0494
 Research Notes of the AAS	69	35	51	16	0.232
 Cell	142	34	79	5	0.0352
 Computational Materials Science	93	34	69	6	0.0645
@@ -110,12 +110,12 @@ Engineering Applications of Artificial Intelligence	55	32	48	0	0
 Frontiers in Genetics	159	32	90	1	0.00629
 Geophysical Journal International	82	32	51	12	0.146
 Global Change Biology	165	32	105	6	0.0364
+ACS Omega	65	31	48	0	0
 Computers and Electronics in Agriculture	63	31	46	1	0.0159
 Imaging Neuroscience	70	31	59	0	0
 Journal of Geophysical Research: Solid Earth	96	31	60	10	0.104
 Neural Computing and Applications	87	31	59	2	0.023
 Publications of the Astronomical Society of the Pacific	95	31	62	3	0.0316
-ACS Omega	63	30	46	0	0
 Chaos: An Interdisciplinary Journal of Nonlinear Science	89	30	60	5	0.0562
 Earth's Future	54	30	39	0	0
 Frontiers in Public Health	82	30	57	0	0
@@ -176,6 +176,7 @@ Energy and Buildings	80	24	59	1	0.0125
 Frontiers in Ecology and Evolution	115	24	72	1	0.0087
 IFAC-PapersOnLine	68	24	42	0	0
 ISPRS International Journal of Geo-Information	57	24	30	1	0.0175
+Journal of Open Research Software	36	24	15	4	0.111
 Microbial Genomics	121	24	80	6	0.0496
 Molecular Ecology	140	24	105	0	0
 NAR Genomics and Bioinformatics	60	24	46	1	0.0167
@@ -187,7 +188,6 @@ ACS Nano	42	23	34	4	0.0952
 Building and Environment	89	23	69	0	0
 Ecography	55	23	40	1	0.0182
 Frontiers in Veterinary Science	101	23	72	0	0
-Journal of Open Research Software	35	23	15	3	0.0857
 Molecular Biology and Evolution	75	23	54	2	0.0267
 PLOS Genetics	85	23	58	5	0.0588
 Peer Community Journal	46	23	36	0	0
@@ -218,6 +218,7 @@ Energy Conversion and Management	54	21	41	2	0.037
 Environmental Pollution	67	21	49	0	0
 Frontiers in Human Neuroscience	49	21	33	0	0
 IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing	43	21	34	6	0.14
+Industrial &amp; Engineering Chemistry Research	33	21	24	2	0.0606
 International Journal of Applied Earth Observation and Geoinformation	38	21	30	0	0
 Journal of Computational and Graphical Statistics	49	21	27	3	0.0612
 Journal of Geophysical Research: Earth Surface	50	21	31	19	0.38
@@ -245,7 +246,6 @@ Future Generation Computer Systems	28	20	23	1	0.0357
 Global Ecology and Conservation	90	20	65	0	0
 IEEE Transactions on Geoscience and Remote Sensing	30	20	26	0	0
 IOP Conference Series: Earth and Environmental Science	45	20	33	0	0
-Industrial &amp; Engineering Chemistry Research	32	20	23	2	0.0625
 Journal of Animal Ecology	99	20	69	0	0
 Journal of Hazardous Materials	54	20	45	0	0
 Landscape Ecology	87	20	61	0	0
@@ -265,6 +265,7 @@ Environmental Monitoring and Assessment	54	19	40	2	0.037
 Frontiers in Bioengineering and Biotechnology	50	19	33	0	0
 IEEE Transactions on Biomedical Engineering	29	19	20	4	0.138
 Journal of Biomechanics	46	19	34	4	0.087
+Journal of Computational Science	26	19	19	2	0.0769
 Journal of Dairy Science	113	19	75	0	0
 Magnetic Resonance in Medicine	81	19	59	19	0.235
 Medical Image Analysis	27	19	20	2	0.0741
@@ -291,7 +292,6 @@ Frontiers in Pharmacology	41	18	29	0	0
 Insects	65	18	51	0	0
 International Journal of Hydrogen Energy	37	18	30	0	0
 Journal of Affective Disorders	53	18	43	0	0
-Journal of Computational Science	25	18	18	2	0.08
 Journal of Computational Social Science	32	18	23	4	0.125
 Journal of Experimental Biology	78	18	56	4	0.0513
 Journal of Marine Science and Engineering	31	18	23	3	0.0968
@@ -469,6 +469,7 @@ Transportation Research Part F: Traffic Psychology and Behaviour	25	14	18	0	0
 Wellcome Open Research	48	14	30	16	0.333
 mSphere	53	14	33	6	0.113
 2021 IEEE International Conference on Big Data (Big Data)	26	13	13	0	0
+2025 IEEE International Conference on Robotics and Automation (ICRA)	15	13	15	0	0
 ACM Computing Surveys	21	13	16	1	0.0476
 ACM Transactions on Mathematical Software	29	13	19	6	0.207
 AIAA SCITECH 2024 Forum	29	13	29	0	0
@@ -541,7 +542,6 @@ The Journal of Physiology	23	13	18	2	0.087
 Transportation Research Part D: Transport and Environment	25	13	16	0	0
 Urban Forestry &amp; Urban Greening	43	13	38	0	0
 2024 IEEE International Symposium on Biomedical Imaging (ISBI)	12	12	12	0	0
-2025 IEEE International Conference on Robotics and Automation (ICRA)	14	12	14	0	0
 AIAA Journal	40	12	26	8	0.2
 Advanced Engineering Materials	22	12	17	3	0.136
 Aerospace Science and Technology	35	12	22	3	0.0857
@@ -574,6 +574,7 @@ GEOPHYSICS	26	12	19	0	0
 Geoderma	42	12	36	0	0
 Geomorphology	18	12	14	0	0
 GeroScience	15	12	13	0	0
+IEEE Transactions on Medical Imaging	21	12	19	4	0.19
 International Journal of Disaster Risk Reduction	17	12	13	0	0
 International Journal of Heat and Mass Transfer	25	12	21	2	0.08
 International Journal of Psychophysiology	23	12	17	0	0
@@ -593,6 +594,7 @@ Languages	35	12	26	0	0
 Mechanical Systems and Signal Processing	27	12	22	0	0
 Nature Physics	19	12	14	2	0.105
 Neuroscience	20	12	13	0	0
+Nuclear Fusion	39	12	35	4	0.103
 Ocean Engineering	31	12	27	0	0
 One Earth	18	12	15	0	0
 PLOS Global Public Health	37	12	28	2	0.0541
@@ -643,7 +645,6 @@ Gut Microbes	40	11	29	1	0.025
 Horticulture Research	25	11	16	2	0.08
 Hydrological Processes	42	11	24	0	0
 ICES Journal of Marine Science	64	11	47	0	0
-IEEE Transactions on Medical Imaging	20	11	18	4	0.2
 IEEE Transactions on Robotics	28	11	21	0	0
 IEEE/ACM Transactions on Audio, Speech, and Language Processing	47	11	34	2	0.0426
 INFORMS Journal on Computing	13	11	9	0	0
@@ -668,7 +669,6 @@ Nature Geoscience	18	11	14	2	0.111
 Network Neuroscience	22	11	16	6	0.273
 Neuropsychopharmacology	16	11	11	1	0.0625
 New Journal of Physics	24	11	15	4	0.167
-Nuclear Fusion	35	11	31	4	0.114
 Oecologia	70	11	48	0	0
 PLOS Digital Health	21	11	16	1	0.0476
 Parasites &amp; Vectors	35	11	29	0	0
@@ -906,6 +906,7 @@ Schizophrenia Research	20	9	15	0	0
 Seismological Research Letters	19	9	15	2	0.105
 Solar Physics	27	9	17	5	0.185
 Structures	12	9	11	0	0
+Systems and Control Transactions,Proceedings of the 35th European Symposium on Computer Aided Process Engineering (ESCAPE 35)	13	9	11	0	0
 The Annals of Applied Statistics	12	9	9	0	0
 The EMBO Journal	22	9	17	0	0
 Transboundary and Emerging Diseases	30	9	20	0	0
@@ -1060,7 +1061,6 @@ Social Media + Society	16	8	13	0	0
 Soil Biology and Biochemistry	34	8	26	0	0
 Suicide and Life-Threatening Behavior	13	8	11	0	0
 Sustainable Energy, Grids and Networks	11	8	9	0	0
-Systems and Control Transactions,Proceedings of the 35th European Symposium on Computer Aided Process Engineering (ESCAPE 35)	11	8	9	0	0
 The American Statistician	14	8	9	0	0
 The European Physical Journal Plus	12	8	8	0	0
 The International Journal of Life Cycle Assessment	46	8	32	2	0.0435
@@ -1125,6 +1125,7 @@ Computer Speech &amp; Language	9	7	7	0	0
 Computerized Medical Imaging and Graphics	8	7	7	1	0.125
 Computers & Chemical Engineering	9	7	9	0	0
 Computers & Geosciences	8	7	8	1	0.125
+Computers and Geotechnics	13	7	10	0	0
 Computers in Human Behavior Reports	12	7	9	0	0
 Computing and Software for Big Science	12	7	7	0	0
 Conservation Physiology	29	7	21	0	0
@@ -1217,6 +1218,7 @@ Journal of Pharmacokinetics and Pharmacodynamics	14	7	8	0	0
 Journal of Phonetics	20	7	16	0	0
 Journal of Physics: Complexity	9	7	8	1	0.111
 Journal of Physics: Energy	9	7	7	3	0.333
+Journal of Plasma Physics	40	7	33	11	0.275
 Journal of Thermal Biology	22	7	18	0	0
 Journal of Virology	21	7	16	0	0
 Journal of Youth and Adolescence	21	7	13	0	0
@@ -1364,7 +1366,6 @@ Computer-Aided Design	8	6	6	0	0
 Computers &amp; Education	10	6	9	0	0
 Computers &amp; Operations Research	6	6	6	0	0
 Computers &amp; Security	13	6	11	0	0
-Computers and Geotechnics	12	6	9	0	0
 Continental Shelf Research	11	6	6	2	0.182
 Current Landscape Ecology Reports	10	6	4	0	0
 Current Opinion in Structural Biology	9	6	5	1	0.111
@@ -1473,7 +1474,6 @@ Journal of Parallel and Distributed Computing	7	6	6	1	0.143
 Journal of Pest Science	14	6	11	0	0
 Journal of Petroleum Science and Engineering	20	6	10	0	0
 Journal of Physics: Materials	6	6	4	0	0
-Journal of Plasma Physics	38	6	31	10	0.263
 Journal of Rock Mechanics and Geotechnical Engineering	7	6	6	0	0
 Journal of Science and Medicine in Sport	12	6	10	0	0
 Journal of Statistical Computation and Simulation	11	6	6	0	0
@@ -1524,6 +1524,7 @@ Neuroscience &amp; Biobehavioral Reviews	14	6	11	0	0
 Nonlinear Processes in Geophysics	6	6	5	0	0
 North American Journal of Fisheries Management	23	6	17	0	0
 Nuclear Technology	11	6	8	3	0.273
+Optimization and Engineering	9	6	6	0	0
 Ore Geology Reviews	12	6	8	0	0
 Ornithology	17	6	13	0	0
 PLANTS, PEOPLE, PLANET	18	6	17	0	0
@@ -1885,7 +1886,6 @@ Numerical Algorithms	5	5	5	0	0
 Numerische Mathematik	7	5	5	0	0
 OCEANS 2024 - Halifax	5	5	4	0	0
 Oncology Letters	6	5	5	0	0
-Optimization and Engineering	8	5	6	0	0
 Organisms Diversity &amp; Evolution	9	5	7	0	0
 Ornithology Research	5	5	4	0	0
 Orthopaedic Journal of Sports Medicine	6	5	4	0	0
@@ -2559,6 +2559,7 @@ Surfaces and Interfaces	6	4	6	0	0
 Synthese	9	4	5	0	0
 Systems	7	4	5	0	0
 Teaching Statistics	11	4	8	0	0
+Technologies	4	4	4	0	0
 Technology, Knowledge and Learning	10	4	6	0	0
 Telematics and Informatics Reports	5	4	3	1	0.2
 Terra Nova	7	4	3	0	0
@@ -3637,7 +3638,6 @@ Sustainable Water Resources Management	3	3	3	0	0
 Swiss Journal of Economics and Statistics	5	3	3	0	0
 Swiss Political Science Review	6	3	4	2	0.333
 Systematic Reviews	7	3	4	0	0
-Technologies	3	3	3	0	0
 Technology and Health Care	4	3	3	0	0
 Technology, Pedagogy and Education	3	3	1	0	0
 Thalassas: An International Journal of Marine Sciences	4	3	4	0	0
@@ -7029,6 +7029,7 @@ tm - Technisches Messen	2	2	2	0	0
 2025 IEEE International Conference on Information Reuse and Integration and Data Science (IRI)	1	1	1	0	0
 2025 IEEE International Conference on Joint Cloud Computing (JCC)	1	1	1	0	0
 2025 IEEE International Conference on LLM-Aided Design (ICLAD)	1	1	1	0	0
+2025 IEEE International Conference on Machine Learning for Communication and Networking (ICMLCN)	1	1	1	0	0
 2025 IEEE International Conference on Mechatronics (ICM)	1	1	1	0	0
 2025 IEEE International Conference on Quantum Software (QSW)	1	1	1	0	0
 2025 IEEE International Conference on Software Testing, Verification and Validation Workshops (ICSTW)	1	1	1	0	0

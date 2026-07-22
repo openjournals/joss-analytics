@@ -42,6 +42,8 @@ suppressPackageStartupMessages({
     library(gt)
     library(stringr)
     library(openalexR)
+    library(arrow)
+    library(jsonlite)
 })
 ```
 

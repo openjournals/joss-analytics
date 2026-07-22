@@ -64,7 +64,7 @@ jobs:
       - name: Install dependencies
         run: |
           install.packages(c('remotes', 'dplyr', 'ggplot2', 'rmarkdown',
-                             'knitr', 'tibble', 'tidyr', 'arrow',
+                             'knitr', 'tibble', 'tidyr', 'arrow', 'reticulate',
                              'lubridate', 'gh', 'jsonlite', 'purrr',
                              'DT', 'plotly', 'citecorp', 'readr', 
                              'viridis', 'wordcloud', 'stringr', 'gt', 

@@ -1344,6 +1344,25 @@ following code:
 papers <- readRDS(gzcon(url("https://github.com/openjournals/joss-analytics/blob/gh-pages/joss_submission_analytics.rds?raw=true")))
 ```
 
+For non-R users, we also save a parquet file. For this, we convert any list 
+column to a JSON string, and the difftime columns to numeric values. 
+
+```{r to-parquet}
+papers_parquet <- papers |>
+     mutate(across(where(~ inherits(.x, "difftime")), as.numeric)) |>
+     mutate(across(where(is.list), ~ map_chr(.x, ~ jsonlite::toJSON(.x))))
+write_parquet(papers_parquet, "joss_submission_analytics.parquet")
+```
+
+This can be read into python as follows (assuming that `pandas` and `pyarrow`
+or `fastparquet` are available):
+
+```{python, class.source = 'fold-show', eval = FALSE}
+import pandas as pd
+papers = pd.read_parquet("https://github.com/openjournals/joss-analytics/blob/gh-pages/joss_submission_analytics.parquet?raw=true")
+```
+
+
 # Session info
 
 ```{r session-info}

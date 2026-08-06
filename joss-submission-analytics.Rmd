@@ -100,6 +100,8 @@ counts from OpenAlex.
 
 ```{r pull-crossref, class.source = 'fold-show'}
 ## First check how many records there are in Crossref
+## See ?rcrossref for information about how to provide your email address to get 
+## improved performance when using the crossref API
 issn <- "2475-9066"
 joss_details <- rcrossref::cr_journals(issn, works = FALSE) %>%
     pluck("data")
@@ -264,6 +266,7 @@ times and assigned labels.
 
 ```{r pull-github, class.source = 'fold-show', message = FALSE}
 ## Pull down info on all issues in the joss-reviews repository
+## See ?gh_token for information about GitHub Personal Access Tokens
 issues <- gh("/repos/openjournals/joss-reviews/issues", 
              .limit = 15000, state = "all")
 ```

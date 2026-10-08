@@ -150,7 +150,8 @@ source_track <- c(source_track,
 ## Helper function to extract countries from affiliations. Note that this 
 ## information is not available for all papers.
 .get_countries <- function(df, wh = "first") {
-    if ((length(df) == 1 && is.na(df)) || is.null(df$affiliations)) {
+    if ((length(df) == 1 && is.na(df)) || is.null(df$affiliations) || 
+        length(df$affiliations) == 0) {
         ""
     } else {
         if (wh == "first") {
